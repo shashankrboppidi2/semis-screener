@@ -1,11 +1,12 @@
-name: Semis SEC screens (weekly)
+name: Semis SEC screens (Sun + Wed)
 
 # SEC-filing screens: market-wide RPO / book-to-bill, beat-and-raise vs own guidance, and segment
-# acceleration across the semis tickers. Filings arrive slowly, so weekly is enough; run by hand after an
-# earnings wave. Needs the SEC_UA secret ("Your Name you@email.com") - the SEC blocks anonymous clients.
+# acceleration across the semis tickers. Sunday run plus a Wednesday rerun, each e-mailed (email_report.py);
+# run by hand after an earnings wave. Needs the SEC_UA secret ("Your Name you@email.com") - the SEC blocks anonymous clients.
 on:
   schedule:
-    - cron: '17 11 * * 6'      # Saturday 11:17 UTC
+    - cron: '17 11 * * 0'      # Sunday    11:17 UTC (07:17 EDT / 06:17 EST): the weekly run
+    - cron: '17 11 * * 3'      # Wednesday 11:17 UTC: mid-week rerun, catches filings from Mon-Tue
   workflow_dispatch:
     inputs:
       stages:
@@ -51,6 +52,15 @@ jobs:
             echo "::error::Add a repository secret SEC_UA = 'Your Name you@email.com' (Settings > Secrets and variables > Actions)"; exit 1
           fi
           python run_screens.py $STAGES $NO_FETCH
+      - name: E-mail the report
+        if: always()
+        env:
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: '587'
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO:   ${{ secrets.MAIL_TO }}
+        run: python email_report.py
       - name: Save SEC cache
         if: always()
         uses: actions/cache/save@v4

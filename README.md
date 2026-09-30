@@ -34,8 +34,8 @@ copies of the headline lists to `results/` with a `run_status.json`. It also see
 `out/br_guide_ckpt.jsonl` from the shipped `br_guidance_enriched.pkl`, so the beat-and-raise
 refresh only opens releases it has not read before.
 
-On GitHub, `.github/workflows/screens.yml` runs `tier1 br accel` every Saturday (or by hand,
-with a stage list) and commits `results/`. Add the repository secret `SEC_UA`. The SEC HTTP
+On GitHub, `.github/workflows/screens.yml` runs `tier1 br accel` every Sunday and Wednesday and e-mails the report (or by hand,
+with a stage list) and commits `results/`. Add the repository secrets `SEC_UA`, and `SMTP_USER`, `SMTP_PASS`, `MAIL_TO` for the e-mail (same values as cipherb-screen). The SEC HTTP
 cache is kept between runs with `actions/cache`; `data.sec.gov` answers (submissions,
 companyfacts, frames) expire after `SEC_CACHE_TTL_HOURS` (default 20) so new filings are seen,
 while archive documents are cached for good. The tier-1 date window and the `CURRENT` recency

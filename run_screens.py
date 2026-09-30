@@ -101,6 +101,10 @@ def workbooks(fetch):
 def publish():
     import pandas as pd
     os.makedirs(PUB, exist_ok=True)
+    # keep last run's lists so the e-mail can mark names that are new this run
+    os.makedirs(f"{PUB}/prev", exist_ok=True)
+    for f in os.listdir(PUB):
+        if f.endswith(".csv"): shutil.copy(f"{PUB}/{f}", f"{PUB}/prev/{f}")
     for f in ["market_bookings_screen", "beat_and_raise_screen", "semis_acceleration_screen"]:
         if os.path.exists(f"out/{f}.xlsx"): shutil.copy(f"out/{f}.xlsx", PUB)
     wb = [f"out/{t}_sec_history.xlsx" for t in TICKERS if os.path.exists(f"out/{t}_sec_history.xlsx")]
