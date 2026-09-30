@@ -1,0 +1,59 @@
+name: Book-to-bill backtest (on demand)
+
+# Point-in-time backtest of book-to-bill (backtest_b2b.py): SEC companyfacts for every RPO filer, first-reported
+# values dated to the filing, Yahoo prices, excess return over SPY. Writes and commits results/backtest_b2b/.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Only the first N filers (0 = all ~900); for a quick trial'
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt yfinance
+      # companyfacts are large; kept in their own cache so the weekly screen's cache stays small
+      - name: Restore SEC cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cache
+          key: semis-bt-${{ github.run_id }}
+          restore-keys: semis-bt-
+      - name: Run
+        env:
+          SEC_UA: ${{ secrets.SEC_UA }}
+          BT_LIMIT: ${{ inputs.limit }}
+          SEC_CACHE_TTL_HOURS: '0'    # companyfacts carries every vintage with its filing date, so a stale copy loses nothing but the newest quarter
+        run: |
+          if [ -z "$SEC_UA" ]; then echo "::error::Add the SEC_UA repository secret"; exit 1; fi
+          python backtest_b2b.py
+      - name: Save SEC cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: cache
+          key: semis-bt-${{ github.run_id }}
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-b2b
+          path: results/backtest_b2b/
+          retention-days: 30
+      - name: Commit results
+        run: |
+          git config user.name  "cipherb-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add results/backtest_b2b/
+          git diff --quiet --cached || git commit -m "$(date -u +%FT%H:%M) book-to-bill backtest"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

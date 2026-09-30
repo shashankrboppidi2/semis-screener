@@ -13,3 +13,4 @@ __pycache__/
 
 # per-ticker workbooks are uploaded as a workflow artifact, not committed
 results/tickers/
+out/bt_panel.pkl

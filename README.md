@@ -41,6 +41,11 @@ companyfacts, frames) expire after `SEC_CACHE_TTL_HOURS` (default 20) so new fil
 while archive documents are cached for good. The tier-1 date window and the `CURRENT` recency
 gate roll forward with the calendar (`SEMIS_CURRENT_Q=2026Q1` pins the gate).
 
+**Book-to-bill backtest** (`backtest_b2b.py`, BACKLOG task 7): as-first-reported RPO and revenue from companyfacts for
+every RPO filer, dated to the 10-Q/10-K filing, returns in excess of SPY from the next close. Four hypotheses fixed
+in the docstring before any result was seen; pass/fail on a within-cohort shuffle placebo with Bonferroni.
+Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest_b2b/summary.md`.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 
