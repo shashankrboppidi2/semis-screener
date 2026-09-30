@@ -1,0 +1,14 @@
+{
+ "ticker": "TXN",
+ "cik": 97476,
+ "company_key": "NASDAQ_TXN",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "_ignore_members": [
+  "Reportable Segments"
+ ],
+ "earnings_forms": [
+  "8-K"
+ ],
+ "annual_form": "10-K"
+}

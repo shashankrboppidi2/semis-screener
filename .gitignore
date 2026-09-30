@@ -1,0 +1,15 @@
+cache/
+queue/
+out/*.xlsx
+out/tier1_raw.pkl
+out/tier1_panel.pkl
+out/logs/
+out/*_ckpt.jsonl
+out/*_log.txt
+out/run_all_status*.json
+all_facts_*.pkl
+*.pyc
+__pycache__/
+
+# per-ticker workbooks are uploaded as a workflow artifact, not committed
+results/tickers/

@@ -1,0 +1,16 @@
+{
+ "ticker": "ASX",
+ "cik": 1122411,
+ "company_key": "NYSE_ASX",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "first_annual": "2001-06-28",
+ "annual_form": "20-F",
+ "sic": "Semiconductors & Related Devices",
+ "name": "ASE Technology Holding Co., Ltd.",
+ "filer_type": "FPI",
+ "currency": "TWD"
+}

@@ -1,0 +1,30 @@
+{
+ "ticker": "NVDA",
+ "cik": 1045810,
+ "company_key": "NASDAQ_NVDA",
+ "_note": "member_map is the only per-company hand-off: XBRL member label -> canonical name. Drafted once per ticker (by a model from the list of distinct members, ~1k tokens) and reviewed.",
+ "earnings": {
+  "platform_table_header": "^Revenue by (Market Platform|Market|End Market|Specialized Market)",
+  "platform_labels": {
+   "Gaming": "Gaming",
+   "Gaming and AI PC": "Gaming",
+   "Professional Visualization": "Professional Visualization",
+   "Datacenter": "Data Center",
+   "Data Center": "Data Center",
+   "Automotive": "Automotive",
+   "Automotive and Robotics": "Automotive",
+   "OEM and IP": "OEM & Other",
+   "OEM & IP": "OEM & Other",
+   "OEM and Other": "OEM & Other",
+   "OEM & Other": "OEM & Other",
+   "Edge Computing": "Edge Computing"
+  },
+  "platforms_from": "2016-05-01"
+ },
+ "start_period": "2010-04-01",
+ "_start_note": "History starts FY2011 (first quarter ends Apr 2010). Earlier periods are skipped by every module.",
+ "annual_form": "10-K",
+ "earnings_forms": [
+  "8-K"
+ ]
+}

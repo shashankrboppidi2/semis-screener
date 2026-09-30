@@ -1,0 +1,14 @@
+{
+ "ticker": "SNPS",
+ "cik": 883241,
+ "company_key": "NASDAQ_SNPS",
+ "start_period": "2010-04-01",
+ "fye_month": 10,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1996-12-20",
+ "annual_form": "10-K",
+ "sic": "Services-Prepackaged Software",
+ "name": "SYNOPSYS INC"
+}

@@ -1,0 +1,14 @@
+{
+ "ticker": "LRCX",
+ "cik": 707549,
+ "company_key": "NASDAQ_LRCX",
+ "start_period": "2010-04-01",
+ "fye_month": 6,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1995-09-26",
+ "annual_form": "10-K",
+ "sic": "Special Industry Machinery, NEC",
+ "name": "LAM RESEARCH CORP"
+}

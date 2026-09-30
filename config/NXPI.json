@@ -1,0 +1,15 @@
+{
+ "ticker": "NXPI",
+ "cik": 1413447,
+ "company_key": "NASDAQ_NXPI",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "2011-03-09",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "NXP Semiconductors N.V.",
+ "_form_history": "filed Counter({'20-F': 9, '10-K': 7}) \u2014 classified by the most recent annual filing"
+}

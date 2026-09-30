@@ -1,0 +1,14 @@
+{
+ "ticker": "TER",
+ "cik": 97210,
+ "company_key": "NASDAQ_TER",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1994-03-31",
+ "annual_form": "10-K",
+ "sic": "Instruments For Meas & Testing of  Electricity & Elec Signals",
+ "name": "TERADYNE, INC"
+}

@@ -1,0 +1,14 @@
+{
+ "ticker": "CBRS",
+ "cik": 2021728,
+ "company_key": "NASDAQ_CBRS",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "annual_form": "none yet",
+ "first_annual": null,
+ "sic": "Semiconductors & Related Devices",
+ "name": "Cerebras Systems Inc."
+}

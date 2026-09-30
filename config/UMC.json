@@ -1,0 +1,16 @@
+{
+ "ticker": "UMC",
+ "cik": 1033767,
+ "company_key": "NYSE_UMC",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "first_annual": "2002-06-13",
+ "annual_form": "20-F",
+ "sic": "Semiconductors & Related Devices",
+ "name": "UNITED MICROELECTRONICS CORP",
+ "filer_type": "FPI",
+ "currency": "TWD"
+}

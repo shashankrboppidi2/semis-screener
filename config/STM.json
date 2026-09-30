@@ -1,0 +1,15 @@
+{
+ "ticker": "STM",
+ "cik": 932787,
+ "company_key": "NYSE_STM",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "first_annual": "1996-07-05",
+ "annual_form": "20-F",
+ "sic": "Semiconductors & Related Devices",
+ "name": "STMicroelectronics N.V.",
+ "filer_type": "FPI"
+}

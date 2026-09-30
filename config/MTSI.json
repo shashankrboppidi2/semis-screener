@@ -1,0 +1,14 @@
+{
+ "ticker": "MTSI",
+ "cik": 1493594,
+ "company_key": "NASDAQ_MTSI",
+ "start_period": "2010-04-01",
+ "fye_month": 10,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "2012-11-28",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "MACOM Technology Solutions Holdings, Inc."
+}

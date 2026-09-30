@@ -1,0 +1,14 @@
+{
+ "ticker": "CDNS",
+ "cik": 813672,
+ "company_key": "NASDAQ_CDNS",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1994-06-17",
+ "annual_form": "10-K",
+ "sic": "Services-Prepackaged Software",
+ "name": "CADENCE DESIGN SYSTEMS INC"
+}

@@ -1,0 +1,14 @@
+{
+ "ticker": "QCOM",
+ "cik": 804328,
+ "company_key": "NASDAQ_QCOM",
+ "start_period": "2010-04-01",
+ "fye_month": 9,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1996-12-03",
+ "annual_form": "10-K",
+ "sic": "Radio & Tv Broadcasting & Communications Equipment",
+ "name": "QUALCOMM INC/DE"
+}

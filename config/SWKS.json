@@ -1,0 +1,14 @@
+{
+ "ticker": "SWKS",
+ "cik": 4127,
+ "company_key": "NASDAQ_SWKS",
+ "start_period": "2010-04-01",
+ "fye_month": 10,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1996-07-01",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "SKYWORKS SOLUTIONS, INC."
+}

@@ -1,0 +1,14 @@
+{
+ "ticker": "AMAT",
+ "cik": 6951,
+ "company_key": "NASDAQ_AMAT",
+ "start_period": "2010-04-01",
+ "fye_month": 10,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1994-12-21",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "APPLIED MATERIALS INC /DE"
+}

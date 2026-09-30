@@ -1,0 +1,14 @@
+{
+ "ticker": "ENTG",
+ "cik": 1101302,
+ "company_key": "NASDAQ_ENTG",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "2000-11-22",
+ "annual_form": "10-K",
+ "sic": "Plastics Products, NEC",
+ "name": "ENTEGRIS INC"
+}

@@ -1,0 +1,20 @@
+{
+ "ticker": "AVGO",
+ "cik": 1730168,
+ "company_key": "NASDAQ_AVGO",
+ "start_period": "2010-04-01",
+ "fye_month": 11,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "2018-12-21",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "Broadcom Inc.",
+ "cik_chain": [
+  1730168,
+  1649338,
+  1441634
+ ],
+ "_cik_chain_note": "Broadcom Inc (2018-) <- Broadcom Ltd/Pte (2016-17) <- Avago Technologies (2009-15)"
+}

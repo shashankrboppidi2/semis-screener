@@ -1,0 +1,76 @@
+name: Semis SEC screens (weekly)
+
+# SEC-filing screens: market-wide RPO / book-to-bill, beat-and-raise vs own guidance, and segment
+# acceleration across the semis tickers. Filings arrive slowly, so weekly is enough; run by hand after an
+# earnings wave. Needs the SEC_UA secret ("Your Name you@email.com") - the SEC blocks anonymous clients.
+on:
+  schedule:
+    - cron: '17 11 * * 6'      # Saturday 11:17 UTC
+  workflow_dispatch:
+    inputs:
+      stages:
+        description: 'Stages to run: any of tier1 br accel workbooks'
+        default: 'tier1 br accel'
+      fetch:
+        description: 'Fetch from SEC (off = rebuild from the pickles in out/ only)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      # SEC HTTP cache: filing documents never change, so a warm cache turns the per-ticker refresh from
+      # ~12k requests into a handful. Mutable endpoints expire after SEC_CACHE_TTL_HOURS (edgar.py).
+      - name: Restore SEC cache
+        uses: actions/cache/restore@v4
+        with:
+          path: cache
+          key: semis-sec-${{ github.run_id }}
+          restore-keys: semis-sec-
+      - name: Run
+        env:
+          SEC_UA: ${{ secrets.SEC_UA }}
+          STAGES: ${{ inputs.stages || 'tier1 br accel' }}
+          NO_FETCH: ${{ github.event_name == 'workflow_dispatch' && !inputs.fetch && '--no-fetch' || '' }}
+        run: |
+          if [ -z "$SEC_UA" ] && [ -z "$NO_FETCH" ]; then
+            echo "::error::Add a repository secret SEC_UA = 'Your Name you@email.com' (Settings > Secrets and variables > Actions)"; exit 1
+          fi
+          python run_screens.py $STAGES $NO_FETCH
+      - name: Save SEC cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: cache
+          key: semis-sec-${{ github.run_id }}
+      - name: Upload workbooks and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: semis-screens
+          path: |
+            results/
+            out/logs/
+          retention-days: 30
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name  "cipherb-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add results/
+          git diff --quiet --cached || git commit -m "$(date -u +%FT%H:%M) semis screens"
+          git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -1,0 +1,16 @@
+{
+ "ticker": "TSM",
+ "cik": 1046179,
+ "company_key": "NYSE_TSM",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "first_annual": "2002-05-09",
+ "annual_form": "20-F",
+ "sic": "Semiconductors & Related Devices",
+ "name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+ "filer_type": "FPI",
+ "currency": "TWD"
+}

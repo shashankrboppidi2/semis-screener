@@ -1,0 +1,11 @@
+{
+ "ticker": "AMD",
+ "cik": 2488,
+ "company_key": "NASDAQ_AMD",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "annual_form": "10-K"
+}

@@ -1,0 +1,15 @@
+{
+ "ticker": "ARM",
+ "cik": 1973239,
+ "company_key": "NASDAQ_ARM",
+ "start_period": "2010-04-01",
+ "fye_month": 3,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "first_annual": "2024-05-29",
+ "annual_form": "20-F",
+ "sic": "Semiconductors & Related Devices",
+ "name": "ARM HOLDINGS PLC /UK",
+ "filer_type": "FPI"
+}

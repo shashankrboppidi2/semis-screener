@@ -1,0 +1,16 @@
+{
+ "ticker": "SKHY",
+ "cik": 2120882,
+ "company_key": "NASDAQ_SKHY",
+ "start_period": "2010-04-01",
+ "fye_month": 12,
+ "earnings_forms": [
+  "6-K"
+ ],
+ "annual_form": "none yet",
+ "first_annual": null,
+ "sic": "Semiconductors & Related Devices",
+ "name": "SK hynix Inc.",
+ "filer_type": "FPI",
+ "currency": "KRW"
+}

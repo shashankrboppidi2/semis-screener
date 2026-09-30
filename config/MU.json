@@ -1,0 +1,14 @@
+{
+ "ticker": "MU",
+ "cik": 723125,
+ "company_key": "NASDAQ_MU",
+ "start_period": "2010-04-01",
+ "fye_month": 9,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1994-09-23",
+ "annual_form": "10-K",
+ "sic": "Semiconductors & Related Devices",
+ "name": "MICRON TECHNOLOGY INC"
+}

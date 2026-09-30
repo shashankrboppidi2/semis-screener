@@ -1,0 +1,14 @@
+{
+ "ticker": "KLAC",
+ "cik": 319201,
+ "company_key": "NASDAQ_KLAC",
+ "start_period": "2010-04-01",
+ "fye_month": 6,
+ "earnings_forms": [
+  "8-K"
+ ],
+ "first_annual": "1994-09-28",
+ "annual_form": "10-K",
+ "sic": "Optical Instruments & Lenses",
+ "name": "KLA CORP"
+}
