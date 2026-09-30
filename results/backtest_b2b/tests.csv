@@ -1,3 +1,9 @@
 test,horizon,cohorts,events,mean_ic,ic_t_nw,ic_positive_share,q5_minus_q1,q5q1_t_nw,placebo_p,significant
-H4 backlog-building gate,63,21,68,,,0.5714,0.02059,0.6909,0.2789,False
-H4 backlog-building gate,126,20,64,,,0.6,-0.0322,-0.5855,0.6172,False
+H1 b2b level,63,32,5910,0.04637,1.943,0.625,0.02748,1.576,0.0009995,True
+H1 b2b level,126,31,5664,0.05896,1.88,0.6452,0.05759,1.668,0.0004998,False
+H2 b2b trend,63,29,4980,0.006952,0.5163,0.5172,0.008903,0.8395,0.3143,False
+H2 b2b trend,126,28,4752,0.04624,3.255,0.75,0.03018,1.559,0.001999,False
+H3 RPO growth y/y,63,29,5127,0.0387,1.154,0.6207,0.03076,1.403,0.006497,True
+H3 RPO growth y/y,126,28,4897,0.02089,0.5471,0.6071,0.01963,0.5485,0.07846,False
+H4 backlog-building gate,63,29,1085,,,0.5172,0.005996,0.691,0.2464,False
+H4 backlog-building gate,126,28,1045,,,0.6429,0.008382,0.6023,0.2879,False
