@@ -71,6 +71,7 @@ jobs:
         run: |
           git config user.name  "cipherb-bot"
           git config user.email "bot@users.noreply.github.com"
+          # the run rewrites tracked pickles in out/; only results/ is committed, the rest is stashed around the pull
           git add results/
           git diff --quiet --cached || git commit -m "$(date -u +%FT%H:%M) semis screens"
-          git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"

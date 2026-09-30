@@ -7,6 +7,8 @@ for c_ in CHAIN:
     _j, _rows = edgar.submissions(c_)
     fil += [dict(x, cik=c_) for x in _rows if x["form"] in ("10-Q", "10-K", "20-F") and x["filingDate"] >= "2010-01-01"]
 fil = sorted(fil, key=lambda r: r["filingDate"]); j, rows = edgar.submissions(cik)
+if not fil:                                  # e.g. SKHY: registered, but no 10-Q/10-K/20-F filed yet; picked up once one is
+    print(t, "no 10-Q/10-K/20-F filings yet - nothing to parse; existing out/ files left as they are"); sys.exit(0)
 seg = pd.concat([S.parse(r["cik"], r["accessionNumber"]).assign(filed=pd.Timestamp(r["filingDate"]), form=r["form"], cik=r["cik"]) for r in fil], ignore_index=True)
 if not len(seg) or "period_end" not in seg.columns:   # no dimensional facts at all: a single-segment filer, or an IFRS filer with no segment tags
     seg = pd.DataFrame(columns=["accn", "concept", "metric", "period_end", "duration_months", "axis", "members", "raw_members", "value", "ctx", "filed", "form", "cik"])
