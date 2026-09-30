@@ -1,0 +1,5 @@
+ticker,name,industry,cqp,rev,rpo,rpo_cover_q,b2b,b2b_4q,b2b_prev3,b2b_trend,rpo_yoy,rpo_yoy_accel,rev_yoy,d_rpo
+BLZE,"BACKBLAZE, INC.",Services-Prepackaged Software,2026Q2,42.71,396,9.271,8.48,3.078,1.278,7.202,7.82,7.116,0.1767,319.5
+VECO,VEECO INSTRUMENTS INC.,"Special Industry Machinery, NEC",2026Q2,193.5,376.5,1.946,2.208,1.465,1.217,0.991,8.46,6.976,0.1648,233.7
+AROC,"Archrock, Inc.",Natural Gas Transmission,2026Q2,371.2,1502,4.046,2.718,1.384,0.9397,1.778,0.6088,0.6609,-0.03109,637.6
+KGS,"Kodiak Gas Services, Inc.",Natural Gas Transmission,2026Q2,391.1,2643,6.758,3.583,1.656,1.014,2.569,0.6358,0.5493,0.2115,1010

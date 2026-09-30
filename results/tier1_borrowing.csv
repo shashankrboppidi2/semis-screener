@@ -1,0 +1,54 @@
+ticker,name,industry,cqp,rev,rpo,rpo_cover_q,b2b,b2b_4q,b2b_prev3,b2b_trend,rpo_yoy,rpo_yoy_accel,rev_yoy,d_rpo
+,THE HOWARD HUGHES CORPORATION,Real Estate Investment Trusts,2026Q2,1009,3800,3.765,0.2073,1.742,2.254,-2.047,0.1515,-0.286,2.868,-800
+FLY,Firefly Aerospace Inc.,Guided Missiles & Space Vehicles & Parts,2026Q2,117.7,563.7,4.79,0.2446,2.01,2.599,-2.354,0.0385,,6.569,-88.9
+HHH,HOWARD HUGHES HOLDINGS INC.,Real Estate Investment Trusts,2026Q2,1122,3800,3.386,0.2872,1.762,2.254,-1.967,0.1515,-0.286,3.302,-800
+PL,Planet Labs PBC,Radio & Tv Broadcasting & Communications Equipment,2026Q2,116.1,753.1,6.489,0.458,1.232,1.49,-1.032,0.09129,-0.7144,0.5814,-62.9
+BLND,"BLEND LABS, INC.","Services-Computer Programming, Data Processing, Etc.",2026Q2,33.84,168.5,4.98,0.5626,0.8337,0.924,-0.3614,-0.115,-0.2744,0.06981,-14.8
+TKO,"TKO GROUP HOLDINGS, INC.",Services-Amusement & Recreation Services,2026Q2,1547,1.597e+04,10.32,0.5711,2.901,3.678,-3.107,1.083,0.04532,0.1824,-663.6
+AMRC,"Ameresco, Inc.",Construction - Special Trade Contractors,2026Q2,515.5,3820,7.412,0.5724,,1.016,-0.4439,0.01562,-0.002712,0.09143,-220.4
+NWPX,"NWPX Infrastructure, Inc.",Steel Pipe & Tubes,2026Q2,159.5,305,1.913,0.5736,1.031,1.184,-0.61,0.02349,-0.8139,0.1974,-68
+NFE,New Fortress Energy Inc.,Natural Gas Distribution,2026Q2,312.5,1.017e+04,32.55,0.5764,1.97,2.434,-1.858,0.19,0.347,0.02763,-132.4
+SDGR,"Schrodinger, Inc.",Pharmaceutical Preparations,2026Q2,58.89,189.1,3.211,0.6281,1.305,1.531,-0.9026,2.366,0.000545,0.07542,-21.9
+RAMP,"LiveRamp Holdings, Inc.",Services-Computer Processing & Data Preparation,2026Q2,214,684.9,3.201,0.6472,0.9091,0.9923,-0.3451,-0.007966,-0.0782,0.09837,-75.5
+PLBY,"Playboy, Inc.",Retail-Miscellaneous Retail,2026Q2,31.22,324.5,10.39,0.6637,0.707,0.7215,-0.0578,-0.1006,0.001989,0.1091,-10.5
+CVEO,Civeo Corp,"Hotels, Rooming Houses, Camps & Other Lodging Places",2026Q2,180,530.2,2.945,0.6677,0.7372,0.7603,-0.09263,-0.254,-0.3908,0.1065,-59.82
+HOS,"HELIX ENERGY SOLUTIONS GROUP, INC.","Oil & Gas Field Services, NEC",2026Q2,304,1100,3.618,0.6711,0.8309,0.8842,-0.2132,-0.1538,-0.01099,0.2079,-100
+MTRX,MATRIX SERVICE CO,Construction - Special Trade Contractors,2026Q1,206.7,932.9,4.513,0.6754,0.8922,1.167,-0.4916,-0.1519,-0.1519,0.03271,-67.1
+ESOA,Energy Services of America CORP,"Water, Sewer, Pipeline, Comm & Power Line Construction",2026Q2,130,216.6,1.666,0.6923,1.061,1.277,-0.5842,-0.1611,-0.3108,0.2549,-40
+WMB,"Williams Companies, Inc.",Natural Gas Transmission,2026Q2,3053,3.074e+04,10.07,0.7019,0.8907,0.9536,-0.2517,-0.04133,-0.02854,0.09781,-910
+SND,"SMART SAND, INC.",Mining & Quarrying of  Nonmetallic Minerals (No Fuels),2026Q2,115,191.9,1.668,0.7165,1.409,1.639,-0.9229,1.921,1.031,0.3414,-32.61
+AMPX,"AMPRIUS TECHNOLOGIES, INC.","Miscellaneous Electrical Machinery, Equipment & Supplies",2026Q2,34.03,36.5,1.073,0.7179,1.139,1.279,-0.561,0.2543,0.001578,1.259,-9.6
+BWXT,"BWX TECHNOLOGIES, INC.",Engines & Turbines,2026Q2,901.6,8398,9.314,0.7197,1.694,2.019,-1.299,0.3961,-0.377,0.1801,-252.7
+SYM,SYMBOTIC INC.,"General Industrial Machinery & Equipment, NEC",2026Q2,720.8,2.25e+04,31.21,0.7225,0.9988,0.9224,-0.1998,0.004464,0.004464,0.2174,-200
+MH,"MCGRAW HILL, INC.",Miscellaneous Publishing,2026Q2,549.9,1522,2.768,0.7287,0.8743,0.9472,-0.2185,-0.07758,,0.02649,-149.2
+ESTC,Elastic N.V.,Services-Prepackaged Software,2026Q2,478.1,1854,3.878,0.7323,1.054,1.075,-0.3432,0.269,-0.01385,0.1513,-128
+MSTR,STRATEGY INC,Finance Services,2026Q2,122.4,546.9,4.469,0.7483,1.156,1.292,-0.5433,0.1621,-0.1425,0.06883,-30.8
+ON,ON Semiconductor Corporation,Semiconductors & Related Devices,2026Q2,1604,6100,3.804,0.7505,0.4333,0.3276,0.423,-0.3646,0.02221,0.09178,-400
+MITK,"MITEK SYSTEMS, INC.","Computer Peripheral Equipment, NEC",2026Q2,54.04,102.5,1.896,0.7647,1.114,1.19,-0.4251,0.2705,-0.152,0.1817,-12.72
+IQV,IQVIA HOLDINGS INC.,Services-Commercial Physical & Biological Research,2026Q2,4368,3.64e+04,8.333,0.794,1.112,1.217,-0.4234,0.05202,-0.01674,0.08738,-900
+EGHT,"8x8, INC.",Services-Computer Processing & Data Preparation,2025Q4,185.1,675,3.648,0.8109,,0.9554,-0.1445,-0.1562,-0.04375,0.03448,-35
+DAKT,"Daktronics, Inc.",Miscellaneous Manufacturing Industries,2026Q2,234.6,380.4,1.622,0.8109,0.9258,1.017,-0.2058,-0.1084,-0.1487,0.07121,-44.35
+ADSK,"AUTODESK, INC.",Services-Prepackaged Software,2026Q2,2046,7430,3.631,0.8143,,1.248,-0.4341,,,0.1605,-380
+BFLY,"Butterfly Network, Inc.",X-Ray Apparatus & Tubes & Related Irradiation Apparatus,2026Q2,32.61,85.8,2.631,0.8283,1.355,1.53,-0.7022,1.119,-0.1053,0.3947,-5.6
+FSLY,"FASTLY, INC.",Services-Prepackaged Software,2026Q2,183.3,340.9,1.86,0.8484,1.033,1.095,-0.2468,0.08188,-0.135,0.2327,-27.8
+MORN,"MORNINGSTAR, INC.",Investment Advice,2026Q2,663.2,1600,2.413,0.8492,1.059,1.129,-0.2798,0.1001,-0.04144,0.09602,-100
+ASUR,"ASURE SOFTWARE, INC.",Services-Computer Integrated Systems Design,2026Q2,37.11,80.03,2.156,0.8509,0.8617,0.9144,-0.0635,-0.02862,-0.07053,0.232,-5.535
+FIS,"Fidelity National Information Services, Inc.","Services-Business Services, NEC",2026Q2,3377,2.5e+04,7.403,0.8519,1.204,1.321,-0.4689,0.1111,0.002415,0.2909,-500
+CRM,"Salesforce, Inc.",Services-Prepackaged Software,2026Q2,1.134e+04,6.63e+04,5.844,0.859,1.142,1.236,-0.3772,0.1068,-0.008098,0.1083,-1600
+SNOW,SNOWFLAKE INC.,Services-Prepackaged Software,2026Q2,1547,9000,5.818,0.8707,1.436,1.624,-0.7536,0.3043,-0.06879,0.3509,-200
+VVX,"V2X, Inc.",Services-Facilities Support Management Services,2026Q2,1257,3731,2.969,0.8751,0.9593,0.9874,-0.1123,-0.04358,-0.2049,0.1654,-157
+SPHR,SPHERE ENTERTAINMENT CO.,Services-Amusement & Recreation Services,2026Q2,313.2,347.6,1.11,0.8832,1.146,1.234,-0.3507,0.6639,-0.3031,0.1097,-36.59
+MOG-A,MOOG Inc.,Misc Industrial & Commercial Machinery & Equipment,2026Q2,1117,7100,6.359,0.8836,1.331,1.435,-0.5516,0.2886,-0.07046,0.1516,-130
+USAC,"USA Compression Partners, LP",Natural Gas Transmission,2026Q2,342.1,1180,3.449,0.8843,1.001,1.04,-0.1554,-0.004103,-0.03446,0.3679,-39.59
+TLS,TELOS CORPORATION,Services-Computer Integrated Systems Design,2026Q2,47.74,56.5,1.183,0.8869,1.02,1.065,-0.1779,0.09284,-0.1114,0.3274,-5.4
+KRMN,KARMAN HOLDINGS INC.,"Aircraft Parts & Auxiliary Equipment, NEC",2026Q2,182.1,703.9,3.866,0.8934,1.332,1.478,-0.5846,0.3703,-0.2887,0.5818,-19.4
+MMLP,MARTIN MIDSTREAM PARTNERS L.P.,Wholesale-Petroleum Bulk Stations & Terminals,2026Q2,213.6,380.1,1.779,0.9082,0.9398,0.9504,-0.04216,-0.1077,-0.006217,0.1822,-19.61
+DT,"Dynatrace, Inc.",Services-Prepackaged Software,2026Q2,554.5,3442,6.206,0.9097,1.157,1.206,-0.2959,0.179,-0.028,0.1617,-50.1
+LIF,"Life360, Inc.",Services-Computer Processing & Data Preparation,2026Q2,159,186.8,1.175,0.9113,0.9172,0.9191,-0.007804,-0.2038,-0.1382,0.3777,-14.1
+PATH,"UiPath, Inc.",Services-Prepackaged Software,2026Q2,410.3,1378,3.358,0.9132,1.085,1.142,-0.2287,0.1397,-0.007993,0.1342,-35.6
+MSCI,MSCI INC.,"Services-Business Services, NEC",2026Q2,867,2414,2.785,0.9209,1.103,1.163,-0.2423,0.158,-0.07464,0.122,-68.6
+TXT,Textron Inc.,Aircraft & Parts,2026Q2,3827,1.89e+04,4.939,0.9216,1.142,1.216,-0.2941,0.1183,0.002064,0.02987,-300
+NIQ,NIQ Global Intelligence plc,"Services-Computer Programming, Data Processing, Etc.",2026Q2,1124,1773,1.577,0.9219,1.019,1.052,-0.1298,0.04288,,0.08013,-87.8
+VRNS,"VARONIS SYSTEMS, INC.",Services-Prepackaged Software,2026Q2,180,1084,6.024,0.9393,1.315,1.44,-0.5009,0.2453,-0.1436,0.1831,-10.93
+MPLX,MPLX LP,Pipe Lines (No Natural Gas),2026Q2,3312,5100,1.54,0.9396,0.8976,0.8836,0.05597,-0.2031,0.01746,0.1029,-200
+FICO,FAIR ISAAC CORP,"Services-Business Services, NEC",2026Q2,674.2,680.4,1.009,0.9447,1.016,1.085,-0.1399,0.1468,-0.2536,0.2568,-37.3

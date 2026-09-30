@@ -1,0 +1,201 @@
+{
+ "finished_utc": "2026-09-30T06:51Z",
+ "steps": {
+  "tier1_frames": {
+   "rc": 0,
+   "secs": 357
+  },
+  "tier1_panel": {
+   "rc": 0,
+   "secs": 13
+  },
+  "tier1_sic": {
+   "rc": 0,
+   "secs": 1
+  },
+  "rpo_pull": {
+   "rc": 0,
+   "secs": 2
+  },
+  "tier1_screen": {
+   "rc": 0,
+   "secs": 2
+  },
+  "build_tier1_workbook": {
+   "rc": 0,
+   "secs": 3
+  },
+  "br_releases": {
+   "rc": 0,
+   "secs": 5
+  },
+  "br_extract": {
+   "rc": 0,
+   "secs": 1
+  },
+  "br_postpass": {
+   "rc": 0,
+   "secs": 12
+  },
+  "br_flag": {
+   "rc": 0,
+   "secs": 1
+  },
+  "br_build": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_ADI": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_ALAB": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_AMAT": {
+   "rc": 0,
+   "secs": 5
+  },
+  "xbrl_AMD": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_ARM": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_ASML": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_ASX": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_AVGO": {
+   "rc": 0,
+   "secs": 5
+  },
+  "xbrl_CBRS": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_CDNS": {
+   "rc": 0,
+   "secs": 3
+  },
+  "xbrl_CRDO": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_ENTG": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_INTC": {
+   "rc": 0,
+   "secs": 6
+  },
+  "xbrl_KLAC": {
+   "rc": 0,
+   "secs": 5
+  },
+  "xbrl_LRCX": {
+   "rc": 0,
+   "secs": 3
+  },
+  "xbrl_MCHP": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_MPWR": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_MRVL": {
+   "rc": 0,
+   "secs": 3
+  },
+  "xbrl_MTSI": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_MU": {
+   "rc": 0,
+   "secs": 5
+  },
+  "xbrl_NVDA": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_NVMI": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_NXPI": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_ON": {
+   "rc": 0,
+   "secs": 5
+  },
+  "xbrl_QCOM": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_RMBS": {
+   "rc": 0,
+   "secs": 3
+  },
+  "xbrl_SKHY": {
+   "rc": 0,
+   "secs": 0
+  },
+  "xbrl_SNPS": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_STM": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_SWKS": {
+   "rc": 0,
+   "secs": 2
+  },
+  "xbrl_TER": {
+   "rc": 0,
+   "secs": 6
+  },
+  "xbrl_TSEM": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_TSM": {
+   "rc": 0,
+   "secs": 1
+  },
+  "xbrl_TXN": {
+   "rc": 0,
+   "secs": 4
+  },
+  "xbrl_UMC": {
+   "rc": 0,
+   "secs": 1
+  },
+  "accel_series": {
+   "rc": 0,
+   "secs": 22
+  },
+  "accel_rank": {
+   "rc": 0,
+   "secs": 3
+  },
+  "build_accel_workbook": {
+   "rc": 0,
+   "secs": 1
+  }
+ }
+}
