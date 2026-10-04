@@ -1,25 +1,25 @@
 {
- "finished_utc": "2026-09-30T06:51Z",
+ "finished_utc": "2026-10-04T16:10Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 357
+   "secs": 482
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 13
+   "secs": 17
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 1
+   "secs": 122
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 2
+   "secs": 14
   },
   "tier1_screen": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "build_tier1_workbook": {
    "rc": 0,
@@ -27,11 +27,11 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 5
+   "secs": 532
   },
   "br_extract": {
    "rc": 0,
-   "secs": 1
+   "secs": 10
   },
   "br_postpass": {
    "rc": 0,
@@ -43,11 +43,11 @@
   },
   "br_build": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "xbrl_ADI": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_ALAB": {
    "rc": 0,
@@ -55,11 +55,11 @@
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -91,7 +91,7 @@
   },
   "xbrl_ENTG": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_INTC": {
    "rc": 0,
@@ -107,19 +107,19 @@
   },
   "xbrl_MCHP": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_MPWR": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 3
+   "secs": 5
   },
   "xbrl_MTSI": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "xbrl_MU": {
    "rc": 0,
@@ -127,7 +127,7 @@
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -143,15 +143,15 @@
   },
   "xbrl_QCOM": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "xbrl_SKHY": {
    "rc": 0,
-   "secs": 0
+   "secs": 1
   },
   "xbrl_SNPS": {
    "rc": 0,
@@ -175,11 +175,11 @@
   },
   "xbrl_TSM": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "xbrl_TXN": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_UMC": {
    "rc": 0,
@@ -187,11 +187,11 @@
   },
   "accel_series": {
    "rc": 0,
-   "secs": 22
+   "secs": 27
   },
   "accel_rank": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "build_accel_workbook": {
    "rc": 0,

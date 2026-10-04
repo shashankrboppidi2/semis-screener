@@ -7,7 +7,6 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 1023128,2025Q3,2,2,True,1,1,0.007896,next-quarter guide implies faster y/y than reported,dollar guide,LAD
 1069878,2026Q2,2,2,False,1,1,0.05694,next-quarter guide implies faster y/y than reported,dollar guide,TREX
 1377630,2026Q1,3,2,False,1,1,0.04615,next-quarter guide implies faster y/y than reported,dollar guide,NCMI
-917520,2026Q2,6,2,False,1,1,0.00302,next-quarter guide implies faster y/y than reported,dollar guide,IART
 1375365,2025Q4,1,1,False,1,1,0.2682,next-quarter guide implies faster y/y than reported,dollar guide,SMCI
 1102993,2025Q4,4,1,False,1,1,0.174,next-quarter guide implies faster y/y than reported,dollar guide,
 2023554,2025Q4,1,1,False,1,1,0.1635,next-quarter guide implies faster y/y than reported,dollar guide,SNDK
@@ -37,6 +36,7 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 1372612,2026Q2,5,1,False,1,1,0.00673,next-quarter guide implies faster y/y than reported,dollar guide,BOX
 910638,2026Q2,2,1,False,1,1,0.00616,next-quarter guide implies faster y/y than reported,dollar guide,DDD
 1108524,2026Q2,5,1,False,1,1,0.003095,next-quarter guide implies faster y/y than reported,dollar guide,CRM
+917520,2026Q2,5,1,False,1,1,0.00302,next-quarter guide implies faster y/y than reported,dollar guide,IART
 1853145,2026Q2,5,1,False,1,1,0.0001118,next-quarter guide implies faster y/y than reported,dollar guide,EVCM
 1805385,2026Q1,1,0,False,1,0,0.2033,next-quarter guide implies faster y/y than reported,dollar guide,EVLV
 2052568,2026Q2,2,0,False,1,0,0.1741,next-quarter guide implies faster y/y than reported,dollar guide,LGN
