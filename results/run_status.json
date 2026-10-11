@@ -1,25 +1,25 @@
 {
- "finished_utc": "2026-10-07T18:13Z",
+ "finished_utc": "2026-10-11T17:03Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 511
+   "secs": 602
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 17
+   "secs": 13
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 157
+   "secs": 122
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 14
+   "secs": 13
   },
   "tier1_screen": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "build_tier1_workbook": {
    "rc": 0,
@@ -27,15 +27,15 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 576
+   "secs": 545
   },
   "br_extract": {
    "rc": 0,
-   "secs": 14
+   "secs": 9
   },
   "br_postpass": {
    "rc": 0,
-   "secs": 13
+   "secs": 10
   },
   "br_flag": {
    "rc": 0,
@@ -47,7 +47,7 @@
   },
   "xbrl_ADI": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_ALAB": {
    "rc": 0,
@@ -55,11 +55,11 @@
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -75,7 +75,7 @@
   },
   "xbrl_AVGO": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_CBRS": {
    "rc": 0,
@@ -83,7 +83,7 @@
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -91,7 +91,7 @@
   },
   "xbrl_ENTG": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_INTC": {
    "rc": 0,
@@ -99,7 +99,7 @@
   },
   "xbrl_KLAC": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_LRCX": {
    "rc": 0,
@@ -115,7 +115,7 @@
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_MTSI": {
    "rc": 0,
@@ -127,7 +127,7 @@
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -143,15 +143,15 @@
   },
   "xbrl_QCOM": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_SKHY": {
    "rc": 0,
-   "secs": 1
+   "secs": 0
   },
   "xbrl_SNPS": {
    "rc": 0,
@@ -171,7 +171,7 @@
   },
   "xbrl_TSEM": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_TSM": {
    "rc": 0,
@@ -183,15 +183,15 @@
   },
   "xbrl_UMC": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "accel_series": {
    "rc": 0,
-   "secs": 28
+   "secs": 24
   },
   "accel_rank": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "build_accel_workbook": {
    "rc": 0,
