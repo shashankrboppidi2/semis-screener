@@ -1,25 +1,25 @@
 {
- "finished_utc": "2026-10-11T17:03Z",
+ "finished_utc": "2026-10-14T16:15Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 602
+   "secs": 508
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 13
+   "secs": 16
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 122
+   "secs": 148
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 13
+   "secs": 12
   },
   "tier1_screen": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "build_tier1_workbook": {
    "rc": 0,
@@ -27,15 +27,15 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 545
+   "secs": 646
   },
   "br_extract": {
    "rc": 0,
-   "secs": 9
+   "secs": 16
   },
   "br_postpass": {
    "rc": 0,
-   "secs": 10
+   "secs": 13
   },
   "br_flag": {
    "rc": 0,
@@ -47,7 +47,7 @@
   },
   "xbrl_ADI": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_ALAB": {
    "rc": 0,
@@ -55,7 +55,7 @@
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_AMD": {
    "rc": 0,
@@ -75,7 +75,7 @@
   },
   "xbrl_AVGO": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_CBRS": {
    "rc": 0,
@@ -91,7 +91,7 @@
   },
   "xbrl_ENTG": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_INTC": {
    "rc": 0,
@@ -115,7 +115,7 @@
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "xbrl_MTSI": {
    "rc": 0,
@@ -123,11 +123,11 @@
   },
   "xbrl_MU": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -151,7 +151,7 @@
   },
   "xbrl_SKHY": {
    "rc": 0,
-   "secs": 0
+   "secs": 1
   },
   "xbrl_SNPS": {
    "rc": 0,
@@ -171,7 +171,7 @@
   },
   "xbrl_TSEM": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "xbrl_TSM": {
    "rc": 0,
@@ -179,19 +179,19 @@
   },
   "xbrl_TXN": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_UMC": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "accel_series": {
    "rc": 0,
-   "secs": 24
+   "secs": 26
   },
   "accel_rank": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "build_accel_workbook": {
    "rc": 0,
