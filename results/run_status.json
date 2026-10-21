@@ -1,9 +1,9 @@
 {
- "finished_utc": "2026-10-18T14:59Z",
+ "finished_utc": "2026-10-21T16:23Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 507
+   "secs": 506
   },
   "tier1_panel": {
    "rc": 0,
@@ -15,7 +15,7 @@
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 16
+   "secs": 20
   },
   "tier1_screen": {
    "rc": 0,
@@ -27,11 +27,11 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 662
+   "secs": 634
   },
   "br_extract": {
    "rc": 0,
-   "secs": 12
+   "secs": 45
   },
   "br_postpass": {
    "rc": 0,
@@ -83,7 +83,7 @@
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -123,7 +123,7 @@
   },
   "xbrl_MU": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_NVDA": {
    "rc": 0,
@@ -179,15 +179,15 @@
   },
   "xbrl_TXN": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_UMC": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "accel_series": {
    "rc": 0,
-   "secs": 28
+   "secs": 27
   },
   "accel_rank": {
    "rc": 0,
