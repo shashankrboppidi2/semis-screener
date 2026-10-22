@@ -1,0 +1,32 @@
+name: Price history (on demand)
+
+# Daily adjusted closes from Yahoo for the config tickers and benchmark ETFs (fetch_prices.py), committed to
+# results/prices/ so price-only studies (relval_backtest.py) can run without Yahoo access.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['fetch_prices.py', '.github/workflows/prices.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas yfinance
+      - run: python fetch_prices.py
+      - name: Commit prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/prices
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) price history"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
