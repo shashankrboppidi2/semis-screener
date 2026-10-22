@@ -295,6 +295,11 @@ def main(name="AMD", bench="QQQ"):
               "| quintile | mean z | fwd rel mean | fwd rel median | hit | days |", "|---|---|---|---|---|---|"]
         for k, r in q.iterrows():
             L.append(f"| {k} | {r.z_mean:+.2f} | {pct(r.fwd_rel_mean)} | {pct(r.fwd_rel_median)} | {r.hit:.0%} | {r.days} |")
+    pd.DataFrame([dict(test=t, window=w, **p) for t, w, p in [
+        ("S3 resid vs QQQ", "5y", plc5), ("S3 resid vs QQQ", "full", plcl), ("S4 resid vs SMH", "5y", plc5_smh),
+        ("S4 resid vs SMH", "full", plcl_smh), ("S5 drawdown then turn", "5y", plc5_turn),
+        ("S5 drawdown then turn", "full", plcl_turn)]]).to_csv(f"{OUT}/placebo.csv", index=False)
+    pd.concat([q5.assign(window="5y"), qlong.assign(window="full")]).to_csv(f"{OUT}/quintiles.csv")
     L += ["", "## Universe placebos, 126-day forward excess", ""]
     for lab, p in [("S4 residual vs SMH, last 5 years", plc5_smh), ("S4 residual vs SMH, full history", plcl_smh),
                    ("S5 drawdown then turn vs QQQ, last 5 years", plc5_turn), ("S5 drawdown then turn vs QQQ, full history", plcl_turn)]:
