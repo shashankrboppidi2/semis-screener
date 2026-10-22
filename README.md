@@ -46,6 +46,8 @@ every RPO filer, dated to the 10-Q/10-K filing, returns in excess of SPY from th
 in the docstring before any result was seen; pass/fail on a within-cohort shuffle placebo with Bonferroni.
 Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest_b2b/summary.md`.
 
+**Relative-value overlay backtest** (`relval_backtest.py`): "add to a stock when it falls hard against QQQ", four signal definitions fixed in the docstring (raw ratio drawdown, vol-adjusted, beta-adjusted, beta-adjusted vs SMH), judged against a static mix with the same average weight, plus a universe-wide random-date placebo. Prices come from `fetch_prices.py` via the "Price history" workflow (`results/prices/closes.csv`); results in `results/relval_backtest/summary.md`. `python relval_backtest.py AMD QQQ`.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 
