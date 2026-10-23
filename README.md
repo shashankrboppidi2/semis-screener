@@ -50,6 +50,8 @@ Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest
 
 **Contribution backtests** (`dca_backtest.py`, `rotation_backtest.py`): $100k plus $4k/month. The first holds cash in T-bills and buys a stock only on a composite-ETF delta; the second parks everything in QQQ and rotates 10% of the account into the stock at each 30% correction (or composite delta), capped at 40%, held or round-tripped. Both are judged against DCA QQQ, an exposure-matched mix, random-date placebos, every rolling 5-year window and every chip name; results in `results/dca_backtest/` and `results/rotation_backtest/`.
 
+**Basket rotation** (`basket_backtest.py`): QQQ core; rotate 5% of the account into any chip/tech name that is >= 30% below its 1-year high and at least $10bn / $20bn / $50bn by market cap *at the time*, max 10% per name and 40% total. The point-in-time universe (`build_tech_universe.py`, "Tech universe" workflow) takes share counts from SEC frames and Yahoo closes; `tech_caps.py` undoes split-restated share counts and rebuilds caps offline from `results/universe/`.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 

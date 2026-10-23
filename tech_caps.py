@@ -20,7 +20,11 @@ def adjusted_shares(sh, splits):
     """sh: rows (end, shares) for one filer; splits: Series ratio by date (>1 for forward splits).
     Returns Series of shares in today's units, indexed by period end."""
     sh = sh.sort_values("end").drop_duplicates("end", keep="last")
-    sp = splits[splits > 0].sort_index()
+    sp = splits[splits > 0].sort_index() if len(splits) else pd.Series(dtype=float, index=pd.DatetimeIndex([]))
+    F0 = np.array([float(np.prod(sp[sp.index > e].values)) for e in sh.end])
+    naive = sh.shares.values * F0
+    sh = sh[np.abs(np.log(naive / np.median(naive))) <= np.log(8)]          # unit errors (thousands as units) and class mix-ups
+    if not len(sh): return pd.Series(dtype=float)
     ends, vals = pd.DatetimeIndex(sh.end), sh.shares.values.astype(float)
     out = np.empty(len(vals))
     F_now = lambda e: float(np.prod(sp[sp.index > e].values)) if (sp.index > e).any() else 1.0
@@ -35,8 +39,10 @@ def adjusted_shares(sh, splits):
         out[i] = vals[i] * m
         ref.append(out[i])
     s = pd.Series(out, ends)
-    med = s.rolling(5, center=True, min_periods=1).median()
-    return s[np.abs(np.log(s / med)) <= np.log(2.5)]
+    for _ in range(2):
+        med = s.rolling(9, center=True, min_periods=1).median()
+        s = s[np.abs(np.log(s / med)) <= np.log(2.5)]
+    return s
 
 def daily_caps(close, splits, sh, ratio=1.0):
     if not len(sh) or close.dropna().empty: return pd.Series(np.nan, close.index)
@@ -49,3 +55,18 @@ def daily_caps(close, splits, sh, ratio=1.0):
     age = (close.index - avail.index[np.maximum(pos, 0)]).days
     v[(pos < 0) | (age > 500)] = np.nan
     return close * v / ratio / 1e9
+
+def rebuild(root="results/universe"):
+    """Caps for every universe name from the saved raw inputs (no SEC or Yahoo needed)."""
+    close = pd.read_csv(f"{root}/tech_close.csv.gz", index_col=0, parse_dates=True)
+    sp = pd.read_csv(f"{root}/tech_splits.csv", parse_dates=["date"])
+    sh = pd.read_csv(f"{root}/tech_shares.csv.gz", parse_dates=["end"])
+    meta = pd.read_csv(f"{root}/tech_meta.csv").set_index("ticker")
+    by_t = {t: g for t, g in sh.groupby("ticker")}
+    sp_t = {t: g.set_index("date").ratio for t, g in sp.groupby("ticker")}
+    cap = {}
+    for t in close.columns:
+        if t not in by_t: continue
+        cap[t] = daily_caps(close[t], sp_t.get(t, pd.Series(dtype=float)), by_t[t][["end", "shares"]],
+                            meta.adr_ratio.get(t, 1.0))
+    return pd.DataFrame(cap), close
