@@ -110,9 +110,10 @@ def trip_exits(entries, up):
     return np.array(ex, int)
 
 # ---------------------------------------------------------------- simulation (event-driven)
-def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False):
+def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, log=None):
     """P: T x N prices (nan outside a name's life). entries/exits: {day: [names]}. last_day: N last valid day.
-    matched: (weight, eligible T x N bool) -> monthly equal-weight rebalance instead of rotation."""
+    matched: (weight, eligible T x N bool) -> monthly equal-weight rebalance instead of rotation.
+    log: a list to append every trade (and every signal that found no room) to."""
     T, N = P.shape
     pos, amt = flows
     add = dict(zip(pos.tolist(), amt.tolist()))
@@ -128,7 +129,11 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False):
         p = np.nan_to_num(P[d])
         if d in add: nq += add[d] * (1 - FEE) / q[d]
         for j in set(exits.get(d, [])) | set(dying.get(d, [])):
-            if ns[j] > 0: nq += ns[j] * p[j] * (1 - FEE) ** 2 / q[d]; ns[j] = 0.0
+            if ns[j] > 0:
+                if log is not None:
+                    log.append(dict(day=d, j=j, action="sell" if j in exits.get(d, []) else "sell (delisted)",
+                                    amount=ns[j] * p[j], price=p[j], shares=ns[j]))
+                nq += ns[j] * p[j] * (1 - FEE) ** 2 / q[d]; ns[j] = 0.0
         V = nq * q[d] + ns @ p
         if matched and d in rebal:
             w, elig = matched
@@ -146,7 +151,12 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False):
                 want = np.array([max(0.0, min(STEP * V, CAP_NAME * V - ns[j] * p[j])) for j in js])
                 room = max(0.0, min(CAP_TOT * V - ns @ p, nq * q[d]))
                 if want.sum() > room: want *= room / want.sum()
-                for j, x in zip(js, want):
+                full = [max(0.0, min(STEP * V, CAP_NAME * V - ns[j] * p[j])) for j in js]
+                for j, x, f in zip(js, want, full):
+                    if log is not None:
+                        why = "" if x > 0 else ("name already at 10%" if f <= 0 else "satellite full (40%)")
+                        log.append(dict(day=d, j=j, action="buy" if x > 0 else "skip", amount=x, price=p[j],
+                                        shares=x * (1 - FEE) ** 2 / p[j], account=V, sat_before=(ns @ p) / V, note=why))
                     if x <= 0: continue
                     nq -= x / q[d]; ns[j] += x * (1 - FEE) ** 2 / p[j]; bought[j] += x
         seg.append((d, ns.copy(), nq))
@@ -167,7 +177,7 @@ def twr_drawdown(val, flows):
     return (nav / np.maximum.accumulate(nav) - 1).min()
 
 # ---------------------------------------------------------------- one window
-def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False):
+def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False, log=None):
     k0, k1 = q_all.index.searchsorted(start), q_all.index.searchsorted(end, side="right")
     idx = q_all.index[k0:k1]
     q = q_all.values[k0:k1]
@@ -192,7 +202,7 @@ def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=
                 prev = ex[ex < d]
                 prior = prior[prior > (prev.max() if len(prev) else -1)]
                 if len(prior): durs.append(d - prior.min())
-    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True)
+    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True, log=log)
     dq, vq, _, _ = simulate(P, q, flows, {}, {}, last_day, path=True)
     wbar = float(np.mean(sat / val))
     fm, vm, _, _ = simulate(P, q, flows, {}, {}, last_day, matched=(wbar, elig), path=True)
