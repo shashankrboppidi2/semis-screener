@@ -1,6 +1,6 @@
 # Basket rotation: park in QQQ, rotate into large chip/tech names after a 30% fall
 
-Window 2021-10-22 .. 2026-10-22. $100,000 then $4,000/month: $340,000 contributed. 221 chip/tech names in the point-in-time universe file; 202 delisted or acquired tech filers with >= 150m shares could not be priced (survivorship). DCA QQQ ends at $606,495 (+18.2%/yr, worst drop -35.1%).
+Window 2021-10-22 .. 2026-10-22. $100,000 then $4,000/month: $340,000 contributed. 216 chip/tech names in the point-in-time universe file; 202 delisted or acquired tech filers with >= 150m shares could not be priced (survivorship). DCA QQQ ends at $606,495 (+18.2%/yr, worst drop -35.1%).
 
 | trigger | cap floor | exit | final | vs DCA QQQ | vs matched basket | beats % of random | avg satellite | signals | names bought | money-wtd | worst drop |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Window 2021-10-22 .. 2026-10-22. $100,000 then $4,000/month: $340,000 contribute
 | 30% below high vs own sector ETF | $10bn | trip | $579,854 | -4.4% | -4.2% | 63% | 40% | 1058 | 141 | +16.7%/yr | -45.3% |
 | 30% below high vs own sector ETF | $20bn | hold | $668,768 | +10.3% | +6.1% | 100% | 41% | 646 | 66 | +21.3%/yr | -46.2% |
 | 30% below high vs own sector ETF | $20bn | trip | $612,096 | +0.9% | -2.8% | 77% | 40% | 646 | 95 | +18.5%/yr | -45.7% |
-| 30% below high vs own sector ETF | $50bn | hold | $722,902 | +19.2% | +10.8% | 100% | 41% | 314 | 31 | +23.9%/yr | -45.1% |
+| 30% below high vs own sector ETF | $50bn | hold | $722,901 | +19.2% | +10.8% | 100% | 41% | 314 | 31 | +23.9%/yr | -45.1% |
 | 30% below high vs own sector ETF | $50bn | trip | $626,227 | +3.3% | -3.7% | 69% | 39% | 314 | 55 | +19.2%/yr | -46.6% |
 
 Largest rotations (dollars moved in):

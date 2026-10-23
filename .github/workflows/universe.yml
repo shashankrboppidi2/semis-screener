@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: ['claude/**']
-    paths: ['build_tech_universe.py', 'tech_caps.py', '.github/workflows/universe.yml']
+    paths: ['build_tech_universe.py', '.github/workflows/universe.yml']
 
 permissions:
   contents: write
