@@ -22,6 +22,7 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 import edgar
+from tech_caps import daily_caps
 
 OUT = "results/universe"
 START = "2010-01-01"
@@ -29,7 +30,6 @@ TECH_SIC = set(range(3570, 3580)) | {3661, 3663, 3669, 3825, 3827, 3559} | set(r
 ALSO = {"AMZN", "TSLA", "NFLX"}
 ADR = {"TSM": 5, "UMC": 5, "ASX": 2, "ASML": 1, "STM": 1, "NVMI": 1, "TSEM": 1, "ARM": 1, "SAP": 1, "INFY": 1, "SHOP": 1}
 PRE_B = 8.0
-LAG = pd.Timedelta(days=60)
 
 def frames():
     rows = []
@@ -55,26 +55,6 @@ def frames():
     f["end"] = pd.to_datetime(f.end)
     f = f[f.shares > 0].sort_values(["cik", "end", "prio"]).drop_duplicates(["cik", "end"])
     return f
-
-def split_factor(splits, dates):
-    """F(t) = product of split ratios strictly after t, so raw shares at t x F(t) are in today's share units."""
-    s = splits[splits > 0]
-    out = np.ones(len(dates))
-    for d, r in s.items():
-        out[dates < d] *= r
-    return pd.Series(out, dates)
-
-def caps(close, splits, sh, ratio):
-    """Market cap in $bn on close's dates: close x the latest share count available by then (<= 500 days old)."""
-    if not len(sh) or close.dropna().empty: return pd.Series(dtype=float)
-    F_end = split_factor(splits, pd.DatetimeIndex(sh.end))
-    s = pd.Series(sh.shares.values * F_end.values, index=pd.DatetimeIndex(sh.end) + LAG).sort_index()
-    s = s[~s.index.duplicated(keep="last")]
-    pos = s.index.searchsorted(close.index, side="right") - 1
-    vals = s.values[np.maximum(pos, 0)].astype(float)
-    age = (close.index - s.index[np.maximum(pos, 0)]).days
-    vals[(pos < 0) | (age > 500)] = np.nan
-    return close * vals / ratio / 1e9
 
 def yahoo(tickers, **kw):
     out = {}
@@ -113,7 +93,7 @@ def main():
     for r in have.itertuples():
         if r.ticker not in m["Close"].columns: continue
         sp = m["Stock Splits"][r.ticker].fillna(0) if "Stock Splits" in m and r.ticker in m["Stock Splits"] else pd.Series(dtype=float)
-        c = caps(m["Close"][r.ticker], sp, by[r.cik], ADR.get(r.ticker, 1))
+        c = daily_caps(m["Close"][r.ticker], sp, by[r.cik], ADR.get(r.ticker, 1))
         if len(c) and (c.max() >= PRE_B or r.ticker in config | ALSO): pre.append((r.cik, r.ticker, r.name, c.max()))
     print(f"{len(pre)} candidates with a month-end cap >= ${PRE_B:.0f}bn", flush=True)
 
@@ -141,8 +121,13 @@ def main():
     for r in keep.itertuples():
         if r.ticker in d["Close"].columns:
             sp = d["Stock Splits"][r.ticker].fillna(0) if "Stock Splits" in d and r.ticker in d["Stock Splits"] else pd.Series(dtype=float)
-            cap[r.ticker] = caps(d["Close"][r.ticker], sp, by[r.cik], r.adr_ratio)
+            cap[r.ticker] = daily_caps(d["Close"][r.ticker], sp, by[r.cik], r.adr_ratio)
     adj.round(4).to_csv(f"{OUT}/tech_adj.csv.gz", index_label="date")
+    # raw inputs, so caps can be rebuilt without SEC or Yahoo (tech_caps.daily_caps)
+    d["Close"].reindex(columns=sorted(keep.ticker)).round(4).to_csv(f"{OUT}/tech_close.csv.gz", index_label="date")
+    spl = d["Stock Splits"].reindex(columns=sorted(keep.ticker)).stack()
+    spl[spl > 0].rename("ratio").rename_axis(["date", "ticker"]).reset_index().to_csv(f"{OUT}/tech_splits.csv", index=False)
+    fr[fr.cik.isin(keep.cik)].merge(keep[["cik", "ticker"]], on="cik").to_csv(f"{OUT}/tech_shares.csv.gz", index=False)
     cap.round(3).to_csv(f"{OUT}/tech_cap_b.csv.gz", index_label="date")
     keep = keep.assign(first_price=[adj[t].first_valid_index() for t in keep.ticker],
                        last_cap_b=[cap[t].dropna().iloc[-1] if t in cap and cap[t].notna().any() else np.nan for t in keep.ticker],
