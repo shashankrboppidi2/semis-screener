@@ -171,7 +171,7 @@ def main(name="AMD"):
     os.makedirs(OUT, exist_ok=True)
     rng = np.random.default_rng(23)
     end = px[name].dropna().index[-1]; start = end - pd.DateOffset(years=YEARS)
-    names = sorted(c for c in px.columns if c not in set(COMP) | {"BIL"} and px[c].dropna().index[0] <= start - pd.DateOffset(days=550))
+    names = sorted(c for c in px.columns if c not in set(COMP) | {"BIL", "PSQ", "SOXS", "SH"} and px[c].dropna().index[0] <= start - pd.DateOffset(days=550))
     cache = {(t, k): signals(px, t, k) for t in names for k in ("rel", "abs")}
     configs = [(k, x) for k in ("rel", "abs") for x in ("hold", "trip")]
     label = {("rel", "hold"): "Relative delta, hold", ("rel", "trip"): "Relative delta, round trip",
