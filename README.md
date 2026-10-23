@@ -48,6 +48,8 @@ Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest
 
 **Relative-value overlay backtest** (`relval_backtest.py`): "add to a stock when it falls hard against QQQ", four signal definitions fixed in the docstring (raw ratio drawdown, vol-adjusted, beta-adjusted, beta-adjusted vs SMH), judged against a static mix with the same average weight, plus a universe-wide random-date placebo. Prices come from `fetch_prices.py` via the "Price history" workflow (`results/prices/closes.csv`); results in `results/relval_backtest/summary.md`. `python relval_backtest.py AMD QQQ`.
 
+**Contribution backtests** (`dca_backtest.py`, `rotation_backtest.py`): $100k plus $4k/month. The first holds cash in T-bills and buys a stock only on a composite-ETF delta; the second parks everything in QQQ and rotates 10% of the account into the stock at each 30% correction (or composite delta), capped at 40%, held or round-tripped. Both are judged against DCA QQQ, an exposure-matched mix, random-date placebos, every rolling 5-year window and every chip name; results in `results/dca_backtest/` and `results/rotation_backtest/`.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 
