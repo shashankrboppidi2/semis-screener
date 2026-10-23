@@ -110,10 +110,13 @@ def trip_exits(entries, up):
     return np.array(ex, int)
 
 # ---------------------------------------------------------------- simulation (event-driven)
-def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, log=None):
+def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, log=None, hedge=None):
     """P: T x N prices (nan outside a name's life). entries/exits: {day: [names]}. last_day: N last valid day.
     matched: (weight, eligible T x N bool) -> monthly equal-weight rebalance instead of rotation.
-    log: a list to append every trade (and every signal that found no room) to."""
+    log: a list to append every trade (and every signal that found no room) to.
+    hedge: (on days, off days, fraction, cash prices, hedge-instrument prices) -> short the instrument worth
+    `fraction` of the account from each on day to the next off day, futures-style (the notional sits in T-bills);
+    its gain or loss goes into QQQ at the cover."""
     T, N = P.shape
     pos, amt = flows
     add = dict(zip(pos.tolist(), amt.tolist()))
@@ -121,8 +124,10 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, lo
     for j, d in enumerate(last_day):
         if d < T - 1: dying.setdefault(int(d), []).append(j)
     rebal = set((pos[1:] - 1).tolist()) | {0} if matched else set()
-    days = sorted(set(add) | set(entries) | set(exits) | set(dying) | rebal)
+    h_on, h_off, h_frac, bil, hp = hedge if hedge else (set(), set(), 0.0, None, None)
+    days = sorted(set(add) | set(entries) | set(exits) | set(dying) | rebal | set(h_on) | set(h_off))
     ns, nq = np.zeros(N), 0.0
+    hb = hq = 0.0                                                    # hedge: T-bill units long, instrument units short
     seg = []
     bought = np.zeros(N)
     for d in days:
@@ -134,7 +139,15 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, lo
                     log.append(dict(day=d, j=j, action="sell" if j in exits.get(d, []) else "sell (delisted)",
                                     amount=ns[j] * p[j], price=p[j], shares=ns[j]))
                 nq += ns[j] * p[j] * (1 - FEE) ** 2 / q[d]; ns[j] = 0.0
-        V = nq * q[d] + ns @ p
+        if d in h_off and hq > 0:
+            hv = hb * bil[d] - hq * hp[d]
+            nq += (hv - FEE * hq * hp[d]) / q[d]; hb = hq = 0.0
+            if log is not None: log.append(dict(day=d, action="hedge off", amount=hv))
+        V = nq * q[d] + ns @ p + (hb * bil[d] - hq * hp[d] if hq > 0 else 0.0)
+        if d in h_on and hq == 0 and h_frac > 0:
+            Nn = h_frac * V
+            hq = Nn / hp[d]; hb = Nn * (1 - FEE) / bil[d]
+            if log is not None: log.append(dict(day=d, action="hedge on", amount=Nn))
         if matched and d in rebal:
             w, elig = matched
             E = np.flatnonzero(elig[d] & (p > 0))
@@ -159,15 +172,15 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, lo
                                         shares=x * (1 - FEE) ** 2 / p[j], account=V, sat_before=(ns @ p) / V, note=why))
                     if x <= 0: continue
                     nq -= x / q[d]; ns[j] += x * (1 - FEE) ** 2 / p[j]; bought[j] += x
-        seg.append((d, ns.copy(), nq))
-    final = nq * q[-1] + ns @ np.nan_to_num(P[-1])
+        seg.append((d, ns.copy(), nq, hb, hq))
+    final = nq * q[-1] + ns @ np.nan_to_num(P[-1]) + (hb * bil[-1] - hq * hp[-1] if hq > 0 else 0.0)
     if not path: return final, None, None, bought
     val, sat = np.empty(T), np.empty(T)
     bounds = [s[0] for s in seg] + [T]
-    for k, (d, s_, q_) in enumerate(seg):
+    for k, (d, s_, q_, hb_, hq_) in enumerate(seg):
         sl = slice(d, bounds[k + 1])
         sv = np.nan_to_num(P[sl]) @ s_
-        sat[sl] = sv; val[sl] = sv + q_ * q[sl]
+        sat[sl] = sv; val[sl] = sv + q_ * q[sl] + (hb_ * bil[sl] - hq_ * hp[sl] if hq_ > 0 else 0.0)
     return final, val, sat, bought
 
 def twr_drawdown(val, flows):
@@ -177,7 +190,9 @@ def twr_drawdown(val, flows):
     return (nav / np.maximum.accumulate(nav) - 1).min()
 
 # ---------------------------------------------------------------- one window
-def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False, log=None):
+def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False, log=None, hedge=None):
+    """hedge: (on dates, off dates, fraction, cash price Series, instrument price Series); dates are signal closes,
+    traded at the next close. Applied to the rotation and to DCA QQQ alike."""
     k0, k1 = q_all.index.searchsorted(start), q_all.index.searchsorted(end, side="right")
     idx = q_all.index[k0:k1]
     q = q_all.values[k0:k1]
@@ -202,8 +217,13 @@ def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=
                 prev = ex[ex < d]
                 prior = prior[prior > (prev.max() if len(prev) else -1)]
                 if len(prior): durs.append(d - prior.min())
-    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True, log=log)
-    dq, vq, _, _ = simulate(P, q, flows, {}, {}, last_day, path=True)
+    hg = None
+    if hedge:
+        on_d, off_d, frac, bil_s, hp_s = hedge
+        nxt = lambda ds: {int(k) for k in idx.searchsorted(pd.DatetimeIndex(ds), side="right") if 0 < k < T}
+        hg = (nxt(on_d), nxt(off_d), frac, bil_s.reindex(idx).ffill().values, hp_s.reindex(idx).ffill().values)
+    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True, log=log, hedge=hg)
+    dq, vq, _, _ = simulate(P, q, flows, {}, {}, last_day, path=True, hedge=hg)
     wbar = float(np.mean(sat / val))
     fm, vm, _, _ = simulate(P, q, flows, {}, {}, last_day, matched=(wbar, elig), path=True)
     res = dict(threshold=thr, exit=exit_rule, start=idx[0].date(), final=final, dca_qqq=dq, matched=fm, avg_sat=wbar,

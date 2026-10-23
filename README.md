@@ -52,6 +52,8 @@ Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest
 
 **Basket rotation** (`basket_backtest.py`): QQQ core; rotate 5% of the account into any chip/tech name that is >= 30% below its 1-year high and at least $10bn / $20bn / $50bn by market cap *at the time*, max 10% per name and 40% total. The point-in-time universe (`build_tech_universe.py`, "Tech universe" workflow) takes share counts from SEC frames and Yahoo closes; `tech_caps.py` undoes split-restated share counts and rebuilds caps offline from `results/universe/`.
 
+**Hedge overlay** (`hedge_overlay.py`): WU SP500 Hedging Signal on top of DCA QQQ and the basket rotation; short QQQ/SPY worth 25%/50% of the account while hedged, futures-style, under three exit readings plus the public breadth core. Reads the event calendar from a local HedgingSignals clone (`WU_EVENTS`); only performance is committed, in `results/hedge_overlay/`.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 
