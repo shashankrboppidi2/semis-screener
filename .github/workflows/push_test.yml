@@ -1,0 +1,28 @@
+name: Push test
+
+# Sends one test message through plan_alerts.push() to the configured DISCORD_WEBHOOK / NTFY_TOPIC, to check the
+# secrets without waiting for an action day. Run it from the Actions tab (Run workflow).
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/push_test.yml']
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy requests
+      - name: Push
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          [ -n "$DISCORD_WEBHOOK$NTFY_TOPIC" ] || { echo "no DISCORD_WEBHOOK or NTFY_TOPIC secret set"; exit 1; }
+          python -c "from plan_alerts import push; push('Plan alerts: test message', ['If you can read this, the push alerts work.'])" | tee out.txt
+          ! grep -q failed out.txt
