@@ -42,6 +42,7 @@ jobs:
           HOLDINGS: ${{ secrets.HOLDINGS }}
           BREADTH_PARAMS: ${{ secrets.BREADTH_PARAMS }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           SMTP_HOST: smtp.gmail.com
           SMTP_PORT: '587'
           SMTP_USER: ${{ secrets.SMTP_USER }}

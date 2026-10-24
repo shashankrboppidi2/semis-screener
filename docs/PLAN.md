@@ -47,5 +47,7 @@ the run log are public and leave out the hedge and any dollar amounts; the e-mai
    - `HOLDINGS` (optional) -- `sleeve,ticker,shares` lines for everything you hold, PSQ included; update after trading.
    - `NTFY_TOPIC` (optional) -- a long random topic name; install the ntfy app and subscribe to it for phone pushes.
      Messages pass through ntfy.sh.
+   - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server (Server settings >
+     Integrations > Webhooks > New Webhook > Copy Webhook URL); action days post there.
 3. Repository variable `WU_HEDGE` (optional) -- `on` / `off`.
 4. The stock universe refreshes itself quarterly (`universe.yml`); the breadth counts refresh on every alert run.

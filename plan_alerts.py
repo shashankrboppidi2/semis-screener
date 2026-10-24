@@ -19,6 +19,7 @@ Inputs (all optional except prices):
   BREADTH_PARAMS           secret, breadth calibration and levels (see breadth_live.py)
   SMTP_HOST/PORT/USER/PASS, MAIL_TO   e-mail (sent when there is something to do, or on Mondays)
   NTFY_TOPIC               secret, optional phone push via ntfy.sh on action days (the topic name is the password)
+  DISCORD_WEBHOOK          secret, optional push to a Discord channel webhook on action days
 State: state/plan_alerts.json (last alert per sleeve and name, last hedge state). Report: results/alerts/latest.md.
 
 python plan_alerts.py            # live, Yahoo prices
@@ -235,15 +236,25 @@ def main(offline=False):
     if (todo or d.weekday() == 0) and not offline:
         from email_report import send_mail
         send_mail(f"Plan {d:%Y-%m-%d}: " + (f"{len(acts)} action(s)" if acts else "no action"), html)
-    topic = os.getenv("NTFY_TOPIC", "").strip()
-    if acts and topic and not offline:
-        import requests
+    if acts and not offline: push(f"Plan {d:%Y-%m-%d}: {len(acts)} action(s)", acts)
+
+def push(title, acts):
+    import requests
+    topic, hook = os.getenv("NTFY_TOPIC", "").strip(), os.getenv("DISCORD_WEBHOOK", "").strip()
+    if topic:
         try:
             requests.post(f"https://ntfy.sh/{topic}", data="\n".join(acts).encode(), timeout=20,
-                          headers={"Title": f"Plan {d:%Y-%m-%d}: {len(acts)} action(s)", "Tags": "chart_with_upwards_trend"})
+                          headers={"Title": title, "Tags": "chart_with_upwards_trend"}).raise_for_status()
             print("push sent")
         except Exception as e:
-            print("push failed:", str(e)[:120])
+            print("push failed:", type(e).__name__)                      # the error text would contain the topic
+    if hook:
+        msg = f"**{title}**\n" + "\n".join(f"- {a}" for a in acts)
+        try:
+            requests.post(hook, json={"content": msg[:1990]}, timeout=20).raise_for_status()   # Discord caps at 2000
+            print("discord sent")
+        except Exception as e:
+            print("discord failed:", type(e).__name__)                   # the error text would contain the hook URL
 
 def md_to_html(md):
     out, in_table = [], False
