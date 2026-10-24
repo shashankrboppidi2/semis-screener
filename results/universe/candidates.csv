@@ -3,7 +3,7 @@ LTM,1047716,LATAM AIRLINES GROUP S.A.,4512.0,"Air Transportation, Scheduled",Fal
 ATLX,1540684,Atlas Lithium Corp,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),True,16266.5,False,1.0,False
 BSAC,1027552,BANCO SANTANDER CHILE,6029.0,"Commercial Banks, NEC",False,6637.1,False,1.0,False
 NVDA,1045810,NVIDIA CORP,3674.0,Semiconductors & Related Devices,True,5570.4,True,1.0,True
-AAPL,320193,Apple Inc.,3571.0,Electronic Computers,True,5082.0,True,1.0,True
+AAPL,320193,Apple Inc.,3571.0,Electronic Computers,True,5074.8,True,1.0,True
 GOOGL,1652044,Alphabet Inc.,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,4706.1,True,1.0,True
 BCH,1161125,BANK OF CHILE,6029.0,"Commercial Banks, NEC",False,4407.4,False,1.0,False
 MSFT,789019,MICROSOFT CORP,7372.0,Services-Prepackaged Software,True,3965.3,True,1.0,True
@@ -17,7 +17,7 @@ TSLA,1318605,"Tesla, Inc.",3711.0,Motor Vehicles & Passenger Car Bodies,True,163
 AMX,1129137,AMERICA MOVIL SAB DE CV/,4813.0,Telephone Communications (No Radiotelephone),False,1603.0,False,1.0,False
 RPAY,1720592,Repay Holdings Corp,7389.0,"Services-Business Services, NEC",True,1514.4,False,1.0,False
 MU,723125,MICRON TECHNOLOGY INC,3674.0,Semiconductors & Related Devices,True,1301.7,True,1.0,True
-LLY,59478,ELI LILLY & Co,2834.0,Pharmaceutical Preparations,True,1167.8,False,1.0,False
+LLY,59478,ELI LILLY & Co,2834.0,Pharmaceutical Preparations,True,1138.1,False,1.0,False
 NTES,1110646,"NetEase, Inc.",7372.0,Services-Prepackaged Software,False,1132.3,True,1.0,False
 ELVR,1739016,Elevra Lithium Ltd,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),False,1131.2,False,1.0,False
 EC,1444406,ECOPETROL S.A.,1311.0,Crude Petroleum & Natural Gas,False,1107.3,False,1.0,False
@@ -30,31 +30,31 @@ PDD,1737806,PDD Holdings Inc.,7389.0,"Services-Business Services, NEC",False,874
 ORCL,1341439,ORACLE CORP,7372.0,Services-Prepackaged Software,True,790.0,True,1.0,True
 BABA,1577552,Alibaba Group Holding Ltd,7389.0,"Services-Business Services, NEC",False,788.3,False,1.0,False
 ASML,937966,ASML HOLDING NV,3559.0,"Special Industry Machinery, NEC",False,766.8,True,1.0,True
-XOM,2115436,ExxonMobil Holdings Corp,2911.0,Petroleum Refining,True,732.9,False,1.0,False
+XOM,2115436,ExxonMobil Holdings Corp,2911.0,Petroleum Refining,True,753.3,False,1.0,False
 INTC,50863,INTEL CORP,3674.0,Semiconductors & Related Devices,True,709.7,True,1.0,True
 JNJ,200406,JOHNSON & JOHNSON,2834.0,Pharmaceutical Preparations,True,646.0,False,1.0,False
-SHEL,1306965,Shell plc,1311.0,Crude Petroleum & Natural Gas,False,602.0,False,1.0,False
+SHEL,1306965,Shell plc,1311.0,Crude Petroleum & Natural Gas,False,615.5,False,1.0,False
 HDB,1144967,HDFC BANK LTD,6029.0,"Commercial Banks, NEC",False,587.5,False,1.0,False
 AMAT,6951,APPLIED MATERIALS INC /DE,3674.0,Semiconductors & Related Devices,True,577.7,True,1.0,True
 NFLX,1065280,NETFLIX INC,7841.0,Services-Video Tape Rental,True,572.8,True,1.0,True
-ONC,1651308,BeOne Medicines Ltd.,2834.0,Pharmaceutical Preparations,True,565.0,False,1.0,False
 UNH,731766,UNITEDHEALTH GROUP INC,6324.0,Hospital & Medical Service Plans,True,563.5,False,1.0,False
 DEO,835403,DIAGEO PLC,2080.0,Beverages,False,563.3,False,1.0,False
-MA,1141391,Mastercard Inc,7389.0,"Services-Business Services, NEC",True,559.1,False,1.0,False
+ONC,1651308,BeOne Medicines Ltd.,2834.0,Pharmaceutical Preparations,True,558.2,False,1.0,False
 VOD,839923,VODAFONE GROUP PUBLIC LTD CO,4812.0,Radiotelephone Communications,False,556.0,False,1.0,False
+MA,1141391,Mastercard Inc,7389.0,"Services-Business Services, NEC",True,550.6,False,1.0,False
 LRCX,707549,LAM RESEARCH CORP,3559.0,"Special Industry Machinery, NEC",True,544.8,True,1.0,True
 PLTR,1321655,Palantir Technologies Inc.,7372.0,Services-Prepackaged Software,True,513.8,True,1.0,True
-ABBV,1551152,AbbVie Inc.,2834.0,Pharmaceutical Preparations,True,504.0,False,1.0,False
+ABBV,1551152,AbbVie Inc.,2834.0,Pharmaceutical Preparations,True,504.8,False,1.0,False
 CAT,18230,CATERPILLAR INC,3531.0,Construction Machinery & Equip,True,496.0,False,1.0,False
 NGG,1004315,NATIONAL GRID PLC,4922.0,Natural Gas Transmission,False,481.3,False,1.0,False
 BHP,811809,BHP Group Ltd,1000.0,Metal Mining,False,476.7,False,1.0,False
 CSCO,858877,"CISCO SYSTEMS, INC.",3576.0,Computer Communications Equipment,True,475.6,True,1.0,True
 COST,909832,COSTCO WHOLESALE CORP /NEW,5331.0,Retail-Variety Stores,True,466.5,False,1.0,False
-CVX,93410,CHEVRON CORP,2911.0,Petroleum Refining,True,447.7,False,1.0,False
+CVX,93410,CHEVRON CORP,2911.0,Petroleum Refining,True,460.6,False,1.0,False
 BAC,70858,BANK OF AMERICA CORP /DE/,6021.0,National Commercial Banks,True,439.6,False,1.0,False
 HD,354950,"HOME DEPOT, INC.",5211.0,Retail-Lumber & Other Building Materials Dealers,True,438.0,False,1.0,False
 PG,80424,PROCTER & GAMBLE Co,2840.0,"Soap, Detergents, Cleang Preparations, Perfumes, Cosmetics",True,428.7,False,1.0,False
-KO,21344,COCA COLA CO,2080.0,Beverages,True,410.2,False,1.0,False
+KO,21344,COCA COLA CO,2080.0,Beverages,True,398.9,False,1.0,False
 KLAC,319201,KLA CORP,3827.0,Optical Instruments & Lenses,True,397.5,True,1.0,True
 GE,40545,GENERAL ELECTRIC CO,3600.0,Electronic & Other Electrical Equipment (No Computer Equip),True,393.9,False,1.0,False
 BCS,312069,BARCLAYS PLC,6029.0,"Commercial Banks, NEC",False,385.7,False,1.0,False
@@ -74,10 +74,10 @@ WFC,72971,WELLS FARGO & COMPANY/MN,6021.0,National Commercial Banks,True,323.9,F
 PANW,1327567,Palo Alto Networks Inc,3577.0,"Computer Peripheral Equipment, NEC",True,323.8,True,1.0,True
 GEV,1996810,GE Vernova Inc.,3600.0,Electronic & Other Electrical Equipment (No Computer Equip),True,319.6,False,1.0,False
 ADBE,796343,ADOBE INC.,7372.0,Services-Prepackaged Software,True,319.1,True,1.0,True
-PM,1413329,Philip Morris International Inc.,2111.0,Cigarettes,True,314.4,False,1.0,False
 ENIC,1659939,Enel Chile S.A.,4911.0,Electric Services,False,314.2,False,1.0,False
 TMUS,1283699,"T-Mobile US, Inc.",4812.0,Radiotelephone Communications,True,313.0,False,1.0,False
 GS,886982,GOLDMAN SACHS GROUP INC,6211.0,"Security Brokers, Dealers & Flotation Companies",True,311.5,False,1.0,False
+PM,1413329,Philip Morris International Inc.,2111.0,Cigarettes,True,310.9,False,1.0,False
 PBR,1119639,PETROBRAS - PETROLEO BRASILEIRO SA,1311.0,Crude Petroleum & Natural Gas,False,300.9,False,1.0,False
 RTX,101829,RTX Corp,3724.0,Aircraft Engines & Engine Parts,True,293.7,False,1.0,False
 RY,1000275,ROYAL BANK OF CANADA,6029.0,"Commercial Banks, NEC",False,293.4,False,1.0,False
@@ -106,8 +106,8 @@ APP,1751008,AppLovin Corp,7370.0,"Services-Computer Programming, Data Processing
 C,831001,CITIGROUP INC,6021.0,National Commercial Banks,True,244.8,False,1.0,False
 MCD,63908,MCDONALDS CORP,5812.0,Retail-Eating  Places,True,243.7,False,1.0,False
 LIN,1707925,LINDE PLC,2810.0,Industrial Inorganic Chemicals,True,242.0,False,1.0,False
-AMGN,318154,AMGEN INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,241.8,False,1.0,False
 DHR,313616,DANAHER CORP /DE/,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,239.2,False,1.0,False
+AMGN,318154,AMGEN INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,237.5,False,1.0,False
 SHOP,1594805,SHOPIFY INC.,7372.0,Services-Prepackaged Software,True,227.6,True,1.0,True
 APH,820313,AMPHENOL CORP /DE/,3678.0,Electronic Connectors,True,227.4,True,1.0,True
 FUTU,1754581,Futu Holdings Ltd,6211.0,"Security Brokers, Dealers & Flotation Companies",False,223.0,False,1.0,False
@@ -116,22 +116,23 @@ INTU,896878,INTUIT INC.,7372.0,Services-Prepackaged Software,True,221.4,True,1.0
 NOW,1373715,"ServiceNow, Inc.",7372.0,Services-Prepackaged Software,True,221.1,True,1.0,True
 WDC,106040,WESTERN DIGITAL CORP,3572.0,Computer Storage Devices,True,216.6,True,1.0,True
 SAN,891478,"Banco Santander, S.A.",6029.0,"Commercial Banks, NEC",False,213.9,False,1.0,False
-TD,947263,TORONTO DOMINION BANK,6029.0,"Commercial Banks, NEC",False,211.4,False,1.0,False
 STX,1137789,Seagate Technology Holdings plc,3572.0,Computer Storage Devices,True,211.2,True,1.0,True
+TD,947263,TORONTO DOMINION BANK,6029.0,"Commercial Banks, NEC",False,210.5,False,1.0,False
 UBER,1543151,"Uber Technologies, Inc",7389.0,"Services-Business Services, NEC",True,208.2,False,1.0,False
 ISRG,1035267,INTUITIVE SURGICAL INC,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",True,205.6,False,1.0,False
-TTE,879764,TotalEnergies SE,1311.0,Crude Petroleum & Natural Gas,False,204.6,False,1.0,False
+TTE,879764,TotalEnergies SE,1311.0,Crude Petroleum & Natural Gas,False,204.7,False,1.0,False
 NEE,753308,NEXTERA ENERGY INC,4911.0,Electric Services,True,203.9,False,1.0,False
 ADI,6281,ANALOG DEVICES INC,3674.0,Semiconductors & Related Devices,True,203.5,True,1.0,True
-GILD,882095,"GILEAD SCIENCES, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,194.9,False,1.0,False
+E,1002242,ENI SPA,1311.0,Crude Petroleum & Natural Gas,False,195.4,False,1.0,False
+GILD,882095,"GILEAD SCIENCES, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,193.5,False,1.0,False
 SCHW,316709,SCHWAB CHARLES CORP,6211.0,"Security Brokers, Dealers & Flotation Companies",True,191.0,False,1.0,False
 BLK,2012383,"BlackRock, Inc.",6211.0,"Security Brokers, Dealers & Flotation Companies",True,190.7,False,1.0,False
 BKNG,1075531,Booking Holdings Inc.,4700.0,Transportation Services,True,190.0,False,1.0,False
 CX,1076378,CEMEX SAB DE CV,3241.0,"Cement, Hydraulic",False,189.9,False,1.0,False
 UPS,1090727,UNITED PARCEL SERVICE INC,4210.0,Trucking & Courier Services (No Air),True,188.4,False,1.0,False
-E,1002242,ENI SPA,1311.0,Crude Petroleum & Natural Gas,False,187.3,False,1.0,False
 UBS,1610520,UBS Group AG,6021.0,National Commercial Banks,False,186.2,False,1.0,False
 BUD,1668717,Anheuser-Busch InBev SA/NV,2082.0,Malt Beverages,False,186.2,False,1.0,False
+COP,1163165,CONOCOPHILLIPS,2911.0,Petroleum Refining,True,183.1,False,1.0,False
 JOYY,1530238,JOYY Inc.,7374.0,Services-Computer Processing & Data Preparation,False,182.1,True,1.0,False
 DE,315189,DEERE & CO,3523.0,Farm Machinery & Equipment,True,181.9,False,1.0,False
 MDT,1613103,Medtronic plc,3845.0,Electromedical & Electrotherapeutic Apparatus,True,180.7,False,1.0,False
@@ -140,10 +141,9 @@ UNP,100885,UNION PACIFIC CORP,4011.0,"Railroads, Line-Haul Operating",True,179.1
 LOW,60667,LOWES COMPANIES INC,5211.0,Retail-Lumber & Other Building Materials Dealers,True,179.0,False,1.0,False
 SCCO,1001838,SOUTHERN COPPER CORP/,1000.0,Metal Mining,True,178.7,False,1.0,False
 DD,1666700,"DuPont de Nemours, Inc.",2821.0,"Plastic Materials, Synth Resins & Nonvulcan Elastomers",True,176.9,False,1.0,False
-COP,1163165,CONOCOPHILLIPS,2911.0,Petroleum Refining,True,176.8,False,1.0,False
 ATXG,1650101,ADDENTAX GROUP CORP.,7330.0,"Services-Mailing, Reproduction, Commercial Art & Photography",True,175.3,False,1.0,False
 BMY,14272,BRISTOL MYERS SQUIBB CO,2834.0,Pharmaceutical Preparations,True,171.4,False,1.0,False
-WELL,766704,WELLTOWER INC.,6798.0,Real Estate Investment Trusts,True,171.1,False,1.0,False
+WELL,766704,WELLTOWER INC.,6798.0,Real Estate Investment Trusts,True,171.0,False,1.0,False
 HTHT,1483994,H World Group Ltd,7011.0,Hotels & Motels,False,169.0,False,1.0,False
 CHTR,1091667,"CHARTER COMMUNICATIONS, INC. /MO/",4841.0,Cable & Other Pay Television Services,True,168.1,False,1.0,False
 ETN,1551182,Eaton Corp plc,3590.0,Misc Industrial & Commercial Machinery & Equipment,True,168.0,False,1.0,False
@@ -173,10 +173,10 @@ SBUX,829224,STARBUCKS CORP,5810.0,Retail-Eating & Drinking Places,True,143.1,Fal
 ZM,1585521,"Zoom Communications, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,142.2,True,1.0,True
 NEM,1164727,NEWMONT Corp /DE/,1040.0,Gold and Silver Ores,True,141.9,False,1.0,False
 CVS,64803,CVS HEALTH Corp,5912.0,Retail-Drug Stores and Proprietary Stores,True,140.6,False,1.0,False
-CB,896159,Chubb Ltd,6331.0,"Fire, Marine & Casualty Insurance",True,140.4,False,1.0,False
 VRTX,875320,VERTEX PHARMACEUTICALS INC / MA,2834.0,Pharmaceutical Preparations,True,138.2,False,1.0,False
 ZLAB,1704292,Zai Lab Ltd,2834.0,Pharmaceutical Preparations,True,138.0,False,1.0,False
 BX,1393818,Blackstone Inc.,6282.0,Investment Advice,True,137.6,False,1.0,False
+CB,896159,Chubb Ltd,6331.0,"Fire, Marine & Casualty Insurance",True,137.0,False,1.0,False
 REGN,872589,"REGENERON PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,136.4,False,1.0,False
 EL,1001250,ESTEE LAUDER COMPANIES INC,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",True,136.2,False,1.0,False
 PLD,1045609,"Prologis, Inc.",6798.0,Real Estate Investment Trusts,True,135.9,False,1.0,False
@@ -195,56 +195,55 @@ VRT,1674101,Vertiv Holdings Co,3679.0,"Electronic Components, NEC",True,131.3,Tr
 ELV,1156039,"Elevance Health, Inc.",6324.0,Hospital & Medical Service Plans,True,131.2,False,1.0,False
 PH,76334,Parker-Hannifin Corp,3490.0,Miscellaneous Fabricated Metal Products,True,129.6,False,1.0,False
 BEKE,1809587,KE Holdings Inc.,6531.0,Real Estate Agents & Managers (For Others),False,129.2,False,1.0,False
-MPC,1510295,Marathon Petroleum Corp,2911.0,Petroleum Refining,True,129.0,False,1.0,False
+MPC,1510295,Marathon Petroleum Corp,2911.0,Petroleum Refining,True,128.4,False,1.0,False
 BMO,927971,BANK OF MONTREAL /CAN/,6029.0,"Commercial Banks, NEC",False,127.2,False,1.0,False
 AEM,2809,AGNICO EAGLE MINES LTD,1040.0,Gold and Silver Ores,False,126.2,False,1.0,False
 HPQ,47217,HP INC,3570.0,Computer & office Equipment,True,126.1,True,1.0,True
 EQNR,1140625,EQUINOR ASA,2911.0,Petroleum Refining,False,125.4,False,1.0,False
 PAM,1469395,Pampa Energy Inc.,4911.0,Electric Services,False,124.0,False,1.0,False
 NET,1477333,"Cloudflare, Inc.",7372.0,Services-Prepackaged Software,True,123.1,True,1.0,True
-VLO,1035002,VALERO ENERGY CORP/TX,2911.0,Petroleum Refining,True,122.7,False,1.0,False
+DJP,312070,BARCLAYS BANK PLC,6029.0,"Commercial Banks, NEC",False,122.8,False,1.0,False
 MCK,927653,MCKESSON CORP,5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,121.9,False,1.0,False
-DJP,312070,BARCLAYS BANK PLC,6029.0,"Commercial Banks, NEC",False,121.8,False,1.0,False
 ENB,895728,ENBRIDGE INC,4610.0,Pipe Lines (No Natural Gas),True,121.1,False,1.0,False
 MRSH,62709,"MARSH & MCLENNAN COMPANIES, INC.",6411.0,"Insurance Agents, Brokers & Service",True,121.0,False,1.0,False
 HCA,860730,"HCA Healthcare, Inc.",8062.0,"Services-General Medical & Surgical Hospitals, NEC",True,120.9,False,1.0,False
+VLO,1035002,VALERO ENERGY CORP/TX,2911.0,Petroleum Refining,True,120.7,False,1.0,False
 DASH,1792789,"DoorDash, Inc.",7389.0,"Services-Business Services, NEC",True,119.2,False,1.0,False
 CEG,1868275,Constellation Energy Corp,4911.0,Electric Services,True,117.8,False,1.0,False
 SNOW,1640147,Snowflake Inc.,7372.0,Services-Prepackaged Software,True,117.3,True,1.0,True
 ZTS,1555280,Zoetis Inc.,2834.0,Pharmaceutical Preparations,True,116.2,False,1.0,False
-BNS,9631,BANK OF NOVA SCOTIA,6022.0,State Commercial Banks,False,115.5,False,1.0,False
 CME,1156375,CME GROUP INC.,6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,115.2,False,1.0,False
-PSX,1534701,Phillips 66,2911.0,Petroleum Refining,True,114.6,False,1.0,False
+BNS,9631,BANK OF NOVA SCOTIA,6022.0,State Commercial Banks,False,114.9,False,1.0,False
+CNQ,1017413,CANADIAN NATURAL RESOURCES Ltd,1311.0,Crude Petroleum & Natural Gas,False,114.6,False,1.0,False
 TEAM,1650372,Atlassian Corp,7372.0,Services-Prepackaged Software,True,114.4,True,1.0,True
 SNAP,1564408,Snap Inc,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,114.3,True,1.0,True
 ABEV,1565025,AMBEV S.A.,2080.0,Beverages,False,114.2,False,1.0,False
 GDS,1526125,GDS Holdings Ltd,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,114.2,True,1.0,False
 WPP,806968,WPP plc,7311.0,Services-Advertising Agencies,False,114.1,False,1.0,False
+PSX,1534701,Phillips 66,2911.0,Petroleum Refining,True,114.0,False,1.0,False
 HWM,4281,Howmet Aerospace Inc.,3350.0,Rolling Drawing & Extruding of  Nonferrous Metals,True,113.8,False,1.0,False
 ABNB,1559720,"Airbnb, Inc.",7340.0,Services-To Dwellings & Other Buildings,True,113.5,False,1.0,False
 KHC,1637459,Kraft Heinz Co,2030.0,"Canned, Frozen & Preservd Fruit, Veg & Food Specialties",True,113.0,False,1.0,False
 BNY,1390777,Bank of New York Mellon Corp,6022.0,State Commercial Banks,True,112.6,False,1.0,False
 VALE,917851,Vale S.A.,1000.0,Metal Mining,False,112.2,False,1.0,False
-CNQ,1017413,CANADIAN NATURAL RESOURCES Ltd,1311.0,Crude Petroleum & Natural Gas,False,112.2,False,1.0,False
-TX,1342874,Ternium S.A.,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,111.0,False,1.0,False
+TX,1342874,Ternium S.A.,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,112.2,False,1.0,False
 MFG,1335730,MIZUHO FINANCIAL GROUP INC,6021.0,National Commercial Banks,False,110.1,False,1.0,False
 PWR,1050915,"QUANTA SERVICES, INC.",1731.0,Electrical Work,True,110.1,False,1.0,False
 CM,1045520,CANADIAN IMPERIAL BANK OF COMMERCE /CAN/,6029.0,"Commercial Banks, NEC",False,109.8,False,1.0,False
 TT,1466258,Trane Technologies plc,3822.0,Auto Controls For Regulating Residential & Comml Environments,True,109.6,False,1.0,False
 FCX,831259,FREEPORT-MCMORAN INC,1000.0,Metal Mining,True,108.9,False,1.0,False
 SO,92122,SOUTHERN CO,4911.0,Electric Services,True,108.2,False,1.0,False
-CI,1739940,Cigna Group,6324.0,Hospital & Medical Service Plans,True,107.8,False,1.0,False
 INFY,1067491,Infosys Ltd,7371.0,Services-Computer Programming Services,False,107.8,True,1.0,True
+CI,1739940,Cigna Group,6324.0,Hospital & Medical Service Plans,True,107.8,False,1.0,False
 EPD,1061219,ENTERPRISE PRODUCTS PARTNERS L.P.,4922.0,Natural Gas Transmission,True,107.7,False,1.0,False
 EQIX,1101239,EQUINIX INC,6798.0,Real Estate Investment Trusts,True,106.3,False,1.0,False
 ICE,1571949,"Intercontinental Exchange, Inc.",6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,106.0,False,1.0,False
 SRE,1032208,SEMPRA,4932.0,Gas & Other Services Combined,True,105.3,False,1.0,False
 GD,40533,GENERAL DYNAMICS CORP,3730.0,Ship & Boat Building & Repairing,True,105.1,False,1.0,False
-IQ,1722608,"iQIYI, Inc.",7841.0,Services-Video Tape Rental,False,104.8,False,1.0,False
 HLN,1900304,Haleon plc,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",False,104.8,False,1.0,False
+IQ,1722608,"iQIYI, Inc.",7841.0,Services-Video Tape Rental,False,104.8,False,1.0,False
 MDLZ,1103982,"Mondelez International, Inc.",2000.0,Food and Kindred Products,True,104.6,False,1.0,False
 MSTR,1050446,Strategy Inc,6199.0,Finance Services,True,103.7,False,1.0,False
-MAR,1048286,MARRIOTT INTERNATIONAL INC /MD/,7011.0,Hotels & Motels,True,103.5,False,1.0,False
 NOC,1133421,NORTHROP GRUMMAN CORP /DE/,3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,103.4,False,1.0,False
 EXE,895126,EXPAND ENERGY Corp,1311.0,Crude Petroleum & Natural Gas,True,103.2,False,1.0,False
 ING,1039765,ING GROEP NV,6029.0,"Commercial Banks, NEC",False,103.0,False,1.0,False
@@ -252,47 +251,47 @@ RTO,930157,RENTOKIL INITIAL PLC /FI,8741.0,Services-Management Services,False,10
 CDNS,813672,CADENCE DESIGN SYSTEMS INC,7372.0,Services-Prepackaged Software,True,102.7,True,1.0,True
 COIN,1679788,"Coinbase Global, Inc.",6199.0,Finance Services,True,102.5,False,1.0,False
 CTA-PB,30554,"EIDP, Inc.",2820.0,"Plastic Material, Synth Resin/Rubber, Cellulos (No Glass)",True,101.9,False,1.0,False
+MAR,1048286,MARRIOTT INTERNATIONAL INC /MD/,7011.0,Hotels & Motels,True,101.9,False,1.0,False
 DUK,1326160,Duke Energy CORP,4931.0,Electric & Other Services Combined,True,101.8,False,1.0,False
 DDOG,1561550,"Datadog, Inc.",7372.0,Services-Prepackaged Software,True,101.6,True,1.0,True
 RELX,929869,RELX PLC,7389.0,"Services-Business Services, NEC",False,101.4,False,1.0,False
 SHW,89800,SHERWIN WILLIAMS CO,5200.0,"Retail-Building Materials, Hardware, Garden Supply",True,101.0,False,1.0,False
 APO,1858681,"Apollo Global Management, Inc.",6282.0,Investment Advice,True,100.6,False,1.0,False
-ASX,1122411,"ASE Technology Holding Co., Ltd.",3674.0,Semiconductors & Related Devices,False,100.3,True,2.0,True
 PNC,713676,"PNC FINANCIAL SERVICES GROUP, INC.",6021.0,National Commercial Banks,True,100.3,False,1.0,False
+ASX,1122411,"ASE Technology Holding Co., Ltd.",3674.0,Semiconductors & Related Devices,False,100.3,True,2.0,True
 BIIB,875045,BIOGEN INC.,2836.0,"Biological Products, (No Diagnostic Substances)",True,99.8,False,1.0,False
 CMI,26172,CUMMINS INC,3510.0,Engines & Turbines,True,99.0,False,1.0,False
 SNPS,883241,SYNOPSYS INC,7372.0,Services-Prepackaged Software,True,98.9,True,1.0,True
 RCL,884887,ROYAL CARIBBEAN CRUISES LTD,4400.0,Water Transportation,True,98.6,False,1.0,False
 FDX,1048911,FEDEX CORP,4513.0,Air Courier Services,True,98.4,False,1.0,False
-USB,36104,US BANCORP DE,6021.0,National Commercial Banks,True,97.8,False,1.0,False
+USB,36104,US BANCORP \DE\,6021.0,National Commercial Banks,True,97.8,False,1.0,False
 WM,823768,WASTE MANAGEMENT INC,4953.0,Refuse Systems,True,97.0,False,1.0,False
 BE,1664703,Bloom Energy Corp,3620.0,Electrical Industrial Apparatus,True,96.8,False,1.0,False
 KDP,1418135,Keurig Dr Pepper Inc.,2080.0,Beverages,True,96.4,False,1.0,False
 CL,21665,COLGATE PALMOLIVE CO,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",True,96.2,False,1.0,False
-CSX,277948,CSX CORP,4011.0,"Railroads, Line-Haul Operating",True,96.1,False,1.0,False
 FIS,1136893,"Fidelity National Information Services, Inc.",7389.0,"Services-Business Services, NEC",True,95.9,False,1.0,False
 MNST,865752,Monster Beverage Corp,2086.0,Bottled & Canned Soft Drinks & Carbonated Waters,True,95.0,False,1.0,False
 RBLX,1315098,Roblox Corp,7372.0,Services-Prepackaged Software,True,94.9,True,1.0,True
+SU,311337,SUNCOR ENERGY INC,2911.0,Petroleum Refining,False,94.7,False,1.0,False
 CNI,16868,CANADIAN NATIONAL RAILWAY CO,4011.0,"Railroads, Line-Haul Operating",False,94.6,False,1.0,False
-LU,1816007,Lufax Holding Ltd,6199.0,Finance Services,False,93.5,False,1.0,False
+CSX,277948,CSX CORP,4011.0,"Railroads, Line-Haul Operating",True,94.4,False,1.0,False
 WMB,107263,"WILLIAMS COMPANIES, INC.",4922.0,Natural Gas Transmission,True,93.5,False,1.0,False
 MCO,1059556,MOODYS CORP /DE/,7320.0,"Services-Consumer Credit Reporting, Collection Agencies",True,93.2,False,1.0,False
 OXY,797468,OCCIDENTAL PETROLEUM CORP /DE/,1311.0,Crude Petroleum & Natural Gas,True,93.0,False,1.0,False
 CTAS,723254,CINTAS CORP,2320.0,"Men's & Boys' Furnishgs, Work Clothg, & Allied Garments",True,92.9,False,1.0,False
 ORLY,898173,O REILLY AUTOMOTIVE INC,5531.0,Retail-Auto & Home Supply Stores,True,92.5,False,1.0,False
-SU,311337,SUNCOR ENERGY INC,2911.0,Petroleum Refining,False,92.4,False,1.0,False
 AMUB,1114446,UBS AG,6021.0,National Commercial Banks,False,91.3,False,1.0,False
+EMR,32604,EMERSON ELECTRIC CO,3600.0,Electronic & Other Electrical Equipment (No Computer Equip),True,90.7,False,1.0,False
 JCI,833444,Johnson Controls International plc,3585.0,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,True,90.7,False,1.0,False
 CCI,1051470,CROWN CASTLE INC.,6798.0,Real Estate Investment Trusts,True,90.6,False,1.0,False
 ZKH,1862044,ZKH Group Ltd,5200.0,"Retail-Building Materials, Hardware, Garden Supply",False,90.4,False,1.0,False
 TDG,1260221,TransDigm Group INC,3728.0,"Aircraft Parts & Auxiliary Equipment, NEC",True,90.3,False,1.0,False
-EMR,32604,EMERSON ELECTRIC CO,3600.0,Electronic & Other Electrical Equipment (No Computer Equip),True,89.9,False,1.0,False
 LI,1791706,Li Auto Inc.,3711.0,Motor Vehicles & Passenger Car Bodies,False,89.1,False,1.0,False
 CVNA,1690820,CARVANA CO.,5500.0,Retail-Auto Dealers & Gasoline Stations,True,88.8,False,1.0,False
 AON,315293,Aon plc,6411.0,"Insurance Agents, Brokers & Service",True,88.5,False,1.0,False
 AJG,354190,Arthur J. Gallagher & Co.,6411.0,"Insurance Agents, Brokers & Service",True,88.5,False,1.0,False
-FAST,815556,FASTENAL CO,5200.0,"Retail-Building Materials, Hardware, Garden Supply",True,88.4,False,1.0,False
 KMI,1506307,"KINDER MORGAN, INC.",4922.0,Natural Gas Transmission,True,88.4,False,1.0,False
+FAST,815556,FASTENAL CO,5200.0,"Retail-Building Materials, Hardware, Garden Supply",True,88.4,False,1.0,False
 BHC,885590,Bausch Health Companies Inc.,2834.0,Pharmaceutical Preparations,True,88.2,False,1.0,False
 ECL,31462,ECOLAB INC.,2840.0,"Soap, Detergents, Cleang Preparations, Perfumes, Cosmetics",True,88.0,False,1.0,False
 B,756894,BARRICK MINING CORP,1040.0,Gold and Silver Ores,False,87.6,False,1.0,False
@@ -300,17 +299,17 @@ ALAB,1736297,"Astera Labs, Inc.",3674.0,Semiconductors & Related Devices,True,87
 CMG,1058090,CHIPOTLE MEXICAN GRILL INC,5812.0,Retail-Eating  Places,True,86.7,False,1.0,False
 GM,1467858,General Motors Co,3711.0,Motor Vehicles & Passenger Car Bodies,True,86.6,False,1.0,False
 LCID,1811210,"Lucid Group, Inc.",3711.0,Motor Vehicles & Passenger Car Bodies,True,85.8,False,1.0,False
-TFC,92230,TRUIST FINANCIAL CORP,6021.0,National Commercial Banks,True,85.7,False,1.0,False
 AIG,5272,"AMERICAN INTERNATIONAL GROUP, INC.",6331.0,"Fire, Marine & Casualty Insurance",True,85.7,False,1.0,False
+TFC,92230,TRUIST FINANCIAL CORP,6021.0,National Commercial Banks,True,85.7,False,1.0,False
 STLA,1605484,Stellantis N.V.,3711.0,Motor Vehicles & Passenger Car Bodies,False,85.6,False,1.0,False
+EOG,821189,EOG RESOURCES INC,1311.0,Crude Petroleum & Natural Gas,True,85.5,False,1.0,False
 NOK,924613,NOKIA CORP,3663.0,Radio & Tv Broadcasting & Communications Equipment,False,85.2,True,1.0,False
 ITW,49826,ILLINOIS TOOL WORKS INC,3560.0,General Industrial Machinery & Equipment,True,84.8,False,1.0,False
 HPE,1645590,Hewlett Packard Enterprise Co,3570.0,Computer & office Equipment,True,84.6,True,1.0,True
-TRV,86312,"TRAVELERS COMPANIES, INC.",6331.0,"Fire, Marine & Casualty Insurance",True,84.6,False,1.0,False
 CRH,849395,CRH PUBLIC LTD CO,3241.0,"Cement, Hydraulic",True,84.3,False,1.0,False
 F,37996,FORD MOTOR CO,3711.0,Motor Vehicles & Passenger Car Bodies,True,83.8,False,1.0,False
 MSI,68505,"Motorola Solutions, Inc.",3663.0,Radio & Tv Broadcasting & Communications Equipment,True,83.4,True,1.0,True
-EOG,821189,EOG RESOURCES INC,1311.0,Crude Petroleum & Natural Gas,True,83.2,False,1.0,False
+TRV,86312,"TRAVELERS COMPANIES, INC.",6331.0,"Fire, Marine & Casualty Insurance",True,83.1,False,1.0,False
 LITE,1633978,Lumentum Holdings Inc.,3669.0,"Communications Equipment, NEC",True,82.5,True,1.0,True
 CP,16875,CANADIAN PACIFIC KANSAS CITY LTD/CN,4011.0,"Railroads, Line-Haul Operating",True,82.3,False,1.0,False
 CIEN,936395,CIENA CORP,3661.0,Telephone & Telegraph Apparatus,True,82.0,True,1.0,True
@@ -319,20 +318,19 @@ IAU,1278680,ISHARES GOLD TRUST,6221.0,Commodity Contracts Brokers & Dealers,True
 IBIT,1980994,iShares Bitcoin Trust ETF,6221.0,Commodity Contracts Brokers & Dealers,True,81.3,False,1.0,False
 NXPI,1413447,NXP Semiconductors N.V.,3674.0,Semiconductors & Related Devices,True,81.2,True,1.0,True
 ROST,745732,"ROSS STORES, INC.",5651.0,Retail-Family Clothing Stores,True,80.7,False,1.0,False
-HLT,1585689,Hilton Worldwide Holdings Inc.,7011.0,Hotels & Motels,True,80.6,False,1.0,False
 RSG,1060391,"REPUBLIC SERVICES, INC.",4953.0,Refuse Systems,True,80.3,False,1.0,False
 VFS,1913510,VinFast Auto Ltd.,3711.0,Motor Vehicles & Passenger Car Bodies,False,79.8,False,1.0,False
 BDX,10795,BECTON DICKINSON & CO,3841.0,Surgical & Medical Instruments & Apparatus,True,79.8,False,1.0,False
-WBD,1437107,"Warner Bros. Discovery, Inc.",4841.0,Cable & Other Pay Television Services,True,79.7,False,1.0,False
 HMC,715153,HONDA MOTOR CO LTD,3711.0,Motor Vehicles & Passenger Car Bodies,False,79.3,False,1.0,False
+HLT,1585689,Hilton Worldwide Holdings Inc.,7011.0,Hotels & Motels,True,78.7,False,1.0,False
 WDAY,1327811,"Workday, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,78.5,True,1.0,True
 MPWR,1280452,"MONOLITHIC POWER SYSTEMS, INC.",3674.0,Semiconductors & Related Devices,True,78.0,True,1.0,True
 COHR,820318,COHERENT CORP.,3827.0,Optical Instruments & Lenses,True,77.5,True,1.0,True
 NSC,702165,NORFOLK SOUTHERN CORP,4011.0,"Railroads, Line-Haul Operating",True,77.1,False,1.0,False
 TER,97210,"TERADYNE, INC",3825.0,Instruments For Meas & Testing of  Electricity & Elec Signals,True,76.3,True,1.0,True
 DB,1159508,DEUTSCHE BANK AKTIENGESELLSCHAFT,6022.0,State Commercial Banks,False,76.3,False,1.0,False
-EBAY,1065088,EBAY INC,7389.0,"Services-Business Services, NEC",True,76.1,False,1.0,False
 RKLB,1819994,Rocket Lab Corp,3760.0,Guided Missiles & Space Vehicles & Parts,True,76.1,False,1.0,False
+EBAY,1065088,EBAY INC,7389.0,"Services-Business Services, NEC",True,76.1,False,1.0,False
 AEP,4904,AMERICAN ELECTRIC POWER CO INC,4911.0,Electric Services,True,74.8,False,1.0,False
 APD,2969,"Air Products & Chemicals, Inc.",2810.0,Industrial Inorganic Chemicals,True,74.6,False,1.0,False
 SPG,1063761,SIMON PROPERTY GROUP INC.,6798.0,Real Estate Investment Trusts,True,74.5,False,1.0,False
@@ -341,105 +339,105 @@ CARR,1783180,CARRIER GLOBAL Corp,3585.0,Air-Cond & Warm Air Heatg Equip & Comm &
 TEL,1385157,TE Connectivity plc,5065.0,"Wholesale-Electronic Parts & Equipment, NEC",True,73.0,False,1.0,False
 SNY,1121404,Sanofi,2834.0,Pharmaceutical Preparations,False,72.9,False,1.0,False
 ILMN,1110803,"ILLUMINA, INC.",3826.0,Laboratory Analytical Instruments,True,72.4,False,1.0,False
-AZO,866787,AUTOZONE INC,5531.0,Retail-Auto & Home Supply Stores,True,72.2,False,1.0,False
 COR,1140859,"Cencora, Inc.",5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,72.2,False,1.0,False
+AZO,866787,AUTOZONE INC,5531.0,Retail-Auto & Home Supply Stores,True,72.2,False,1.0,False
 URI,1067701,"UNITED RENTALS, INC.",7359.0,"Services-Equipment Rental & Leasing, NEC",True,71.4,False,1.0,False
 ADSK,769397,"Autodesk, Inc.",7372.0,Services-Prepackaged Software,True,71.3,True,1.0,True
-MLCO,1381640,Melco Resorts & Entertainment LTD,7011.0,Hotels & Motels,False,71.2,False,1.0,False
 D,715957,"DOMINION ENERGY, INC",4911.0,Electric Services,True,71.2,False,1.0,False
+MLCO,1381640,Melco Resorts & Entertainment LTD,7011.0,Hotels & Motels,False,71.2,False,1.0,False
 HUM,49071,HUMANA INC,6324.0,Hospital & Medical Service Plans,True,70.9,False,1.0,False
 VST,1692819,Vistra Corp.,4911.0,Electric Services,True,70.8,False,1.0,False
 TRP,1232384,TC ENERGY CORP,4922.0,Natural Gas Transmission,False,70.2,False,1.0,False
+DLR,1297996,"DIGITAL REALTY TRUST, INC.",6798.0,Real Estate Investment Trusts,True,69.9,False,1.0,False
 LVS,1300514,LAS VEGAS SANDS CORP,7011.0,Hotels & Motels,True,69.9,False,1.0,False
 FIX,1035983,COMFORT SYSTEMS USA INC,1731.0,Electrical Work,True,69.9,False,1.0,False
-DLR,1297996,"DIGITAL REALTY TRUST, INC.",6798.0,Real Estate Investment Trusts,True,69.9,False,1.0,False
 PCAR,75362,PACCAR INC,3711.0,Motor Vehicles & Passenger Car Bodies,True,69.8,False,1.0,False
 BKR,1701605,Baker Hughes Co,3533.0,Oil & Gas Field Machinery & Equipment,True,68.9,False,1.0,False
-UMC,1033767,UNITED MICROELECTRONICS CORP,3674.0,Semiconductors & Related Devices,False,68.5,True,5.0,True
-TS,1190723,TENARIS SA,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,68.5,False,1.0,False
 PSA,1393311,Public Storage,6798.0,Real Estate Investment Trusts,True,68.5,False,1.0,False
+TS,1190723,TENARIS SA,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,68.5,False,1.0,False
+UMC,1033767,UNITED MICROELECTRONICS CORP,3674.0,Semiconductors & Related Devices,False,68.5,True,5.0,True
 NBIS,1513845,Nebius Group N.V.,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,68.4,True,1.0,False
 LHX,202058,"L3HARRIS TECHNOLOGIES, INC. /DE/",3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,68.2,False,1.0,False
 ALL,899051,ALLSTATE CORP,6331.0,"Fire, Marine & Casualty Insurance",True,68.0,False,1.0,False
-AXON,1069183,"AXON ENTERPRISE, INC.",3480.0,"Ordnance & Accessories, (No Vehicles/Guided Missiles)",True,67.5,False,1.0,False
 IMO,49938,IMPERIAL OIL LTD,2911.0,Petroleum Refining,True,67.5,False,1.0,False
-CRWV,1769628,"CoreWeave, Inc.",7372.0,Services-Prepackaged Software,True,66.6,True,1.0,True
+AXON,1069183,"AXON ENTERPRISE, INC.",3480.0,"Ordnance & Accessories, (No Vehicles/Guided Missiles)",True,67.5,False,1.0,False
 STM,932787,STMicroelectronics N.V.,3674.0,Semiconductors & Related Devices,False,66.6,True,1.0,True
-ASR,1123452,SOUTHEAST AIRPORT GROUP,4581.0,"Airports, Flying Fields & Airport Terminal Services",False,66.5,False,1.0,False
+CRWV,1769628,"CoreWeave, Inc.",7372.0,Services-Prepackaged Software,True,66.6,True,1.0,True
 TIMB,1826168,TIM S.A.,4813.0,Telephone Communications (No Radiotelephone),False,66.5,False,1.0,False
+ASR,1123452,SOUTHEAST AIRPORT GROUP,4581.0,"Airports, Flying Fields & Airport Terminal Services",False,66.5,False,1.0,False
 OKE,1039684,ONEOK INC /NEW/,4923.0,Natural Gas Transmisison & Distribution,True,66.4,False,1.0,False
 TWLO,1447669,TWILIO INC,7372.0,Services-Prepackaged Software,True,65.9,True,1.0,True
-MET,1099219,METLIFE INC,6311.0,Life Insurance,True,65.8,False,1.0,False
 GWW,277135,"W.W. GRAINGER, INC.",5000.0,Wholesale-Durable Goods,True,65.3,False,1.0,False
 BMA,1347426,Macro Bank Inc.,6029.0,"Commercial Banks, NEC",False,65.2,False,1.0,False
 AFL,4977,AFLAC INC,6321.0,Accident & Health Insurance,True,64.9,False,1.0,False
+TRGP,1389170,Targa Resources Corp.,4922.0,Natural Gas Transmission,True,64.8,False,1.0,False
 GPN,1123360,GLOBAL PAYMENTS INC,7389.0,"Services-Business Services, NEC",True,64.7,False,1.0,False
 ROKU,1428439,"ROKU, INC",4841.0,Cable & Other Pay Television Services,True,64.4,False,1.0,False
-AU,1973832,AngloGold Ashanti PLC,1040.0,Gold and Silver Ores,False,64.3,False,1.0,False
 TTD,1671933,"Trade Desk, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,64.3,True,1.0,True
+AU,1973832,AngloGold Ashanti PLC,1040.0,Gold and Silver Ores,False,64.3,False,1.0,False
 TRI,1075124,THOMSON REUTERS CORP /CAN/,2741.0,Miscellaneous Publishing,False,63.9,False,1.0,False
 ARGX,1697862,ARGENX SE,2836.0,"Biological Products, (No Diagnostic Substances)",False,63.8,False,1.0,False
 ROP,882835,ROPER TECHNOLOGIES INC,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,63.7,False,1.0,False
-TRGP,1389170,Targa Resources Corp.,4922.0,Natural Gas Transmission,True,63.0,False,1.0,False
+MET,1099219,METLIFE INC,6311.0,Life Insurance,True,63.6,False,1.0,False
 DHI,882184,HORTON D R INC /DE/,1531.0,Operative Builders,True,63.0,False,1.0,False
 NIO,1736541,NIO Inc.,3711.0,Motor Vehicles & Passenger Car Bodies,False,62.9,False,1.0,False
 TIGR,1756699,UP Fintech Holding Ltd,6211.0,"Security Brokers, Dealers & Flotation Companies",False,62.7,False,1.0,False
 LNG,3570,"Cheniere Energy, Inc.",4924.0,Natural Gas Distribution,True,62.5,False,1.0,False
 KEYS,1601046,"Keysight Technologies, Inc.",3823.0,"Industrial Instruments For Measurement, Display, and Control",True,62.2,False,1.0,False
 LULU,1397187,lululemon athletica inc.,2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,True,62.1,False,1.0,False
+CVE,1475260,CENOVUS ENERGY INC.,1311.0,Crude Petroleum & Natural Gas,False,61.9,False,1.0,False
 CPRT,900075,COPART INC,5500.0,Retail-Auto Dealers & Gasoline Stations,True,61.8,False,1.0,False
 O,726728,REALTY INCOME CORP,6798.0,Real Estate Investment Trusts,True,61.6,False,1.0,False
 UI,1511737,Ubiquiti Inc.,3663.0,Radio & Tv Broadcasting & Communications Equipment,True,61.3,True,1.0,True
 FLEX,866374,FLEX LTD.,3672.0,Printed Circuit Boards,True,61.3,True,1.0,True
 DAL,27904,"DELTA AIR LINES, INC.",4512.0,"Air Transportation, Scheduled",True,61.1,False,1.0,False
 HAL,45012,HALLIBURTON CO,1389.0,"Oil & Gas Field Services, NEC",True,60.6,False,1.0,False
-CVE,1475260,CENOVUS ENERGY INC.,1311.0,Crude Petroleum & Natural Gas,False,60.6,False,1.0,False
-LYB,1489393,LyondellBasell Industries N.V.,2860.0,Industrial Organic Chemicals,True,60.3,False,1.0,False
 DXCM,1093557,DEXCOM INC,3841.0,Surgical & Medical Instruments & Apparatus,True,60.3,False,1.0,False
+LYB,1489393,LyondellBasell Industries N.V.,2860.0,Industrial Organic Chemicals,True,60.3,False,1.0,False
 IDXX,874716,IDEXX LABORATORIES INC /DE,2835.0,In Vitro & In Vivo Diagnostic Substances,True,60.2,False,1.0,False
 MPLX,1552000,MPLX LP,4610.0,Pipe Lines (No Natural Gas),True,60.0,False,1.0,False
 ALNY,1178670,"ALNYLAM PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,59.8,False,1.0,False
 CPNG,1834584,"Coupang, Inc.",5961.0,Retail-Catalog & Mail-Order Houses,True,59.7,False,1.0,False
 TEVA,818686,TEVA PHARMACEUTICAL INDUSTRIES LTD,2834.0,Pharmaceutical Preparations,True,59.6,False,1.0,False
-CAH,721371,CARDINAL HEALTH INC,5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,59.5,False,1.0,False
 FANG,1539838,"Diamondback Energy, Inc.",1311.0,Crude Petroleum & Natural Gas,True,59.4,False,1.0,False
 NTR,1725964,Nutrien Ltd.,2870.0,Agricultural Chemicals,False,59.2,False,1.0,False
 NTRA,1604821,"Natera, Inc.",8071.0,Services-Medical Laboratories,True,59.2,False,1.0,False
 TME,1744676,Tencent Music Entertainment Group,4832.0,Radio Broadcasting Stations,False,59.1,False,1.0,False
 NUE,73309,NUCOR CORP,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",True,59.0,False,1.0,False
 FICO,814547,FAIR ISAAC CORP,7389.0,"Services-Business Services, NEC",True,58.2,False,1.0,False
+CAH,721371,CARDINAL HEALTH INC,5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,58.0,False,1.0,False
 DG,29534,DOLLAR GENERAL CORP,5331.0,Retail-Variety Stores,True,58.0,False,1.0,False
 DOCU,1261333,"DOCUSIGN, INC.",7372.0,Services-Prepackaged Software,True,57.9,True,1.0,True
-NDAQ,1120193,"NASDAQ, INC.",6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,57.7,False,1.0,False
-CTVA,1755672,"Corteva, Inc.",100.0,Agricultural Production-Crops,True,57.2,False,1.0,False
+NDAQ,1120193,"NASDAQ, INC.",6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,57.3,False,1.0,False
 PAYX,723531,PAYCHEX INC,8700.0,"Services-Engineering, Accounting, Research, Management",True,57.2,False,1.0,False
-GRMN,1121788,GARMIN LTD,3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,57.0,False,1.0,False
+CTVA,1755672,"Corteva, Inc.",100.0,Agricultural Production-Crops,True,57.0,False,1.0,False
 AME,1037868,AMETEK INC/,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,56.9,False,1.0,False
 MT,1243429,ArcelorMittal,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,56.8,False,1.0,False
+GRMN,1121788,GARMIN LTD,3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,56.7,False,1.0,False
 PCG,1004980,PG&E Corp,4931.0,Electric & Other Services Combined,True,56.6,False,1.0,False
+DVN,1090012,DEVON ENERGY CORP/DE,1311.0,Crude Petroleum & Natural Gas,True,56.5,False,1.0,False
 AMP,820027,AMERIPRISE FINANCIAL INC,6282.0,Investment Advice,True,56.4,False,1.0,False
 ITUB,1132597,Itau Unibanco Holding S.A.,6022.0,State Commercial Banks,False,56.2,False,1.0,False
 PPG,79879,PPG INDUSTRIES INC,2851.0,"Paints, Varnishes, Lacquers, Enamels & Allied Prods",True,56.1,False,1.0,False
 ALGN,1097149,ALIGN TECHNOLOGY INC,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",True,56.1,False,1.0,False
 SBSW,1786909,Sibanye Stillwater Ltd,1040.0,Gold and Silver Ores,False,55.9,False,1.0,False
-ROK,1024478,"ROCKWELL AUTOMATION, INC",3829.0,"Measuring & Controlling Devices, NEC",True,55.7,False,1.0,False
 WF,1264136,WOORI FINANCIAL GROUP INC.,6029.0,"Commercial Banks, NEC",False,55.7,False,1.0,False
+ROK,1024478,"ROCKWELL AUTOMATION, INC",3829.0,"Measuring & Controlling Devices, NEC",True,55.7,False,1.0,False
 GLDI,1053092,CREDIT SUISSE AG,6211.0,"Security Brokers, Dealers & Flotation Companies",False,55.4,False,1.0,False
 IQV,1478242,IQVIA HOLDINGS INC.,8731.0,Services-Commercial Physical & Biological Research,True,55.1,False,1.0,False
 ATHM,1527636,Autohome Inc.,7374.0,Services-Computer Processing & Data Preparation,False,55.1,True,1.0,False
 MSCI,1408198,MSCI Inc.,7389.0,"Services-Business Services, NEC",True,54.8,False,1.0,False
 ADM,7084,Archer-Daniels-Midland Co,2070.0,Fats & Oils,True,54.7,False,1.0,False
 BIDU,1329099,"Baidu, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",False,54.6,True,1.0,False
-EMBJ,1355444,EMBRAER S.A.,3721.0,Aircraft,False,54.4,False,1.0,False
 CNC,1071739,CENTENE CORP,6324.0,Hospital & Medical Service Plans,True,54.4,False,1.0,False
+EMBJ,1355444,EMBRAER S.A.,3721.0,Aircraft,False,54.4,False,1.0,False
 FLUT,1635327,Flutter Entertainment plc,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,54.3,True,1.0,True
-DVN,1090012,DEVON ENERGY CORP/DE,1311.0,Crude Petroleum & Natural Gas,True,54.1,False,1.0,False
-VEEV,1393052,VEEVA SYSTEMS INC,7372.0,Services-Prepackaged Software,True,54.0,True,1.0,True
 MCHP,827054,MICROCHIP TECHNOLOGY INC,3674.0,Semiconductors & Related Devices,True,54.0,True,1.0,True
 FNV,1456346,FRANCO NEVADA Corp,1040.0,Gold and Silver Ores,False,54.0,False,1.0,False
+VEEV,1393052,VEEVA SYSTEMS INC,7372.0,Services-Prepackaged Software,True,54.0,True,1.0,True
 SMCI,1375365,"Super Micro Computer, Inc.",3571.0,Electronic Computers,True,53.8,True,1.0,True
-FER,1468522,Ferrovial N.V.,1600.0,Heavy Construction Other Than Bldg Const - Contractors,False,53.7,False,1.0,False
 CCJ,1009001,CAMECO CORP,1090.0,Miscellaneous Metal Ores,False,53.7,False,1.0,False
+FER,1468522,Ferrovial N.V.,1600.0,Heavy Construction Other Than Bldg Const - Contractors,False,53.7,False,1.0,False
 KMB,55785,KIMBERLY CLARK CORP,2670.0,Converted Paper & Paperboard Prods (No Contaners/Boxes),True,53.7,False,1.0,False
 WIT,1123799,WIPRO LTD,7371.0,Services-Computer Programming Services,False,53.5,True,1.0,False
 ETR,65984,ENTERGY CORP /DE/,4911.0,Electric Services,True,53.4,False,1.0,False
@@ -450,36 +448,36 @@ MOGU,1743971,MOGU Inc.,7389.0,"Services-Business Services, NEC",False,52.4,False
 FERG,2011641,Ferguson Enterprises Inc. /DE/,5070.0,Wholesale-Hardware & Plumbing & Heating Equipment & Supplies,True,52.3,False,1.0,False
 KR,56873,KROGER CO,5411.0,Retail-Grocery Stores,True,52.3,False,1.0,False
 GIS,40704,GENERAL MILLS INC,2040.0,Grain Mill Products,True,52.3,False,1.0,False
-EDN,1395213,EDENOR,4911.0,Electric Services,False,52.1,False,1.0,False
 XPEV,1810997,XPENG INC.,3711.0,Motor Vehicles & Passenger Car Bodies,False,52.1,False,1.0,False
+EDN,1395213,EDENOR,4911.0,Electric Services,False,52.1,False,1.0,False
 PTON,1639825,"PELOTON INTERACTIVE, INC.",3949.0,"Sporting & Athletic Goods, NEC",True,51.9,False,1.0,False
-HONA,2089271,Honeywell Aerospace Inc.,3724.0,Aircraft Engines & Engine Parts,True,51.7,False,1.0,False
+HONA,2089271,Honeywell Aerospace Inc.,3724.0,Aircraft Engines & Engine Parts,True,51.8,False,1.0,False
 PHG,313216,KONINKLIJKE PHILIPS NV,3844.0,X-Ray Apparatus & Tubes & Related Irradiation Apparatus,False,51.6,False,1.0,False
-CCEP,1650107,COCA-COLA EUROPACIFIC PARTNERS plc,2086.0,Bottled & Canned Soft Drinks & Carbonated Waters,False,51.3,False,1.0,False
 FITB,35527,FIFTH THIRD BANCORP,6022.0,State Commercial Banks,True,51.2,False,1.0,False
-ZS,1713683,"Zscaler, Inc.",7371.0,Services-Computer Programming Services,True,51.1,True,1.0,True
 WCN,1318220,"Waste Connections, Inc.",4953.0,Refuse Systems,True,51.1,False,1.0,False
+ZS,1713683,"Zscaler, Inc.",7371.0,Services-Computer Programming Services,True,51.1,True,1.0,True
+CCEP,1650107,COCA-COLA EUROPACIFIC PARTNERS plc,2086.0,Bottled & Canned Soft Drinks & Carbonated Waters,False,50.9,False,1.0,False
 DOW,1751788,DOW INC.,2821.0,"Plastic Materials, Synth Resins & Nonvulcan Elastomers",True,50.9,False,1.0,False
-TROW,1113169,PRICE T ROWE GROUP INC,6282.0,Investment Advice,True,50.8,False,1.0,False
 VIV,1066119,TELEFONICA BRASIL S.A.,4813.0,Telephone Communications (No Radiotelephone),False,50.8,False,1.0,False
+TROW,1113169,PRICE T ROWE GROUP INC,6282.0,Investment Advice,True,50.8,False,1.0,False
 CBRE,1138118,"CBRE GROUP, INC.",6500.0,Real Estate,True,50.7,False,1.0,False
 PRU,1137774,PRUDENTIAL FINANCIAL INC,6311.0,Life Insurance,True,50.6,False,1.0,False
 CCL,815097,Carnival Corp Ltd.,4400.0,Water Transportation,True,50.5,False,1.0,False
 BCE,718940,BCE INC,4813.0,Telephone Communications (No Radiotelephone),False,50.4,False,1.0,False
 HEI,46619,HEICO CORP,3724.0,Aircraft Engines & Engine Parts,True,50.3,False,1.0,False
 XEL,72903,XCEL ENERGY INC,4931.0,Electric & Other Services Combined,True,50.3,False,1.0,False
-CRDO,1807794,Credo Technology Group Holding Ltd,3674.0,Semiconductors & Related Devices,True,50.2,True,1.0,True
 IMOS,1123134,CHIPMOS TECHNOLOGIES INC,3674.0,Semiconductors & Related Devices,False,50.2,True,1.0,False
-EXC,1109357,EXELON CORP,4931.0,Electric & Other Services Combined,True,50.1,False,1.0,False
+CRDO,1807794,Credo Technology Group Holding Ltd,3674.0,Semiconductors & Related Devices,True,50.2,True,1.0,True
 MTCH,891103,"Match Group, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,50.1,True,1.0,True
+EXC,1109357,EXELON CORP,4931.0,Electric & Other Services Combined,True,50.1,False,1.0,False
+CIB,2058897,Grupo Cibest S.A.,6029.0,"Commercial Banks, NEC",False,49.9,False,1.0,False
 LEN,920760,LENNAR CORP /NEW/,1520.0,General Bldg Contractors - Residential Bldgs,True,49.7,False,1.0,False
 PINS,1506293,"PINTEREST, INC.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,49.6,True,1.0,True
 WAB,943452,WESTINGHOUSE AIR BRAKE TECHNOLOGIES CORP,3743.0,Railroad Equipment,True,49.4,False,1.0,False
 ALC,1167379,ALCON INC,3851.0,Ophthalmic Goods,False,49.4,False,1.0,False
-CIB,2058897,Grupo Cibest S.A.,6029.0,"Commercial Banks, NEC",False,49.2,False,1.0,False
 WDS,844551,WOODSIDE ENERGY GROUP LTD,1311.0,Crude Petroleum & Natural Gas,False,49.0,False,1.0,False
-U,1810806,Unity Software Inc.,7372.0,Services-Prepackaged Software,True,48.7,True,1.0,True
 CTSH,1058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,7371.0,Services-Computer Programming Services,True,48.7,True,1.0,True
+U,1810806,Unity Software Inc.,7372.0,Services-Prepackaged Software,True,48.7,True,1.0,True
 CAN,1780652,Canaan Inc.,6199.0,Finance Services,False,48.5,False,1.0,False
 ODFL,878927,"OLD DOMINION FREIGHT LINE, INC.",4213.0,Trucking (No Local),True,48.3,False,1.0,False
 VG,2007855,"Venture Global, Inc.",4924.0,Natural Gas Distribution,True,48.1,False,1.0,False
@@ -497,47 +495,47 @@ KVUE,1944048,Kenvue Inc.,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations
 SHG,1263043,SHINHAN FINANCIAL GROUP CO LTD,6021.0,National Commercial Banks,False,46.0,False,1.0,False
 GFS,1709048,GLOBALFOUNDRIES Inc.,3674.0,Semiconductors & Related Devices,False,45.8,True,1.0,False
 SLV,1330568,iShares Silver Trust,6221.0,Commodity Contracts Brokers & Dealers,True,45.7,False,1.0,False
-KGC,701818,KINROSS GOLD CORP,1040.0,Gold and Silver Ores,False,45.5,False,1.0,False
 VTR,740260,"Ventas, Inc.",6798.0,Real Estate Investment Trusts,True,45.5,False,1.0,False
+KGC,701818,KINROSS GOLD CORP,1040.0,Gold and Silver Ores,False,45.5,False,1.0,False
 VRSK,1442145,"Verisk Analytics, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,44.9,True,1.0,True
 RKT,1805284,"Rocket Companies, Inc.",6162.0,Mortgage Bankers & Loan Correspondents,True,44.8,False,1.0,False
-SIMO,1329394,Silicon Motion Technology CORP,3674.0,Semiconductors & Related Devices,False,44.7,True,1.0,False
 SYY,96021,SYSCO CORP,5140.0,Wholesale-Groceries & Related Products,True,44.7,False,1.0,False
-WAT,1000697,WATERS CORP /DE/,3826.0,Laboratory Analytical Instruments,True,44.7,False,1.0,False
 KB,1445930,KB Financial Group Inc.,6029.0,"Commercial Banks, NEC",False,44.7,False,1.0,False
+SIMO,1329394,Silicon Motion Technology CORP,3674.0,Semiconductors & Related Devices,False,44.7,True,1.0,False
 TKO,1973266,"TKO Group Holdings, Inc.",7900.0,Services-Amusement & Recreation Services,True,44.6,False,1.0,False
+WAT,1000697,WATERS CORP /DE/,3826.0,Laboratory Analytical Instruments,True,44.5,False,1.0,False
 UAL,100517,"United Airlines Holdings, Inc.",4512.0,"Air Transportation, Scheduled",True,44.4,False,1.0,False
 INSM,1104506,INSMED Inc,2834.0,Pharmaceutical Preparations,True,43.9,False,1.0,False
 RVMD,1628171,"Revolution Medicines, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,43.7,False,1.0,False
 IBKR,1381197,"Interactive Brokers Group, Inc.",6211.0,"Security Brokers, Dealers & Flotation Companies",True,43.6,False,1.0,False
 P,1474432,"Everpure, Inc.",3572.0,Computer Storage Devices,True,43.5,True,1.0,True
-SBAC,1034054,SBA COMMUNICATIONS CORP,6798.0,Real Estate Investment Trusts,True,43.4,False,1.0,False
 ENPH,1463101,"Enphase Energy, Inc.",3674.0,Semiconductors & Related Devices,True,43.4,True,1.0,True
-AIFU,1413855,AIFU Inc.,6411.0,"Insurance Agents, Brokers & Service",False,43.1,False,1.0,False
+SBAC,1034054,SBA COMMUNICATIONS CORP,6798.0,Real Estate Investment Trusts,True,43.4,False,1.0,False
+NTAP,1002047,"NetApp, Inc.",3572.0,Computer Storage Devices,True,43.1,True,1.0,True
 GEHC,1932393,GE HealthCare Technologies Inc.,3844.0,X-Ray Apparatus & Tubes & Related Irradiation Apparatus,True,43.1,False,1.0,False
+AIFU,1413855,AIFU Inc.,6411.0,"Insurance Agents, Brokers & Service",False,43.1,False,1.0,False
 LBTYA,1570585,Liberty Global Ltd.,4841.0,Cable & Other Pay Television Services,True,43.0,False,1.0,False
-ED,1047862,CONSOLIDATED EDISON INC,4931.0,Electric & Other Services Combined,True,42.8,False,1.0,False
 V,1403161,VISA INC.,7389.0,"Services-Business Services, NEC",True,42.8,False,1.0,False
-ACGL,947484,ARCH CAPITAL GROUP LTD.,6331.0,"Fire, Marine & Casualty Insurance",True,42.7,False,1.0,False
 SNN,845982,SMITH & NEPHEW PLC,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",False,42.7,False,1.0,False
+ED,1047862,CONSOLIDATED EDISON INC,4931.0,Electric & Other Services Combined,True,42.7,False,1.0,False
+ACGL,947484,ARCH CAPITAL GROUP LTD.,6331.0,"Fire, Marine & Casualty Insurance",True,42.7,False,1.0,False
 CMCM,1597835,Cheetah Mobile Inc.,7372.0,Services-Prepackaged Software,False,42.7,True,1.0,False
 LYV,1335258,"Live Nation Entertainment, Inc.",7900.0,Services-Amusement & Recreation Services,True,42.6,False,1.0,False
-NTAP,1002047,"NetApp, Inc.",3572.0,Computer Storage Devices,True,42.5,True,1.0,True
 RMD,943819,RESMED INC,3841.0,Surgical & Medical Instruments & Apparatus,True,42.3,False,1.0,False
 OTIS,1781335,Otis Worldwide Corp,3600.0,Electronic & Other Electrical Equipment (No Computer Equip),True,42.1,False,1.0,False
 IR,1699150,Ingersoll Rand Inc.,3560.0,General Industrial Machinery & Equipment,True,42.0,False,1.0,False
 IT,749251,GARTNER INC,8741.0,Services-Management Services,True,41.9,False,1.0,False
 CHWY,1766502,"Chewy, Inc.",5961.0,Retail-Catalog & Mail-Order Houses,True,41.7,False,1.0,False
-ELPC,1041792,ENERGY CO OF PARANA,4911.0,Electric Services,False,41.3,False,1.0,False
+ELPC,1041792,ENERGY CO OF PARANA,4911.0,Electric Services,False,41.5,False,1.0,False
 ZG,1617640,"ZILLOW GROUP, INC.",7389.0,"Services-Business Services, NEC",True,41.2,False,1.0,False
-ZJYL,1837821,Jin Medical International Ltd.,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",False,41.2,False,1.0,False
 BNTX,1776985,BioNTech SE,2836.0,"Biological Products, (No Diagnostic Substances)",False,41.2,False,1.0,False
+ZJYL,1837821,Jin Medical International Ltd.,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",False,41.2,False,1.0,False
 VMC,1396009,Vulcan Materials CO,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),True,41.0,False,1.0,False
 MKC,63754,MCCORMICK & CO INC,2090.0,Miscellaneous Food Preparations & Kindred Products,True,41.0,False,1.0,False
 ESLT,1027664,ELBIT SYSTEMS LTD,3728.0,"Aircraft Parts & Auxiliary Equipment, NEC",False,40.9,False,1.0,False
 MLM,916076,MARTIN MARIETTA MATERIALS INC,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),True,40.8,False,1.0,False
-JBL,898293,JABIL INC,3672.0,Printed Circuit Boards,True,40.7,True,1.0,True
 BILI,1723690,Bilibili Inc.,7374.0,Services-Computer Processing & Data Preparation,False,40.7,True,1.0,False
+JBL,898293,JABIL INC,3672.0,Printed Circuit Boards,True,40.7,True,1.0,True
 EME,105634,"EMCOR Group, Inc.",1731.0,Electrical Work,True,40.3,False,1.0,False
 CSGP,1057352,"COSTAR GROUP, INC.",7389.0,"Services-Business Services, NEC",True,40.2,False,1.0,False
 HUBS,1404655,HUBSPOT INC,7372.0,Services-Prepackaged Software,True,40.2,True,1.0,True
@@ -551,23 +549,23 @@ EQT,33213,EQT Corp,1311.0,Crude Petroleum & Natural Gas,True,39.2,False,1.0,Fals
 LUV,92380,SOUTHWEST AIRLINES CO,4512.0,"Air Transportation, Scheduled",True,39.1,False,1.0,False
 EXPE,1324424,"Expedia Group, Inc.",4700.0,Transportation Services,True,38.6,False,1.0,False
 STLD,1022671,STEEL DYNAMICS INC,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",True,38.6,False,1.0,False
-IFF,51253,INTERNATIONAL FLAVORS & FRAGRANCES INC,2860.0,Industrial Organic Chemicals,True,38.4,False,1.0,False
 CBRS,2021728,Cerebras Systems Inc.,3674.0,Semiconductors & Related Devices,True,38.4,True,1.0,True
+IFF,51253,INTERNATIONAL FLAVORS & FRAGRANCES INC,2860.0,Industrial Organic Chemicals,True,38.4,False,1.0,False
 WEC,783325,"WEC ENERGY GROUP, INC.",4931.0,Electric & Other Services Combined,True,38.4,False,1.0,False
 MOS,1285785,MOSAIC CO,2870.0,Agricultural Chemicals,True,38.4,False,1.0,False
 EXR,1289490,Extra Space Storage Inc.,6798.0,Real Estate Investment Trusts,True,38.1,False,1.0,False
+OKTA,1660134,"Okta, Inc.",7372.0,Services-Prepackaged Software,True,38.1,True,1.0,True
 EFX,33185,EQUIFAX INC,7320.0,"Services-Consumer Credit Reporting, Collection Agencies",True,38.0,False,1.0,False
 IRM,1020569,IRON MOUNTAIN INC,6798.0,Real Estate Investment Trusts,True,37.9,False,1.0,False
 BAP,1001290,CREDICORP LTD,6029.0,"Commercial Banks, NEC",False,37.8,False,1.0,False
 DLTR,935703,"DOLLAR TREE, INC.",5331.0,Retail-Variety Stores,True,37.4,False,1.0,False
-OKTA,1660134,"Okta, Inc.",7372.0,Services-Prepackaged Software,True,37.4,True,1.0,True
 ECHO,1415404,EchoStar CORP,4899.0,"Communications Services, NEC",True,37.2,False,1.0,False
 NOV,1021860,NOV Inc.,3533.0,Oil & Gas Field Machinery & Equipment,True,37.1,False,1.0,False
 QSR,1618756,Restaurant Brands International Inc.,5812.0,Retail-Eating  Places,True,36.9,False,1.0,False
 BB,1070235,BLACKBERRY Ltd,7372.0,Services-Prepackaged Software,True,36.9,True,1.0,True
 TPL,1811074,Texas Pacific Land Corp,6792.0,Oil Royalty Traders,True,36.8,False,1.0,False
-XYL,1524472,Xylem Inc.,3561.0,Pumps & Pumping Equipment,True,36.7,False,1.0,False
 MTB,36270,M&T BANK CORP,6022.0,State Commercial Banks,True,36.7,False,1.0,False
+XYL,1524472,Xylem Inc.,3561.0,Pumps & Pumping Equipment,True,36.7,False,1.0,False
 BEN,38777,FRANKLIN TEMPLETON INC,6282.0,Investment Advice,True,36.6,False,1.0,False
 MDB,1441816,"MongoDB, Inc.",7372.0,Services-Prepackaged Software,True,36.5,True,1.0,True
 DQ,1477641,DAQO NEW ENERGY CORP.,3674.0,Semiconductors & Related Devices,False,36.2,True,1.0,False
@@ -576,16 +574,16 @@ AMRZ,2035989,Amrize Ltd,3241.0,"Cement, Hydraulic",True,36.0,False,1.0,False
 TU,868675,TELUS CORP,4812.0,Radiotelephone Communications,False,35.8,False,1.0,False
 RJF,720005,RAYMOND JAMES FINANCIAL INC,6211.0,"Security Brokers, Dealers & Flotation Companies",True,35.8,False,1.0,False
 VICI,1705696,VICI PROPERTIES INC.,6798.0,Real Estate Investment Trusts,True,35.7,False,1.0,False
+RPRX,1802768,Royalty Pharma plc,2834.0,Pharmaceutical Preparations,True,35.6,False,1.0,False
 ZBH,1136869,"ZIMMER BIOMET HOLDINGS, INC.",3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",True,35.6,False,1.0,False
-SOFI,1818874,"SoFi Technologies, Inc.",6199.0,Finance Services,True,35.6,False,1.0,False
 WST,105770,WEST PHARMACEUTICAL SERVICES INC,3841.0,Surgical & Medical Instruments & Apparatus,True,35.6,False,1.0,False
-RPRX,1802768,Royalty Pharma plc,2834.0,Pharmaceutical Preparations,True,35.5,False,1.0,False
+SOFI,1818874,"SoFi Technologies, Inc.",6199.0,Finance Services,True,35.6,False,1.0,False
 BRO,79282,"BROWN & BROWN, INC.",6411.0,"Insurance Agents, Brokers & Service",True,35.3,False,1.0,False
 SWK,93556,"STANLEY BLACK & DECKER, INC.",3420.0,"Cutlery, Handtools & General Hardware",True,35.2,False,1.0,False
 VMRK,906107,VIVMARK RESIDENTIAL,6798.0,Real Estate Investment Trusts,True,35.1,False,1.0,False
 MBLY,1910139,Mobileye Global Inc.,7372.0,Services-Prepackaged Software,True,35.1,True,1.0,True
-W,1616707,Wayfair Inc.,5961.0,Retail-Catalog & Mail-Order Houses,True,34.9,False,1.0,False
 CDW,1402057,CDW Corp,5961.0,Retail-Catalog & Mail-Order Houses,True,34.9,False,1.0,False
+W,1616707,Wayfair Inc.,5961.0,Retail-Catalog & Mail-Order Houses,True,34.9,False,1.0,False
 ETSY,1370637,ETSY INC,7389.0,"Services-Business Services, NEC",True,34.8,False,1.0,False
 VTMX,1969373,"Vesta Real Estate Corporation, S.A.B. de C.V.",6500.0,Real Estate,False,34.7,False,1.0,False
 NTRS,73124,NORTHERN TRUST CORP,6022.0,State Commercial Banks,True,34.6,False,1.0,False
@@ -596,526 +594,526 @@ NRG,1013871,"NRG ENERGY, INC.",4911.0,Electric Services,True,34.3,False,1.0,Fals
 TSN,100493,"TYSON FOODS, INC.",2015.0,Poultry Slaughtering and Processing,True,34.1,False,1.0,False
 CQP,1383650,"Cheniere Energy Partners, L.P.",4924.0,Natural Gas Distribution,True,34.0,False,1.0,False
 EIX,827052,EDISON INTERNATIONAL,4911.0,Electric Services,True,33.9,False,1.0,False
-RNG,1384905,"RingCentral, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,33.8,True,1.0,True
 ARE,1035443,"ALEXANDRIA REAL ESTATE EQUITIES, INC.",6798.0,Real Estate Investment Trusts,True,33.8,False,1.0,False
+RNG,1384905,"RingCentral, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,33.8,True,1.0,True
 HBAN,49196,HUNTINGTON BANCSHARES INC /MD/,6021.0,National Commercial Banks,True,33.7,False,1.0,False
 DRD,1023512,DRDGOLD LTD,1040.0,Gold and Silver Ores,False,33.6,False,1.0,False
 IONR,1896084,ioneer Ltd,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),False,33.6,False,1.0,False
 FCNCA,798941,FIRST CITIZENS BANCSHARES INC /DE/,6022.0,State Commercial Banks,True,33.4,False,1.0,False
 FOXA,1754301,Fox Corp,4833.0,Television Broadcasting Stations,True,33.2,False,1.0,False
+FSLR,1274494,"FIRST SOLAR, INC.",3674.0,Semiconductors & Related Devices,True,33.0,True,1.0,True
 BTCT,1796514,BTC Digital Ltd.,6199.0,Finance Services,True,33.0,False,1.0,False
 ALB,915913,ALBEMARLE CORP,2821.0,"Plastic Materials, Synth Resins & Nonvulcan Elastomers",True,33.0,False,1.0,False
-FSLR,1274494,"FIRST SOLAR, INC.",3674.0,Semiconductors & Related Devices,True,33.0,True,1.0,True
 PAYC,1590955,"Paycom Software, Inc.",7372.0,Services-Prepackaged Software,True,32.9,True,1.0,True
 MTZ,15615,MASTEC INC,1623.0,"Water, Sewer, Pipeline, Comm & Power Line Construction",True,32.8,False,1.0,False
 TSCO,916365,TRACTOR SUPPLY CO /DE/,5200.0,"Retail-Building Materials, Hardware, Garden Supply",True,32.7,False,1.0,False
 SIRI,908937,SIRIUS XM HOLDINGS INC.,4832.0,Radio Broadcasting Stations,True,32.6,False,1.0,False
 SUNB,2083785,"Sunbelt Rentals Holdings, Inc.",7359.0,"Services-Equipment Rental & Leasing, NEC",True,32.6,False,1.0,False
 NVR,906163,NVR INC,1531.0,Operative Builders,True,32.6,False,1.0,False
-BBD,1160330,BANK BRADESCO,6022.0,State Commercial Banks,False,32.5,False,1.0,False
 CASY,726958,CASEYS GENERAL STORES INC,5500.0,Retail-Auto Dealers & Gasoline Stations,True,32.5,False,1.0,False
+BBD,1160330,BANK BRADESCO,6022.0,State Commercial Banks,False,32.5,False,1.0,False
 RLX,1828365,RLX Technology Inc.,2111.0,Cigarettes,False,32.3,False,1.0,False
 ZBRA,877212,ZEBRA TECHNOLOGIES CORP,3560.0,General Industrial Machinery & Equipment,True,32.1,False,1.0,False
+TDY,1094285,TELEDYNE TECHNOLOGIES INC,3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,32.0,False,1.0,False
 TDOC,1477449,"Teladoc Health, Inc.",8011.0,Services-Offices & Clinics of  Doctors of  Medicine,True,32.0,False,1.0,False
 SWKS,4127,"SKYWORKS SOLUTIONS, INC.",3674.0,Semiconductors & Related Devices,True,32.0,True,1.0,True
-TDY,1094285,TELEDYNE TECHNOLOGIES INC,3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,32.0,False,1.0,False
-BALL,9389,BALL Corp,3411.0,Metal Cans,True,31.9,False,1.0,False
 TW,1758730,Tradeweb Markets Inc.,6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,31.9,False,1.0,False
+BALL,9389,BALL Corp,3411.0,Metal Cans,True,31.9,False,1.0,False
 ES,72741,EVERSOURCE ENERGY,4911.0,Electric Services,True,31.8,False,1.0,False
-RIVN,1874178,"Rivian Automotive, Inc. / DE",3711.0,Motor Vehicles & Passenger Car Bodies,True,31.8,False,1.0,False
 TAK,1395064,TAKEDA PHARMACEUTICAL CO LTD,2834.0,Pharmaceutical Preparations,False,31.8,False,1.0,False
 TPR,1116132,"TAPESTRY, INC.",3100.0,Leather & Leather Products,True,31.8,False,1.0,False
-DTE,936340,DTE ENERGY CO,4911.0,Electric Services,True,31.7,False,1.0,False
+RIVN,1874178,"Rivian Automotive, Inc. / DE",3711.0,Motor Vehicles & Passenger Car Bodies,True,31.8,False,1.0,False
 FTI,1681459,TechnipFMC plc,3533.0,Oil & Gas Field Machinery & Equipment,True,31.7,False,1.0,False
 AGQ,1415311,ProShares Trust II,6221.0,Commodity Contracts Brokers & Dealers,True,31.7,False,1.0,False
+DTE,936340,DTE ENERGY CO,4911.0,Electric Services,True,31.7,False,1.0,False
 MKSI,1049502,MKS INC,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,31.6,False,1.0,False
 HRL,48465,HORMEL FOODS CORP /DE/,2011.0,Meat Packing Plants,True,31.6,False,1.0,False
 GNRC,1474735,GENERAC HOLDINGS INC.,3621.0,Motors & Generators,True,31.5,False,1.0,False
 AEE,1002910,AMEREN CORP,4931.0,Electric & Other Services Combined,True,31.5,False,1.0,False
-ATO,731802,ATMOS ENERGY CORP,4924.0,Natural Gas Distribution,True,31.4,False,1.0,False
 FTAI,1590364,FTAI Aviation Ltd.,7350.0,Services-Miscellaneous Equipment Rental & Leasing,True,31.4,False,1.0,False
+ATO,731802,ATMOS ENERGY CORP,4924.0,Natural Gas Distribution,True,31.4,False,1.0,False
 DOV,29905,DOVER Corp,3530.0,"Construction, Mining & Materials Handling Machinery & Equip",True,31.2,False,1.0,False
 SYF,1601712,Synchrony Financial,6199.0,Finance Services,True,31.1,False,1.0,False
 MNSO,1815846,MINISO Group Holding Ltd,5331.0,Retail-Variety Stores,False,31.1,False,1.0,False
-WSM,719955,WILLIAMS SONOMA INC,5700.0,"Retail-Home Furniture, Furnishings & Equipment Stores",True,31.0,False,1.0,False
-WY,106535,WEYERHAEUSER CO,6798.0,Real Estate Investment Trusts,True,31.0,False,1.0,False
 DECK,910521,DECKERS OUTDOOR CORP,3021.0,Rubber & Plastics Footwear,True,31.0,False,1.0,False
+WY,106535,WEYERHAEUSER CO,6798.0,Real Estate Investment Trusts,True,31.0,False,1.0,False
 CRS,17843,CARPENTER TECHNOLOGY CORP,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",True,31.0,False,1.0,False
 BBY,764478,BEST BUY CO INC,5731.0,"Retail-Radio, Tv & Consumer Electronics Stores",True,30.9,False,1.0,False
 NMR,1163653,NOMURA HOLDINGS INC,6211.0,"Security Brokers, Dealers & Flotation Companies",False,30.8,False,1.0,False
-WRB,11544,BERKLEY W R CORP,6331.0,"Fire, Marine & Casualty Insurance",True,30.7,False,1.0,False
 ROL,84839,ROLLINS INC,7340.0,Services-To Dwellings & Other Buildings,True,30.7,False,1.0,False
-HCM,1648257,HUTCHMED (China) Ltd,2834.0,Pharmaceutical Preparations,False,30.6,False,1.0,False
+WRB,11544,BERKLEY W R CORP,6331.0,"Fire, Marine & Casualty Insurance",True,30.7,False,1.0,False
 FTV,1659166,Fortive Corp,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,30.6,False,1.0,False
-LH,920148,LABCORP HOLDINGS INC.,8071.0,Services-Medical Laboratories,True,30.5,False,1.0,False
-UPST,1647639,"Upstart Holdings, Inc.",6199.0,Finance Services,True,30.5,False,1.0,False
+HCM,1648257,HUTCHMED (China) Ltd,2834.0,Pharmaceutical Preparations,False,30.6,False,1.0,False
 AFRM,1820953,"Affirm Holdings, Inc.",6141.0,Personal Credit Institutions,True,30.5,False,1.0,False
+UPST,1647639,"Upstart Holdings, Inc.",6199.0,Finance Services,True,30.5,False,1.0,False
+LH,920148,LABCORP HOLDINGS INC.,8071.0,Services-Medical Laboratories,True,30.5,False,1.0,False
 ULTA,1403568,"Ulta Beauty, Inc.",5990.0,"Retail-Retail Stores, NEC",True,30.4,False,1.0,False
 CFG,759944,CITIZENS FINANCIAL GROUP INC/RI,6022.0,State Commercial Banks,True,30.3,False,1.0,False
-ASTS,1780312,"AST SpaceMobile, Inc.",4899.0,"Communications Services, NEC",True,30.3,False,1.0,False
 PHM,822416,PULTEGROUP INC/MI/,1531.0,Operative Builders,True,30.3,False,1.0,False
+ASTS,1780312,"AST SpaceMobile, Inc.",4899.0,"Communications Services, NEC",True,30.3,False,1.0,False
 LPLA,1397911,LPL Financial Holdings Inc.,6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,30.2,False,1.0,False
-MGA,749098,MAGNA INTERNATIONAL INC,3714.0,Motor Vehicle Parts & Accessories,False,30.2,False,1.0,False
 SID,1049659,NATIONAL STEEL CO,3310.0,"Steel Works, Blast Furnaces & Rolling & Finishing Mills",False,30.2,False,1.0,False
+MGA,749098,MAGNA INTERNATIONAL INC,3714.0,Motor Vehicle Parts & Accessories,False,30.2,False,1.0,False
 JHX,1159152,James Hardie Industries plc,3272.0,"Concrete Products, Except Block & Brick",True,30.1,False,1.0,False
+WSM,719955,WILLIAMS SONOMA INC,5700.0,"Retail-Home Furniture, Furnishings & Equipment Stores",True,30.0,False,1.0,False
 BR,1383312,"BROADRIDGE FINANCIAL SOLUTIONS, INC.",7389.0,"Services-Business Services, NEC",True,30.0,False,1.0,False
 GLDM,1618181,World Gold Trust,6221.0,Commodity Contracts Brokers & Dealers,True,30.0,False,1.0,False
 GDDY,1609711,GoDaddy Inc.,7373.0,Services-Computer Integrated Systems Design,True,29.9,True,1.0,True
 CLX,21076,CLOROX CO /DE/,2842.0,"Specialty Cleaning, Polishing and Sanitation Preparations",True,29.8,False,1.0,False
-INIO,2109150,INNIO N.V.,3621.0,Motors & Generators,True,29.7,False,1.0,False
 HKD,1809691,AMTD Digital Inc.,6199.0,Finance Services,False,29.7,False,1.0,False
+INIO,2109150,INNIO N.V.,3621.0,Motors & Generators,True,29.7,False,1.0,False
 IOT,1642896,Samsara Inc.,7373.0,Services-Computer Integrated Systems Design,True,29.6,True,1.0,True
 FE,1031296,FIRSTENERGY CORP,4911.0,Electric Services,True,29.6,False,1.0,False
 TOST,1650164,"Toast, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,29.5,True,1.0,True
 FTS,1666175,Fortis Inc.,4911.0,Electric Services,False,29.4,False,1.0,False
+PBA,1546066,PEMBINA PIPELINE CORP,1382.0,Oil & Gas Field Exploration Services,False,29.3,False,1.0,False
 TSEM,928876,TOWER SEMICONDUCTOR LTD,3674.0,Semiconductors & Related Devices,False,29.3,True,1.0,True
 CINF,20286,CINCINNATI FINANCIAL CORP,6331.0,"Fire, Marine & Casualty Insurance",True,29.1,False,1.0,False
 ZTO,1677250,ZTO Express (Cayman) Inc.,4210.0,Trucking & Courier Services (No Air),False,29.1,False,1.0,False
-CNP,1130310,CENTERPOINT ENERGY INC,4911.0,Electric Services,True,29.0,False,1.0,False
 HSIC,1000228,HENRY SCHEIN INC,5047.0,"Wholesale-Medical, Dental & Hospital Equipment & Supplies",True,29.0,False,1.0,False
+CNP,1130310,CENTERPOINT ENERGY INC,4911.0,Electric Services,True,29.0,False,1.0,False
 WB,1595761,WEIBO Corp,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,28.9,True,1.0,False
 PPL,922224,PPL Corp,4911.0,Electric Services,True,28.8,False,1.0,False
 YUMC,1673358,"Yum China Holdings, Inc.",5812.0,Retail-Eating  Places,True,28.8,False,1.0,False
 CPAY,1175454,"CORPAY, INC.",7389.0,"Services-Business Services, NEC",True,28.7,False,1.0,False
-PBA,1546066,PEMBINA PIPELINE CORP,1382.0,Oil & Gas Field Exploration Services,False,28.7,False,1.0,False
 MTSI,1493594,"MACOM Technology Solutions Holdings, Inc.",3674.0,Semiconductors & Related Devices,True,28.5,True,1.0,True
 IHG,858446,INTERCONTINENTAL HOTELS GROUP PLC /NEW/,7011.0,Hotels & Motels,False,28.5,False,1.0,False
 BBWI,701985,"Bath & Body Works, Inc.",5990.0,"Retail-Retail Stores, NEC",True,28.5,False,1.0,False
 UTHR,1082554,UNITED THERAPEUTICS Corp,2834.0,Pharmaceutical Preparations,True,28.4,False,1.0,False
 VRSN,1014473,VERISIGN INC/CA,7371.0,Services-Computer Programming Services,True,28.4,True,1.0,True
-SN,1957132,"SharkNinja, Inc.",3630.0,Household Appliances,True,28.1,False,1.0,False
 PRGO,1585364,PERRIGO Co plc,2834.0,Pharmaceutical Preparations,True,28.1,False,1.0,False
-CHRD,1486159,Chord Energy Corp,1311.0,Crude Petroleum & Natural Gas,True,28.1,False,1.0,False
 INCY,879169,INCYTE CORP,8731.0,Services-Commercial Physical & Biological Research,True,28.1,False,1.0,False
+CHRD,1486159,Chord Energy Corp,1311.0,Crude Petroleum & Natural Gas,True,28.1,False,1.0,False
 CW,26324,CURTISS WRIGHT CORP,3590.0,Misc Industrial & Commercial Machinery & Equipment,True,28.1,False,1.0,False
-SQM,909037,CHEMICAL & MINING CO OF CHILE INC,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),False,27.9,False,1.0,False
 VLTO,1967680,Veralto Corp,3825.0,Instruments For Meas & Testing of  Electricity & Elec Signals,True,27.9,True,1.0,True
-HUBB,48898,HUBBELL INC,3670.0,Electronic Components & Accessories,True,27.9,True,1.0,True
-ATI,1018963,ATI INC,3317.0,Steel Pipe & Tubes,True,27.9,False,1.0,False
 AMC,1411579,"AMC ENTERTAINMENT HOLDINGS, INC.",7830.0,Services-Motion Picture Theaters,True,27.9,False,1.0,False
-NVT,1720635,nVent Electric plc,3550.0,Special Industry Machinery (No Metalworking Machinery),True,27.8,False,1.0,False
+ATI,1018963,ATI INC,3317.0,Steel Pipe & Tubes,True,27.9,False,1.0,False
+HUBB,48898,HUBBELL INC,3670.0,Electronic Components & Accessories,True,27.9,True,1.0,True
+SQM,909037,CHEMICAL & MINING CO OF CHILE INC,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),False,27.9,False,1.0,False
 RIG,1451505,Transocean Ltd.,1381.0,Drilling Oil & Gas Wells,True,27.8,False,1.0,False
+NVT,1720635,nVent Electric plc,3550.0,Special Industry Machinery (No Metalworking Machinery),True,27.8,False,1.0,False
+SN,1957132,"SharkNinja, Inc.",3630.0,Household Appliances,True,27.7,False,1.0,False
 ICLR,1060955,ICON PLC,8731.0,Services-Commercial Physical & Biological Research,False,27.7,False,1.0,False
 JBHT,728535,HUNT J B TRANSPORT SERVICES INC,4213.0,Trucking (No Local),True,27.6,False,1.0,False
 ENTG,1101302,ENTEGRIS INC,3089.0,"Plastics Products, NEC",True,27.6,True,1.0,True
 SW,2005951,Smurfit Westrock plc,2650.0,Paperboard Containers & Boxes,True,27.4,False,1.0,False
 CHD,313927,CHURCH & DWIGHT CO INC /DE/,2840.0,"Soap, Detergents, Cleang Preparations, Perfumes, Cosmetics",True,27.2,False,1.0,False
-ROIV,1635088,Roivant Sciences Ltd.,2834.0,Pharmaceutical Preparations,True,27.1,False,1.0,False
 MKL,1096343,MARKEL GROUP INC.,6331.0,"Fire, Marine & Casualty Insurance",True,27.1,False,1.0,False
 DXC,1688568,DXC Technology Co,7374.0,Services-Computer Processing & Data Preparation,True,27.1,True,1.0,True
-DGX,1022079,QUEST DIAGNOSTICS INC,8071.0,Services-Medical Laboratories,True,26.9,False,1.0,False
 RF,1281761,REGIONS FINANCIAL CORP,6021.0,National Commercial Banks,True,26.9,False,1.0,False
 BLDR,1316835,"Builders FirstSource, Inc.",5211.0,Retail-Lumber & Other Building Materials Dealers,True,26.9,False,1.0,False
 TYL,860731,TYLER TECHNOLOGIES INC,7372.0,Services-Prepackaged Software,True,26.8,True,1.0,True
 FIG,1579878,"Figma, Inc.",7372.0,Services-Prepackaged Software,True,26.7,True,1.0,True
+DGX,1022079,QUEST DIAGNOSTICS INC,8071.0,Services-Medical Laboratories,True,26.7,False,1.0,False
 STRL,874238,"STERLING INFRASTRUCTURE, INC.",1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,26.6,False,1.0,False
 PATH,1734722,"UiPath, Inc.",7372.0,Services-Prepackaged Software,True,26.5,True,1.0,True
+RBRK,1943896,"Rubrik, Inc.",7372.0,Services-Prepackaged Software,True,26.5,True,1.0,True
 AER,1378789,AerCap Holdings N.V.,7359.0,"Services-Equipment Rental & Leasing, NEC",False,26.5,False,1.0,False
 CEPU,1717161,CENTRAL PUERTO S.A.,4911.0,Electric Services,False,26.5,False,1.0,False
-BLIN,1378590,"Bridgeline Digital, Inc.",7372.0,Services-Prepackaged Software,True,26.4,True,1.0,True
 MAA,912595,MID AMERICA APARTMENT COMMUNITIES INC.,6798.0,Real Estate Investment Trusts,True,26.4,False,1.0,False
-LUMN,18926,"Lumen Technologies, Inc.",4813.0,Telephone Communications (No Radiotelephone),True,26.3,False,1.0,False
+ROIV,1635088,Roivant Sciences Ltd.,2834.0,Pharmaceutical Preparations,True,26.4,False,1.0,False
+BLIN,1378590,"Bridgeline Digital, Inc.",7372.0,Services-Prepackaged Software,True,26.4,True,1.0,True
 STE,1757898,STERIS plc,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",True,26.3,False,1.0,False
+LUMN,18926,"Lumen Technologies, Inc.",4813.0,Telephone Communications (No Radiotelephone),True,26.3,False,1.0,False
 AERO,1561861,"Grupo Aeromexico, S.A.B. de C.V.",4512.0,"Air Transportation, Scheduled",False,26.3,False,1.0,False
-IP,51434,INTERNATIONAL PAPER CO /NEW/,2621.0,Paper Mills,True,26.2,False,1.0,False
 INVH,1687229,Invitation Homes Inc.,6510.0,Real Estate Operators (No Developers) & Lessors,True,26.2,False,1.0,False
-TGS,931427,GAS TRANSPORTER OF THE SOUTH INC,4922.0,Natural Gas Transmission,False,26.1,False,1.0,False
+IP,51434,INTERNATIONAL PAPER CO /NEW/,2621.0,Paper Mills,True,26.2,False,1.0,False
+FFIV,1048695,"F5, INC.",3576.0,Computer Communications Equipment,True,26.2,True,1.0,True
 WWD,108312,"Woodward, Inc.",3620.0,Electrical Industrial Apparatus,True,26.1,False,1.0,False
+TGS,931427,GAS TRANSPORTER OF THE SOUTH INC,4922.0,Natural Gas Transmission,False,26.1,False,1.0,False
 NWL,814453,NEWELL BRANDS INC.,3089.0,"Plastics Products, NEC",True,26.0,False,1.0,False
 GPC,40987,GENUINE PARTS CO,5013.0,Wholesale-Motor Vehicle Supplies & New Parts,True,25.9,False,1.0,False
-FFIV,1048695,"F5, INC.",3576.0,Computer Communications Equipment,True,25.9,True,1.0,True
 XPO,1166003,"XPO, Inc.",4700.0,Transportation Services,True,25.8,False,1.0,False
 PTC,857005,PTC INC.,7372.0,Services-Prepackaged Software,True,25.8,True,1.0,True
+CRCL,1876042,"Circle Internet Group, Inc.",6199.0,Finance Services,True,25.5,False,1.0,False
 TPG,1880661,TPG Inc.,6282.0,Investment Advice,True,25.5,False,1.0,False
 EXPD,746515,EXPEDITORS INTERNATIONAL OF WASHINGTON INC,4731.0,Arrangement of  Transportation of  Freight & Cargo,True,25.5,False,1.0,False
 DRI,940944,DARDEN RESTAURANTS INC,5812.0,Retail-Eating  Places,True,25.5,False,1.0,False
-CRCL,1876042,"Circle Internet Group, Inc.",6199.0,Finance Services,True,25.5,False,1.0,False
 RGLD,85535,ROYAL GOLD INC,6795.0,Mineral Royalty Traders,True,25.3,False,1.0,False
 VNET,1508475,"VNET Group, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",False,25.2,True,1.0,False
-KEY,91576,KEYCORP /NEW/,6021.0,National Commercial Banks,True,25.2,False,1.0,False
 AVTR,1722482,"Avantor, Inc.",3826.0,Laboratory Analytical Instruments,True,25.2,False,1.0,False
-HSY,47111,HERSHEY CO,2060.0,Sugar & Confectionery Products,True,25.0,False,1.0,False
+KEY,91576,KEYCORP /NEW/,6021.0,National Commercial Banks,True,25.2,False,1.0,False
 RL,1037038,RALPH LAUREN CORP,2320.0,"Men's & Boys' Furnishgs, Work Clothg, & Allied Garments",True,25.0,False,1.0,False
-OMC,29989,OMNICOM GROUP INC.,7311.0,Services-Advertising Agencies,True,24.9,False,1.0,False
-LEGN,1801198,Legend Biotech Corp,2834.0,Pharmaceutical Preparations,False,24.9,False,1.0,False
-RBRK,1943896,"Rubrik, Inc.",7372.0,Services-Prepackaged Software,True,24.9,True,1.0,True
-CHKP,1015922,CHECK POINT SOFTWARE TECHNOLOGIES LTD,7372.0,Services-Prepackaged Software,False,24.9,True,1.0,False
+HSY,47111,HERSHEY CO,2060.0,Sugar & Confectionery Products,True,25.0,False,1.0,False
 PAAS,771992,PAN AMERICAN SILVER CORP,1040.0,Gold and Silver Ores,False,24.9,False,1.0,False
-SUI,912593,SUN COMMUNITIES INC,6798.0,Real Estate Investment Trusts,True,24.8,False,1.0,False
+LEGN,1801198,Legend Biotech Corp,2834.0,Pharmaceutical Preparations,False,24.9,False,1.0,False
+CHKP,1015922,CHECK POINT SOFTWARE TECHNOLOGIES LTD,7372.0,Services-Prepackaged Software,False,24.9,True,1.0,False
+OMC,29989,OMNICOM GROUP INC.,7311.0,Services-Advertising Agencies,True,24.9,False,1.0,False
 KSPI,1985487,Joint Stock Co Kaspi.kz,7389.0,"Services-Business Services, NEC",False,24.8,False,1.0,False
+SUI,912593,SUN COMMUNITIES INC,6798.0,Real Estate Investment Trusts,True,24.8,False,1.0,False
 LDOS,1336920,"Leidos Holdings, Inc.",7373.0,Services-Computer Integrated Systems Design,True,24.7,True,1.0,True
 PFG,1126328,PRINCIPAL FINANCIAL GROUP INC,6321.0,Accident & Health Insurance,True,24.6,False,1.0,False
 WYNN,1174922,WYNN RESORTS LTD,7011.0,Hotels & Motels,True,24.5,False,1.0,False
-BAM,1937926,Brookfield Asset Management Ltd.,6282.0,Investment Advice,True,24.5,False,1.0,False
 FN,1408710,Fabrinet,3661.0,Telephone & Telegraph Apparatus,True,24.5,True,1.0,True
+BAM,1937926,Brookfield Asset Management Ltd.,6282.0,Investment Advice,True,24.5,False,1.0,False
 DUOL,1562088,"Duolingo, Inc.",7372.0,Services-Prepackaged Software,True,24.5,True,1.0,True
 BILL,1786352,"BILL Holdings, Inc.",7372.0,Services-Prepackaged Software,True,24.4,True,1.0,True
 BIO,12208,"BIO-RAD LABORATORIES, INC.",3826.0,Laboratory Analytical Instruments,True,24.3,False,1.0,False
 NXT,1852131,Nextpower Inc.,3674.0,Semiconductors & Related Devices,True,24.1,True,1.0,True
 CNH,1567094,CNH Industrial N.V.,3531.0,Construction Machinery & Equip,True,24.0,False,1.0,False
 FDXF,2082247,"FedEx Freight Holding Company, Inc.",4513.0,Air Courier Services,True,24.0,False,1.0,False
-PODD,1145197,INSULET CORP,3841.0,Surgical & Medical Instruments & Apparatus,True,23.9,False,1.0,False
-M,794367,"Macy's, Inc.",5311.0,Retail-Department Stores,True,23.9,False,1.0,False
-MOH,1179929,"MOLINA HEALTHCARE, INC.",6324.0,Hospital & Medical Service Plans,True,23.9,False,1.0,False
 L,60086,LOEWS CORP,6331.0,"Fire, Marine & Casualty Insurance",True,23.9,False,1.0,False
-LII,1069202,LENNOX INTERNATIONAL INC,3585.0,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,True,23.8,False,1.0,False
+PODD,1145197,INSULET CORP,3841.0,Surgical & Medical Instruments & Apparatus,True,23.9,False,1.0,False
+MOH,1179929,"MOLINA HEALTHCARE, INC.",6324.0,Hospital & Medical Service Plans,True,23.9,False,1.0,False
+M,794367,"Macy's, Inc.",5311.0,Retail-Department Stores,True,23.9,False,1.0,False
 CMS,811156,CMS ENERGY CORP,4931.0,Electric & Other Services Combined,True,23.8,False,1.0,False
-TAP,24545,MOLSON COORS BEVERAGE CO,2082.0,Malt Beverages,True,23.7,False,1.0,False
+LII,1069202,LENNOX INTERNATIONAL INC,3585.0,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,True,23.8,False,1.0,False
 DKNG,1883685,DraftKings Inc.,7990.0,Services-Miscellaneous Amusement & Recreation,True,23.7,False,1.0,False
+TAP,24545,MOLSON COORS BEVERAGE CO,2082.0,Malt Beverages,True,23.7,False,1.0,False
 CZR,1590895,"Caesars Entertainment, Inc.",7011.0,Hotels & Motels,True,23.7,False,1.0,False
 GH,1576280,"Guardant Health, Inc.",8071.0,Services-Medical Laboratories,True,23.7,False,1.0,False
-TRMB,864749,TRIMBLE INC.,3829.0,"Measuring & Controlling Devices, NEC",True,23.6,False,1.0,False
 BURL,1579298,"Burlington Stores, Inc.",5311.0,Retail-Department Stores,True,23.6,False,1.0,False
+TRMB,864749,TRIMBLE INC.,3829.0,"Measuring & Controlling Devices, NEC",True,23.6,False,1.0,False
+BAH,1443646,Booz Allen Hamilton Holding Corp,8742.0,Services-Management Consulting Services,True,23.5,False,1.0,False
 BMRN,1048477,BIOMARIN PHARMACEUTICAL INC,2834.0,Pharmaceutical Preparations,True,23.5,False,1.0,False
 SBS,1170858,COMPANHIA DE SANEAMENTO BASICO DO ESTADO DE SAO PAULO-SABESP,4941.0,Water Supply,False,23.5,False,1.0,False
-BAH,1443646,Booz Allen Hamilton Holding Corp,8742.0,Services-Management Consulting Services,True,23.5,False,1.0,False
-FMS,1333141,Fresenius Medical Care AG,8090.0,"Services-Misc Health & Allied Services, NEC",False,23.4,False,1.0,False
+TRU,1552033,TransUnion,7320.0,"Services-Consumer Credit Reporting, Collection Agencies",True,23.4,False,1.0,False
 KMX,1170010,CARMAX INC,5500.0,Retail-Auto Dealers & Gasoline Stations,True,23.4,False,1.0,False
 MGM,789570,MGM Resorts International,7011.0,Hotels & Motels,True,23.4,False,1.0,False
+FMS,1333141,Fresenius Medical Care AG,8090.0,"Services-Misc Health & Allied Services, NEC",False,23.4,False,1.0,False
 PLUG,1093691,PLUG POWER INC,3620.0,Electrical Industrial Apparatus,True,23.4,False,1.0,False
-TRU,1552033,TransUnion,7320.0,"Services-Consumer Credit Reporting, Collection Agencies",True,23.4,False,1.0,False
 BG,1996862,Bunge Global SA,2070.0,Fats & Oils,True,23.3,False,1.0,False
 CG,1527166,Carlyle Group Inc.,6282.0,Investment Advice,True,23.3,False,1.0,False
 ASAN,1477720,"Asana, Inc.",7372.0,Services-Prepackaged Software,True,23.2,True,1.0,True
-USFD,1665918,US Foods Holding Corp.,5140.0,Wholesale-Groceries & Related Products,True,23.1,False,1.0,False
 MESO,1345099,MESOBLAST LTD,2836.0,"Biological Products, (No Diagnostic Substances)",False,23.1,False,1.0,False
-CHRW,1043277,"C. H. ROBINSON WORLDWIDE, INC.",4731.0,Arrangement of  Transportation of  Freight & Cargo,True,23.0,False,1.0,False
+USFD,1665918,US Foods Holding Corp.,5140.0,Wholesale-Groceries & Related Products,True,23.1,False,1.0,False
 POOL,945841,POOL CORP,5090.0,Wholesale-Misc Durable Goods,True,23.0,False,1.0,False
+CHRW,1043277,"C. H. ROBINSON WORLDWIDE, INC.",4731.0,Arrangement of  Transportation of  Freight & Cargo,True,23.0,False,1.0,False
+NI,1111711,NISOURCE INC.,4931.0,Electric & Other Services Combined,True,22.9,False,1.0,False
 ESS,920522,"ESSEX PROPERTY TRUST, INC.",6798.0,Real Estate Investment Trusts,True,22.9,False,1.0,False
 THC,70318,TENET HEALTHCARE CORP,8062.0,"Services-General Medical & Surgical Hospitals, NEC",True,22.9,False,1.0,False
-NI,1111711,NISOURCE INC.,4931.0,Electric & Other Services Combined,True,22.9,False,1.0,False
+DOC,765880,"HEALTHPEAK PROPERTIES, INC.",6798.0,Real Estate Investment Trusts,True,22.8,False,1.0,False
 NVCR,1645113,NovoCure Ltd,3841.0,Surgical & Medical Instruments & Apparatus,True,22.8,False,1.0,False
 AGI,1178819,ALAMOS GOLD INC,1040.0,Gold and Silver Ores,False,22.8,False,1.0,False
-DOC,765880,"HEALTHPEAK PROPERTIES, INC.",6798.0,Real Estate Investment Trusts,True,22.8,False,1.0,False
 RVTY,31791,"REVVITY, INC.",3826.0,Laboratory Analytical Instruments,True,22.7,False,1.0,False
 CRL,1100682,"CHARLES RIVER LABORATORIES INTERNATIONAL, INC.",8731.0,Services-Commercial Physical & Biological Research,True,22.6,False,1.0,False
-SMFG,1022837,"SUMITOMO MITSUI FINANCIAL GROUP, INC.",6029.0,"Commercial Banks, NEC",False,22.4,False,1.0,False
-PS,2026053,PERSHING SQUARE INC.,6282.0,Investment Advice,True,22.4,False,1.0,False
 SSNC,1402436,SS&C Technologies Holdings Inc,7372.0,Services-Prepackaged Software,True,22.4,True,1.0,True
+PS,2026053,PERSHING SQUARE INC.,6282.0,Investment Advice,True,22.4,False,1.0,False
+SMFG,1022837,"SUMITOMO MITSUI FINANCIAL GROUP, INC.",6029.0,"Commercial Banks, NEC",False,22.4,False,1.0,False
 AMCR,1748790,Amcor plc,3990.0,Miscellaneous Manufacturing Industries,True,22.4,False,1.0,False
-PKG,75677,PACKAGING CORP OF AMERICA,2650.0,Paperboard Containers & Boxes,True,22.3,False,1.0,False
 CF,1324404,"CF Industries Holdings, Inc.",2870.0,Agricultural Chemicals,True,22.3,False,1.0,False
+PKG,75677,PACKAGING CORP OF AMERICA,2650.0,Paperboard Containers & Boxes,True,22.3,False,1.0,False
 COO,711404,"COOPER COMPANIES, INC.",3851.0,Ophthalmic Goods,True,22.2,False,1.0,False
 BXP,1037540,"BXP, Inc.",6798.0,Real Estate Investment Trusts,True,22.2,False,1.0,False
 AKAM,1086222,AKAMAI TECHNOLOGIES INC,7389.0,"Services-Business Services, NEC",True,22.0,False,1.0,False
 RH,1528849,RH,5712.0,Retail-Furniture Stores,True,21.9,False,1.0,False
-RBA,1046102,RB GLOBAL INC.,7389.0,"Services-Business Services, NEC",True,21.8,False,1.0,False
-PAA,1070423,PLAINS ALL AMERICAN PIPELINE LP,4610.0,Pipe Lines (No Natural Gas),True,21.8,False,1.0,False
 UAA,1336917,"Under Armour, Inc.",2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,True,21.8,False,1.0,False
-AS,1988894,"Amer Sports, Inc.",2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,False,21.8,False,1.0,False
 TAL,1499620,TAL Education Group,8200.0,Services-Educational Services,False,21.8,False,1.0,False
 MKTX,1278021,MARKETAXESS HOLDINGS INC,6211.0,"Security Brokers, Dealers & Flotation Companies",True,21.8,False,1.0,False
-OPTU,1702780,"Optimum Communications, Inc.",4841.0,Cable & Other Pay Television Services,True,21.7,False,1.0,False
-DINO,1915657,HF Sinclair Corp,4610.0,Pipe Lines (No Natural Gas),True,21.7,False,1.0,False
+AS,1988894,"Amer Sports, Inc.",2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,False,21.8,False,1.0,False
+PAA,1070423,PLAINS ALL AMERICAN PIPELINE LP,4610.0,Pipe Lines (No Natural Gas),True,21.8,False,1.0,False
+RBA,1046102,RB GLOBAL INC.,7389.0,"Services-Business Services, NEC",True,21.8,False,1.0,False
 BWA,908255,BORGWARNER INC,3714.0,Motor Vehicle Parts & Accessories,True,21.7,False,1.0,False
-SNX,1177394,TD SYNNEX CORP,5045.0,Wholesale-Computers & Peripheral Equipment & Software,True,21.5,False,1.0,False
+OPTU,1702780,"Optimum Communications, Inc.",4841.0,Cable & Other Pay Television Services,True,21.7,False,1.0,False
+DINO,1915657,HF Sinclair Corp,4610.0,Pipe Lines (No Natural Gas),True,21.6,False,1.0,False
 AMKR,1047127,"AMKOR TECHNOLOGY, INC.",3674.0,Semiconductors & Related Devices,True,21.5,True,1.0,True
+SNX,1177394,TD SYNNEX CORP,5045.0,Wholesale-Computers & Peripheral Equipment & Software,True,21.5,False,1.0,False
 BZ,1842827,Kanzhun Ltd,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,21.5,True,1.0,False
-VTRS,1792044,Viatris Inc,2834.0,Pharmaceutical Preparations,True,21.5,False,1.0,False
-CDE,215466,"Coeur Mining, Inc.",1040.0,Gold and Silver Ores,True,21.5,False,1.0,False
 CSL,790051,CARLISLE COMPANIES INC,3060.0,"Fabricated Rubber Products, NEC",True,21.5,False,1.0,False
+CDE,215466,"Coeur Mining, Inc.",1040.0,Gold and Silver Ores,True,21.5,False,1.0,False
 GAP,39911,GAP INC,5651.0,Retail-Family Clothing Stores,True,21.4,False,1.0,False
-TECH,842023,BIO-TECHNE Corp,2836.0,"Biological Products, (No Diagnostic Substances)",True,21.3,False,1.0,False
-RS,861884,"RELIANCE, INC.",5051.0,Wholesale-Metals Service Centers & of fices,True,21.3,False,1.0,False
 TXG,1770787,"10x Genomics, Inc.",3826.0,Laboratory Analytical Instruments,True,21.3,False,1.0,False
 DT,1773383,"Dynatrace, Inc.",7372.0,Services-Prepackaged Software,True,21.3,True,1.0,True
 SNA,91440,Snap-on Inc,3420.0,"Cutlery, Handtools & General Hardware",True,21.3,False,1.0,False
+PR,1658566,Permian Resources Corp,1311.0,Crude Petroleum & Natural Gas,True,21.3,False,1.0,False
+TECH,842023,BIO-TECHNE Corp,2836.0,"Biological Products, (No Diagnostic Substances)",True,21.3,False,1.0,False
+RS,861884,"RELIANCE, INC.",5051.0,Wholesale-Metals Service Centers & of fices,True,21.2,False,1.0,False
 GME,1326380,GameStop Corp.,5734.0,Retail-Computer & Computer Software Stores,True,21.2,False,1.0,False
 IREN,1878848,IREN Ltd,6199.0,Finance Services,True,21.1,False,1.0,False
-MHK,851968,MOHAWK INDUSTRIES INC,2273.0,Carpets & Rugs,True,21.0,False,1.0,False
-TKC,1071321,TURKCELL ILETISIM HIZMETLERI A S,4813.0,Telephone Communications (No Radiotelephone),False,21.0,False,1.0,False
-VNO,899689,VORNADO REALTY TRUST,6798.0,Real Estate Investment Trusts,True,21.0,False,1.0,False
 DPZ,1286681,DOMINOS PIZZA INC,5140.0,Wholesale-Groceries & Related Products,True,21.0,False,1.0,False
+TKC,1071321,TURKCELL ILETISIM HIZMETLERI A S,4813.0,Telephone Communications (No Radiotelephone),False,21.0,False,1.0,False
+MHK,851968,MOHAWK INDUSTRIES INC,2273.0,Carpets & Rugs,True,21.0,False,1.0,False
+VNO,899689,VORNADO REALTY TRUST,6798.0,Real Estate Investment Trusts,True,21.0,False,1.0,False
+VTRS,1792044,Viatris Inc,2834.0,Pharmaceutical Preparations,True,20.9,False,1.0,False
 LSCC,855658,LATTICE SEMICONDUCTOR CORP,3674.0,Semiconductors & Related Devices,True,20.9,True,1.0,True
+LOGI,1032975,LOGITECH INTERNATIONAL S.A.,3577.0,"Computer Peripheral Equipment, NEC",True,20.8,True,1.0,True
+YPF,904851,YPF SOCIEDAD ANONIMA,2911.0,Petroleum Refining,False,20.8,False,1.0,False
 ULS,1901440,UL Solutions Inc.,8734.0,Services-Testing Laboratories,True,20.8,False,1.0,False
 BSY,1031308,BENTLEY SYSTEMS INC,7372.0,Services-Prepackaged Software,True,20.8,True,1.0,True
-YPF,904851,YPF SOCIEDAD ANONIMA,2911.0,Petroleum Refining,False,20.8,False,1.0,False
-LOGI,1032975,LOGITECH INTERNATIONAL S.A.,3577.0,"Computer Peripheral Equipment, NEC",True,20.8,True,1.0,True
-CPB,16732,CAMPBELL'S Co,2000.0,Food and Kindred Products,True,20.6,False,1.0,False
-WLK,1262823,WESTLAKE CORP,2860.0,Industrial Organic Chemicals,True,20.6,False,1.0,False
+ARXS,2093536,"Arxis, Inc.",3728.0,"Aircraft Parts & Auxiliary Equipment, NEC",True,20.8,False,1.0,False
 NTNX,1618732,"Nutanix, Inc.",7372.0,Services-Prepackaged Software,True,20.6,True,1.0,True
+WLK,1262823,WESTLAKE CORP,2860.0,Industrial Organic Chemicals,True,20.6,False,1.0,False
 ALLY,40729,Ally Financial Inc.,6022.0,State Commercial Banks,True,20.6,False,1.0,False
+CPB,16732,CAMPBELL'S Co,2000.0,Food and Kindred Products,True,20.6,False,1.0,False
 AES,874761,AES CORP,4991.0,Cogeneration Services & Small Power Producers,True,20.4,False,1.0,False
-RBC,1324948,RBC Bearings INC,3562.0,Ball & Roller Bearings,True,20.4,False,1.0,False
-TLN,1622536,Talen Energy Corp,4911.0,Electric Services,True,20.4,False,1.0,False
 EVRG,1711269,"Evergy, Inc.",4931.0,Electric & Other Services Combined,True,20.4,False,1.0,False
-PR,1658566,Permian Resources Corp,1311.0,Crude Petroleum & Natural Gas,True,20.4,False,1.0,False
-AA,1675149,Alcoa Corp,3334.0,Primary Production of  Aluminum,True,20.3,False,1.0,False
+TLN,1622536,Talen Energy Corp,4911.0,Electric Services,True,20.4,False,1.0,False
+RBC,1324948,RBC Bearings INC,3562.0,Ball & Roller Bearings,True,20.4,False,1.0,False
 QS,1811414,QuantumScape Corp,3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",True,20.3,False,1.0,False
-IONQ,1824920,"IonQ, Inc.",7373.0,Services-Computer Integrated Systems Design,True,20.2,True,1.0,True
+AA,1675149,Alcoa Corp,3334.0,Primary Production of  Aluminum,True,20.3,False,1.0,False
 WSO,105016,WATSCO INC,5070.0,Wholesale-Hardware & Plumbing & Heating Equipment & Supplies,True,20.2,False,1.0,False
+IONQ,1824920,"IonQ, Inc.",7373.0,Services-Computer Integrated Systems Design,True,20.2,True,1.0,True
 GWRE,1528396,"Guidewire Software, Inc.",7372.0,Services-Prepackaged Software,True,20.1,True,1.0,True
-TFX,96943,TELEFLEX INC,3841.0,Surgical & Medical Instruments & Apparatus,True,20.0,False,1.0,False
-ARXS,2093536,"Arxis, Inc.",3728.0,"Aircraft Parts & Auxiliary Equipment, NEC",True,20.0,False,1.0,False
-CPRI,1530721,Capri Holdings Ltd,3100.0,Leather & Leather Products,True,20.0,False,1.0,False
 GEN,849399,Gen Digital Inc.,7372.0,Services-Prepackaged Software,True,20.0,True,1.0,True
+CPRI,1530721,Capri Holdings Ltd,3100.0,Leather & Leather Products,True,20.0,False,1.0,False
+TFX,96943,TELEFLEX INC,3841.0,Surgical & Medical Instruments & Apparatus,True,20.0,False,1.0,False
 TTMI,1116942,TTM TECHNOLOGIES INC,3672.0,Printed Circuit Boards,True,20.0,True,1.0,True
 SEDG,1419612,"SOLAREDGE TECHNOLOGIES, INC.",3674.0,Semiconductors & Related Devices,True,19.9,True,1.0,True
-DKS,1089063,"DICK'S SPORTING GOODS, INC.",5940.0,Retail-Miscellaneous Shopping Goods Stores,True,19.9,False,1.0,False
 BWXT,1486957,"BWX Technologies, Inc.",3510.0,Engines & Turbines,True,19.9,False,1.0,False
+OVV,1792580,Ovintiv Inc.,1311.0,Crude Petroleum & Natural Gas,True,19.9,False,1.0,False
+DKS,1089063,"DICK'S SPORTING GOODS, INC.",5940.0,Retail-Miscellaneous Shopping Goods Stores,True,19.9,False,1.0,False
 CRBG,1889539,"Corebridge Financial, Inc.",6311.0,Life Insurance,True,19.8,False,1.0,False
-LYFT,1759509,"Lyft, Inc.",7389.0,"Services-Business Services, NEC",True,19.7,False,1.0,False
 LNT,352541,ALLIANT ENERGY CORP,4931.0,Electric & Other Services Combined,True,19.7,False,1.0,False
-SMMT,1599298,Summit Therapeutics Inc.,2834.0,Pharmaceutical Preparations,True,19.6,False,1.0,False
-CELH,1341766,"Celsius Holdings, Inc.",2086.0,Bottled & Canned Soft Drinks & Carbonated Waters,True,19.6,False,1.0,False
+LYFT,1759509,"Lyft, Inc.",7389.0,"Services-Business Services, NEC",True,19.7,False,1.0,False
 SITM,1451809,SITIME Corp,3674.0,Semiconductors & Related Devices,True,19.6,True,1.0,True
+CELH,1341766,"Celsius Holdings, Inc.",2086.0,Bottled & Canned Soft Drinks & Carbonated Waters,True,19.6,False,1.0,False
+SMMT,1599298,Summit Therapeutics Inc.,2834.0,Pharmaceutical Preparations,True,19.6,False,1.0,False
 YSG,1819580,Yatsen Holding Ltd,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",False,19.5,False,1.0,False
 TXT,217346,TEXTRON INC,3720.0,Aircraft & Parts,True,19.4,False,1.0,False
-MOB,1898643,Mobilicom Ltd,3721.0,Aircraft,False,19.2,False,1.0,False
-MOMO,1610601,Hello Group Inc.,7372.0,Services-Prepackaged Software,False,19.2,True,1.0,False
 SGI,1206264,SOMNIGROUP INTERNATIONAL INC.,2510.0,Household Furniture,True,19.2,False,1.0,False
+MOMO,1610601,Hello Group Inc.,7372.0,Services-Prepackaged Software,False,19.2,True,1.0,False
+MOB,1898643,Mobilicom Ltd,3721.0,Aircraft,False,19.2,False,1.0,False
 NICE,1003935,NICE Ltd.,7372.0,Services-Prepackaged Software,False,19.1,True,1.0,False
 GDRX,1809519,"GoodRx Holdings, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,19.1,True,1.0,True
 ACI,1646972,"Albertsons Companies, Inc.",5411.0,Retail-Grocery Stores,True,19.1,False,1.0,False
-OVV,1792580,Ovintiv Inc.,1311.0,Crude Petroleum & Natural Gas,True,19.1,False,1.0,False
 APG,1796209,APi Group Corp,7340.0,Services-To Dwellings & Other Buildings,True,19.0,False,1.0,False
 FWONA,1560385,Liberty Media Corp,4833.0,Television Broadcasting Stations,True,19.0,False,1.0,False
 CAG,23217,CONAGRA BRANDS INC.,2000.0,Food and Kindred Products,True,19.0,False,1.0,False
-CE,1306830,Celanese Corp,2820.0,"Plastic Material, Synth Resin/Rubber, Cellulos (No Glass)",True,18.9,False,1.0,False
-FDS,1013237,FACTSET RESEARCH SYSTEMS INC,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,18.9,True,1.0,True
 WES,1423902,"Western Midstream Partners, LP",4922.0,Natural Gas Transmission,True,18.9,False,1.0,False
+CE,1306830,Celanese Corp,2820.0,"Plastic Material, Synth Resin/Rubber, Cellulos (No Glass)",True,18.9,False,1.0,False
 ONTO,704532,ONTO INNOVATION INC.,3829.0,"Measuring & Controlling Devices, NEC",True,18.9,False,1.0,False
+FDS,1013237,FACTSET RESEARCH SYSTEMS INC,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,18.9,True,1.0,True
 H,1468174,Hyatt Hotels Corp,7011.0,Hotels & Motels,True,18.8,False,1.0,False
+MEDP,1668397,"Medpace Holdings, Inc.",8731.0,Services-Commercial Physical & Biological Research,True,18.7,False,1.0,False
 PNFP,2082866,"Pinnacle Financial Partners, Inc.",6021.0,National Commercial Banks,True,18.7,False,1.0,False
 AVY,8818,Avery Dennison Corp,2670.0,Converted Paper & Paperboard Prods (No Contaners/Boxes),True,18.7,False,1.0,False
+J,52988,JACOBS SOLUTIONS INC.,1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,18.6,False,1.0,False
 BFH,1101215,"BREAD FINANCIAL HOLDINGS, INC.",6141.0,Personal Credit Institutions,True,18.6,False,1.0,False
 OKLO,1849056,Oklo Inc.,4911.0,Electric Services,True,18.6,False,1.0,False
-J,52988,JACOBS SOLUTIONS INC.,1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,18.6,False,1.0,False
 MAS,62996,MASCO CORP /DE/,3430.0,"Heating Equip, Except Elec & Warm Air; & Plumbing Fixtures",True,18.5,False,1.0,False
 IEX,832101,IDEX CORP /DE/,3561.0,Pumps & Pumping Equipment,True,18.5,False,1.0,False
-CPT,906345,CAMDEN PROPERTY TRUST,6798.0,Real Estate Investment Trusts,True,18.4,False,1.0,False
 PNR,77360,PENTAIR plc,3550.0,Special Industry Machinery (No Metalworking Machinery),True,18.4,False,1.0,False
-SJM,91419,J M SMUCKER Co,2033.0,"Canned, Fruits, Veg, Preserves, Jams & Jellies",True,18.3,False,1.0,False
-CLVT,1764046,CLARIVATE PLC,7374.0,Services-Computer Processing & Data Preparation,True,18.3,True,1.0,True
+CPT,906345,CAMDEN PROPERTY TRUST,6798.0,Real Estate Investment Trusts,True,18.4,False,1.0,False
 GTM,1794515,ZoomInfo Technologies Inc.,7372.0,Services-Prepackaged Software,True,18.3,True,1.0,True
-CAR,723612,"AVIS BUDGET GROUP, INC.",7510.0,Services-Auto Rental & Leasing (No Drivers),True,18.3,False,1.0,False
-ELS,895417,EQUITY LIFESTYLE PROPERTIES INC,6798.0,Real Estate Investment Trusts,True,18.3,False,1.0,False
-MEDP,1668397,"Medpace Holdings, Inc.",8731.0,Services-Commercial Physical & Biological Research,True,18.3,False,1.0,False
 NDSN,72331,NORDSON CORP,3569.0,"General Industrial Machinery & Equipment, NEC",True,18.3,False,1.0,False
+ELS,895417,EQUITY LIFESTYLE PROPERTIES INC,6798.0,Real Estate Investment Trusts,True,18.3,False,1.0,False
+CLVT,1764046,CLARIVATE PLC,7374.0,Services-Computer Processing & Data Preparation,True,18.3,True,1.0,True
+CAR,723612,"AVIS BUDGET GROUP, INC.",7510.0,Services-Auto Rental & Leasing (No Drivers),True,18.3,False,1.0,False
+SJM,91419,J M SMUCKER Co,2033.0,"Canned, Fruits, Veg, Preserves, Jams & Jellies",True,18.3,False,1.0,False
+APA,1841666,APA Corp,1311.0,Crude Petroleum & Natural Gas,True,18.2,False,1.0,False
 IEP,813762,ICAHN ENTERPRISES L.P.,2911.0,Petroleum Refining,True,18.2,False,1.0,False
-EWBC,1069157,EAST WEST BANCORP INC,6022.0,State Commercial Banks,True,18.2,False,1.0,False
-UDR,74208,"UDR, Inc.",6798.0,Real Estate Investment Trusts,True,18.1,False,1.0,False
 DVA,927066,DAVITA INC.,8090.0,"Services-Misc Health & Allied Services, NEC",True,18.1,False,1.0,False
+UDR,74208,"UDR, Inc.",6798.0,Real Estate Investment Trusts,True,18.1,False,1.0,False
 LNC,59558,LINCOLN NATIONAL CORP,6311.0,Life Insurance,True,18.1,False,1.0,False
-PENN,921738,"PENN Entertainment, Inc.",7011.0,Hotels & Motels,True,18.0,False,1.0,False
 CLF,764065,CLEVELAND-CLIFFS INC.,1000.0,Metal Mining,True,18.0,False,1.0,False
-PFGC,1618673,Performance Food Group Co,5141.0,"Wholesale-Groceries, General Line",True,18.0,False,1.0,False
 ITT,216228,ITT INC.,3561.0,Pumps & Pumping Equipment,True,18.0,False,1.0,False
 HST,1070750,"HOST HOTELS & RESORTS, INC.",6798.0,Real Estate Investment Trusts,True,18.0,False,1.0,False
+PFGC,1618673,Performance Food Group Co,5141.0,"Wholesale-Groceries, General Line",True,18.0,False,1.0,False
 WIX,1576789,Wix.com Ltd.,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,18.0,True,1.0,False
-IVZ,914208,Invesco Ltd.,6282.0,Investment Advice,True,17.9,False,1.0,False
-OC,1370946,Owens Corning,3290.0,"Abrasive, Asbestos & Misc Nonmetallic Mineral Prods",True,17.9,False,1.0,False
-DNA,1830214,"Ginkgo Bioworks Holdings, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,17.9,False,1.0,False
+EWBC,1069157,EAST WEST BANCORP INC,6022.0,State Commercial Banks,True,18.0,False,1.0,False
+PENN,921738,"PENN Entertainment, Inc.",7011.0,Hotels & Motels,True,18.0,False,1.0,False
 VICR,751978,VICOR CORP,3679.0,"Electronic Components, NEC",True,17.9,True,1.0,True
-SUZ,909327,Suzano S.A.,2621.0,Paper Mills,False,17.8,False,1.0,False
+DNA,1830214,"Ginkgo Bioworks Holdings, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,17.9,False,1.0,False
+OC,1370946,Owens Corning,3290.0,"Abrasive, Asbestos & Misc Nonmetallic Mineral Prods",True,17.9,False,1.0,False
+IVZ,914208,Invesco Ltd.,6282.0,Investment Advice,True,17.9,False,1.0,False
 RPM,110621,RPM INTERNATIONAL INC/DE/,2851.0,"Paints, Varnishes, Lacquers, Enamels & Allied Prods",True,17.8,False,1.0,False
-EG,1095073,"EVEREST GROUP, LTD.",6331.0,"Fire, Marine & Casualty Insurance",True,17.8,False,1.0,False
-ACM,868857,AECOM,8711.0,Services-Engineering Services,True,17.8,False,1.0,False
 WPC,1025378,W. P. Carey Inc.,6798.0,Real Estate Investment Trusts,True,17.8,False,1.0,False
-RGA,898174,REINSURANCE GROUP OF AMERICA INC,6311.0,Life Insurance,True,17.8,False,1.0,False
+ACM,868857,AECOM,8711.0,Services-Engineering Services,True,17.8,False,1.0,False
+SUZ,909327,Suzano S.A.,2621.0,Paper Mills,False,17.8,False,1.0,False
+EG,1095073,"EVEREST GROUP, LTD.",6331.0,"Fire, Marine & Casualty Insurance",True,17.8,False,1.0,False
 WCC,929008,WESCO INTERNATIONAL INC,5063.0,"Wholesale-Electrical Apparatus & Equipment, Wiring Supplies ",True,17.8,False,1.0,False
-LKQ,1065696,LKQ CORP,5010.0,Wholesale-Motor Vehicles & Motor Vehicle Parts & Supplies,True,17.7,False,1.0,False
-ELAN,1739104,Elanco Animal Health Inc,2834.0,Pharmaceutical Preparations,True,17.7,False,1.0,False
-AKTX,1541157,Akari Therapeutics Plc,2834.0,Pharmaceutical Preparations,True,17.7,False,1.0,False
 NVAX,1000694,NOVAVAX INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,17.7,False,1.0,False
+ELAN,1739104,Elanco Animal Health Inc,2834.0,Pharmaceutical Preparations,True,17.7,False,1.0,False
+LKQ,1065696,LKQ CORP,5010.0,Wholesale-Motor Vehicles & Motor Vehicle Parts & Supplies,True,17.7,False,1.0,False
+AKTX,1541157,Akari Therapeutics Plc,2834.0,Pharmaceutical Preparations,True,17.7,False,1.0,False
 DOCN,1582961,"DigitalOcean Holdings, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,17.6,True,1.0,True
 NLY,1043219,ANNALY CAPITAL MANAGEMENT INC,6798.0,Real Estate Investment Trusts,True,17.6,False,1.0,False
 NWSA,1564708,NEWS CORP,2711.0,Newspapers: Publishing or  Publishing & Printing,True,17.5,False,1.0,False
 MANH,1056696,MANHATTAN ASSOCIATES INC,7372.0,Services-Prepackaged Software,True,17.5,True,1.0,True
 SFM,1575515,"Sprouts Farmers Market, Inc.",5411.0,Retail-Grocery Stores,True,17.5,False,1.0,False
-JLL,1037976,JONES LANG LASALLE INC,6531.0,Real Estate Agents & Managers (For Others),True,17.5,False,1.0,False
 JEF,96223,Jefferies Financial Group Inc.,6211.0,"Security Brokers, Dealers & Flotation Companies",True,17.5,False,1.0,False
 EQH,1333986,"Equitable Holdings, Inc.",6411.0,"Insurance Agents, Brokers & Service",True,17.5,False,1.0,False
-NBIX,914475,NEUROCRINE BIOSCIENCES INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,17.4,False,1.0,False
-CHDN,20212,Churchill Downs Inc,7948.0,"Services-Racing, Including Track Operation",True,17.4,False,1.0,False
+JLL,1037976,JONES LANG LASALLE INC,6531.0,Real Estate Agents & Managers (For Others),True,17.5,False,1.0,False
 KSS,885639,KOHLS Corp,5311.0,Retail-Department Stores,True,17.4,False,1.0,False
 KTOS,1069258,"KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",3760.0,Guided Missiles & Space Vehicles & Parts,True,17.4,False,1.0,False
+NBIX,914475,NEUROCRINE BIOSCIENCES INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,17.4,False,1.0,False
+CHDN,20212,Churchill Downs Inc,7948.0,"Services-Racing, Including Track Operation",True,17.4,False,1.0,False
 HII,1501585,"HUNTINGTON INGALLS INDUSTRIES, INC.",3730.0,Ship & Boat Building & Repairing,True,17.4,False,1.0,False
-FNF,1331875,"Fidelity National Financial, Inc.",6361.0,Title Insurance,True,17.3,False,1.0,False
-APA,1841666,APA Corp,1311.0,Crude Petroleum & Natural Gas,True,17.3,False,1.0,False
 AVAV,1368622,AeroVironment Inc,3721.0,Aircraft,True,17.3,False,1.0,False
-AR,1433270,ANTERO RESOURCES Corp,1311.0,Crude Petroleum & Natural Gas,True,17.2,False,1.0,False
+FNF,1331875,"Fidelity National Financial, Inc.",6361.0,Title Insurance,True,17.3,False,1.0,False
+RGA,898174,REINSURANCE GROUP OF AMERICA INC,6311.0,Life Insurance,True,17.2,False,1.0,False
 KIM,879101,KIMCO REALTY CORP,6798.0,Real Estate Investment Trusts,True,17.2,False,1.0,False
 ONON,1858985,On Holding AG,3021.0,Rubber & Plastics Footwear,False,17.2,False,1.0,False
+AR,1433270,ANTERO RESOURCES Corp,1311.0,Crude Petroleum & Natural Gas,True,17.2,False,1.0,False
 EMN,915389,EASTMAN CHEMICAL CO,2821.0,"Plastic Materials, Synth Resins & Nonvulcan Elastomers",True,17.0,False,1.0,False
 COE,1659494,51Talk Online Education Group,8200.0,Services-Educational Services,False,17.0,False,1.0,False
-CLH,822818,CLEAN HARBORS INC,4955.0,Hazardous Waste Management,True,16.9,False,1.0,False
-PHYS,1477049,Sprott Physical Gold Trust,6221.0,Commodity Contracts Brokers & Dealers,False,16.9,False,1.0,False
 XHG,1769256,XChange TEC.INC,6411.0,"Insurance Agents, Brokers & Service",False,16.9,False,1.0,False
 FMC,37785,FMC CORP,2800.0,Chemicals & Allied Products,True,16.9,False,1.0,False
+PHYS,1477049,Sprott Physical Gold Trust,6221.0,Commodity Contracts Brokers & Dealers,False,16.9,False,1.0,False
+CLH,822818,CLEAN HARBORS INC,4955.0,Hazardous Waste Management,True,16.8,False,1.0,False
 GOTU,1768259,Gaotu Techedu Inc.,8200.0,Services-Educational Services,False,16.7,False,1.0,False
-CAVA,1639438,"CAVA GROUP, INC.",5812.0,Retail-Eating  Places,True,16.7,False,1.0,False
-PCTY,1591698,Paylocity Holding Corp,7372.0,Services-Prepackaged Software,True,16.7,True,1.0,True
 TOL,794170,"Toll Brothers, Inc.",1531.0,Operative Builders,True,16.7,False,1.0,False
-HL,719413,HECLA MINING CO/DE/,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),True,16.7,False,1.0,False
+PCTY,1591698,Paylocity Holding Corp,7372.0,Services-Prepackaged Software,True,16.7,True,1.0,True
 LW,1679273,"Lamb Weston Holdings, Inc.",2030.0,"Canned, Frozen & Preservd Fruit, Veg & Food Specialties",True,16.7,False,1.0,False
-SMTC,88941,SEMTECH CORP,3674.0,Semiconductors & Related Devices,True,16.6,True,1.0,True
+HL,719413,HECLA MINING CO/DE/,1400.0,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),True,16.7,False,1.0,False
+CAVA,1639438,"CAVA GROUP, INC.",5812.0,Retail-Eating  Places,True,16.7,False,1.0,False
 NKTR,906709,NEKTAR THERAPEUTICS,2834.0,Pharmaceutical Preparations,True,16.6,False,1.0,False
-MDGL,1157601,"MADRIGAL PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,16.6,False,1.0,False
 SIM,887153,"GRUPO SIMEC, S.A.B. de C.V.",3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,16.6,False,1.0,False
+HAS,46080,"HASBRO, INC.",3944.0,"Games, Toys & Children's Vehicles (No Dolls & Bicycles)",True,16.6,False,1.0,False
+MDGL,1157601,"MADRIGAL PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,16.6,False,1.0,False
+SMTC,88941,SEMTECH CORP,3674.0,Semiconductors & Related Devices,True,16.6,True,1.0,True
+ASND,1612042,Ascendis Pharma A/S,2834.0,Pharmaceutical Preparations,False,16.5,False,1.0,False
 MAT,63276,MATTEL INC /DE/,3942.0,Dolls & Stuffed Toys,True,16.5,False,1.0,False
 WHR,106640,WHIRLPOOL CORP /DE/,3630.0,Household Appliances,True,16.5,False,1.0,False
-ASND,1612042,Ascendis Pharma A/S,2834.0,Pharmaceutical Preparations,False,16.5,False,1.0,False
-HAS,46080,"HASBRO, INC.",3944.0,"Games, Toys & Children's Vehicles (No Dolls & Bicycles)",True,16.5,False,1.0,False
 CGNX,851205,COGNEX CORP,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,16.3,False,1.0,False
-ATAT,1853717,Atour Lifestyle Holdings Ltd,7011.0,Hotels & Motels,False,16.3,False,1.0,False
-CCK,1219601,"CROWN HOLDINGS, INC.",3411.0,Metal Cans,True,16.3,False,1.0,False
-HOG,793952,"HARLEY-DAVIDSON, INC.",3751.0,"Motorcycles, Bicycles & Parts",True,16.3,False,1.0,False
-HIMS,1773751,"Hims & Hers Health, Inc.",8011.0,Services-Offices & Clinics of  Doctors of  Medicine,True,16.3,False,1.0,False
 UHS,352915,UNIVERSAL HEALTH SERVICES INC,8062.0,"Services-General Medical & Surgical Hospitals, NEC",True,16.3,False,1.0,False
-LAMR,1090425,LAMAR ADVERTISING CO/NEW,6798.0,Real Estate Investment Trusts,True,16.2,False,1.0,False
+CCK,1219601,"CROWN HOLDINGS, INC.",3411.0,Metal Cans,True,16.3,False,1.0,False
+HIMS,1773751,"Hims & Hers Health, Inc.",8011.0,Services-Offices & Clinics of  Doctors of  Medicine,True,16.3,False,1.0,False
+ATAT,1853717,Atour Lifestyle Holdings Ltd,7011.0,Hotels & Motels,False,16.3,False,1.0,False
+HOG,793952,"HARLEY-DAVIDSON, INC.",3751.0,"Motorcycles, Bicycles & Parts",True,16.3,False,1.0,False
 EMA,1127248,EMERA INC,4911.0,Electric Services,False,16.2,False,1.0,False
 CRIS,1108205,CURIS INC,2836.0,"Biological Products, (No Diagnostic Substances)",True,16.2,False,1.0,False
-EXEL,939767,"EXELIXIS, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,16.2,False,1.0,False
-GGG,42888,GRACO INC,3561.0,Pumps & Pumping Equipment,True,16.1,False,1.0,False
-JAZZ,1232524,Jazz Pharmaceuticals plc,2834.0,Pharmaceutical Preparations,True,16.1,False,1.0,False
-TIGO,912958,MILLICOM INTERNATIONAL CELLULAR SA,4812.0,Radiotelephone Communications,False,16.1,False,1.0,False
+LAMR,1090425,LAMAR ADVERTISING CO/NEW,6798.0,Real Estate Investment Trusts,True,16.2,False,1.0,False
 GPCR,1888886,Structure Therapeutics Inc.,2834.0,Pharmaceutical Preparations,True,16.1,False,1.0,False
+TIGO,912958,MILLICOM INTERNATIONAL CELLULAR SA,4812.0,Radiotelephone Communications,False,16.1,False,1.0,False
+GGG,42888,GRACO INC,3561.0,Pumps & Pumping Equipment,True,16.1,False,1.0,False
 PSLV,1494728,Sprott Physical Silver Trust,6221.0,Commodity Contracts Brokers & Dealers,False,16.1,False,1.0,False
+JAZZ,1232524,Jazz Pharmaceuticals plc,2834.0,Pharmaceutical Preparations,True,16.1,False,1.0,False
+DUO,1750593,Fangdd Network Group Ltd.,6500.0,Real Estate,False,16.0,False,1.0,False
 MNDY,1845338,monday.com Ltd.,7372.0,Services-Prepackaged Software,False,16.0,True,1.0,False
 IPX,1898601,IPERIONX Ltd,1090.0,Miscellaneous Metal Ores,False,16.0,False,1.0,False
-DUO,1750593,Fangdd Network Group Ltd.,6500.0,Real Estate,False,16.0,False,1.0,False
-RGEN,730272,REPLIGEN CORP,2836.0,"Biological Products, (No Diagnostic Substances)",True,16.0,False,1.0,False
+EXEL,939767,"EXELIXIS, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,16.0,False,1.0,False
 LECO,59527,LINCOLN ELECTRIC HOLDINGS INC,3540.0,Metalworkg Machinery & Equipment,True,16.0,False,1.0,False
-RRX,82811,REGAL REXNORD CORP,3569.0,"General Industrial Machinery & Equipment, NEC",True,15.9,False,1.0,False
+RGEN,730272,REPLIGEN CORP,2836.0,"Biological Products, (No Diagnostic Substances)",True,16.0,False,1.0,False
 NVMI,1109345,NOVA LTD.,3827.0,Optical Instruments & Lenses,False,15.9,True,1.0,True
-SOLV,1964738,Solventum Corp,3841.0,Surgical & Medical Instruments & Apparatus,True,15.8,False,1.0,False
+RRX,82811,REGAL REXNORD CORP,3569.0,"General Industrial Machinery & Equipment, NEC",True,15.9,False,1.0,False
 ESTC,1707753,Elastic N.V.,7372.0,Services-Prepackaged Software,True,15.8,True,1.0,True
 TRIP,1526520,"TripAdvisor, Inc.",7370.0,"Services-Computer Programming, Data Processing, Etc.",True,15.8,True,1.0,True
+SOLV,1964738,Solventum Corp,3841.0,Surgical & Medical Instruments & Apparatus,True,15.8,False,1.0,False
 RMBS,917273,RAMBUS INC,3674.0,Semiconductors & Related Devices,True,15.7,True,1.0,True
-BBIO,1743881,"BridgeBio Pharma, Inc.",2834.0,Pharmaceutical Preparations,True,15.7,False,1.0,False
 SAIA,1177702,SAIA INC,4213.0,Trucking (No Local),True,15.7,False,1.0,False
-PL,1836833,Planet Labs PBC,3663.0,Radio & Tv Broadcasting & Communications Equipment,True,15.7,True,1.0,True
-AEIS,927003,ADVANCED ENERGY INDUSTRIES INC,3679.0,"Electronic Components, NEC",True,15.7,True,1.0,True
 SRPT,873303,"Sarepta Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,15.7,False,1.0,False
+AEIS,927003,ADVANCED ENERGY INDUSTRIES INC,3679.0,"Electronic Components, NEC",True,15.7,True,1.0,True
+BBIO,1743881,"BridgeBio Pharma, Inc.",2834.0,Pharmaceutical Preparations,True,15.7,False,1.0,False
+PL,1836833,Planet Labs PBC,3663.0,Radio & Tv Broadcasting & Communications Equipment,True,15.7,True,1.0,True
 TREX,1069878,TREX CO INC,2400.0,Lumber & Wood Products (No Furniture),True,15.6,False,1.0,False
-BJ,1531152,"BJ's Wholesale Club Holdings, Inc.",5331.0,Retail-Variety Stores,True,15.5,False,1.0,False
 ICL,941221,ICL Group Ltd.,2870.0,Agricultural Chemicals,False,15.5,False,1.0,False
+BJ,1531152,"BJ's Wholesale Club Holdings, Inc.",5331.0,Retail-Variety Stores,True,15.5,False,1.0,False
+UNM,5513,Unum Group,6321.0,Accident & Health Insurance,True,15.4,False,1.0,False
 BTSG,1865782,"BrightSpring Health Services, Inc.",8082.0,Services-Home Health Care Services,True,15.4,False,1.0,False
 XRAY,818479,DENTSPLY SIRONA Inc.,3843.0,Dental Equipment & Supplies,True,15.4,False,1.0,False
-UNM,5513,Unum Group,6321.0,Accident & Health Insurance,True,15.4,False,1.0,False
 PPLI,1800227,People Inc,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,15.3,True,1.0,True
 APPN,1441683,APPIAN CORP,7372.0,Services-Prepackaged Software,True,15.3,True,1.0,True
-ALLE,1579241,Allegion plc,7381.0,"Services-Detective, Guard & Armored Car Services",True,15.3,False,1.0,False
 COTY,1024305,COTY INC.,2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",True,15.3,False,1.0,False
 ARCC,1287750,ARES CAPITAL CORP,,,True,15.3,False,1.0,False
-DTM,1842022,"DT Midstream, Inc.",4922.0,Natural Gas Transmission,True,15.2,False,1.0,False
-DY,67215,DYCOM INDUSTRIES INC,1623.0,"Water, Sewer, Pipeline, Comm & Power Line Construction",True,15.2,False,1.0,False
+ALLE,1579241,Allegion plc,7381.0,"Services-Detective, Guard & Armored Car Services",True,15.3,False,1.0,False
 MORN,1289419,"Morningstar, Inc.",6282.0,Investment Advice,True,15.2,False,1.0,False
-OHI,888491,OMEGA HEALTHCARE INVESTORS INC,6798.0,Real Estate Investment Trusts,True,15.1,False,1.0,False
+DY,67215,DYCOM INDUSTRIES INC,1623.0,"Water, Sewer, Pipeline, Comm & Power Line Construction",True,15.2,False,1.0,False
+DTM,1842022,"DT Midstream, Inc.",4922.0,Natural Gas Transmission,True,15.2,False,1.0,False
 JKHY,779152,JACK HENRY & ASSOCIATES INC,7373.0,Services-Computer Integrated Systems Design,True,15.1,True,1.0,True
 AAP,1158449,ADVANCE AUTO PARTS INC,5531.0,Retail-Auto & Home Supply Stores,True,15.1,False,1.0,False
-RNR,913144,RENAISSANCERE HOLDINGS LTD,6331.0,"Fire, Marine & Casualty Insurance",True,15.1,False,1.0,False
 MLI,89439,MUELLER INDUSTRIES INC,3350.0,Rolling Drawing & Extruding of  Nonferrous Metals,True,15.1,False,1.0,False
 HDL,1995306,SUPER HI INTERNATIONAL HOLDING LTD.,5812.0,Retail-Eating  Places,False,15.1,False,1.0,False
-EVR,1360901,Evercore Inc.,6282.0,Investment Advice,True,15.0,False,1.0,False
-ARMK,1584509,Aramark,5812.0,Retail-Eating  Places,True,15.0,False,1.0,False
+OHI,888491,OMEGA HEALTHCARE INVESTORS INC,6798.0,Real Estate Investment Trusts,True,15.1,False,1.0,False
+MRVI,1823239,"MARAVAI LIFESCIENCES HOLDINGS, INC.",2834.0,Pharmaceutical Preparations,True,15.0,False,1.0,False
 OTEX,1002638,OPEN TEXT CORP,7373.0,Services-Computer Integrated Systems Design,True,15.0,True,1.0,True
 RRC,315852,RANGE RESOURCES CORP,1311.0,Crude Petroleum & Natural Gas,True,15.0,False,1.0,False
-MRVI,1823239,"MARAVAI LIFESCIENCES HOLDINGS, INC.",2834.0,Pharmaceutical Preparations,True,15.0,False,1.0,False
-MUR,717423,MURPHY OIL CORP,1311.0,Crude Petroleum & Natural Gas,True,14.9,False,1.0,False
-SAM,949870,BOSTON BEER CO INC,2082.0,Malt Beverages,True,14.9,False,1.0,False
+ARMK,1584509,Aramark,5812.0,Retail-Eating  Places,True,15.0,False,1.0,False
+EVR,1360901,Evercore Inc.,6282.0,Investment Advice,True,15.0,False,1.0,False
 CGC,1737927,Canopy Growth Corp,2833.0,Medicinal Chemicals & Botanical Products,True,14.9,False,1.0,False
+SAM,949870,BOSTON BEER CO INC,2082.0,Malt Beverages,True,14.9,False,1.0,False
+RNR,913144,RENAISSANCERE HOLDINGS LTD,6331.0,"Fire, Marine & Casualty Insurance",True,14.9,False,1.0,False
+MUR,717423,MURPHY OIL CORP,1311.0,Crude Petroleum & Natural Gas,True,14.9,False,1.0,False
 IESC,1048268,"IES Holdings, Inc.",1731.0,Electrical Work,True,14.8,False,1.0,False
 AAPG,2023311,ASCENTAGE PHARMA GROUP INTERNATIONAL,2834.0,Pharmaceutical Preparations,False,14.8,False,1.0,False
-FBIN,1519751,"Fortune Brands Innovations, Inc.",2430.0,"Millwood, Veneer, Plywood, & Structural Wood Members",True,14.7,False,1.0,False
-CNA,21175,CNA FINANCIAL CORP,6331.0,"Fire, Marine & Casualty Insurance",True,14.7,False,1.0,False
-DOCS,1516513,"Doximity, Inc.",7371.0,Services-Computer Programming Services,True,14.7,True,1.0,True
-SKYD,2041610,Skydance Corp,4833.0,Television Broadcasting Stations,True,14.7,False,1.0,False
 MOD,67347,MODINE MANUFACTURING CO,3714.0,Motor Vehicle Parts & Accessories,True,14.7,False,1.0,False
+FBIN,1519751,"Fortune Brands Innovations, Inc.",2430.0,"Millwood, Veneer, Plywood, & Structural Wood Members",True,14.7,False,1.0,False
+SKYD,2041610,Skydance Corp,4833.0,Television Broadcasting Stations,True,14.7,False,1.0,False
+CNA,21175,CNA FINANCIAL CORP,6331.0,"Fire, Marine & Casualty Insurance",True,14.7,False,1.0,False
 REG,910606,REGENCY CENTERS CORP,6798.0,Real Estate Investment Trusts,True,14.7,False,1.0,False
-NCLH,1513761,Norwegian Cruise Line Holdings Ltd.,4400.0,Water Transportation,True,14.6,False,1.0,False
+DOCS,1516513,"Doximity, Inc.",7371.0,Services-Computer Programming Services,True,14.7,True,1.0,True
 HTZ,1657853,"HERTZ GLOBAL HOLDINGS, INC",7510.0,Services-Auto Rental & Leasing (No Drivers),True,14.6,False,1.0,False
 AMH,1562401,American Homes 4 Rent,6798.0,Real Estate Investment Trusts,True,14.6,False,1.0,False
+NCLH,1513761,Norwegian Cruise Line Holdings Ltd.,4400.0,Water Transportation,True,14.6,False,1.0,False
 UHAL,4457,U-Haul Holding Co /NV/,7510.0,Services-Auto Rental & Leasing (No Drivers),True,14.5,False,1.0,False
 RGC,1829667,Regencell Bioscience Holdings Ltd,2833.0,Medicinal Chemicals & Botanical Products,False,14.4,False,1.0,False
 WU,1365135,Western Union CO,7389.0,"Services-Business Services, NEC",True,14.4,False,1.0,False
 AGL,1831097,"agilon health, inc.",8090.0,"Services-Misc Health & Allied Services, NEC",True,14.4,False,1.0,False
 HMY,1023514,HARMONY GOLD MINING CO LTD,1040.0,Gold and Silver Ores,False,14.4,False,1.0,False
+PAG,1019849,"PENSKE AUTOMOTIVE GROUP, INC.",5500.0,Retail-Auto Dealers & Gasoline Stations,True,14.3,False,1.0,False
+HALO,1159036,"HALOZYME THERAPEUTICS, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,14.3,False,1.0,False
 FND,1507079,"Floor & Decor Holdings, Inc.",5211.0,Retail-Lumber & Other Building Materials Dealers,True,14.3,False,1.0,False
 LSPD,1823306,Lightspeed Commerce Inc.,7372.0,Services-Prepackaged Software,False,14.3,True,1.0,False
-PAG,1019849,"PENSKE AUTOMOTIVE GROUP, INC.",5500.0,Retail-Auto Dealers & Gasoline Stations,True,14.3,False,1.0,False
 LKFT,1421876,Lakefront Biotherapeutics NV,2834.0,Pharmaceutical Preparations,False,14.3,False,1.0,False
+FINV,1691445,FinVolution Group,6163.0,Loan Brokers,False,14.2,False,1.0,False
+GLPI,1575965,"Gaming & Leisure Properties, Inc.",6798.0,Real Estate Investment Trusts,True,14.2,False,1.0,False
+GL,320335,GLOBE LIFE INC.,6311.0,Life Insurance,True,14.2,False,1.0,False
 XCH,1979887,XCHG Ltd,3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",False,14.2,False,1.0,False
 ENLT,1922641,Enlight Renewable Energy Ltd.,4911.0,Electric Services,False,14.2,False,1.0,False
-DAR,916540,DARLING INGREDIENTS INC.,2070.0,Fats & Oils,True,14.2,False,1.0,False
-LINE,1868159,"Lineage, Inc.",6798.0,Real Estate Investment Trusts,True,14.2,False,1.0,False
-GL,320335,GLOBE LIFE INC.,6311.0,Life Insurance,True,14.2,False,1.0,False
-GLPI,1575965,"Gaming & Leisure Properties, Inc.",6798.0,Real Estate Investment Trusts,True,14.2,False,1.0,False
-FINV,1691445,FinVolution Group,6163.0,Loan Brokers,False,14.2,False,1.0,False
 SANM,897723,SANMINA CORP,3672.0,Printed Circuit Boards,True,14.2,True,1.0,True
-AIZ,1267238,"ASSURANT, INC.",6399.0,"Insurance Carriers, NEC",True,14.2,False,1.0,False
-SOLS,2064953,Solstice Advanced Materials Inc.,2800.0,Chemicals & Allied Products,True,14.1,False,1.0,False
-MPT,1287865,MEDICAL PROPERTIES TRUST INC,6798.0,Real Estate Investment Trusts,True,14.1,False,1.0,False
-HALO,1159036,"HALOZYME THERAPEUTICS, INC.",2836.0,"Biological Products, (No Diagnostic Substances)",True,14.1,False,1.0,False
-MTN,812011,VAIL RESORTS INC,7990.0,Services-Miscellaneous Amusement & Recreation,True,14.1,False,1.0,False
-SMG,825542,SCOTTS MIRACLE-GRO CO,2870.0,Agricultural Chemicals,True,14.1,False,1.0,False
+LINE,1868159,"Lineage, Inc.",6798.0,Real Estate Investment Trusts,True,14.2,False,1.0,False
+DAR,916540,DARLING INGREDIENTS INC.,2070.0,Fats & Oils,True,14.2,False,1.0,False
 HLI,1302215,"HOULIHAN LOKEY, INC.",6282.0,Investment Advice,True,14.1,False,1.0,False
+SMG,825542,SCOTTS MIRACLE-GRO CO,2870.0,Agricultural Chemicals,True,14.1,False,1.0,False
+MPT,1287865,MEDICAL PROPERTIES TRUST INC,6798.0,Real Estate Investment Trusts,True,14.1,False,1.0,False
+SOLS,2064953,Solstice Advanced Materials Inc.,2800.0,Chemicals & Allied Products,True,14.1,False,1.0,False
+MTN,812011,VAIL RESORTS INC,7990.0,Services-Miscellaneous Amusement & Recreation,True,14.1,False,1.0,False
+FHN,36966,FIRST HORIZON CORP,6021.0,National Commercial Banks,True,14.0,False,1.0,False
+OWL,1823945,BLUE OWL CAPITAL INC.,6282.0,Investment Advice,True,14.0,False,1.0,False
+PSN,275880,PARSONS CORP,7373.0,Services-Computer Integrated Systems Design,True,14.0,True,1.0,True
+AIZ,1267238,"ASSURANT, INC.",6399.0,"Insurance Carriers, NEC",True,14.0,False,1.0,False
+PEN,1321732,Penumbra Inc,3841.0,Surgical & Medical Instruments & Apparatus,True,14.0,False,1.0,False
+CACI,16058,CACI INTERNATIONAL INC /DE/,7373.0,Services-Computer Integrated Systems Design,True,14.0,True,1.0,True
+WMS,1604028,"ADVANCED DRAINAGE SYSTEMS, INC.",3086.0,Plastics Foam Products,True,14.0,False,1.0,False
 IAG,1203464,IAMGOLD CORP,1040.0,Gold and Silver Ores,False,14.0,False,1.0,False
 OPEN,1801169,Opendoor Technologies Inc.,6531.0,Real Estate Agents & Managers (For Others),True,14.0,False,1.0,False
-PSN,275880,PARSONS CORP,7373.0,Services-Computer Integrated Systems Design,True,14.0,True,1.0,True
-WMS,1604028,"ADVANCED DRAINAGE SYSTEMS, INC.",3086.0,Plastics Foam Products,True,14.0,False,1.0,False
-PEN,1321732,Penumbra Inc,3841.0,Surgical & Medical Instruments & Apparatus,True,14.0,False,1.0,False
-OWL,1823945,BLUE OWL CAPITAL INC.,6282.0,Investment Advice,True,14.0,False,1.0,False
-FHN,36966,FIRST HORIZON CORP,6021.0,National Commercial Banks,True,14.0,False,1.0,False
-PHAR,1828316,Pharming Group N.V.,2834.0,Pharmaceutical Preparations,False,13.9,False,1.0,False
 RDY,1135951,DR REDDYS LABORATORIES LTD,2834.0,Pharmaceutical Preparations,False,13.9,False,1.0,False
-MAIR,2098430,Madison Air Solutions Corp,3564.0,Industrial & Commercial Fans & Blowers & Air Purifing Equip,True,13.9,False,1.0,False
+PHAR,1828316,Pharming Group N.V.,2834.0,Pharmaceutical Preparations,False,13.9,False,1.0,False
 IRS,933267,IRSA INVESTMENTS & REPRESENTATIONS INC,6552.0,Land Subdividers & Developers (No Cemeteries),False,13.9,False,1.0,False
 WTRG,78128,"Essential Utilities, Inc.",4941.0,Water Supply,True,13.9,False,1.0,False
-BRKR,1109354,BRUKER CORP,3826.0,Laboratory Analytical Instruments,True,13.8,False,1.0,False
-CACI,16058,CACI INTERNATIONAL INC /DE/,7373.0,Services-Computer Integrated Systems Design,True,13.8,True,1.0,True
-AOS,91142,SMITH A O CORP,3630.0,Household Appliances,True,13.8,False,1.0,False
-NYT,71691,NEW YORK TIMES CO,2711.0,Newspapers: Publishing or  Publishing & Printing,True,13.8,False,1.0,False
-SF,720672,STIFEL FINANCIAL CORP,6211.0,"Security Brokers, Dealers & Flotation Companies",True,13.8,False,1.0,False
+MAIR,2098430,Madison Air Solutions Corp,3564.0,Industrial & Commercial Fans & Blowers & Air Purifing Equip,True,13.9,False,1.0,False
 JOBY,1819848,"Joby Aviation, Inc.",3721.0,Aircraft,True,13.8,False,1.0,False
+AOS,91142,SMITH A O CORP,3630.0,Household Appliances,True,13.8,False,1.0,False
+SF,720672,STIFEL FINANCIAL CORP,6211.0,"Security Brokers, Dealers & Flotation Companies",True,13.8,False,1.0,False
+NYT,71691,NEW YORK TIMES CO,2711.0,Newspapers: Publishing or  Publishing & Printing,True,13.8,False,1.0,False
 NBP,1778016,NovaBridge Biosciences,2834.0,Pharmaceutical Preparations,False,13.8,False,1.0,False
+BRKR,1109354,BRUKER CORP,3826.0,Laboratory Analytical Instruments,True,13.8,False,1.0,False
 TXRH,1289460,"Texas Roadhouse, Inc.",5812.0,Retail-Eating  Places,True,13.7,False,1.0,False
-FIVE,1177609,"FIVE BELOW, INC",5331.0,Retail-Variety Stores,True,13.7,False,1.0,False
 BETR,1835856,Better Home & Finance Holding Co,6163.0,Loan Brokers,True,13.7,False,1.0,False
 KRMN,2040127,Karman Holdings Inc.,3728.0,"Aircraft Parts & Auxiliary Equipment, NEC",True,13.7,False,1.0,False
+FIVE,1177609,"FIVE BELOW, INC",5331.0,Retail-Variety Stores,True,13.7,False,1.0,False
 UWMC,1783398,UWM Holdings Corp,6162.0,Mortgage Bankers & Loan Correspondents,True,13.6,False,1.0,False
-MAC,912242,MACERICH CO,6798.0,Real Estate Investment Trusts,True,13.6,False,1.0,False
 MOG-A,67887,MOOG INC.,3590.0,Misc Industrial & Commercial Machinery & Equipment,True,13.6,False,1.0,False
 CORT,1088856,CORCEPT THERAPEUTICS INC,2834.0,Pharmaceutical Preparations,True,13.6,False,1.0,False
-WSE,2099039,Wise Group plc,7389.0,"Services-Business Services, NEC",False,13.5,False,1.0,False
+MAC,912242,MACERICH CO,6798.0,Real Estate Investment Trusts,True,13.6,False,1.0,False
 CABO,1632127,"Cable One, Inc.",4841.0,Cable & Other Pay Television Services,True,13.5,False,1.0,False
-IPGP,1111928,IPG PHOTONICS CORP,3674.0,Semiconductors & Related Devices,True,13.5,True,1.0,True
-TFII,1588823,TFI International Inc.,4210.0,Trucking & Courier Services (No Air),False,13.5,False,1.0,False
-AUR,1828108,"Aurora Innovation, Inc.",7373.0,Services-Computer Integrated Systems Design,True,13.5,True,1.0,True
 API,1802883,"Agora, Inc.",7372.0,Services-Prepackaged Software,False,13.5,True,1.0,False
+WSE,2099039,Wise Group plc,7389.0,"Services-Business Services, NEC",False,13.5,False,1.0,False
+AUR,1828108,"Aurora Innovation, Inc.",7373.0,Services-Computer Integrated Systems Design,True,13.5,True,1.0,True
+TFII,1588823,TFI International Inc.,4210.0,Trucking & Courier Services (No Air),False,13.5,False,1.0,False
+IPGP,1111928,IPG PHOTONICS CORP,3674.0,Semiconductors & Related Devices,True,13.5,True,1.0,True
 FIVN,1288847,"Five9, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,13.5,True,1.0,True
-RHI,315213,ROBERT HALF INC.,7363.0,Services-Help Supply Services,True,13.4,False,1.0,False
+IONS,874015,IONIS PHARMACEUTICALS INC,2834.0,Pharmaceutical Preparations,True,13.4,False,1.0,False
 PCVX,1649094,"Vaxcyte, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,13.4,False,1.0,False
 BBAR,913059,Banco BBVA Argentina S.A.,6029.0,"Commercial Banks, NEC",False,13.4,False,1.0,False
-IONS,874015,IONIS PHARMACEUTICALS INC,2834.0,Pharmaceutical Preparations,True,13.4,False,1.0,False
-CHYM,1795586,"Chime Financial, Inc.",6199.0,Finance Services,True,13.3,False,1.0,False
-SEIC,350894,SEI INVESTMENTS CO,6211.0,"Security Brokers, Dealers & Flotation Companies",True,13.3,False,1.0,False
+RHI,315213,ROBERT HALF INC.,7363.0,Services-Help Supply Services,True,13.4,False,1.0,False
+APLD,1144879,Applied Digital Corp.,7374.0,Services-Computer Processing & Data Preparation,True,13.3,True,1.0,True
 FLR,1124198,FLUOR CORP,1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,13.3,False,1.0,False
+SEIC,350894,SEI INVESTMENTS CO,6211.0,"Security Brokers, Dealers & Flotation Companies",True,13.3,False,1.0,False
 LEA,842162,LEAR CORP,3714.0,Motor Vehicle Parts & Accessories,True,13.3,False,1.0,False
 HRI,1364479,HERC HOLDINGS INC,7350.0,Services-Miscellaneous Equipment Rental & Leasing,True,13.3,False,1.0,False
-APLD,1144879,Applied Digital Corp.,7374.0,Services-Computer Processing & Data Preparation,True,13.3,True,1.0,True
-CART,1579091,Maplebear Inc.,7389.0,"Services-Business Services, NEC",True,13.2,False,1.0,False
-PNW,764622,PINNACLE WEST CAPITAL CORP,4911.0,Electric Services,True,13.2,False,1.0,False
+CHYM,1795586,"Chime Financial, Inc.",6199.0,Finance Services,True,13.3,False,1.0,False
 RGTI,1838359,"Rigetti Computing, Inc.",7371.0,Services-Computer Programming Services,True,13.2,True,1.0,True
-JKS,1481513,"JinkoSolar Holding Co., Ltd.",3674.0,Semiconductors & Related Devices,False,13.2,True,1.0,False
-AMG,1004434,"AFFILIATED MANAGERS GROUP, INC.",6282.0,Investment Advice,True,13.2,False,1.0,False
+PNW,764622,PINNACLE WEST CAPITAL CORP,4911.0,Electric Services,True,13.2,False,1.0,False
 GPOR,874499,GULFPORT ENERGY CORP,1311.0,Crude Petroleum & Natural Gas,True,13.2,False,1.0,False
-RADX,1949257,Radiopharm Theranostics Ltd,2834.0,Pharmaceutical Preparations,False,13.1,False,1.0,False
+AMG,1004434,"AFFILIATED MANAGERS GROUP, INC.",6282.0,Investment Advice,True,13.2,False,1.0,False
+JKS,1481513,"JinkoSolar Holding Co., Ltd.",3674.0,Semiconductors & Related Devices,False,13.2,True,1.0,False
+CART,1579091,Maplebear Inc.,7389.0,"Services-Business Services, NEC",True,13.2,False,1.0,False
 CR,1944013,Crane Co,3490.0,Miscellaneous Fabricated Metal Products,True,13.1,False,1.0,False
-DRS,1833756,"Leonardo DRS, Inc.",3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,13.1,False,1.0,False
+RADX,1949257,Radiopharm Theranostics Ltd,2834.0,Pharmaceutical Preparations,False,13.1,False,1.0,False
 HUT,1964789,Hut 8 Corp.,6199.0,Finance Services,True,13.1,False,1.0,False
-FPS,2080126,"Forgent Power Solutions, Inc.",3620.0,Electrical Industrial Apparatus,True,13.1,False,1.0,False
-WTS,795403,WATTS WATER TECHNOLOGIES INC,3490.0,Miscellaneous Fabricated Metal Products,True,13.1,False,1.0,False
 CNM,1856525,"Core & Main, Inc.",5099.0,"Wholesale-Durable Goods, NEC",True,13.1,False,1.0,False
-QGEN,1015820,QIAGEN N.V.,2836.0,"Biological Products, (No Diagnostic Substances)",False,13.1,False,1.0,False
+WTS,795403,WATTS WATER TECHNOLOGIES INC,3490.0,Miscellaneous Fabricated Metal Products,True,13.1,False,1.0,False
 TTEK,831641,TETRA TECH INC,8711.0,Services-Engineering Services,True,13.1,False,1.0,False
-TDC,816761,TERADATA CORP /DE/,7372.0,Services-Prepackaged Software,True,13.0,True,1.0,True
-EHC,785161,Encompass Health Corp,8060.0,Services-Hospitals,True,13.0,False,1.0,False
-SCI,89089,SERVICE CORP INTERNATIONAL,7200.0,Services-Personal Services,True,13.0,False,1.0,False
-KEP,887225,KOREA ELECTRIC POWER CORP,4911.0,Electric Services,False,13.0,False,1.0,False
-PPC,802481,PILGRIMS PRIDE CORP,2015.0,Poultry Slaughtering and Processing,True,13.0,False,1.0,False
+DRS,1833756,"Leonardo DRS, Inc.",3812.0,"Search, Detection, Navigation, Guidance, Aeronautical Sys",True,13.1,False,1.0,False
+FPS,2080126,"Forgent Power Solutions, Inc.",3620.0,Electrical Industrial Apparatus,True,13.1,False,1.0,False
+QGEN,1015820,QIAGEN N.V.,2836.0,"Biological Products, (No Diagnostic Substances)",False,13.1,False,1.0,False
 GLXY,1859392,Galaxy Digital Inc.,6211.0,"Security Brokers, Dealers & Flotation Companies",True,13.0,False,1.0,False
+SCI,89089,SERVICE CORP INTERNATIONAL,7200.0,Services-Personal Services,True,13.0,False,1.0,False
+PPC,802481,PILGRIMS PRIDE CORP,2015.0,Poultry Slaughtering and Processing,True,13.0,False,1.0,False
+EHC,785161,Encompass Health Corp,8060.0,Services-Hospitals,True,13.0,False,1.0,False
+KEP,887225,KOREA ELECTRIC POWER CORP,4911.0,Electric Services,False,13.0,False,1.0,False
+TDC,816761,TERADATA CORP /DE/,7372.0,Services-Prepackaged Software,True,13.0,True,1.0,True
 GLOB,1557860,Globant S.A.,7374.0,Services-Computer Processing & Data Preparation,False,12.9,True,1.0,False
 DBX,1467623,"DROPBOX, INC.",7372.0,Services-Prepackaged Software,True,12.9,True,1.0,True
 ALGM,866291,"ALLEGRO MICROSYSTEMS, INC.",3674.0,Semiconductors & Related Devices,True,12.9,True,1.0,True
@@ -1123,331 +1121,331 @@ QFIN,1741530,"Qfin Holdings, Inc.",6199.0,Finance Services,False,12.8,False,1.0,
 AIT,109563,APPLIED INDUSTRIAL TECHNOLOGIES INC,5080.0,"Wholesale-Machinery, Equipment & Supplies",True,12.8,False,1.0,False
 SLG,1040971,SL GREEN REALTY CORP,6798.0,Real Estate Investment Trusts,True,12.8,False,1.0,False
 GMED,1237831,GLOBUS MEDICAL INC,3841.0,Surgical & Medical Instruments & Apparatus,True,12.8,False,1.0,False
-AFG,1042046,AMERICAN FINANCIAL GROUP INC,6331.0,"Fire, Marine & Casualty Insurance",True,12.7,False,1.0,False
-LOMA,1711375,Loma Negra Compania Industrial Argentina Sociedad Anonima,3241.0,"Cement, Hydraulic",False,12.7,False,1.0,False
 KNX,1492691,Knight-Swift Transportation Holdings Inc.,4213.0,Trucking (No Local),True,12.7,False,1.0,False
+LOMA,1711375,Loma Negra Compania Industrial Argentina Sociedad Anonima,3241.0,"Cement, Hydraulic",False,12.7,False,1.0,False
 RLI,84246,RLI CORP,6331.0,"Fire, Marine & Casualty Insurance",True,12.7,False,1.0,False
 HP,46765,"Helmerich & Payne, Inc.",1381.0,Drilling Oil & Gas Wells,True,12.7,False,1.0,False
 FORM,1039399,FORMFACTOR INC,3674.0,Semiconductors & Related Devices,True,12.7,True,1.0,True
-PVH,78239,PVH CORP. /DE/,2320.0,"Men's & Boys' Furnishgs, Work Clothg, & Allied Garments",True,12.6,False,1.0,False
 STN,1131383,STANTEC INC,8711.0,Services-Engineering Services,False,12.6,False,1.0,False
+PVH,78239,PVH CORP. /DE/,2320.0,"Men's & Boys' Furnishgs, Work Clothg, & Allied Garments",True,12.6,False,1.0,False
 CHGG,1364954,"CHEGG, INC",8200.0,Services-Educational Services,True,12.6,False,1.0,False
 ETHE,1725210,Grayscale Ethereum Staking ETF,6221.0,Commodity Contracts Brokers & Dealers,True,12.6,False,1.0,False
-TTC,737758,TORO CO,3524.0,Lawn & Garden Tractors & Home Lawn & Gardens Equip,True,12.5,False,1.0,False
 MICC,2071668,Magnum Ice Cream Co N.V.,2024.0,Ice Cream & Frozen Desserts,False,12.5,False,1.0,False
-WING,1636222,Wingstop Inc.,5812.0,Retail-Eating  Places,True,12.5,False,1.0,False
 AXSM,1579428,"Axsome Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,12.5,False,1.0,False
-HLF,1180262,HERBALIFE LTD.,5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,12.4,False,1.0,False
+TTC,737758,TORO CO,3524.0,Lawn & Garden Tractors & Home Lawn & Gardens Equip,True,12.5,False,1.0,False
+AFG,1042046,AMERICAN FINANCIAL GROUP INC,6331.0,"Fire, Marine & Casualty Insurance",True,12.5,False,1.0,False
+WING,1636222,Wingstop Inc.,5812.0,Retail-Eating  Places,True,12.5,False,1.0,False
 ENSG,1125376,"ENSIGN GROUP, INC",8051.0,Services-Skilled Nursing Care Facilities,True,12.4,False,1.0,False
-RUN,1469367,Sunrun Inc.,1700.0,Construction - Special Trade Contractors,True,12.4,False,1.0,False
 SPXC,88205,"SPX Technologies, Inc.",3540.0,Metalworkg Machinery & Equipment,True,12.4,False,1.0,False
-AGNC,1423689,AGNC Investment Corp.,6798.0,Real Estate Investment Trusts,True,12.3,False,1.0,False
+SAIL,2030781,"SailPoint, Inc.",7372.0,Services-Prepackaged Software,True,12.4,True,1.0,True
+FROG,1800667,JFrog Ltd,7372.0,Services-Prepackaged Software,True,12.4,True,1.0,True
+RUN,1469367,Sunrun Inc.,1700.0,Construction - Special Trade Contractors,True,12.4,False,1.0,False
+HLF,1180262,HERBALIFE LTD.,5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,12.4,False,1.0,False
 USO,1327068,"United States Oil Fund, LP",6221.0,Commodity Contracts Brokers & Dealers,True,12.3,False,1.0,False
+AGNC,1423689,AGNC Investment Corp.,6798.0,Real Estate Investment Trusts,True,12.3,False,1.0,False
 KVYO,1835830,"Klaviyo, Inc.",7372.0,Services-Prepackaged Software,True,12.3,True,1.0,True
-SAIL,2030781,"SailPoint, Inc.",7372.0,Services-Prepackaged Software,True,12.3,True,1.0,True
-CUBE,1298675,CubeSmart,6798.0,Real Estate Investment Trusts,True,12.2,False,1.0,False
-ELF,1600033,"e.l.f. Beauty, Inc.",2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",True,12.2,False,1.0,False
-BEP,1533232,Brookfield Renewable Partners L.P.,4911.0,Electric Services,False,12.2,False,1.0,False
-LRMR,1374690,"Larimar Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,12.2,False,1.0,False
 KNSL,1669162,"Kinsale Capital Group, Inc.",6331.0,"Fire, Marine & Casualty Insurance",True,12.2,False,1.0,False
 GTLB,1653482,Gitlab Inc.,7372.0,Services-Prepackaged Software,True,12.2,True,1.0,True
 CNX,1070412,CNX Resources Corp,1311.0,Crude Petroleum & Natural Gas,True,12.2,False,1.0,False
+ELF,1600033,"e.l.f. Beauty, Inc.",2844.0,"Perfumes, Cosmetics & Other Toilet Preparations",True,12.2,False,1.0,False
+CUBE,1298675,CubeSmart,6798.0,Real Estate Investment Trusts,True,12.2,False,1.0,False
+LRMR,1374690,"Larimar Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,12.2,False,1.0,False
+BEP,1533232,Brookfield Renewable Partners L.P.,4911.0,Electric Services,False,12.2,False,1.0,False
+WAL,1212545,WESTERN ALLIANCE BANCORPORATION,6022.0,State Commercial Banks,True,12.1,False,1.0,False
+VSAT,797721,VIASAT INC,4899.0,"Communications Services, NEC",True,12.1,False,1.0,False
+AYI,1144215,ACUITY INC. (DE),3640.0,Electric Lighting & Wiring Equipment,True,12.1,False,1.0,False
 SIG,832988,SIGNET JEWELERS LTD,5944.0,Retail-Jewelry Stores,True,12.1,False,1.0,False
 CRSP,1674416,CRISPR Therapeutics AG,2836.0,"Biological Products, (No Diagnostic Substances)",True,12.1,False,1.0,False
-TWST,1581280,Twist Bioscience Corp,2836.0,"Biological Products, (No Diagnostic Substances)",True,12.1,False,1.0,False
-WAL,1212545,WESTERN ALLIANCE BANCORPORATION,6022.0,State Commercial Banks,True,12.1,False,1.0,False
-AYI,1144215,ACUITY INC. (DE),3640.0,Electric Lighting & Wiring Equipment,True,12.1,False,1.0,False
-FROG,1800667,JFrog Ltd,7372.0,Services-Prepackaged Software,True,12.1,True,1.0,True
-VSAT,797721,VIASAT INC,4899.0,"Communications Services, NEC",True,12.1,False,1.0,False
-ALK,766421,"ALASKA AIR GROUP, INC.",4512.0,"Air Transportation, Scheduled",True,12.1,False,1.0,False
 VIAV,912093,VIAVI SOLUTIONS INC.,3674.0,Semiconductors & Related Devices,True,12.1,True,1.0,True
-PCOR,1611052,"PROCORE TECHNOLOGIES, INC.",7372.0,Services-Prepackaged Software,True,12.0,True,1.0,True
+ALK,766421,"ALASKA AIR GROUP, INC.",4512.0,"Air Transportation, Scheduled",True,12.1,False,1.0,False
+TWST,1581280,Twist Bioscience Corp,2836.0,"Biological Products, (No Diagnostic Substances)",True,12.1,False,1.0,False
 PSO,938323,PEARSON PLC,2731.0,Books: Publishing or  Publishing & Printing,False,12.0,False,1.0,False
 FRT,34903,FEDERAL REALTY INVESTMENT TRUST,6798.0,Real Estate Investment Trusts,True,12.0,False,1.0,False
-WDH,1823986,Waterdrop Inc.,6411.0,"Insurance Agents, Brokers & Service",False,12.0,False,1.0,False
 DCI,29644,DONALDSON Co INC,3564.0,Industrial & Commercial Fans & Blowers & Air Purifing Equip,True,12.0,False,1.0,False
+PCOR,1611052,"PROCORE TECHNOLOGIES, INC.",7372.0,Services-Prepackaged Software,True,12.0,True,1.0,True
+WDH,1823986,Waterdrop Inc.,6411.0,"Insurance Agents, Brokers & Service",False,12.0,False,1.0,False
 ANGI,1705110,Angi Inc.,7310.0,Services-Advertising,True,11.9,False,1.0,False
+AAOI,1158114,"APPLIED OPTOELECTRONICS, INC.",3674.0,Semiconductors & Related Devices,True,11.9,True,1.0,True
+ARWR,879407,"ARROWHEAD PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,11.9,False,1.0,False
+ALKS,1520262,Alkermes plc.,2834.0,Pharmaceutical Preparations,True,11.9,False,1.0,False
 DOX,1062579,AMDOCS LTD,7371.0,Services-Computer Programming Services,False,11.9,True,1.0,False
 NFE,1749723,New Fortress Energy Inc.,4924.0,Natural Gas Distribution,True,11.9,False,1.0,False
-AAOI,1158114,"APPLIED OPTOELECTRONICS, INC.",3674.0,Semiconductors & Related Devices,True,11.9,True,1.0,True
-ALKS,1520262,Alkermes plc.,2834.0,Pharmaceutical Preparations,True,11.9,False,1.0,False
-ARWR,879407,"ARROWHEAD PHARMACEUTICALS, INC.",2834.0,Pharmaceutical Preparations,True,11.9,False,1.0,False
-ETHA,2000638,iShares Ethereum Trust ETF,6221.0,Commodity Contracts Brokers & Dealers,True,11.8,False,1.0,False
 S,1583708,"SentinelOne, Inc.",7372.0,Services-Prepackaged Software,True,11.8,True,1.0,True
+ETHA,2000638,iShares Ethereum Trust ETF,6221.0,Commodity Contracts Brokers & Dealers,True,11.8,False,1.0,False
 LEVI,94845,LEVI STRAUSS & CO,2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,True,11.8,False,1.0,False
+FRO,913290,Frontline plc,4412.0,Deep Sea Foreign Transportation of  Freight,False,11.8,False,1.0,False
+AAON,824142,"AAON, INC.",3585.0,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,True,11.7,False,1.0,False
 BAK,1071438,BRASKEM SA,2860.0,Industrial Organic Chemicals,False,11.7,False,1.0,False
 ALV,1034670,AUTOLIV INC,3714.0,Motor Vehicle Parts & Accessories,True,11.7,False,1.0,False
-AAON,824142,"AAON, INC.",3585.0,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,True,11.7,False,1.0,False
 LFUS,889331,LITTELFUSE INC /DE,3613.0,Switchgear & Switchboard Apparatus,True,11.7,False,1.0,False
-ESI,1590714,Element Solutions Inc,2890.0,Miscellaneous Chemical Products,True,11.6,False,1.0,False
-FSLY,1517413,"Fastly, Inc.",7372.0,Services-Prepackaged Software,True,11.6,True,1.0,True
-IDCC,1405495,"InterDigital, Inc.",6794.0,Patent Owners & Lessors,True,11.6,False,1.0,False
-GXO,1852244,"GXO Logistics, Inc.",4700.0,Transportation Services,True,11.6,False,1.0,False
-PLTK,1828016,Playtika Holding Corp.,7374.0,Services-Computer Processing & Data Preparation,True,11.6,True,1.0,True
-REXR,1571283,"Rexford Industrial Realty, Inc.",6798.0,Real Estate Investment Trusts,True,11.6,False,1.0,False
 VOYA,1535929,"Voya Financial, Inc.",6311.0,Life Insurance,True,11.6,False,1.0,False
+GXO,1852244,"GXO Logistics, Inc.",4700.0,Transportation Services,True,11.6,False,1.0,False
+IDCC,1405495,"InterDigital, Inc.",6794.0,Patent Owners & Lessors,True,11.6,False,1.0,False
+FSLY,1517413,"Fastly, Inc.",7372.0,Services-Prepackaged Software,True,11.6,True,1.0,True
 MP,1801368,MP Materials Corp. / DE,1000.0,Metal Mining,True,11.6,False,1.0,False
 ORI,74260,OLD REPUBLIC INTERNATIONAL CORP,6351.0,Surety Insurance,True,11.6,False,1.0,False
+REXR,1571283,"Rexford Industrial Realty, Inc.",6798.0,Real Estate Investment Trusts,True,11.6,False,1.0,False
 ARW,7536,"ARROW ELECTRONICS, INC.",5065.0,"Wholesale-Electronic Parts & Equipment, NEC",True,11.6,False,1.0,False
-GIL,1061894,Gildan Activewear Inc.,2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,False,11.5,False,1.0,False
+ESI,1590714,Element Solutions Inc,2890.0,Miscellaneous Chemical Products,True,11.6,False,1.0,False
+PLTK,1828016,Playtika Holding Corp.,7374.0,Services-Computer Processing & Data Preparation,True,11.6,True,1.0,True
 ZION,109380,"ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/",6021.0,National Commercial Banks,True,11.5,False,1.0,False
-TNL,1361658,Travel & Leisure Co.,7011.0,Hotels & Motels,True,11.5,False,1.0,False
 MUSA,1573516,Murphy USA Inc.,5500.0,Retail-Auto Dealers & Gasoline Stations,True,11.5,False,1.0,False
-PEGA,1013857,PEGASYSTEMS INC,7374.0,Services-Computer Processing & Data Preparation,True,11.5,True,1.0,True
-ATR,896622,"APTARGROUP, INC.",3089.0,"Plastics Products, NEC",True,11.5,False,1.0,False
+GIL,1061894,Gildan Activewear Inc.,2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,False,11.5,False,1.0,False
 HBM,1322422,Hudbay Minerals Inc.,1000.0,Metal Mining,False,11.5,False,1.0,False
-BPOP,763901,"POPULAR, INC.",6022.0,State Commercial Banks,True,11.4,False,1.0,False
-BPYPP,1545772,Brookfield Property Partners L.P.,6500.0,Real Estate,False,11.4,False,1.0,False
-FRO,913290,Frontline plc,4412.0,Deep Sea Foreign Transportation of  Freight,False,11.4,False,1.0,False
-EQX,1756607,Equinox Gold Corp.,1040.0,Gold and Silver Ores,False,11.4,False,1.0,False
+ATR,896622,"APTARGROUP, INC.",3089.0,"Plastics Products, NEC",True,11.5,False,1.0,False
+TNL,1361658,Travel & Leisure Co.,7011.0,Hotels & Motels,True,11.5,False,1.0,False
+PEGA,1013857,PEGASYSTEMS INC,7374.0,Services-Computer Processing & Data Preparation,True,11.5,True,1.0,True
 PAGS,1712807,PagSeguro Digital Ltd.,7374.0,Services-Computer Processing & Data Preparation,False,11.4,True,1.0,False
+BPYPP,1545772,Brookfield Property Partners L.P.,6500.0,Real Estate,False,11.4,False,1.0,False
+EQX,1756607,Equinox Gold Corp.,1040.0,Gold and Silver Ores,False,11.4,False,1.0,False
+BPOP,763901,"POPULAR, INC.",6022.0,State Commercial Banks,True,11.4,False,1.0,False
 PRMB,2042694,Primo Brands Corp,2080.0,Beverages,True,11.3,False,1.0,False
+CEF,1726122,Sprott Physical Gold & Silver Trust,6221.0,Commodity Contracts Brokers & Dealers,False,11.3,False,1.0,False
+KRYS,1711279,"Krystal Biotech, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,11.3,False,1.0,False
 FLS,30625,FLOWSERVE CORP,3561.0,Pumps & Pumping Equipment,True,11.3,False,1.0,False
 VMI,102729,VALMONT INDUSTRIES INC,3440.0,Fabricated Structural Metal Products,True,11.3,False,1.0,False
-KRYS,1711279,"Krystal Biotech, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,11.3,False,1.0,False
-CEF,1726122,Sprott Physical Gold & Silver Trust,6221.0,Commodity Contracts Brokers & Dealers,False,11.3,False,1.0,False
-SYNA,817720,SYNAPTICS Inc,3674.0,Semiconductors & Related Devices,True,11.2,True,1.0,True
-KYMR,1815442,"Kymera Therapeutics, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,11.2,False,1.0,False
-OLED,1005284,UNIVERSAL DISPLAY CORP \PA\,3670.0,Electronic Components & Accessories,True,11.2,True,1.0,True
-QBTS,1907982,D-Wave Quantum Inc.,7374.0,Services-Computer Processing & Data Preparation,True,11.2,True,1.0,True
 MIDD,769520,MIDDLEBY Corp,3580.0,Refrigeration & Service Industry Machinery,True,11.2,False,1.0,False
-EGP,49600,EASTGROUP PROPERTIES INC,6798.0,Real Estate Investment Trusts,True,11.2,False,1.0,False
-MXL,1288469,"MAXLINEAR, INC",3674.0,Semiconductors & Related Devices,True,11.2,True,1.0,True
-FRHC,924805,Freedom Holding Corp.,6211.0,"Security Brokers, Dealers & Flotation Companies",True,11.2,False,1.0,False
+SYNA,817720,SYNAPTICS Inc,3674.0,Semiconductors & Related Devices,True,11.2,True,1.0,True
 PSFE,1833835,Paysafe Ltd,7389.0,"Services-Business Services, NEC",False,11.2,False,1.0,False
-BYND,1655210,"BEYOND MEAT, INC.",2000.0,Food and Kindred Products,True,11.1,False,1.0,False
+OLED,1005284,UNIVERSAL DISPLAY CORP \PA\,3670.0,Electronic Components & Accessories,True,11.2,True,1.0,True
+MXL,1288469,"MAXLINEAR, INC",3674.0,Semiconductors & Related Devices,True,11.2,True,1.0,True
+KYMR,1815442,"Kymera Therapeutics, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,11.2,False,1.0,False
+EGP,49600,EASTGROUP PROPERTIES INC,6798.0,Real Estate Investment Trusts,True,11.2,False,1.0,False
+FRHC,924805,Freedom Holding Corp.,6211.0,"Security Brokers, Dealers & Flotation Companies",True,11.2,False,1.0,False
+QBTS,1907982,D-Wave Quantum Inc.,7374.0,Services-Computer Processing & Data Preparation,True,11.2,True,1.0,True
 AGCO,880266,AGCO CORP /DE,3523.0,Farm Machinery & Equipment,True,11.1,False,1.0,False
-OSCR,1568651,"Oscar Health, Inc.",6324.0,Hospital & Medical Service Plans,True,11.1,False,1.0,False
+UMBF,101382,UMB FINANCIAL CORP,6021.0,National Commercial Banks,True,11.1,False,1.0,False
 SNUS-PH,811830,"Santander Holdings USA, Inc.",6021.0,National Commercial Banks,True,11.1,False,1.0,False
 BIRK,1977102,Birkenstock Holding plc,3140.0,"Footwear, (No Rubber)",False,11.1,False,1.0,False
+BYND,1655210,"BEYOND MEAT, INC.",2000.0,Food and Kindred Products,True,11.1,False,1.0,False
+ALSN,1411207,Allison Transmission Holdings Inc,3714.0,Motor Vehicle Parts & Accessories,True,11.1,False,1.0,False
 BVN,1013131,BUENAVENTURA MINING CO INC,1000.0,Metal Mining,False,11.1,False,1.0,False
 AGX,100591,ARGAN INC,1700.0,Construction - Special Trade Contractors,True,11.1,False,1.0,False
-ALSN,1411207,Allison Transmission Holdings Inc,3714.0,Motor Vehicle Parts & Accessories,True,11.1,False,1.0,False
-UMBF,101382,UMB FINANCIAL CORP,6021.0,National Commercial Banks,True,11.1,False,1.0,False
-AM,1623925,Antero Midstream Corp,4922.0,Natural Gas Transmission,True,11.0,False,1.0,False
 SFD,91388,SMITHFIELD FOODS INC,2011.0,Meat Packing Plants,True,11.0,False,1.0,False
 BMBL,1830043,Bumble Inc.,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,11.0,True,1.0,True
-NTLA,1652130,"Intellia Therapeutics, Inc.",2835.0,In Vitro & In Vivo Diagnostic Substances,True,10.9,False,1.0,False
-WTFC,1015328,WINTRUST FINANCIAL CORP,6022.0,State Commercial Banks,True,10.9,False,1.0,False
-CACC,885550,CREDIT ACCEPTANCE CORP,6141.0,Personal Credit Institutions,True,10.9,False,1.0,False
+AM,1623925,Antero Midstream Corp,4922.0,Natural Gas Transmission,True,11.0,False,1.0,False
 CCU,888746,UNITED BREWERIES CO INC,2082.0,Malt Beverages,False,10.9,False,1.0,False
-SLM,1032033,SLM Corp,6141.0,Personal Credit Institutions,True,10.8,False,1.0,False
+NTLA,1652130,"Intellia Therapeutics, Inc.",2835.0,In Vitro & In Vivo Diagnostic Substances,True,10.9,False,1.0,False
+CACC,885550,CREDIT ACCEPTANCE CORP,6141.0,Personal Credit Institutions,True,10.9,False,1.0,False
+WTFC,1015328,WINTRUST FINANCIAL CORP,6022.0,State Commercial Banks,True,10.9,False,1.0,False
 SPCE,1706946,"Virgin Galactic Holdings, Inc",4700.0,Transportation Services,True,10.8,False,1.0,False
+SLM,1032033,SLM Corp,6141.0,Personal Credit Institutions,True,10.8,False,1.0,False
 OSK,775158,OSHKOSH CORP,3711.0,Motor Vehicles & Passenger Car Bodies,True,10.8,False,1.0,False
 SITE,1650729,"SiteOne Landscape Supply, Inc.",5040.0,Wholesale-Professional & Commercial Equipment & Supplies,True,10.8,False,1.0,False
-FRMI,2071778,Fermi Inc.,6798.0,Real Estate Investment Trusts,True,10.7,False,1.0,False
 WSC,1647088,WillScot Holdings Corp,7350.0,Services-Miscellaneous Equipment Rental & Leasing,True,10.7,False,1.0,False
+FRMI,2071778,Fermi Inc.,6798.0,Real Estate Investment Trusts,True,10.7,False,1.0,False
 GSAT,1366868,"Globalstar, Inc.",4899.0,"Communications Services, NEC",True,10.7,False,1.0,False
-OGE,1021635,OGE ENERGY CORP.,4911.0,Electric Services,True,10.6,False,1.0,False
-PAYP,2080845,PayPay Corp,7389.0,"Services-Business Services, NEC",False,10.6,False,1.0,False
-ATPC,1713210,Agape ATP Corp,8000.0,Services-Health Services,True,10.6,False,1.0,False
 AG,1308648,FIRST MAJESTIC SILVER CORP,1040.0,Gold and Silver Ores,False,10.6,False,1.0,False
+OGE,1021635,OGE ENERGY CORP.,4911.0,Electric Services,True,10.6,False,1.0,False
+GKOS,1192448,GLAUKOS Corp,3841.0,Surgical & Medical Instruments & Apparatus,True,10.6,False,1.0,False
+ATPC,1713210,Agape ATP Corp,8000.0,Services-Health Services,True,10.6,False,1.0,False
+PAYP,2080845,PayPay Corp,7389.0,"Services-Business Services, NEC",False,10.6,False,1.0,False
 AHR,1632970,"American Healthcare REIT, Inc.",6798.0,Real Estate Investment Trusts,True,10.6,False,1.0,False
 SARO,2025410,"StandardAero, Inc.",3724.0,Aircraft Engines & Engine Parts,True,10.6,False,1.0,False
-CNXC,1803599,Concentrix Corp,7389.0,"Services-Business Services, NEC",True,10.5,False,1.0,False
-TTAN,1638826,"ServiceTitan, Inc.",7372.0,Services-Prepackaged Software,True,10.5,True,1.0,True
-CC,1627223,Chemours Co,2800.0,Chemicals & Allied Products,True,10.5,False,1.0,False
-BFAM,1437578,BRIGHT HORIZONS FAMILY SOLUTIONS INC.,8351.0,Services-Child Day Care Services,True,10.5,False,1.0,False
-GKOS,1192448,GLAUKOS Corp,3841.0,Surgical & Medical Instruments & Apparatus,True,10.5,False,1.0,False
 POWL,80420,POWELL INDUSTRIES INC,3613.0,Switchgear & Switchboard Apparatus,True,10.5,False,1.0,False
+BFAM,1437578,BRIGHT HORIZONS FAMILY SOLUTIONS INC.,8351.0,Services-Child Day Care Services,True,10.5,False,1.0,False
 DLB,1308547,"Dolby Laboratories, Inc.",6794.0,Patent Owners & Lessors,True,10.5,False,1.0,False
+TTAN,1638826,"ServiceTitan, Inc.",7372.0,Services-Prepackaged Software,True,10.5,True,1.0,True
+R,85961,RYDER SYSTEM INC,7510.0,Services-Auto Rental & Leasing (No Drivers),True,10.5,False,1.0,False
 ABVX,1956827,Abivax S.A.,2834.0,Pharmaceutical Preparations,False,10.5,False,1.0,False
-EXP,918646,EAGLE MATERIALS INC,3241.0,"Cement, Hydraulic",True,10.4,False,1.0,False
-CFR,39263,"CULLEN/FROST BANKERS, INC.",6021.0,National Commercial Banks,True,10.4,False,1.0,False
+CNXC,1803599,Concentrix Corp,7389.0,"Services-Business Services, NEC",True,10.5,False,1.0,False
+CC,1627223,Chemours Co,2800.0,Chemicals & Allied Products,True,10.5,False,1.0,False
 PII,931015,Polaris Inc.,3790.0,Miscellaneous Transportation Equipment,True,10.4,False,1.0,False
-SFIX,1576942,"Stitch Fix, Inc.",5961.0,Retail-Catalog & Mail-Order Houses,True,10.4,False,1.0,False
-R,85961,RYDER SYSTEM INC,7510.0,Services-Auto Rental & Leasing (No Drivers),True,10.4,False,1.0,False
 CYTK,1061983,CYTOKINETICS INC,2834.0,Pharmaceutical Preparations,True,10.4,False,1.0,False
+SFIX,1576942,"Stitch Fix, Inc.",5961.0,Retail-Catalog & Mail-Order Houses,True,10.4,False,1.0,False
+CFR,39263,"CULLEN/FROST BANKERS, INC.",6021.0,National Commercial Banks,True,10.4,False,1.0,False
 SSB,764038,SouthState Bank Corp,6022.0,State Commercial Banks,True,10.4,False,1.0,False
-OLN,74303,OLIN Corp,2800.0,Chemicals & Allied Products,True,10.3,False,1.0,False
-LAD,1023128,LITHIA MOTORS INC,5500.0,Retail-Auto Dealers & Gasoline Stations,True,10.3,False,1.0,False
-CAE,1173382,CAE INC,3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",False,10.3,False,1.0,False
+EXP,918646,EAGLE MATERIALS INC,3241.0,"Cement, Hydraulic",True,10.4,False,1.0,False
+OSCR,1568651,"Oscar Health, Inc.",6324.0,Hospital & Medical Service Plans,True,10.3,False,1.0,False
 ONB,707179,OLD NATIONAL BANCORP /IN/,6021.0,National Commercial Banks,True,10.3,False,1.0,False
-WEX,1309108,WEX Inc.,7389.0,"Services-Business Services, NEC",True,10.3,False,1.0,False
-INGR,1046257,Ingredion Inc,2040.0,Grain Mill Products,True,10.3,False,1.0,False
+LAD,1023128,LITHIA MOTORS INC,5500.0,Retail-Auto Dealers & Gasoline Stations,True,10.3,False,1.0,False
 G,1398659,Genpact LTD,8742.0,Services-Management Consulting Services,True,10.3,False,1.0,False
 HRB,12659,H&R BLOCK INC,7200.0,Services-Personal Services,True,10.3,False,1.0,False
-CROX,1334036,"Crocs, Inc.",3021.0,Rubber & Plastics Footwear,True,10.2,False,1.0,False
-APPF,1433195,APPFOLIO INC,7372.0,Services-Prepackaged Software,True,10.2,True,1.0,True
-TKR,98362,TIMKEN CO,3562.0,Ball & Roller Bearings,True,10.2,False,1.0,False
-COMP,1563190,"Compass, Inc.",6531.0,Real Estate Agents & Managers (For Others),True,10.2,False,1.0,False
+OLN,74303,OLIN Corp,2800.0,Chemicals & Allied Products,True,10.3,False,1.0,False
+CAE,1173382,CAE INC,3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",False,10.3,False,1.0,False
+WEX,1309108,WEX Inc.,7389.0,"Services-Business Services, NEC",True,10.3,False,1.0,False
+INGR,1046257,Ingredion Inc,2040.0,Grain Mill Products,True,10.3,False,1.0,False
 BZUN,1625414,Baozun Inc.,5961.0,Retail-Catalog & Mail-Order Houses,False,10.2,False,1.0,False
-PRI,1475922,"Primerica, Inc.",6311.0,Life Insurance,True,10.2,False,1.0,False
 DSGX,1050140,DESCARTES SYSTEMS GROUP INC,7372.0,Services-Prepackaged Software,False,10.2,True,1.0,False
+PRI,1475922,"Primerica, Inc.",6311.0,Life Insurance,True,10.2,False,1.0,False
+COMP,1563190,"Compass, Inc.",6531.0,Real Estate Agents & Managers (For Others),True,10.2,False,1.0,False
+CROX,1334036,"Crocs, Inc.",3021.0,Rubber & Plastics Footwear,True,10.2,False,1.0,False
+TKR,98362,TIMKEN CO,3562.0,Ball & Roller Bearings,True,10.2,False,1.0,False
+APPF,1433195,APPFOLIO INC,7372.0,Services-Prepackaged Software,True,10.2,True,1.0,True
 BRBR,1772016,"BELLRING BRANDS, INC.",2000.0,Food and Kindred Products,True,10.2,False,1.0,False
 UGI,884614,UGI CORP /PA/,4932.0,Gas & Other Services Combined,True,10.1,False,1.0,False
-KBR,1357615,"KBR, INC.",1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,10.0,False,1.0,False
-ASH,1674862,ASHLAND INC.,5160.0,Wholesale-Chemicals & Allied Products,True,10.0,False,1.0,False
 KD,1867072,"Kyndryl Holdings, Inc.",7373.0,Services-Computer Integrated Systems Design,True,10.0,True,1.0,True
-PTGX,1377121,"Protagonist Therapeutics, Inc",2834.0,Pharmaceutical Preparations,True,10.0,False,1.0,False
+ASH,1674862,ASHLAND INC.,5160.0,Wholesale-Chemicals & Allied Products,True,10.0,False,1.0,False
 LTH,1869198,"Life Time Group Holdings, Inc.",7997.0,Services-Membership Sports & Recreation Clubs,True,10.0,False,1.0,False
+PTGX,1377121,"Protagonist Therapeutics, Inc",2834.0,Pharmaceutical Preparations,True,10.0,False,1.0,False
+KBR,1357615,"KBR, INC.",1600.0,Heavy Construction Other Than Bldg Const - Contractors,True,10.0,False,1.0,False
+IBRX,1326110,"ImmunityBio, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,9.9,False,1.0,False
+GLBE,1835963,Global-E Online Ltd.,7372.0,Services-Prepackaged Software,False,9.9,True,1.0,False
 ST,1477294,Sensata Technologies Holding plc,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,9.9,False,1.0,False
 PRIM,1361538,Primoris Services Corp,1623.0,"Water, Sewer, Pipeline, Comm & Power Line Construction",True,9.9,False,1.0,False
-GLBE,1835963,Global-E Online Ltd.,7372.0,Services-Prepackaged Software,False,9.9,True,1.0,False
-IBRX,1326110,"ImmunityBio, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,9.9,False,1.0,False
 CIFR,1819989,Cipher Digital Inc.,6199.0,Finance Services,True,9.9,False,1.0,False
-TNDM,1438133,TANDEM DIABETES CARE INC,3841.0,Surgical & Medical Instruments & Apparatus,True,9.8,False,1.0,False
-CHE,19584,CHEMED CORP,8082.0,Services-Home Health Care Services,True,9.8,False,1.0,False
-PRAX,1689548,"Praxis Precision Medicines, Inc.",2834.0,Pharmaceutical Preparations,True,9.8,False,1.0,False
-HQY,1428336,"HEALTHEQUITY, INC.",7389.0,"Services-Business Services, NEC",True,9.8,False,1.0,False
 XRX,1770450,Xerox Holdings Corp,3577.0,"Computer Peripheral Equipment, NEC",True,9.8,True,1.0,True
-AQN,1174169,ALGONQUIN POWER & UTILITIES CORP.,4911.0,Electric Services,False,9.8,False,1.0,False
-COLD,1455863,AMERICOLD REALTY TRUST,6798.0,Real Estate Investment Trusts,True,9.8,False,1.0,False
-STVN,1849853,Stevanato Group S.p.A.,3841.0,Surgical & Medical Instruments & Apparatus,False,9.8,False,1.0,False
-AN,350698,"AUTONATION, INC.",5500.0,Retail-Auto Dealers & Gasoline Stations,True,9.8,False,1.0,False
+CHE,19584,CHEMED CORP,8082.0,Services-Home Health Care Services,True,9.8,False,1.0,False
 EAT,703351,"BRINKER INTERNATIONAL, INC",5812.0,Retail-Eating  Places,True,9.8,False,1.0,False
+AQN,1174169,ALGONQUIN POWER & UTILITIES CORP.,4911.0,Electric Services,False,9.8,False,1.0,False
+HQY,1428336,"HEALTHEQUITY, INC.",7389.0,"Services-Business Services, NEC",True,9.8,False,1.0,False
+STVN,1849853,Stevanato Group S.p.A.,3841.0,Surgical & Medical Instruments & Apparatus,False,9.8,False,1.0,False
+PRAX,1689548,"Praxis Precision Medicines, Inc.",2834.0,Pharmaceutical Preparations,True,9.8,False,1.0,False
 MSGS,1636519,Madison Square Garden Sports Corp.,7990.0,Services-Miscellaneous Amusement & Recreation,True,9.8,False,1.0,False
+TNDM,1438133,TANDEM DIABETES CARE INC,3841.0,Surgical & Medical Instruments & Apparatus,True,9.8,False,1.0,False
+COLD,1455863,AMERICOLD REALTY TRUST,6798.0,Real Estate Investment Trusts,True,9.8,False,1.0,False
+NTSK,2063196,Netskope Inc,7372.0,Services-Prepackaged Software,True,9.8,True,1.0,True
+AN,350698,"AUTONATION, INC.",5500.0,Retail-Auto Dealers & Gasoline Stations,True,9.8,False,1.0,False
 FCFS,840489,"FirstCash Holdings, Inc.",5900.0,Retail-Miscellaneous Retail,True,9.7,False,1.0,False
-CDLR,1978867,Cadeler A/S,4412.0,Deep Sea Foreign Transportation of  Freight,False,9.7,False,1.0,False
-SNEX,913760,StoneX Group Inc.,6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,9.7,False,1.0,False
-GRPN,1490281,"Groupon, Inc.",7311.0,Services-Advertising Agencies,True,9.7,False,1.0,False
 BRX,1581068,Brixmor Property Group Inc.,6798.0,Real Estate Investment Trusts,True,9.7,False,1.0,False
+CDLR,1978867,Cadeler A/S,4412.0,Deep Sea Foreign Transportation of  Freight,False,9.7,False,1.0,False
+GRPN,1490281,"Groupon, Inc.",7311.0,Services-Advertising Agencies,True,9.7,False,1.0,False
+SNEX,913760,StoneX Group Inc.,6200.0,"Security & Commodity Brokers, Dealers, Exchanges & Services",True,9.7,False,1.0,False
+NNN,751364,"NNN REIT, INC.",6798.0,Real Estate Investment Trusts,True,9.6,False,1.0,False
+GT,42582,GOODYEAR TIRE & RUBBER CO /OH/,3011.0,Tires & Inner Tubes,True,9.6,False,1.0,False
+OGN,1821825,Organon & Co.,2834.0,Pharmaceutical Preparations,True,9.6,False,1.0,False
 CRESY,1034957,CRESUD INC,6500.0,Real Estate,False,9.6,False,1.0,False
 DNTH,1690585,"Dianthus Therapeutics, Inc. /DE/",2834.0,Pharmaceutical Preparations,True,9.6,False,1.0,False
-GT,42582,GOODYEAR TIRE & RUBBER CO /OH/,3011.0,Tires & Inner Tubes,True,9.6,False,1.0,False
-PBF,1534504,PBF Energy Inc.,2911.0,Petroleum Refining,True,9.6,False,1.0,False
-NNN,751364,"NNN REIT, INC.",6798.0,Real Estate Investment Trusts,True,9.6,False,1.0,False
-OGN,1821825,Organon & Co.,2834.0,Pharmaceutical Preparations,True,9.6,False,1.0,False
+SM,893538,SM Energy Co,1311.0,Crude Petroleum & Natural Gas,True,9.5,False,1.0,False
+PKX,889132,POSCO HOLDINGS INC.,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,9.5,False,1.0,False
 MTH,833079,Meritage Homes CORP,1531.0,Operative Builders,True,9.5,False,1.0,False
-DNLI,1714899,Denali Therapeutics Inc.,2836.0,"Biological Products, (No Diagnostic Substances)",True,9.5,False,1.0,False
 CBSH,22356,COMMERCE BANCSHARES INC /MO/,6022.0,State Commercial Banks,True,9.5,False,1.0,False
 KODK,31235,EASTMAN KODAK CO,3861.0,Photographic Equipment & Supplies,True,9.5,False,1.0,False
 RIOT,1167419,"Riot Platforms, Inc.",6199.0,Finance Services,True,9.5,False,1.0,False
-PKX,889132,POSCO HOLDINGS INC.,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",False,9.5,False,1.0,False
-FLG,910073,"FLAGSTAR BANK, NATIONAL ASSOCIATION",6036.0,"Savings Institutions, Not Federally Chartered",True,9.5,False,1.0,False
 EGO,918608,ELDORADO GOLD CORP /FI,1040.0,Gold and Silver Ores,False,9.5,False,1.0,False
+FLG,910073,"FLAGSTAR BANK, NATIONAL ASSOCIATION",6036.0,"Savings Institutions, Not Federally Chartered",True,9.5,False,1.0,False
+DNLI,1714899,Denali Therapeutics Inc.,2836.0,"Biological Products, (No Diagnostic Substances)",True,9.5,False,1.0,False
 DDD,910638,3D SYSTEMS CORP,7372.0,Services-Prepackaged Software,True,9.5,True,1.0,True
-DAVA,1656081,Endava plc,7371.0,Services-Computer Programming Services,False,9.4,True,1.0,False
 EEFT,1029199,"EURONET WORLDWIDE, INC.",6099.0,"Functions Related To Depository Banking, NEC",True,9.4,False,1.0,False
+CTRE,1590717,"CareTrust REIT, Inc.",6798.0,Real Estate Investment Trusts,True,9.4,False,1.0,False
+DAVA,1656081,Endava plc,7371.0,Services-Computer Programming Services,False,9.4,True,1.0,False
+COLB,887343,"COLUMBIA BANKING SYSTEM, INC.",6022.0,State Commercial Banks,True,9.4,False,1.0,False
+FIRY,1801661,Firy Inc.,7374.0,Services-Computer Processing & Data Preparation,True,9.4,True,1.0,True
+INSP,1609550,"Inspire Medical Systems, Inc.",3841.0,Surgical & Medical Instruments & Apparatus,True,9.4,False,1.0,False
 EAI,7323,"ENTERGY ARKANSAS, LLC",4911.0,Electric Services,True,9.4,False,1.0,False
 LLYVA,2078416,"Liberty Live Holdings, Inc.",7900.0,Services-Amusement & Recreation Services,True,9.4,False,1.0,False
-CTRE,1590717,"CareTrust REIT, Inc.",6798.0,Real Estate Investment Trusts,True,9.4,False,1.0,False
-COLB,887343,"COLUMBIA BANKING SYSTEM, INC.",6022.0,State Commercial Banks,True,9.4,False,1.0,False
-INSP,1609550,"Inspire Medical Systems, Inc.",3841.0,Surgical & Medical Instruments & Apparatus,True,9.4,False,1.0,False
-FIRY,1801661,Firy Inc.,7374.0,Services-Computer Processing & Data Preparation,True,9.4,True,1.0,True
-JXN,1822993,Jackson Financial Inc.,6311.0,Life Insurance,True,9.3,False,1.0,False
+PBF,1534504,PBF Energy Inc.,2911.0,Petroleum Refining,True,9.3,False,1.0,False
 OII,73756,OCEANEERING INTERNATIONAL INC,1389.0,"Oil & Gas Field Services, NEC",True,9.3,False,1.0,False
-ADC,917251,AGREE REALTY CORP,6798.0,Real Estate Investment Trusts,True,9.3,False,1.0,False
+HNGE,1673743,"Hinge Health, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,9.3,True,1.0,True
 MQ,1522540,"Marqeta, Inc.",7372.0,Services-Prepackaged Software,True,9.3,True,1.0,True
+ADC,917251,AGREE REALTY CORP,6798.0,Real Estate Investment Trusts,True,9.3,False,1.0,False
+JXN,1822993,Jackson Financial Inc.,6311.0,Life Insurance,True,9.3,False,1.0,False
 LGN,2052568,Legence Corp.,1700.0,Construction - Special Trade Contractors,True,9.2,False,1.0,False
-SLAB,1038074,SILICON LABORATORIES INC.,3674.0,Semiconductors & Related Devices,True,9.2,True,1.0,True
-HNGE,1673743,"Hinge Health, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,9.2,True,1.0,True
 GPK,1408075,GRAPHIC PACKAGING HOLDING CO,2650.0,Paperboard Containers & Boxes,True,9.2,False,1.0,False
 DLO,1846832,dLocal Ltd,7389.0,"Services-Business Services, NEC",False,9.2,False,1.0,False
 GPRO,1500435,"GoPro, Inc.",3861.0,Photographic Equipment & Supplies,True,9.2,False,1.0,False
-BROS,1866581,Dutch Bros Inc.,5810.0,Retail-Eating & Drinking Places,True,9.1,False,1.0,False
-AGNT,1495932,"AGNT, Inc.",6531.0,Real Estate Agents & Managers (For Others),True,9.1,False,1.0,False
-SM,893538,SM Energy Co,1311.0,Crude Petroleum & Natural Gas,True,9.1,False,1.0,False
-NAVI,1593538,NAVIENT CORP,6211.0,"Security Brokers, Dealers & Flotation Companies",True,9.1,False,1.0,False
+SLAB,1038074,SILICON LABORATORIES INC.,3674.0,Semiconductors & Related Devices,True,9.2,True,1.0,True
 SYM,1837240,Symbotic Inc.,3569.0,"General Industrial Machinery & Equipment, NEC",True,9.1,False,1.0,False
+NAVI,1593538,NAVIENT CORP,6211.0,"Security Brokers, Dealers & Flotation Companies",True,9.1,False,1.0,False
+ANF,1018840,ABERCROMBIE & FITCH CO /DE/,5651.0,Retail-Family Clothing Stores,True,9.1,False,1.0,False
 FIGR,2064124,"Figure Technology Solutions, Inc.",6163.0,Loan Brokers,True,9.1,False,1.0,False
+WFRD,1603923,Weatherford International plc,3533.0,Oil & Gas Field Machinery & Equipment,True,9.1,False,1.0,False
 CNF,1733868,CNFinance Holdings Ltd.,6199.0,Finance Services,False,9.1,False,1.0,False
 FSV,1637810,FirstService Corp,6500.0,Real Estate,False,9.1,False,1.0,False
-WFRD,1603923,Weatherford International plc,3533.0,Oil & Gas Field Machinery & Equipment,True,9.1,False,1.0,False
+CAI,2019410,"Caris Life Sciences, Inc.",8071.0,Services-Medical Laboratories,True,9.1,False,1.0,False
+VNOM,2074176,"Viper Energy, Inc.",1311.0,Crude Petroleum & Natural Gas,True,9.1,False,1.0,False
+BROS,1866581,Dutch Bros Inc.,5810.0,Retail-Eating & Drinking Places,True,9.1,False,1.0,False
 ESE,866706,ESCO TECHNOLOGIES INC,3669.0,"Communications Equipment, NEC",True,9.1,True,1.0,True
-ANF,1018840,ABERCROMBIE & FITCH CO /DE/,5651.0,Retail-Family Clothing Stores,True,9.1,False,1.0,False
+AGNT,1495932,"AGNT, Inc.",6531.0,Real Estate Agents & Managers (For Others),True,9.1,False,1.0,False
 LIF,1581760,"Life360, Inc.",7374.0,Services-Computer Processing & Data Preparation,True,9.0,True,1.0,True
-GNW,1276520,GENWORTH FINANCIAL INC,6311.0,Life Insurance,True,9.0,False,1.0,False
-NTSK,2063196,Netskope Inc,7372.0,Services-Prepackaged Software,True,9.0,True,1.0,True
-RHP,1040829,"Ryman Hospitality Properties, Inc.",6798.0,Real Estate Investment Trusts,True,9.0,False,1.0,False
-CAI,2019410,"Caris Life Sciences, Inc.",8071.0,Services-Medical Laboratories,True,9.0,False,1.0,False
-JMIA,1756708,Jumia Technologies AG,5961.0,Retail-Catalog & Mail-Order Houses,False,9.0,False,1.0,False
 JBLU,1158463,JETBLUE AIRWAYS CORP,4512.0,"Air Transportation, Scheduled",True,9.0,False,1.0,False
-NBR,1163739,NABORS INDUSTRIES LTD,1381.0,Drilling Oil & Gas Wells,True,8.9,False,1.0,False
+GNW,1276520,GENWORTH FINANCIAL INC,6311.0,Life Insurance,True,9.0,False,1.0,False
+JMIA,1756708,Jumia Technologies AG,5961.0,Retail-Catalog & Mail-Order Houses,False,9.0,False,1.0,False
+RHP,1040829,"Ryman Hospitality Properties, Inc.",6798.0,Real Estate Investment Trusts,True,9.0,False,1.0,False
+KRC,1025996,KILROY REALTY CORP,6798.0,Real Estate Investment Trusts,True,8.9,False,1.0,False
+ZWS,1439288,Zurn Elkay Water Solutions Corp,3560.0,General Industrial Machinery & Equipment,True,8.9,False,1.0,False
 FVRR,1762301,Fiverr International Ltd.,7389.0,"Services-Business Services, NEC",False,8.9,False,1.0,False
 CRCT,1828962,"Cricut, Inc.",3559.0,"Special Industry Machinery, NEC",True,8.9,True,1.0,True
-SSD,920371,"Simpson Manufacturing Co., Inc.",3420.0,"Cutlery, Handtools & General Hardware",True,8.9,False,1.0,False
 AXTA,1616862,Axalta Coating Systems Ltd.,2851.0,"Paints, Varnishes, Lacquers, Enamels & Allied Prods",True,8.9,False,1.0,False
-ZWS,1439288,Zurn Elkay Water Solutions Corp,3560.0,General Industrial Machinery & Equipment,True,8.9,False,1.0,False
-IBP,1580905,"Installed Building Products, Inc.",1520.0,General Bldg Contractors - Residential Bldgs,True,8.9,False,1.0,False
-ACMR,1680062,"ACM Research, Inc.",3559.0,"Special Industry Machinery, NEC",True,8.9,True,1.0,True
+SSD,920371,"Simpson Manufacturing Co., Inc.",3420.0,"Cutlery, Handtools & General Hardware",True,8.9,False,1.0,False
 ENS,1289308,EnerSys,3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",True,8.9,False,1.0,False
+IBP,1580905,"Installed Building Products, Inc.",1520.0,General Bldg Contractors - Residential Bldgs,True,8.9,False,1.0,False
 ACAD,1070494,ACADIA PHARMACEUTICALS INC,2834.0,Pharmaceutical Preparations,True,8.9,False,1.0,False
-KRC,1025996,KILROY REALTY CORP,6798.0,Real Estate Investment Trusts,True,8.9,False,1.0,False
+ACMR,1680062,"ACM Research, Inc.",3559.0,"Special Industry Machinery, NEC",True,8.9,True,1.0,True
 ABCL,1703057,AbCellera Biologics Inc.,2834.0,Pharmaceutical Preparations,True,8.9,False,1.0,False
-VNOM,2074176,"Viper Energy, Inc.",1311.0,Crude Petroleum & Natural Gas,True,8.8,False,1.0,False
+NBR,1163739,NABORS INDUSTRIES LTD,1381.0,Drilling Oil & Gas Wells,True,8.9,False,1.0,False
 CAMT,1109138,CAMTEK LTD,3827.0,Optical Instruments & Lenses,False,8.8,True,1.0,False
-SGOL,1450923,abrdn Gold ETF Trust,6221.0,Commodity Contracts Brokers & Dealers,True,8.8,False,1.0,False
-AXS,1214816,AXIS CAPITAL HOLDINGS LTD,6331.0,"Fire, Marine & Casualty Insurance",True,8.8,False,1.0,False
-HUN,1307954,Huntsman CORP,2800.0,Chemicals & Allied Products,True,8.8,False,1.0,False
 OR,1627272,OR Royalties Inc.,1040.0,Gold and Silver Ores,False,8.8,False,1.0,False
 TGTX,1001316,"TG THERAPEUTICS, INC.",2834.0,Pharmaceutical Preparations,True,8.8,False,1.0,False
-CRUS,772406,"CIRRUS LOGIC, INC.",3674.0,Semiconductors & Related Devices,True,8.7,True,1.0,True
+AXS,1214816,AXIS CAPITAL HOLDINGS LTD,6331.0,"Fire, Marine & Casualty Insurance",True,8.8,False,1.0,False
+SGOL,1450923,abrdn Gold ETF Trust,6221.0,Commodity Contracts Brokers & Dealers,True,8.8,False,1.0,False
+HUN,1307954,Huntsman CORP,2800.0,Chemicals & Allied Products,True,8.8,False,1.0,False
 FAF,1472787,First American Financial Corp,6361.0,Title Insurance,True,8.7,False,1.0,False
-CHH,1046311,CHOICE HOTELS INTERNATIONAL INC /DE,7011.0,Hotels & Motels,True,8.7,False,1.0,False
-AMTM,2011286,"Amentum Holdings, Inc.",7389.0,"Services-Business Services, NEC",True,8.7,False,1.0,False
 NVST,1757073,Envista Holdings Corp,3843.0,Dental Equipment & Supplies,True,8.7,False,1.0,False
 YETI,1670592,"YETI Holdings, Inc.",3949.0,"Sporting & Athletic Goods, NEC",True,8.7,False,1.0,False
 GNTX,355811,GENTEX CORP,3714.0,Motor Vehicle Parts & Accessories,True,8.7,False,1.0,False
+AMTM,2011286,"Amentum Holdings, Inc.",7389.0,"Services-Business Services, NEC",True,8.7,False,1.0,False
+ZETA,1851003,Zeta Global Holdings Corp.,7372.0,Services-Prepackaged Software,True,8.7,True,1.0,True
 MAN,871763,ManpowerGroup Inc.,7363.0,Services-Help Supply Services,True,8.7,False,1.0,False
-AZTA,933974,"Azenta, Inc.",3559.0,"Special Industry Machinery, NEC",True,8.7,True,1.0,True
+CHH,1046311,CHOICE HOTELS INTERNATIONAL INC /DE,7011.0,Hotels & Motels,True,8.7,False,1.0,False
 FR,921825,FIRST INDUSTRIAL REALTY TRUST INC,6798.0,Real Estate Investment Trusts,True,8.7,False,1.0,False
+AZTA,933974,"Azenta, Inc.",3559.0,"Special Industry Machinery, NEC",True,8.7,True,1.0,True
+CRUS,772406,"CIRRUS LOGIC, INC.",3674.0,Semiconductors & Related Devices,True,8.7,True,1.0,True
 OMCL,926326,"OMNICELL, INC.",3571.0,Electronic Computers,True,8.7,True,1.0,True
-ZETA,1851003,Zeta Global Holdings Corp.,7372.0,Services-Prepackaged Software,True,8.6,True,1.0,True
-RARE,1515673,Ultragenyx Pharmaceutical Inc.,2834.0,Pharmaceutical Preparations,True,8.6,False,1.0,False
-NFG,70145,NATIONAL FUEL GAS CO,4924.0,Natural Gas Distribution,True,8.6,False,1.0,False
 AWI,7431,ARMSTRONG WORLD INDUSTRIES INC,3089.0,"Plastics Products, NEC",True,8.6,False,1.0,False
+NFG,70145,NATIONAL FUEL GAS CO,4924.0,Natural Gas Distribution,True,8.6,False,1.0,False
+RARE,1515673,Ultragenyx Pharmaceutical Inc.,2834.0,Pharmaceutical Preparations,True,8.6,False,1.0,False
+CVLT,1169561,COMMVAULT SYSTEMS INC,7372.0,Services-Prepackaged Software,True,8.5,True,1.0,True
+BOKF,875357,BOK FINANCIAL CORP,6021.0,National Commercial Banks,True,8.5,False,1.0,False
+ECG,2015845,"Everus Construction Group, Inc.",1531.0,Operative Builders,True,8.5,False,1.0,False
+CMC,22444,COMMERCIAL METALS Co,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",True,8.5,False,1.0,False
 CORZ,1839341,"Core Scientific, Inc./tx",6199.0,Finance Services,True,8.5,False,1.0,False
 BC,14930,BRUNSWICK CORP,3510.0,Engines & Turbines,True,8.5,False,1.0,False
-ADT,1703056,ADT Inc.,7381.0,"Services-Detective, Guard & Armored Car Services",True,8.5,False,1.0,False
-CMC,22444,COMMERCIAL METALS Co,3312.0,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",True,8.5,False,1.0,False
-APPS,317788,"Digital Turbine, Inc.",6794.0,Patent Owners & Lessors,True,8.5,False,1.0,False
-BOKF,875357,BOK FINANCIAL CORP,6021.0,National Commercial Banks,True,8.5,False,1.0,False
-CVLT,1169561,COMMVAULT SYSTEMS INC,7372.0,Services-Prepackaged Software,True,8.5,True,1.0,True
 ENOV,1420800,Enovis CORP,3842.0,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",True,8.5,False,1.0,False
-ECG,2015845,"Everus Construction Group, Inc.",1531.0,Operative Builders,True,8.5,False,1.0,False
-FOSL,883569,"Fossil Group, Inc.",3873.0,"Watches, Clocks, Clockwork Operated Devices/Parts",True,8.4,False,1.0,False
-NEU,1282637,NEWMARKET CORP,2860.0,Industrial Organic Chemicals,True,8.4,False,1.0,False
+APPS,317788,"Digital Turbine, Inc.",6794.0,Patent Owners & Lessors,True,8.5,False,1.0,False
+ADT,1703056,ADT Inc.,7381.0,"Services-Detective, Guard & Armored Car Services",True,8.5,False,1.0,False
 KEX,56047,KIRBY CORP,4400.0,Water Transportation,True,8.4,False,1.0,False
-FIGS,1846576,"FIGS, Inc.",2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,True,8.4,False,1.0,False
-WH,1722684,"WYNDHAM HOTELS & RESORTS, INC.",7011.0,Hotels & Motels,True,8.4,False,1.0,False
 OLLI,1639300,"Ollie's Bargain Outlet Holdings, Inc.",5331.0,Retail-Variety Stores,True,8.4,False,1.0,False
-PB,1068851,PROSPERITY BANCSHARES INC,6022.0,State Commercial Banks,True,8.4,False,1.0,False
 ORA,1296445,"ORMAT TECHNOLOGIES, INC.",4911.0,Electric Services,True,8.4,False,1.0,False
 IMVT,1764013,"Immunovant, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,8.4,False,1.0,False
-UGP,1094972,ULTRAPAR HOLDINGS INC,4924.0,Natural Gas Distribution,False,8.3,False,1.0,False
-THG,944695,"HANOVER INSURANCE GROUP, INC.",6331.0,"Fire, Marine & Casualty Insurance",True,8.3,False,1.0,False
-LPX,60519,LOUISIANA-PACIFIC CORP,2400.0,Lumber & Wood Products (No Furniture),True,8.3,False,1.0,False
-NXST,1142417,"NEXSTAR MEDIA GROUP, INC.",4833.0,Television Broadcasting Stations,True,8.3,False,1.0,False
-IRDM,1418819,Iridium Communications Inc.,4899.0,"Communications Services, NEC",True,8.3,False,1.0,False
-CIGI,913353,Colliers International Group Inc.,6500.0,Real Estate,True,8.3,False,1.0,False
-NSIT,932696,INSIGHT ENTERPRISES INC,5961.0,Retail-Catalog & Mail-Order Houses,True,8.3,False,1.0,False
-NXE,1698535,NexGen Energy Ltd.,1090.0,Miscellaneous Metal Ores,False,8.3,False,1.0,False
-AVT,8858,AVNET INC,5065.0,"Wholesale-Electronic Parts & Equipment, NEC",True,8.3,False,1.0,False
-CCC,1818201,CCC Intelligent Solutions Holdings Inc.,7372.0,Services-Prepackaged Software,True,8.3,True,1.0,True
-TFPM,1829726,Triple Flag Precious Metals Corp.,6795.0,Mineral Royalty Traders,False,8.3,False,1.0,False
+NEU,1282637,NEWMARKET CORP,2860.0,Industrial Organic Chemicals,True,8.4,False,1.0,False
+PB,1068851,PROSPERITY BANCSHARES INC,6022.0,State Commercial Banks,True,8.4,False,1.0,False
+WH,1722684,"WYNDHAM HOTELS & RESORTS, INC.",7011.0,Hotels & Motels,True,8.4,False,1.0,False
+FOSL,883569,"Fossil Group, Inc.",3873.0,"Watches, Clocks, Clockwork Operated Devices/Parts",True,8.4,False,1.0,False
+FIGS,1846576,"FIGS, Inc.",2300.0,Apparel & Other Finishd Prods of  Fabrics & Similar Matl,True,8.4,False,1.0,False
 IDA,1057877,IDACORP INC,4911.0,Electric Services,True,8.3,False,1.0,False
+THG,944695,"HANOVER INSURANCE GROUP, INC.",6331.0,"Fire, Marine & Casualty Insurance",True,8.3,False,1.0,False
+CBC,2065601,"Central Bancompany, Inc.",,,True,8.3,False,1.0,False
 VISN,1517228,"Vistance Networks, Inc.",3663.0,Radio & Tv Broadcasting & Communications Equipment,True,8.3,True,1.0,True
-FCN,887936,"FTI CONSULTING, INC",8742.0,Services-Management Consulting Services,True,8.2,False,1.0,False
-OMF,1584207,"OneMain Holdings, Inc.",6141.0,Personal Credit Institutions,True,8.2,False,1.0,False
-SKM,1015650,SK TELECOM CO LTD,4812.0,Radiotelephone Communications,False,8.2,False,1.0,False
-CHPT,1777393,"ChargePoint Holdings, Inc.",3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",True,8.2,False,1.0,False
-CBC,2065601,"Central Bancompany, Inc.",,,True,8.2,False,1.0,False
-NE,1895262,Noble Corp plc,1381.0,Drilling Oil & Gas Wells,True,8.2,False,1.0,False
-VLY,714310,VALLEY NATIONAL BANCORP,6021.0,National Commercial Banks,True,8.2,False,1.0,False
+UGP,1094972,ULTRAPAR HOLDINGS INC,4924.0,Natural Gas Distribution,False,8.3,False,1.0,False
+TFPM,1829726,Triple Flag Precious Metals Corp.,6795.0,Mineral Royalty Traders,False,8.3,False,1.0,False
+NSIT,932696,INSIGHT ENTERPRISES INC,5961.0,Retail-Catalog & Mail-Order Houses,True,8.3,False,1.0,False
+NXST,1142417,"NEXSTAR MEDIA GROUP, INC.",4833.0,Television Broadcasting Stations,True,8.3,False,1.0,False
+LPX,60519,LOUISIANA-PACIFIC CORP,2400.0,Lumber & Wood Products (No Furniture),True,8.3,False,1.0,False
+AVT,8858,AVNET INC,5065.0,"Wholesale-Electronic Parts & Equipment, NEC",True,8.3,False,1.0,False
+CIGI,913353,Colliers International Group Inc.,6500.0,Real Estate,True,8.3,False,1.0,False
+NXE,1698535,NexGen Energy Ltd.,1090.0,Miscellaneous Metal Ores,False,8.3,False,1.0,False
+IRDM,1418819,Iridium Communications Inc.,4899.0,"Communications Services, NEC",True,8.3,False,1.0,False
+CCC,1818201,CCC Intelligent Solutions Holdings Inc.,7372.0,Services-Prepackaged Software,True,8.3,True,1.0,True
 AIV,922864,APARTMENT INVESTMENT & MANAGEMENT CO,6798.0,Real Estate Investment Trusts,True,8.2,False,1.0,False
-RAL,2041385,Ralliant Corp,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,8.2,False,1.0,False
-NUS,1021561,"NU SKIN ENTERPRISES, INC.",5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,8.2,False,1.0,False
 JBTM,1433660,JBT MAREL Corp,3550.0,Special Industry Machinery (No Metalworking Machinery),True,8.2,False,1.0,False
+NUS,1021561,"NU SKIN ENTERPRISES, INC.",5122.0,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",True,8.2,False,1.0,False
+CHPT,1777393,"ChargePoint Holdings, Inc.",3690.0,"Miscellaneous Electrical Machinery, Equipment & Supplies",True,8.2,False,1.0,False
+FCN,887936,"FTI CONSULTING, INC",8742.0,Services-Management Consulting Services,True,8.2,False,1.0,False
+SKM,1015650,SK TELECOM CO LTD,4812.0,Radiotelephone Communications,False,8.2,False,1.0,False
 POST,1530950,"Post Holdings, Inc.",2040.0,Grain Mill Products,True,8.2,False,1.0,False
-UEC,1334933,URANIUM ENERGY CORP,1090.0,Miscellaneous Metal Ores,True,8.1,False,1.0,False
-SOGP,1783407,Sound Group Inc.,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,8.1,True,1.0,False
-ACHC,1520697,"Acadia Healthcare Company, Inc.",8093.0,"Services-Specialty Outpatient Facilities, NEC",True,8.1,False,1.0,False
-EXLS,1297989,"ExlService Holdings, Inc.",7389.0,"Services-Business Services, NEC",True,8.1,False,1.0,False
-ESAB,1877322,ESAB Corp,3569.0,"General Industrial Machinery & Equipment, NEC",True,8.1,False,1.0,False
-THO,730263,THOR INDUSTRIES INC,3716.0,Motor Homes,True,8.1,False,1.0,False
+OMF,1584207,"OneMain Holdings, Inc.",6141.0,Personal Credit Institutions,True,8.2,False,1.0,False
+RAL,2041385,Ralliant Corp,3823.0,"Industrial Instruments For Measurement, Display, and Control",True,8.2,False,1.0,False
+VLY,714310,VALLEY NATIONAL BANCORP,6021.0,National Commercial Banks,True,8.2,False,1.0,False
+NE,1895262,Noble Corp plc,1381.0,Drilling Oil & Gas Wells,True,8.2,False,1.0,False
 SABR,1597033,Sabre Corp,7370.0,"Services-Computer Programming, Data Processing, Etc.",True,8.1,True,1.0,True
 VIR,1706431,"Vir Biotechnology, Inc.",2836.0,"Biological Products, (No Diagnostic Substances)",True,8.1,False,1.0,False
-BTG,1429937,B2GOLD CORP,1040.0,Gold and Silver Ores,False,8.1,False,1.0,False
-HUIZ,1778982,Huize Holding Ltd,6411.0,"Insurance Agents, Brokers & Service",False,8.1,False,1.0,False
-BEPC,1791863,Brookfield Renewable Corp,4911.0,Electric Services,False,8.1,False,1.0,False
+THO,730263,THOR INDUSTRIES INC,3716.0,Motor Homes,True,8.1,False,1.0,False
+UEC,1334933,URANIUM ENERGY CORP,1090.0,Miscellaneous Metal Ores,True,8.1,False,1.0,False
 LQDA,1819576,Liquidia Corp,2834.0,Pharmaceutical Preparations,True,8.1,False,1.0,False
-PLXS,785786,PLEXUS CORP,3672.0,Printed Circuit Boards,True,8.1,True,1.0,True
+SOGP,1783407,Sound Group Inc.,7370.0,"Services-Computer Programming, Data Processing, Etc.",False,8.1,True,1.0,False
+HUIZ,1778982,Huize Holding Ltd,6411.0,"Insurance Agents, Brokers & Service",False,8.1,False,1.0,False
 ONIT,873860,ONITY GROUP INC.,6162.0,Mortgage Bankers & Loan Correspondents,True,8.1,False,1.0,False
-NPO,1164863,Enpro Inc.,3050.0,"Gaskets, Packg & Sealg Devices & Rubber & Plastics Hose",True,8.0,False,1.0,False
+ACHC,1520697,"Acadia Healthcare Company, Inc.",8093.0,"Services-Specialty Outpatient Facilities, NEC",True,8.1,False,1.0,False
+BTG,1429937,B2GOLD CORP,1040.0,Gold and Silver Ores,False,8.1,False,1.0,False
+EXLS,1297989,"ExlService Holdings, Inc.",7389.0,"Services-Business Services, NEC",True,8.1,False,1.0,False
+BEPC,1791863,Brookfield Renewable Corp,4911.0,Electric Services,False,8.1,False,1.0,False
+ESAB,1877322,ESAB Corp,3569.0,"General Industrial Machinery & Equipment, NEC",True,8.1,False,1.0,False
+PLXS,785786,PLEXUS CORP,3672.0,Printed Circuit Boards,True,8.1,True,1.0,True
+JAN,2100805,"Janus Living, Inc.",6798.0,Real Estate Investment Trusts,True,8.0,False,1.0,False
+VKTX,1607678,"Viking Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,8.0,False,1.0,False
+MTDR,1520006,Matador Resources Co,1311.0,Crude Petroleum & Natural Gas,True,8.0,False,1.0,False
 CRK,23194,COMSTOCK RESOURCES INC,1311.0,Crude Petroleum & Natural Gas,True,8.0,False,1.0,False
 UFPI,912767,UFP INDUSTRIES INC,2421.0,"Sawmills & Planting Mills, General",True,8.0,False,1.0,False
 ADPT,1478320,Adaptive Biotechnologies Corp,2836.0,"Biological Products, (No Diagnostic Substances)",True,8.0,False,1.0,False
-VKTX,1607678,"Viking Therapeutics, Inc.",2834.0,Pharmaceutical Preparations,True,8.0,False,1.0,False
-MTDR,1520006,Matador Resources Co,1311.0,Crude Petroleum & Natural Gas,True,8.0,False,1.0,False
-JAN,2100805,"Janus Living, Inc.",6798.0,Real Estate Investment Trusts,True,8.0,False,1.0,False
+NPO,1164863,Enpro Inc.,3050.0,"Gaskets, Packg & Sealg Devices & Rubber & Plastics Hose",True,8.0,False,1.0,False
