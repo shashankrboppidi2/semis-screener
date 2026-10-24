@@ -5,16 +5,21 @@
   Each alert = buy STEP (2%) of that sleeve from the sleeve's ETF; at most 10% of the sleeve per name and 40% in names;
   a name re-alerts only after 63 trading days. When a sleeve has too little room, the largest caps fill first; no
   displacement. January: trim names to 10% / 40% and rebalance the sleeves to 50/50.
-  Hedge: the WU SP500 Hedging Signal is closed-source TradingView data, so it is not computed here. Set its state in
-  the repository variable WU_HEDGE ("on" / "off") when the TradingView alert fires; the report then sizes PSQ
-  (25% of the QQQ sleeve, beta-scaled for the SMH sleeve) or tells you to unwind it.
+  Hedge (PSQ: 25% of the QQQ sleeve, beta-scaled for the SMH sleeve), from one of two sources:
+    WU_HEDGE        repository variable "on" / "off", set by hand when the TradingView WU alert fires (primary when set)
+    breadth signal  computed here from Yahoo Nasdaq new highs / lows (breadth_live.py, needs BREADTH_PARAMS); drives the
+                    hedge when WU_HEDGE is unset, otherwise shown as a cross-check
+  The report announces the day the hedge should go on or come off; with HOLDINGS it checks what you actually hold.
+  Every report opens with a verdict: no action (keep the monthly DCA) or a numbered list of today's trades.
 
 Inputs (all optional except prices):
   results/universe/        tickers, SIC, share counts and splits (build_tech_universe.py, refreshed quarterly)
   HOLDINGS                 secret, CSV "sleeve,ticker,shares" (sleeve QQQ or SMH; the ETFs and PSQ included) -> the
                            report prints dollar amounts, room left, trims and the rebalance; without it, percentages
+  BREADTH_PARAMS           secret, breadth calibration and levels (see breadth_live.py)
   SMTP_HOST/PORT/USER/PASS, MAIL_TO   e-mail (sent when there is something to do, or on Mondays)
-State: state/plan_alerts.json (last alert date per sleeve and name). Report: results/alerts/latest.md and .html.
+  NTFY_TOPIC               secret, optional phone push via ntfy.sh on action days (the topic name is the password)
+State: state/plan_alerts.json (last alert per sleeve and name, last hedge state). Report: results/alerts/latest.md.
 
 python plan_alerts.py            # live, Yahoo prices
 python plan_alerts.py --offline  # from the price files already in results/ (for testing)
@@ -26,6 +31,7 @@ from tech_caps import daily_caps
 
 STEP, CAP_NAME, CAP_TOT, FLOOR_B, TOP_N, DROP, SPACING = 0.02, 0.10, 0.40, 50.0, 25, 0.30, 63
 UNI, STATE, OUT = "results/universe", "state/plan_alerts.json", "results/alerts"
+PRIVATE = "state/private.json"        # hedge state: kept in the workflow cache, never committed (the repo is public)
 CHIP_SIC = {3674}
 
 def load_prices(offline, tickers):
@@ -86,33 +92,60 @@ def main(offline=False):
     td = adj.index
     state = json.load(open(STATE)) if os.path.exists(STATE) else {"QQQ": {}, "SMH": {}}
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
-    hedge = os.getenv("WU_HEDGE", "").strip().lower()
+    wu = os.getenv("WU_HEDGE", "").strip().lower()
+    wu = wu if wu in ("on", "off") else None
+    br = None
+    try:
+        import breadth_live
+        if breadth_live.params() is not None:
+            br = breadth_live.signal(None if offline else breadth_live.update_counts())
+    except Exception as e:
+        print("breadth signal unavailable:", str(e)[:200])
     r = np.log(adj[["QQQ", "SMH"]]).diff().iloc[-1260:]
     beta = r.SMH.cov(r.QQQ) / r.QQQ.var(); h_smh = 0.5 * beta / (1 + beta)
     H = holdings(close)
     L = [f"# Plan alerts, {d:%A %Y-%m-%d}", ""]
+    acts, pub_acts = [], []                                          # today's to-do list (private / public wording)
     todo = False
 
-    # hedge
+    # hedge: WU_HEDGE when set, else the breadth signal
     frac = {"QQQ": 0.25, "SMH": h_smh}
     sv = {}
     if H is not None:
         for s in ("QQQ", "SMH"): sv[s] = H[H.sleeve == s].value.sum()
     psq_held = H is not None and (H.ticker == "PSQ").any() and H[H.ticker == "PSQ"].shares.sum() > 0
+    source = "WU (TradingView, WU_HEDGE)" if wu else ("Nasdaq breadth (computed)" if br else None)
+    want = (wu == "on") if wu else (br["on"] if br else None)
+    priv = json.load(open(PRIVATE)) if os.path.exists(PRIVATE) and not offline else {}
+    prev = priv.get("hedge_on")
     P = list(L) + ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
-    L += ["## Hedge (WU SP500 Hedging Signal, PSQ)", ""]
-    if hedge not in ("on", "off"):
-        L.append("WU_HEDGE is not set. Set the repository variable to `on` or `off` when the TradingView alert fires.")
-    elif hedge == "on" and not psq_held:
-        todo = True
-        L.append(f"**Hedge ON.** Sell {frac['QQQ']:.0%} of the QQQ sleeve from QQQ and {frac['SMH']:.1%} of the SMH sleeve "
-                 f"from SMH (SMH beta {beta:.2f}); buy PSQ with the proceeds.")
-        if sv: L.append(f"That is ${frac['QQQ'] * sv['QQQ']:,.0f} of QQQ and ${frac['SMH'] * sv['SMH']:,.0f} of SMH into PSQ.")
-    elif hedge == "off" and psq_held:
-        todo = True
-        L.append("**Hedge OFF.** Sell all PSQ; put each sleeve's PSQ back into that sleeve's ETF.")
+    L += ["## Hedge (PSQ)", ""]
+    if want is None:
+        L.append("No hedge source: set WU_HEDGE (`on` / `off`) or the BREADTH_PARAMS secret.")
     else:
-        L.append(f"Hedge is {hedge}; holdings already match." if H is not None else f"Hedge is {hedge}.")
+        need = None
+        if H is not None:
+            need = "on" if want and not psq_held else "off" if not want and psq_held else None
+        elif prev is None or bool(prev) != bool(want):
+            need = "on" if want else "off"
+        if need == "on":
+            todo = True
+            txt = (f"Hedge ON ({source}): sell {frac['QQQ']:.0%} of the QQQ sleeve from QQQ and {frac['SMH']:.1%} of the "
+                   f"SMH sleeve from SMH (SMH beta {beta:.2f}); buy PSQ with the proceeds.")
+            if sv: txt += f" That is ${frac['QQQ'] * sv['QQQ']:,.0f} of QQQ and ${frac['SMH'] * sv['SMH']:,.0f} of SMH into PSQ."
+            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": buy PSQ")
+        elif need == "off":
+            todo = True
+            txt = f"Hedge OFF ({source}): sell all PSQ; put each sleeve's PSQ back into that sleeve's ETF."
+            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": sell PSQ")
+        else:
+            L.append(f"Hedge stays {'ON' if want else 'OFF'} ({source})" + ("; holdings match." if H is not None else "."))
+        if want != prev: priv["hedge_on"], priv["hedge_since"] = bool(want), str(d.date())
+    if br:
+        agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; **disagrees with WU**")
+        L.append(f"Breadth signal: {'ON' if br['on'] else 'OFF'} since {br['since'].date() if br['since'] is not None else '-'} "
+                 f"(lines {br['orange']:,.0f} / {br['blue']:,.0f} on {br['date'].date()}){agree}.")
+    if wu: L.append(f"WU_HEDGE: {wu}.")
     L.append("")
 
     # rotation alerts
@@ -128,6 +161,7 @@ def main(offline=False):
         L += hdr; P += hdr
         if fresh:
             todo = True
+            acts.append(f"{s} sleeve: buy {len(fresh)} stock(s) ({', '.join(fresh)})"); pub_acts.append(acts[-1])
             room = None
             if H is not None:
                 V = sv[s]; names_val = H[(H.sleeve == s) & ~H.ticker.isin([s, "PSQ"])].groupby("ticker").value.sum()
@@ -155,6 +189,7 @@ def main(offline=False):
     # January: trim and rebalance
     if (d.month == 1 and state.get("january_done") != d.year) or os.getenv("FORCE_JANUARY"):
         todo = True; state["january_done"] = d.year
+        acts.append("January: trim and rebalance the sleeves"); pub_acts.append(acts[-1])
         L += ["## January: trim and rebalance", ""]
         P += ["## January: trim and rebalance", "", "Trim names to 10% of the sleeve and 40% in names; rebalance the sleeves to 50/50 "
               "(dollar amounts in the e-mail).", ""]
@@ -174,8 +209,15 @@ def main(offline=False):
     if d.day <= 3 and len(td[(td.month == d.month) & (td.year == d.year)]) == 1:
         L += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
         P += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
-        todo = True
-    foot = ["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; "
+        todo = True; acts.append("Monthly deposit: half into QQQ, half into SMH"); pub_acts.append(acts[-1])
+    # the verdict goes right under the title
+    def verdict(items, extra=""):
+        if not items: return ["## Today: no action", "", "Nothing to trade. Keep the monthly DCA going." + extra, ""]
+        return [f"## Today: {len(items)} action(s)", ""] + [f"{i}. {a}" for i, a in enumerate(items, 1)] + [""]
+    L[2:2] = verdict(acts)
+    hedge_act = len(acts) > len(pub_acts)
+    P[2:2] = verdict(pub_acts + (["Hedge change: see the e-mail"] if hedge_act else []))
+    foot =["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; "
             f"re-alert after {SPACING} trading days. Caps use SEC share counts refreshed quarterly. Not investment advice."]
     L += foot; P += foot
 
@@ -184,13 +226,24 @@ def main(offline=False):
     if offline: OUTP = "/tmp" if not os.getenv("ALERTS_OUT") else os.getenv("ALERTS_OUT")
     else: OUTP = OUT
     open(f"{OUTP}/latest.md", "w").write(md if offline else pub)        # committed copy: public data only
-    if not offline: json.dump(state, open(STATE, "w"), indent=1, sort_keys=True)
+    if not offline:
+        json.dump(state, open(STATE, "w"), indent=1, sort_keys=True)
+        json.dump(priv, open(PRIVATE, "w"))
     html = md_to_html(md); open(f"{OUTP}/latest.html", "w").write(html if offline else md_to_html(pub))
     print(md if offline else pub)                                    # the run log of a public repository is public
     if os.getenv("ALERTS_DRY"): print("--- e-mail (dry run) ---"); print(md); return
     if (todo or d.weekday() == 0) and not offline:
         from email_report import send_mail
-        send_mail(f"Plan alerts {d:%Y-%m-%d}" + (" - action needed" if todo else ""), html)
+        send_mail(f"Plan {d:%Y-%m-%d}: " + (f"{len(acts)} action(s)" if acts else "no action"), html)
+    topic = os.getenv("NTFY_TOPIC", "").strip()
+    if acts and topic and not offline:
+        import requests
+        try:
+            requests.post(f"https://ntfy.sh/{topic}", data="\n".join(acts).encode(), timeout=20,
+                          headers={"Title": f"Plan {d:%Y-%m-%d}: {len(acts)} action(s)", "Tags": "chart_with_upwards_trend"})
+            print("push sent")
+        except Exception as e:
+            print("push failed:", str(e)[:120])
 
 def md_to_html(md):
     out, in_table = [], False
