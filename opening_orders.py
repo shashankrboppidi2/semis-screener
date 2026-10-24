@@ -28,8 +28,6 @@ rq, rs, capd = behind(adj, px.QQQ), behind(adj[chips], px.SMH), cap.loc[d]
 top = capd[chips].sort_values(ascending=False).head(pa.TOP_N).index
 qq = rq[(capd >= pa.FLOOR_B) & (rq <= -pa.DROP)].index
 ss = rs[rs.index.isin(top) & (rs <= -pa.DROP)].index
-skip = pa.skip_list()
-qq, ss = qq[~qq.isin(skip)], ss[~ss.isin(skip)]                       # skipped names: their 2% stays in the ETF
 r = np.log(px[["QQQ", "SMH"]]).diff().iloc[-1260:]
 beta = r.SMH.cov(r.QQQ) / r.QQQ.var()
 SLV = a.plan / 2

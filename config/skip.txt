@@ -1,3 +1,0 @@
-# Names the plan never rotates into, one ticker per line. Their 2% stays in the sleeve ETF.
-NFLX
-ADBE

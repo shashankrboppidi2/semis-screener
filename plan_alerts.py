@@ -18,8 +18,6 @@ Inputs (all optional except prices):
                            report prints dollar amounts, room left, trims and the rebalance; without it, percentages
   BREADTH_PARAMS           secret, breadth calibration and levels (see breadth_live.py)
   SMTP_HOST/PORT/USER/PASS, MAIL_TO   e-mail (sent when there is something to do, or on Mondays)
-  config/skip.txt          names you never want to rotate into (one ticker per line, # comments); they are listed
-                           in the report but never alerted, and their 2% stays in the ETF
   NTFY_TOPIC               secret, optional phone push via ntfy.sh on action days (the topic name is the password)
   DISCORD_WEBHOOK          secret, optional push to a Discord channel webhook on action days
 State: state/plan_alerts.json (last alert per sleeve and name, last hedge state). Report: results/alerts/latest.md.
@@ -36,11 +34,6 @@ STEP, CAP_NAME, CAP_TOT, FLOOR_B, TOP_N, DROP, SPACING = 0.02, 0.10, 0.40, 50.0,
 UNI, STATE, OUT = "results/universe", "state/plan_alerts.json", "results/alerts"
 PRIVATE = "state/private.json"        # hedge state: kept in the workflow cache, never committed (the repo is public)
 CHIP_SIC = {3674}
-SKIP_FILE = "config/skip.txt"
-
-def skip_list(path=SKIP_FILE):
-    if not os.path.exists(path): return set()
-    return {ln.split("#")[0].strip().upper() for ln in open(path)} - {""}
 
 def load_prices(offline, tickers):
     if offline:
@@ -97,9 +90,6 @@ def main(offline=False):
     adj, close, new_splits = load_prices(offline, list(meta0.ticker))
     caps, meta = caps_now(close, new_splits)
     d, sig = signals(adj, caps, meta)
-    skip = skip_list()
-    skipped = {k: v[v.index.isin(skip)] for k, v in sig.items()}
-    sig = {k: v[~v.index.isin(skip)] for k, v in sig.items()}
     td = adj.index
     state = json.load(open(STATE)) if os.path.exists(STATE) else {"QQQ": {}, "SMH": {}}
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
@@ -195,9 +185,6 @@ def main(offline=False):
         others = [t for t in sig[s].index if t not in fresh]
         if others:
             ln = [f"Already alerted, still behind (no action): {', '.join(f'{t} {sig[s][t]:+.0%}' for t in others)}", ""]
-            L += ln; P += ln
-        if len(skipped[s]):
-            ln = [f"On your skip list, behind but not bought: {', '.join(f'{t} {v:+.0%}' for t, v in skipped[s].items())}", ""]
             L += ln; P += ln
 
     # January: trim and rebalance
