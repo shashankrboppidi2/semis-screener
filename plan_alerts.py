@@ -99,6 +99,7 @@ def main(offline=False):
     if H is not None:
         for s in ("QQQ", "SMH"): sv[s] = H[H.sleeve == s].value.sum()
     psq_held = H is not None and (H.ticker == "PSQ").any() and H[H.ticker == "PSQ"].shares.sum() > 0
+    P = list(L) + ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
     L += ["## Hedge (WU SP500 Hedging Signal, PSQ)", ""]
     if hedge not in ("on", "off"):
         L.append("WU_HEDGE is not set. Set the repository variable to `on` or `off` when the TradingView alert fires.")
@@ -123,7 +124,8 @@ def main(offline=False):
             gap = len(td[(td > pd.Timestamp(prev)) & (td <= d)]) if prev else None
             if prev is None or gap >= SPACING: fresh.append(t)
         fresh = sorted(fresh, key=lambda t: -caps.get(t, 0))
-        L += [f"## {s} sleeve: {len(fresh)} new alert(s), {len(sig[s])} name(s) now >= {DROP:.0%} behind {bench}", ""]
+        hdr = [f"## {s} sleeve: {len(fresh)} new alert(s), {len(sig[s])} name(s) now >= {DROP:.0%} behind {bench}", ""]
+        L += hdr; P += hdr
         if fresh:
             todo = True
             room = None
@@ -132,7 +134,8 @@ def main(offline=False):
                 room = max(0.0, CAP_TOT * V - names_val.sum())
                 L.append(f"Sleeve ${V:,.0f}; in names ${names_val.sum():,.0f}; room ${room:,.0f}; step ${STEP * V:,.0f}.")
                 L.append("")
-            L += [f"| buy | name | behind {bench} | market cap | amount | price |", "|---|---|---|---|---|---|"]
+            th = [f"| buy | name | behind {bench} | market cap | amount | price |", "|---|---|---|---|---|---|"]
+            L += th; P += th
             for t in fresh:
                 if H is not None:
                     held = H[(H.sleeve == s) & (H.ticker == t)].value.sum()
@@ -140,17 +143,21 @@ def main(offline=False):
                     amt = f"${x:,.0f}" + ("" if x > 0 else " (no room: skip)")
                 else:
                     amt = f"{STEP:.0%} of sleeve"
-                L.append(f"| {t} | {meta.name.get(t, '')} | {sig[s][t]:+.0%} | ${caps.get(t, np.nan):,.0f}B | {amt} | {close[t].dropna().iloc[-1]:,.2f} |")
+                row = f"| {t} | {meta.name.get(t, '')} | {sig[s][t]:+.0%} | ${caps.get(t, np.nan):,.0f}B | {{}} | {close[t].dropna().iloc[-1]:,.2f} |"
+                L.append(row.format(amt)); P.append(row.format(f"{STEP:.0%} of sleeve"))
                 last[t] = str(d.date())
-            L.append("")
+            L.append(""); P.append("")
         others = [t for t in sig[s].index if t not in fresh]
         if others:
-            L += [f"Already alerted, still behind (no action): {', '.join(f'{t} {sig[s][t]:+.0%}' for t in others)}", ""]
+            ln = [f"Already alerted, still behind (no action): {', '.join(f'{t} {sig[s][t]:+.0%}' for t in others)}", ""]
+            L += ln; P += ln
 
     # January: trim and rebalance
     if (d.month == 1 and state.get("january_done") != d.year) or os.getenv("FORCE_JANUARY"):
         todo = True; state["january_done"] = d.year
         L += ["## January: trim and rebalance", ""]
+        P += ["## January: trim and rebalance", "", "Trim names to 10% of the sleeve and 40% in names; rebalance the sleeves to 50/50 "
+              "(dollar amounts in the e-mail).", ""]
         if H is None:
             L.append("Trim any name above 10% of its sleeve to 10%; if a sleeve's names exceed 40% of it, scale them down to 40%. "
                      "Then move money between QQQ and SMH so the two sleeves are equal.")
@@ -166,18 +173,21 @@ def main(offline=False):
         L.append("")
     if d.day <= 3 and len(td[(td.month == d.month) & (td.year == d.year)]) == 1:
         L += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
+        P += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
         todo = True
-    L += ["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; "
-          f"re-alert after {SPACING} trading days. Caps use SEC share counts refreshed quarterly. Not investment advice."]
+    foot = ["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; "
+            f"re-alert after {SPACING} trading days. Caps use SEC share counts refreshed quarterly. Not investment advice."]
+    L += foot; P += foot
 
     os.makedirs(OUT, exist_ok=True); os.makedirs(os.path.dirname(STATE), exist_ok=True)
-    md = "\n".join(L) + "\n"
+    md, pub = "\n".join(L) + "\n", "\n".join(P) + "\n"
     if offline: OUTP = "/tmp" if not os.getenv("ALERTS_OUT") else os.getenv("ALERTS_OUT")
     else: OUTP = OUT
-    open(f"{OUTP}/latest.md", "w").write(md)
+    open(f"{OUTP}/latest.md", "w").write(md if offline else pub)        # committed copy: public data only
     if not offline: json.dump(state, open(STATE, "w"), indent=1, sort_keys=True)
-    html = md_to_html(md); open(f"{OUTP}/latest.html", "w").write(html)
-    print(md)
+    html = md_to_html(md); open(f"{OUTP}/latest.html", "w").write(html if offline else md_to_html(pub))
+    print(md if offline else pub)                                    # the run log of a public repository is public
+    if os.getenv("ALERTS_DRY"): print("--- e-mail (dry run) ---"); print(md); return
     if (todo or d.weekday() == 0) and not offline:
         from email_report import send_mail
         send_mail(f"Plan alerts {d:%Y-%m-%d}" + (" - action needed" if todo else ""), html)
