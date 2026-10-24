@@ -1,0 +1,31 @@
+name: Nasdaq breadth counts (on demand)
+
+# Daily Nasdaq new 52-week highs / lows from Yahoo (breadth_counts.py), a stand-in for TradingView's HIGQ/LOWQ feeds.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['breadth_counts.py', '.github/workflows/breadth.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy yfinance requests
+      - run: python breadth_counts.py
+      - name: Commit counts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/breadth
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) breadth counts"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

@@ -46,6 +46,16 @@ every RPO filer, dated to the 10-Q/10-K filing, returns in excess of SPY from th
 in the docstring before any result was seen; pass/fail on a within-cohort shuffle placebo with Bonferroni.
 Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest_b2b/summary.md`.
 
+**Relative-value overlay backtest** (`relval_backtest.py`): "add to a stock when it falls hard against QQQ", four signal definitions fixed in the docstring (raw ratio drawdown, vol-adjusted, beta-adjusted, beta-adjusted vs SMH), judged against a static mix with the same average weight, plus a universe-wide random-date placebo. Prices come from `fetch_prices.py` via the "Price history" workflow (`results/prices/closes.csv`); results in `results/relval_backtest/summary.md`. `python relval_backtest.py AMD QQQ`.
+
+**Contribution backtests** (`dca_backtest.py`, `rotation_backtest.py`): $100k plus $4k/month. The first holds cash in T-bills and buys a stock only on a composite-ETF delta; the second parks everything in QQQ and rotates 10% of the account into the stock at each 30% correction (or composite delta), capped at 40%, held or round-tripped. Both are judged against DCA QQQ, an exposure-matched mix, random-date placebos, every rolling 5-year window and every chip name; results in `results/dca_backtest/` and `results/rotation_backtest/`.
+
+**Basket rotation** (`basket_backtest.py`): QQQ core; rotate 5% of the account into any chip/tech name that is >= 30% below its 1-year high and at least $10bn / $20bn / $50bn by market cap *at the time*, max 10% per name and 40% total. The point-in-time universe (`build_tech_universe.py`, "Tech universe" workflow) takes share counts from SEC frames and Yahoo closes; `tech_caps.py` undoes split-restated share counts and rebuilds caps offline from `results/universe/`.
+
+**Hedge overlay** (`hedge_overlay.py`): WU SP500 Hedging Signal on top of DCA QQQ and the basket rotation; short QQQ/SPY worth 25%/50% of the account while hedged, futures-style, under three exit readings plus the public breadth core. Reads the event calendar from a local HedgingSignals clone (`WU_EVENTS`); only performance is committed, in `results/hedge_overlay/`.
+
+**Plan alerts** (`plan_alerts.py`, "Plan alerts" workflow, weekdays after the close; rules and setup in [docs/PLAN.md](docs/PLAN.md)): a daily verdict for the 50/50 QQQ/SMH plan -- no action, or today's trades: rotation buys (2% of a sleeve per alert, 10% / 40% caps), hedge on/off (the `WU_HEDGE` variable, else the computed Nasdaq breadth signal in `breadth_live.py`), the monthly deposit and the January trim/rebalance. E-mail and optional ntfy push.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 
