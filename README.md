@@ -54,6 +54,8 @@ Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest
 
 **Hedge overlay** (`hedge_overlay.py`): WU SP500 Hedging Signal on top of DCA QQQ and the basket rotation; short QQQ/SPY worth 25%/50% of the account while hedged, futures-style, under three exit readings plus the public breadth core. Reads the event calendar from a local HedgingSignals clone (`WU_EVENTS`); only performance is committed, in `results/hedge_overlay/`.
 
+**Plan alerts** (`plan_alerts.py`, "Plan alerts" workflow, weekdays after the close): new rotation buys for the 50/50 QQQ/SMH plan (2% of a sleeve per alert, 10% / 40% caps, 63-day re-alert), the PSQ hedge action implied by the `WU_HEDGE` repository variable, the monthly deposit and the January trim/rebalance. Optional `HOLDINGS` secret (`sleeve,ticker,shares`) turns percentages into dollar amounts. E-mails via the screens' SMTP secrets.
+
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
 

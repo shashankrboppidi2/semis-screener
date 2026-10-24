@@ -3,6 +3,8 @@ name: Tech universe (on demand)
 # Point-in-time chip + tech universe with daily market caps (build_tech_universe.py): SEC frames share counts,
 # SEC submissions for SIC, Yahoo prices. Commits results/universe/.
 on:
+  schedule:
+    - cron: '17 7 5 1,4,7,10 *'   # quarterly (5th of Jan/Apr/Jul/Oct): fresh share counts and new names for plan_alerts.py
   workflow_dispatch:
   push:
     branches: ['claude/**']
