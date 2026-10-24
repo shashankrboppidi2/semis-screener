@@ -1,5 +1,9 @@
 # Plan alerts, Friday 2026-10-23
 
+## Today: no action
+
+Nothing to trade. Keep the monthly DCA going.
+
 ## Hedge
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
