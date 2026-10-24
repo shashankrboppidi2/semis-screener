@@ -1,8 +1,8 @@
 # Plan alerts, Friday 2026-10-23
 
-## Today: no action
+## Today: 1 action(s)
 
-Nothing to trade. Keep the monthly DCA going.
+1. Hedge change: see the e-mail
 
 ## Hedge
 
