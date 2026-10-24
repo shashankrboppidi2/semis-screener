@@ -196,7 +196,7 @@ def main(name="AMD"):
                          core_reserve=r["Core+reserve"]["final"], core_dca=r["Core+DCA"]["final"]))
     roll = pd.DataFrame(roll); roll.to_csv(f"{OUT}/rolling.csv", index=False)
 
-    sigs = {t: composite(px, t)[0] for t in sorted(c for c in px.columns if c not in set(COMP) | {"BIL", "PSQ", "SOXS", "SH"})
+    sigs = {t: composite(px, t)[0] for t in sorted(c for c in px.columns if c not in set(COMP) | {"BIL", "PSQ", "SOXS", "SH", "QID", "SQQQ"})
             if px[t].dropna().index[0] <= start - pd.DateOffset(days=550)}   # a year of beta + 63 days before start
     rob = robustness(px, name, sig, start, end, rng, sigs); rob.to_csv(f"{OUT}/robustness.csv", index=False)
     uni = []

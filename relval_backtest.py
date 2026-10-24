@@ -210,7 +210,7 @@ def quintiles(px, name, bench, start, h=63):
 def universe(px, bench, start, kind="resid_z", h=H, draws=1000, seed=7):
     """Pooled forward excess after episodes across every name, against random dates drawn per name."""
     rng = np.random.default_rng(seed)
-    skip = {"QQQ", "SMH", "SOXX", "SPY", "XLK", "BIL", "PSQ", "SOXS", "SH"}
+    skip = {"QQQ", "SMH", "SOXX", "SPY", "XLK", "BIL", "PSQ", "SOXS", "SH", "QID", "SQQQ"}
     per, actual, pools = [], [], []
     for t in sorted(c for c in px.columns if c not in skip):
         a = px[t].dropna()

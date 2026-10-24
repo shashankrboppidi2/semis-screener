@@ -8,7 +8,7 @@ import pandas as pd
 import yfinance as yf
 
 START = os.environ.get("PX_START", "2010-01-01")
-ETFS = ["QQQ", "SMH", "SOXX", "SPY", "XLK", "BIL", "PSQ", "SOXS", "SH"]
+ETFS = ["QQQ", "SMH", "SOXX", "SPY", "XLK", "BIL", "PSQ", "SOXS", "SH", "QID", "SQQQ"]
 OUT = "results/prices/closes.csv"
 
 def main():
