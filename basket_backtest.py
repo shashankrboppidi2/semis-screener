@@ -111,13 +111,15 @@ def trip_exits(entries, up):
     return np.array(ex, int)
 
 # ---------------------------------------------------------------- simulation (event-driven)
-def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, log=None, hedge=None):
+def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, log=None, hedge=None, priority=None):
     """P: T x N prices (nan outside a name's life). entries/exits: {day: [names]}. last_day: N last valid day.
     matched: (weight, eligible T x N bool) -> monthly equal-weight rebalance instead of rotation.
     log: a list to append every trade (and every signal that found no room) to.
     hedge: (on days, off days, fraction, cash prices, hedge-instrument prices) -> short the instrument worth
     `fraction` of the account from each on day to the next off day, futures-style (the notional sits in T-bills);
-    its gain or loss goes into QQQ at the cover."""
+    its gain or loss goes into QQQ at the cover.
+    priority: T x N market caps -> same-day signals that exceed the room are filled largest cap first, each at its
+    full step, instead of sharing the room pro rata."""
     T, N = P.shape
     pos, amt = flows
     add = dict(zip(pos.tolist(), amt.tolist()))
@@ -162,9 +164,17 @@ def simulate(P, q, flows, entries, exits, last_day, matched=None, path=False, lo
         elif d in entries and V > 0:
             js = [j for j in entries[d] if p[j] > 0]
             if js:
+                if priority is not None:
+                    js = sorted(js, key=lambda j: -np.nan_to_num(priority[d, j]))
                 want = np.array([max(0.0, min(STEP * V, CAP_NAME * V - ns[j] * p[j])) for j in js])
                 room = max(0.0, min(CAP_TOT * V - ns @ p, nq * q[d]))
-                if want.sum() > room: want *= room / want.sum()
+                if want.sum() > room:
+                    if priority is None:
+                        want *= room / want.sum()
+                    else:
+                        left = room
+                        for k in range(len(want)):
+                            want[k] = min(want[k], left); left -= want[k]
                 full = [max(0.0, min(STEP * V, CAP_NAME * V - ns[j] * p[j])) for j in js]
                 for j, x, f in zip(js, want, full):
                     if log is not None:
@@ -191,7 +201,7 @@ def twr_drawdown(val, flows):
     return (nav / np.maximum.accumulate(nav) - 1).min()
 
 # ---------------------------------------------------------------- one window
-def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False, log=None, hedge=None):
+def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=False, log=None, hedge=None, by_cap=False):
     """hedge: (on dates, off dates, fraction, cash price Series, instrument price Series); dates are signal closes,
     traded at the next close. Applied to the rotation and to DCA QQQ alike."""
     k0, k1 = q_all.index.searchsorted(start), q_all.index.searchsorted(end, side="right")
@@ -223,7 +233,8 @@ def window(q_all, adj, cap, sig, start, end, thr, exit_rule, draws, rng, detail=
         on_d, off_d, frac, bil_s, hp_s = hedge
         nxt = lambda ds: {int(k) for k in idx.searchsorted(pd.DatetimeIndex(ds), side="right") if 0 < k < T}
         hg = (nxt(on_d), nxt(off_d), frac, bil_s.reindex(idx).ffill().values, hp_s.reindex(idx).ffill().values)
-    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True, log=log, hedge=hg)
+    pri = cap.values[k0:k1] if by_cap else None
+    final, val, sat, bought = simulate(P, q, flows, entries, exits, last_day, path=True, log=log, hedge=hg, priority=pri)
     dq, vq, _, _ = simulate(P, q, flows, {}, {}, last_day, path=True, hedge=hg)
     wbar = float(np.mean(sat / val))
     fm, vm, _, _ = simulate(P, q, flows, {}, {}, last_day, matched=(wbar, elig), path=True)
