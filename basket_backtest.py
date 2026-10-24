@@ -58,6 +58,7 @@ def load():
     whose SEC share counts are mis-tagged by orders of magnitude (checked by hand); nothing else is removed."""
     q = pd.read_csv("results/prices/closes.csv", index_col=0, parse_dates=True)["QQQ"].dropna()
     adj = pd.read_csv(f"{UNI}/tech_adj.csv.gz", index_col=0, parse_dates=True)
+    q = q.loc[:adj.index.max()]                                      # the ETF file can run a day ahead of the stock file
     cap, close = rebuild(UNI)
     for t in cap.columns:
         c = cap[t]; f = c.first_valid_index()
