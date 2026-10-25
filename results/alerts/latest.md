@@ -8,11 +8,9 @@ Nothing to trade. Keep the monthly DCA going.
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 0 new alert(s), 16 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 0 new alert(s), 18 name(s) now >= 30% behind QQQ
 
-Already alerted, still behind (no action): APP -69%, ORCL -61%, INTU -56%, WDC -52%, ARM -50%, KLAC -50%, VRT -47%, SNDK -46%, INFY -46%, AMAT -45%, LRCX -44%, STX -40%, INTC -35%, TSLA -34%, MPWR -34%, AVGO -30%
-
-On your skip list, behind but not bought: NFLX -51%, ADBE -37%
+Already alerted, still behind (no action): APP -69%, ORCL -61%, INTU -56%, WDC -52%, NFLX -51%, ARM -50%, KLAC -50%, VRT -47%, SNDK -46%, INFY -46%, AMAT -45%, LRCX -44%, STX -40%, ADBE -37%, INTC -35%, TSLA -34%, MPWR -34%, AVGO -30%
 
 ## SMH sleeve: 0 new alert(s), 14 name(s) now >= 30% behind SMH
 
