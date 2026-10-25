@@ -8,7 +8,8 @@
   Hedge: WU SP500 Hedging Signal [2.2] only. On: keep QQQ/SMH and buy PSQ on margin worth half of each sleeve (the
   loan capped at 50% of the sleeve's value), in the taxable account; selling ETF would realize gains. Off: sell the
   PSQ, repay the loan, put the rest back into the ETFs. The WU state comes from
-    WU_HEDGE        repository variable "on" / "off", set by hand (overrides everything when set)
+    WU_HEDGE        repository variable "on" / "off", set by hand (overrides everything when set); with a date
+                    ("on 2026-10-14") it only seeds the state and a newer alert e-mail takes over
     WU e-mail       else the newest TradingView WU alert e-mail with WU_HEDGE=on / off, read over IMAP (wu_mail.py);
                     the last one seen is kept in the private state, so a quiet spell keeps the hedge as it is
   With no WU state the hedge is left as it is. The Nasdaq breadth signal (breadth_live.py, BREADTH_PARAMS) is shown
@@ -29,7 +30,7 @@ State: state/plan_alerts.json (last alert per sleeve and name, last hedge state)
 python plan_alerts.py            # live, Yahoo prices
 python plan_alerts.py --offline  # from the price files already in results/ (for testing)
 """
-import io, json, os, sys, glob
+import io, json, os, re, sys, glob
 import numpy as np
 import pandas as pd
 from tech_caps import daily_caps
@@ -98,19 +99,24 @@ def main(offline=False):
     state = json.load(open(STATE)) if os.path.exists(STATE) else {"QQQ": {}, "SMH": {}}
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
     priv = json.load(open(PRIVATE)) if os.path.exists(PRIVATE) and not offline else {}
-    wu = os.getenv("WU_HEDGE", "").strip().lower()
-    wu = wu if wu in ("on", "off") else None
-    wu_src = "WU [2.2], WU_HEDGE variable" if wu else None
+    # WU_HEDGE "on" / "off" overrides everything; "on 2026-10-14" (with a date) only seeds the state, and a newer
+    # TradingView alert e-mail takes over from it
+    m = re.fullmatch(r"(on|off)(?:[\s@]+(\d{4}-\d{2}-\d{2}))?", os.getenv("WU_HEDGE", "").strip().lower())
+    wu = m.group(1) if m and not m.group(2) else None
+    wu_src = "WU, WU_HEDGE variable" if wu else None
+    if m and m.group(2) and m.group(2) > priv.get("wu_date", ""):
+        priv["wu"], priv["wu_date"], priv["wu_from"] = m.group(1), m.group(2), "WU_HEDGE variable"
     if wu is None and not offline:                                   # else the newest TradingView WU alert e-mail
         try:
             import wu_mail
             got = wu_mail.latest()
-            if got: priv["wu"], priv["wu_date"] = got[0], f"{got[1]:%Y-%m-%d}"
+            if got and f"{got[1]:%Y-%m-%d}" >= priv.get("wu_date", ""):
+                priv["wu"], priv["wu_date"], priv["wu_from"] = got[0], f"{got[1]:%Y-%m-%d}", "TradingView alert e-mail"
             print("WU alert e-mails:", "read" if got else "none found")
         except Exception as e:
             print("WU alert e-mails unavailable:", type(e).__name__)
-        if priv.get("wu") in ("on", "off"):
-            wu, wu_src = priv["wu"], f"WU [2.2], TradingView alert e-mail of {priv.get('wu_date', '?')}"
+    if wu is None and priv.get("wu") in ("on", "off"):
+        wu, wu_src = priv["wu"], f"WU, {priv.get('wu_from', 'TradingView alert e-mail')} of {priv.get('wu_date', '?')}"
     br = None
     try:
         import breadth_live

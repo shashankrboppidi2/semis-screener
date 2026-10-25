@@ -34,7 +34,8 @@ the run log are public and leave out the hedge and any dollar amounts; the e-mai
 
 Only the **WU SP500 Hedging Signal [2.2]** (TradingView) moves the hedge:
 
-1. The `WU_HEDGE` repository variable (`on` / `off`), if set, overrides everything.
+1. The `WU_HEDGE` repository variable: `on` / `off` overrides everything; with a date (`on 2026-10-14`) it only
+   records a signal you received elsewhere (e.g. WealthUmbrella's text message), and a newer alert e-mail takes over.
 2. Otherwise your TradingView alert e-mails: two alerts on the indicator (its exit and its re-entry), each with
    "Send email" ticked and a message containing `WU_HEDGE=on` or `WU_HEDGE=off`. The workflow reads the newest one
    from the Gmail account in `SMTP_USER` over IMAP with the same app password (`wu_mail.py`) and remembers it in the
@@ -56,5 +57,6 @@ In the backtests, hedging on it cost more than it saved: buy and hold beat it af
      Messages pass through ntfy.sh.
    - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server (Server settings >
      Integrations > Webhooks > New Webhook > Copy Webhook URL); action days post there.
-3. Repository variable `WU_HEDGE` (optional) -- `on` / `off`, a manual override of the WU alert e-mails.
+3. Repository variable `WU_HEDGE` (optional) -- `on` / `off` (manual override) or `on 2026-10-14` (a dated signal
+   that newer WU alert e-mails replace).
 4. The stock universe refreshes itself quarterly (`universe.yml`); the breadth counts refresh on every alert run.
