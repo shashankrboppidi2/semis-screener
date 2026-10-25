@@ -5,11 +5,14 @@
   Each alert = buy STEP (2%) of that sleeve from the sleeve's ETF; at most 10% of the sleeve per name and 40% in names;
   a name re-alerts only after 63 trading days. When a sleeve has too little room, the largest caps fill first; no
   displacement. January: trim names to 10% / 40% and rebalance the sleeves to 50/50.
-  Hedge (PSQ: 25% of the QQQ sleeve, beta-scaled for the SMH sleeve), from one of two sources:
+  Hedge: WU SP500 Hedging Signal [2.2] only. On: keep QQQ/SMH and buy PSQ on margin worth half of each sleeve (the
+  loan capped at 50% of the sleeve's value), in the taxable account; selling ETF would realize gains. Off: sell the
+  PSQ, repay the loan, put the rest back into the ETFs. The WU state comes from
     WU_HEDGE        repository variable "on" / "off", set by hand (overrides everything when set)
-    WU e-mail       else the newest TradingView WU alert e-mail with WU_HEDGE=on / off, read over IMAP (wu_mail.py)
-    breadth signal  computed here from Yahoo Nasdaq new highs / lows (breadth_live.py, needs BREADTH_PARAMS); drives the
-                    hedge when there is no WU state, otherwise shown as a cross-check
+    WU e-mail       else the newest TradingView WU alert e-mail with WU_HEDGE=on / off, read over IMAP (wu_mail.py);
+                    the last one seen is kept in the private state, so a quiet spell keeps the hedge as it is
+  With no WU state the hedge is left as it is. The Nasdaq breadth signal (breadth_live.py, BREADTH_PARAMS) is shown
+  for information only: in the backtests it cost more than it saved.
   The report announces the day the hedge should go on or come off; with HOLDINGS it checks what you actually hold.
   Every report opens with a verdict: no action (keep the monthly DCA) or a numbered list of today's trades.
 
@@ -94,17 +97,20 @@ def main(offline=False):
     td = adj.index
     state = json.load(open(STATE)) if os.path.exists(STATE) else {"QQQ": {}, "SMH": {}}
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
+    priv = json.load(open(PRIVATE)) if os.path.exists(PRIVATE) and not offline else {}
     wu = os.getenv("WU_HEDGE", "").strip().lower()
     wu = wu if wu in ("on", "off") else None
-    wu_src = "WU (TradingView, WU_HEDGE)" if wu else None
+    wu_src = "WU [2.2], WU_HEDGE variable" if wu else None
     if wu is None and not offline:                                   # else the newest TradingView WU alert e-mail
         try:
             import wu_mail
             got = wu_mail.latest()
-            if got: wu, wu_src = got[0], f"WU (TradingView alert e-mail of {got[1]:%Y-%m-%d})"
+            if got: priv["wu"], priv["wu_date"] = got[0], f"{got[1]:%Y-%m-%d}"
             print("WU alert e-mails:", "read" if got else "none found")
         except Exception as e:
             print("WU alert e-mails unavailable:", type(e).__name__)
+        if priv.get("wu") in ("on", "off"):
+            wu, wu_src = priv["wu"], f"WU [2.2], TradingView alert e-mail of {priv.get('wu_date', '?')}"
     br = None
     try:
         import breadth_live
@@ -119,20 +125,20 @@ def main(offline=False):
     acts, pub_acts = [], []                                          # today's to-do list (private / public wording)
     todo = False
 
-    # hedge: WU_HEDGE when set, else the breadth signal
-    frac = {"QQQ": 0.25, "SMH": h_smh}
+    # hedge: WU only. PSQ bought on margin, half of each sleeve (beta/2 for SMH, capped at a 50% loan)
+    frac = {"QQQ": 0.5, "SMH": min(0.5, beta / 2)}
     sv = {}
     if H is not None:
         for s in ("QQQ", "SMH"): sv[s] = H[H.sleeve == s].value.sum()
     psq_held = H is not None and (H.ticker == "PSQ").any() and H[H.ticker == "PSQ"].shares.sum() > 0
-    source = wu_src if wu else ("Nasdaq breadth (computed)" if br else None)
-    want = (wu == "on") if wu else (br["on"] if br else None)
-    priv = json.load(open(PRIVATE)) if os.path.exists(PRIVATE) and not offline else {}
+    source = wu_src
+    want = (wu == "on") if wu else None
     prev = priv.get("hedge_on")
     P = list(L) + ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
     L += ["## Hedge (PSQ)", ""]
     if want is None:
-        L.append("No hedge source: set WU_HEDGE (`on` / `off`) or the BREADTH_PARAMS secret.")
+        L.append("No WU signal yet (set up the TradingView alert e-mails, or the WU_HEDGE variable); no hedge change"
+                 + (f" -- the hedge stays {'ON' if prev else 'OFF'}." if prev is not None else "."))
     else:
         need = None
         if H is not None:
@@ -141,22 +147,28 @@ def main(offline=False):
             need = "on" if want else "off"
         if need == "on":
             todo = True
-            txt = (f"Hedge ON ({source}): sell {frac['QQQ']:.0%} of the QQQ sleeve from QQQ and {frac['SMH']:.1%} of the "
-                   f"SMH sleeve from SMH (SMH beta {beta:.2f}); buy PSQ with the proceeds.")
-            if sv: txt += f" That is ${frac['QQQ'] * sv['QQQ']:,.0f} of QQQ and ${frac['SMH'] * sv['SMH']:,.0f} of SMH into PSQ."
-            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": buy PSQ")
+            txt = (f"Hedge ON ({source}): keep QQQ and SMH; in the taxable account buy PSQ on margin worth "
+                   f"{frac['QQQ']:.0%} of the QQQ sleeve and {frac['SMH']:.0%} of the SMH sleeve (SMH beta {beta:.2f}).")
+            if sv:
+                loan = frac["QQQ"] * sv["QQQ"] + frac["SMH"] * sv["SMH"]; V = sv["QQQ"] + sv["SMH"]
+                txt += (f" That is ${loan:,.0f} of PSQ, borrowed; the plan's leverage becomes about {(V + loan) / V:.2f}x. "
+                        "Check that IBKR's Excess Liquidity stays above 30% of the account.")
+            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": buy PSQ on margin")
+            L.append(f"(Without margin: sell 25% of the QQQ sleeve and {h_smh:.0%} of the SMH sleeve into PSQ instead; "
+                     "in a taxable account that realizes gains.)")
         elif need == "off":
             todo = True
-            txt = f"Hedge OFF ({source}): sell all PSQ; put each sleeve's PSQ back into that sleeve's ETF."
+            txt = (f"Hedge OFF ({source}): sell all PSQ; repay the margin loan first, then put anything left back into "
+                   "each sleeve's ETF.")
             L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": sell PSQ")
         else:
             L.append(f"Hedge stays {'ON' if want else 'OFF'} ({source})" + ("; holdings match." if H is not None else "."))
         if want != prev: priv["hedge_on"], priv["hedge_since"] = bool(want), str(d.date())
     if br:
-        agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; **disagrees with WU**")
-        L.append(f"Breadth signal: {'ON' if br['on'] else 'OFF'} since {br['since'].date() if br['since'] is not None else '-'} "
+        agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; differs from WU")
+        L.append(f"Breadth signal, for information (not traded): {'ON' if br['on'] else 'OFF'} since {br['since'].date() if br['since'] is not None else '-'} "
                  f"(lines {br['orange']:,.0f} / {br['blue']:,.0f} on {br['date'].date()}){agree}.")
-    if wu: L.append(f"WU: {wu} ({wu_src}).")
+    if wu: L.append(f"WU: {wu.upper()} ({wu_src}).")
     L.append("")
 
     # rotation alerts

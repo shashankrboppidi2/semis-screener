@@ -9,7 +9,7 @@ import email, imaplib, os, re
 from email.utils import parsedate_to_datetime
 
 PAT = re.compile(r"WU_HEDGE\s*=\s*(on|off)\b", re.I)
-QUERY = '"from:tradingview.com WU_HEDGE newer_than:400d"'
+QUERY = '"from:tradingview.com WU_HEDGE newer_than:1500d"'
 
 def _text(msg):
     parts = msg.walk() if msg.is_multipart() else [msg]

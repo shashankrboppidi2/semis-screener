@@ -54,7 +54,7 @@ Run it from Actions ("Book-to-bill backtest"); results land in `results/backtest
 
 **Hedge overlay** (`hedge_overlay.py`): WU SP500 Hedging Signal on top of DCA QQQ and the basket rotation; short QQQ/SPY worth 25%/50% of the account while hedged, futures-style, under three exit readings plus the public breadth core. Reads the event calendar from a local HedgingSignals clone (`WU_EVENTS`); only performance is committed, in `results/hedge_overlay/`.
 
-**Plan alerts** (`plan_alerts.py`, "Plan alerts" workflow, weekdays after the close; rules and setup in [docs/PLAN.md](docs/PLAN.md)): a daily verdict for the 50/50 QQQ/SMH plan -- no action, or today's trades: rotation buys (2% of a sleeve per alert, 10% / 40% caps), hedge on/off (the `WU_HEDGE` variable, else the computed Nasdaq breadth signal in `breadth_live.py`), the monthly deposit and the January trim/rebalance. E-mail and optional ntfy push.
+**Plan alerts** (`plan_alerts.py`, "Plan alerts" workflow, weekdays after the close; rules and setup in [docs/PLAN.md](docs/PLAN.md)): a daily verdict for the 50/50 QQQ/SMH plan -- no action, or today's trades: rotation buys (2% of a sleeve per alert, 10% / 40% caps), hedge on/off from the WU SP500 Hedging Signal [2.2] (TradingView alert e-mails read by `wu_mail.py`, or the `WU_HEDGE` variable), with PSQ bought on margin; the Nasdaq breadth signal in `breadth_live.py` is shown for information, the monthly deposit and the January trim/rebalance. E-mail and optional Discord / ntfy push.
 
 The original single-stage path still works:
 `python tier1_frames.py && python tier1_panel.py && python tier1_screen.py`.
