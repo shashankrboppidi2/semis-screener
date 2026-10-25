@@ -6,9 +6,10 @@
   a name re-alerts only after 63 trading days. When a sleeve has too little room, the largest caps fill first; no
   displacement. January: trim names to 10% / 40% and rebalance the sleeves to 50/50.
   Hedge (PSQ: 25% of the QQQ sleeve, beta-scaled for the SMH sleeve), from one of two sources:
-    WU_HEDGE        repository variable "on" / "off", set by hand when the TradingView WU alert fires (primary when set)
+    WU_HEDGE        repository variable "on" / "off", set by hand (overrides everything when set)
+    WU e-mail       else the newest TradingView WU alert e-mail with WU_HEDGE=on / off, read over IMAP (wu_mail.py)
     breadth signal  computed here from Yahoo Nasdaq new highs / lows (breadth_live.py, needs BREADTH_PARAMS); drives the
-                    hedge when WU_HEDGE is unset, otherwise shown as a cross-check
+                    hedge when there is no WU state, otherwise shown as a cross-check
   The report announces the day the hedge should go on or come off; with HOLDINGS it checks what you actually hold.
   Every report opens with a verdict: no action (keep the monthly DCA) or a numbered list of today's trades.
 
@@ -95,6 +96,15 @@ def main(offline=False):
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
     wu = os.getenv("WU_HEDGE", "").strip().lower()
     wu = wu if wu in ("on", "off") else None
+    wu_src = "WU (TradingView, WU_HEDGE)" if wu else None
+    if wu is None and not offline:                                   # else the newest TradingView WU alert e-mail
+        try:
+            import wu_mail
+            got = wu_mail.latest()
+            if got: wu, wu_src = got[0], f"WU (TradingView alert e-mail of {got[1]:%Y-%m-%d})"
+            print("WU alert e-mails:", "read" if got else "none found")
+        except Exception as e:
+            print("WU alert e-mails unavailable:", type(e).__name__)
     br = None
     try:
         import breadth_live
@@ -115,7 +125,7 @@ def main(offline=False):
     if H is not None:
         for s in ("QQQ", "SMH"): sv[s] = H[H.sleeve == s].value.sum()
     psq_held = H is not None and (H.ticker == "PSQ").any() and H[H.ticker == "PSQ"].shares.sum() > 0
-    source = "WU (TradingView, WU_HEDGE)" if wu else ("Nasdaq breadth (computed)" if br else None)
+    source = wu_src if wu else ("Nasdaq breadth (computed)" if br else None)
     want = (wu == "on") if wu else (br["on"] if br else None)
     priv = json.load(open(PRIVATE)) if os.path.exists(PRIVATE) and not offline else {}
     prev = priv.get("hedge_on")
@@ -146,7 +156,7 @@ def main(offline=False):
         agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; **disagrees with WU**")
         L.append(f"Breadth signal: {'ON' if br['on'] else 'OFF'} since {br['since'].date() if br['since'] is not None else '-'} "
                  f"(lines {br['orange']:,.0f} / {br['blue']:,.0f} on {br['date'].date()}){agree}.")
-    if wu: L.append(f"WU_HEDGE: {wu}.")
+    if wu: L.append(f"WU: {wu} ({wu_src}).")
     L.append("")
 
     # rotation alerts

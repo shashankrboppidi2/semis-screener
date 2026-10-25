@@ -32,8 +32,12 @@ the run log are public and leave out the hedge and any dollar amounts; the e-mai
 
 ### Where the hedge signal comes from
 
-1. **WU SP500 Hedging Signal** (TradingView), when the `WU_HEDGE` repository variable is set to `on` or `off`. Set up
-   TradingView alerts on the indicator's sell and "Buy Now" signals and change the variable when they fire.
+1. **WU SP500 Hedging Signal** (TradingView), read from your TradingView alert e-mails: two alerts on the indicator
+   (its exit and its re-entry), each with "Send email" ticked and a message containing `WU_HEDGE=on` or
+   `WU_HEDGE=off`. The workflow reads the newest one from the Gmail account in `SMTP_USER` over IMAP with the same app
+   password (`wu_mail.py`). A message such as `{"content": "WU_HEDGE=on"}` also works as a TradingView webhook to the
+   Discord webhook URL, for an instant ping. The `WU_HEDGE` repository variable (`on` / `off`), if set, overrides
+   the e-mails.
 2. Otherwise the **Nasdaq breadth signal** computed in the workflow from Yahoo new 52-week highs and lows
    (`breadth_live.py`). When both are available the report shows the breadth signal as a cross-check and flags
    disagreement. In the backtests the breadth signal gave roughly half the drawdown protection of WU.
@@ -49,5 +53,5 @@ the run log are public and leave out the hedge and any dollar amounts; the e-mai
      Messages pass through ntfy.sh.
    - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server (Server settings >
      Integrations > Webhooks > New Webhook > Copy Webhook URL); action days post there.
-3. Repository variable `WU_HEDGE` (optional) -- `on` / `off`.
+3. Repository variable `WU_HEDGE` (optional) -- `on` / `off`, a manual override of the WU alert e-mails.
 4. The stock universe refreshes itself quarterly (`universe.yml`); the breadth counts refresh on every alert run.
