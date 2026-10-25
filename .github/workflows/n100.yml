@@ -20,7 +20,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pandas yfinance requests n100tickers
+      - run: |
+          pip install pandas yfinance requests
+          pip install git+https://github.com/jmccarrell/n100tickers.git || echo "n100tickers not installed; skipping the cross-check"
       - run: python fetch_n100.py
       - name: Commit
         run: |
