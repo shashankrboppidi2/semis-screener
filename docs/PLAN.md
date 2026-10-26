@@ -1,6 +1,7 @@
 # The plan (strategy A): QQQ/SMH sleeves with laggard buys, a WU hedge on margin, 70/30 with a picks bucket
 
-How the taxable account is run and what the daily alerts mean. The rules were chosen from the backtests in this
+How the taxable account is run and what the daily alerts mean. The three strategies that were tested (A is live) are
+compared in [STRATEGIES.md](STRATEGIES.md). The rules were chosen from the backtests in this
 repository (`basket_backtest.py`, `blend_backtest.py`, `hedge_overlay.py`) and the 2007-2026 / 1990s tests of the
 funding and hedge variants; none of this is investment advice.
 
@@ -39,8 +40,18 @@ Every weekday after the US close the "Plan alerts" workflow runs `plan_alerts.py
   - *Monthly deposit and settlement* -- first trading day of the month.
   - *January* -- tax, trims, rebalance.
 
-E-mails go out when there is something to do and every Monday. The committed copy (`results/alerts/latest.md`) and
-the run log are public and leave out the hedge, the account and any dollar amounts; the e-mail has everything.
+Delivery, every weekday after the close:
+
+- **E-mail** with the full report (daily by default; set the `MAIL_DAILY` variable to `0` for action days and Mondays only).
+- **Push** to Discord and/or ntfy with the verdict and the action list (daily by default; `PUSH_DAILY=0` for action days only).
+- **Text message** through your carrier's e-mail-to-SMS gateway: the verdict, the orders with share counts, "more in
+  e-mail" when long. Set the `SMS_TO` secret to the gateway address (Rogers `number@pcs.rogers.com`, Bell
+  `number@txt.bell.ca`, Telus `number@msg.telus.com`, Fido `number@fido.ca`, Freedom `number@txt.freedommobile.ca`,
+  Koodo `number@msg.koodomobile.com`, Virgin `number@vmobile.ca`; several addresses comma-separated). Sent on action
+  days; `SMS_DAILY=1` for every day.
+
+The committed copy (`results/alerts/latest.md`) and the run log are public and leave out the hedge, the account and
+any dollar amounts; the e-mail, push and text have everything.
 
 ### Where the hedge signal comes from
 
@@ -69,6 +80,8 @@ In the backtests, hedging on it cost more than it saved: buy and hold beat it af
      one line `CASH,USD,<dollars>` gives the USD cash balance (negative while on margin). An optional fourth column
      `price` sets a price for a ticker the universe does not cover. Without the secret the report sizes in percent.
    - `NTFY_TOPIC` (optional) -- a long random topic name; install the ntfy app and subscribe to it for phone pushes.
-   - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server; action days post there.
-3. Repository variables: `WU_HEDGE` (optional, see above); `ETF_SHARE` (default 0.70); `MONTHLY_DEPOSIT` (default 4000).
+   - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server.
+   - `SMS_TO` (optional) -- your carrier's e-mail-to-SMS address (see Delivery above).
+3. Repository variables: `WU_HEDGE` (optional, see above); `ETF_SHARE` (default 0.70); `MONTHLY_DEPOSIT` (default 4000);
+   `MAIL_DAILY` / `PUSH_DAILY` (default on) and `SMS_DAILY` (default off) for the delivery cadence.
 4. The stock universe refreshes itself quarterly (`universe.yml`); the breadth counts refresh on every alert run.

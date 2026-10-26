@@ -395,11 +395,12 @@ def main(offline=False):
     def verdict(items, extra=""):
         if not items: return ["## Today: no action", "", "Nothing to trade." + extra, ""]
         return [f"## Today: {len(items)} action(s)", ""] + [f"{i}. {a}" for i, a in enumerate(items, 1)] + [""]
-    net = {t: x for t, x in orders.items() if abs(x) >= 1}
+    net = {t: x for t, x in orders.items() if abs(x) >= 1}; sms_lines = []
     if net:
         L += ["## Orders (netted across sleeves, sells first)", ""]
         for t, x in sorted(net.items(), key=lambda z: z[1]):
             L.append(f"- {'SELL' if x < 0 else 'BUY'} {abs(x) / px(t):,.1f} {t} at about {px(t):,.2f} (${abs(x):,.0f})")
+            sms_lines.append(f"{'SELL' if x < 0 else 'BUY'} {abs(x) / px(t):,.1f} {t} ~{px(t):,.2f}")
         L.append("")
     L[2:2] = verdict(acts)
     hedge_act = any(a.startswith("Hedge") for a in acts)
@@ -420,11 +421,41 @@ def main(offline=False):
         json.dump(priv, open(PRIVATE, "w"))
     html = md_to_html(md); open(f"{OUTP}/latest.html", "w").write(html if offline else md_to_html(pub))
     print(md if offline else pub)                                    # the run log of a public repository is public
-    if os.getenv("ALERTS_DRY"): print("--- e-mail (dry run) ---"); print(md); return
-    if (todo or d.weekday() == 0) and not offline:
+    title = f"Plan {d:%Y-%m-%d}: " + (f"{len(acts)} action(s)" if acts else "no action")
+    text = sms_text(title, acts, sms_lines)
+    if os.getenv("ALERTS_DRY"): print("--- e-mail (dry run) ---"); print(md); print("--- text (dry run) ---"); print(text); return
+    if offline: return
+    # delivery: e-mail every weekday (MAIL_DAILY, default on) or on action days and Mondays; push and text likewise
+    if todo or d.weekday() == 0 or flag("MAIL_DAILY", True):
         from email_report import send_mail
-        send_mail(f"Plan {d:%Y-%m-%d}: " + (f"{len(acts)} action(s)" if acts else "no action"), html)
-    if acts and not offline: push(f"Plan {d:%Y-%m-%d}: {len(acts)} action(s)", acts)
+        send_mail(title, html)
+    if acts or flag("PUSH_DAILY", True): push(title, acts or ["No action today."])
+    if acts or flag("SMS_DAILY", False): send_text(title, text)
+
+def flag(name, default):
+    v = os.getenv(name, "").strip().lower()
+    return default if v == "" else v in ("1", "true", "yes", "on")
+
+def sms_text(title, acts, lines, limit=450):
+    """Short plain text for an e-mail-to-SMS gateway: the verdict, the orders, 'details in e-mail'."""
+    out = [title] + ([f"- {a}" for a in acts] if acts else ["No action today."]) + lines
+    s = "\n".join(out)
+    if len(s) > limit: s = s[:limit - 20].rsplit("\n", 1)[0] + "\n(more in e-mail)"
+    return s
+
+def send_text(subject, body):
+    """Plain-text message to SMS_TO (e-mail-to-SMS gateway addresses, comma-separated) through the same Gmail SMTP."""
+    import smtplib
+    from email.mime.text import MIMEText
+    to = os.getenv("SMS_TO", "").strip(); host, user, pw = os.getenv("SMTP_HOST"), os.getenv("SMTP_USER"), os.getenv("SMTP_PASS")
+    if not to or not all([host, user, pw]): return
+    m = MIMEText(body, "plain"); m["Subject"], m["From"], m["To"] = subject, user, to
+    try:
+        with smtplib.SMTP(host, int(os.getenv("SMTP_PORT", "587"))) as s:
+            s.starttls(); s.login(user, pw); s.sendmail(user, [a.strip() for a in to.split(",")], m.as_string())
+        print("text sent")
+    except Exception as e:
+        print("text failed:", type(e).__name__)                     # the error text could contain the address
 
 def push(title, acts):
     import requests

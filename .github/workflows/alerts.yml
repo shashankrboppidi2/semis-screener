@@ -45,6 +45,10 @@ jobs:
           BREADTH_PARAMS: ${{ secrets.BREADTH_PARAMS }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          SMS_TO: ${{ secrets.SMS_TO }}
+          MAIL_DAILY: ${{ vars.MAIL_DAILY }}
+          PUSH_DAILY: ${{ vars.PUSH_DAILY }}
+          SMS_DAILY: ${{ vars.SMS_DAILY }}
           SMTP_HOST: smtp.gmail.com
           SMTP_PORT: '587'
           SMTP_USER: ${{ secrets.SMTP_USER }}
