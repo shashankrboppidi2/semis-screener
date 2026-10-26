@@ -1,0 +1,23 @@
+ticker,name,first,last,rows,adj_ok
+SUNW,Sun Microsystems,empty,,,
+NT,Nortel,empty,,,
+LU,Lucent,empty,,,
+CPQ,Compaq,empty,,,
+WCOM,WorldCom,"http 404: '{""detail"":""Error: Ticker \'WCOM\' not found""}'",,,
+COMS,3Com,empty,,,
+PALM,Palm,2007-10-25,2010-07-19,687.0,True
+AOL,AOL,2009-11-24,2012-12-31,780.0,True
+YHOO,Yahoo,1996-04-12,2012-12-31,4209.0,True
+EMC,EMC,empty,,,
+BRCM,Broadcom (old),empty,,,
+XLNX,Xilinx,1990-06-18,2012-12-31,5681.0,True
+ALTR,Altera,empty,,,
+LLTC,Linear Tech,empty,,,
+MXIM,Maxim,1990-03-26,2012-12-31,5739.0,True
+NSM,National Semi,2012-03-08,2012-12-31,205.0,True
+NOVL,Novell,empty,,,
+GTW,Gateway,empty,,,
+CMGI,CMGI,"http 404: '{""detail"":""Error: Ticker \'CMGI\' not found""}'",,,
+JDSU,JDS Uniphase,1993-11-17,2012-12-31,4815.0,True
+QCOM,Qualcomm (control),1991-12-16,2012-12-31,5302.0,True
+INTC,Intel (control),1990-01-02,2012-12-31,5797.0,True

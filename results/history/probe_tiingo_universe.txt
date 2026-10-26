@@ -1,0 +1,25 @@
+US stocks listed: 16314
+stopped trading before 2010 with history before 2007: 38
+... with history starting before 1995: 3
+SUNW: not in list
+NT: not in list
+LU: 2020-10-30 to 2026-10-23 (NYSE)
+CPQ: not in list
+WCOM: not in list
+COMS: not in list
+PALM: 2007-10-25 to 2010-07-19 (NASDAQ)
+AOL: 2009-11-24 to 2015-06-22 (NYSE)
+YHOO: 1996-04-12 to 2017-06-26 (NASDAQ)
+EMC: 1988-12-16 to 2016-09-15 (NYSE)
+BRCM: 2016-01-04 to 2016-01-29 (NASDAQ)
+XLNX: 1990-06-18 to 2022-02-14 (NASDAQ)
+ALTR: 1988-04-04 to 2017-10-31 (NASDAQ); 2017-11-01 to 2025-03-26 (NASDAQ)
+LLTC: 2016-01-04 to 2017-03-20 (NASDAQ)
+MXIM: 1990-03-26 to 2021-09-01 (NASDAQ)
+NSM: 2012-03-08 to 2018-07-31 (NYSE)
+NOVL: not in list
+GTW: not in list
+CMGI: not in list
+JDSU: 1993-11-17 to 2015-08-03 (NASDAQ)
+QCOM: 1991-12-16 to 2026-10-23 (NASDAQ)
+INTC: 1980-03-17 to 2026-10-23 (NASDAQ)
