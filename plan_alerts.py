@@ -124,7 +124,8 @@ class Book:
         s.loan = max(0.0, -cash); s.free = max(0.0, cash)
         s.longs = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.psq
         s.equity = s.longs + cash
-        s.base = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.free           # what the 70/30 targets are measured on
+        s.base = s.equity                                              # 70/30 targets on net liquidation: while hedged, the PSQ
+                                                                       # bought with pick cash nets against the loan
         s.tgt = {k: ETF_SHARE / 2 * s.base for k in SLEEVES}; s.tgt_picks = (1 - ETF_SHARE) * s.base
     def names(s, k):                                                   # a sleeve's laggard names (not its ETF)
         return s.H[(s.H.sleeve == k) & ~s.H.ticker.isin([k, "PSQ"])].groupby("ticker").value.sum()
