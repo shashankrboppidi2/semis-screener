@@ -1,0 +1,30 @@
+name: Probe delisted-data sources (on demand)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['probe_delisted.py', '.github/workflows/probe.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas requests yfinance
+      - run: python probe_delisted.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/history/probe_delisted.csv
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) probe delisted data"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
