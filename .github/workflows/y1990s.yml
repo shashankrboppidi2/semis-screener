@@ -1,0 +1,34 @@
+name: 1990s prices (on demand)
+
+# 1993-2010 prices for the 1990s stress test (fetch_1990s.py): Yahoo plus Tiingo (TIINGO_KEY). Commits results/history/.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['fetch_1990s.py', '.github/workflows/y1990s.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas requests yfinance
+      - name: Fetch
+        env:
+          TIINGO_KEY: ${{ secrets.TIINGO_KEY }}
+        run: python fetch_1990s.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/history
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) 1990s prices"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
