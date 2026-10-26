@@ -1,8 +1,8 @@
 name: Plan alerts (weekdays)
 
-# Daily alerts for the 50/50 QQQ/SMH rotation plan (plan_alerts.py; rules and setup in docs/PLAN.md): new rotation
-# buys per sleeve, hedge on/off (WU_HEDGE variable, else the computed Nasdaq breadth signal), the monthly deposit and
-# the January trim/rebalance. E-mails when there is something to do and every Monday; optional ntfy.sh push.
+# Daily alerts for the plan (plan_alerts.py; rules and setup in docs/PLAN.md): laggard buys per sleeve, the WU hedge
+# on/off/top-up (WU_HEDGE variable or TradingView e-mails), the monthly deposit and settlement, the January
+# tax/trim/rebalance and margin guardrails. E-mails when there is something to do and every Monday; optional push.
 # Scheduled runs only fire from the default branch.
 on:
   schedule:
@@ -39,6 +39,8 @@ jobs:
       - name: Alerts
         env:
           WU_HEDGE: ${{ vars.WU_HEDGE }}
+          ETF_SHARE: ${{ vars.ETF_SHARE }}
+          MONTHLY_DEPOSIT: ${{ vars.MONTHLY_DEPOSIT }}
           HOLDINGS: ${{ secrets.HOLDINGS }}
           BREADTH_PARAMS: ${{ secrets.BREADTH_PARAMS }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}

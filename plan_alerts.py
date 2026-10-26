@@ -1,34 +1,50 @@
-"""Daily alerts for the 50/50 QQQ/SMH rotation plan (blend_backtest rules).
+"""Daily alerts for the plan (strategy A): QQQ/SMH sleeves with laggard buys, a WU hedge on margin, 70/30 next to a
+discretionary stock-pick bucket. Rules in docs/PLAN.md.
 
-  QQQ sleeve  park in QQQ; alert when a chip/tech name of $50bn+ closes >= 30% below its 252-day high relative to QQQ
-  SMH sleeve  park in SMH; alert when one of the 25 largest chip names closes >= 30% below its 252-day high vs SMH
-  Each alert = buy STEP (2%) of that sleeve from the sleeve's ETF; at most 10% of the sleeve per name and 40% in names;
-  a name re-alerts only after 63 trading days. When a sleeve has too little room, the largest caps fill first; no
-  displacement. January: trim names to 10% / 40% and rebalance the sleeves to 50/50.
-  Hedge: WU SP500 Hedging Signal [2.2] only. On: keep QQQ/SMH and buy PSQ on margin worth half of each sleeve (the
-  loan capped at 50% of the sleeve's value), in the taxable account; selling ETF would realize gains. Off: sell the
-  PSQ, repay the loan, put the rest back into the ETFs. The WU state comes from
+  Account      ETF_SHARE (70%) runs the plan in two equal sleeves; the rest (30%) is the PICKS bucket (your own stock
+               picks, not traded by these alerts, but counted and hedged).
+  QQQ sleeve   parked in QQQ; alert when a chip/tech name of $50bn+ closes >= 30% below its 252-day high relative to QQQ
+  SMH sleeve   parked in SMH; alert when one of the 25 largest chip names closes >= 30% below its 252-day high vs SMH
+  Each alert = buy STEP (2%) of that sleeve the same day: from cash first, the rest on margin (the "bridge" loan),
+  repaid at the next monthly deposit. Nothing is sold on an alert day. Caps 10% of the sleeve per name, 40% in names;
+  a name re-alerts only after 63 trading days; largest caps fill first when room is short. Orders under MIN_TRADE
+  ($500) are skipped. Names are held.
+  Monthly       first trading day: the deposit repays the margin loan first (hedge loan, then bridge), then the plan's
+               share goes to the more underweight sleeve's ETF (one order) and the picks' share stays as cash. If the
+               bridge is not cleared, sell that much ETF from the more overweight sleeve.
+  Hedge        WU SP500 Hedging Signal only. On: keep everything and buy PSQ on margin worth 50% of each sleeve (SMH:
+               beta/2, capped at 50%) and 50% of the picks; the total loan is capped at LOAN_CAP (50%) of the
+               account's long holdings. Off: sell all PSQ, repay the loan, put anything left into the more underweight
+               ETF. The WU state comes from
     WU_HEDGE        repository variable "on" / "off", set by hand (overrides everything when set); with a date
                     ("on 2026-10-14") it only seeds the state and a newer alert e-mail takes over
     WU e-mail       else the newest TradingView WU alert e-mail with WU_HEDGE=on / off, read over IMAP (wu_mail.py);
                     the last one seen is kept in the private state, so a quiet spell keeps the hedge as it is
   With no WU state the hedge is left as it is. The Nasdaq breadth signal (breadth_live.py, BREADTH_PARAMS) is shown
-  for information only: in the backtests it cost more than it saved.
-  The report announces the day the hedge should go on or come off; with HOLDINGS it checks what you actually hold.
-  Every report opens with a verdict: no action (keep the monthly DCA) or a numbered list of today's trades.
+  for information only.
+  January      trim names above 10% of the sleeve / 40% in names (slices under MIN_TRADE skipped), rebalance the
+               sleeves to 50/50 and the account toward ETF_SHARE, selling ETF first; set the tax aside.
+  Guardrails   every report with HOLDINGS: loan / long holdings (warn above LOAN_CAP), estimated excess liquidity at
+               a 30% requirement (warn below 20% of holdings), any name above 10% of the whole account.
+  Every report opens with a verdict: no action, or a numbered list of today's orders (same ticker netted across
+  sleeves). Dollar amounts and the hedge are in the e-mail only; the committed copy and the run log are public.
 
 Inputs (all optional except prices):
   results/universe/        tickers, SIC, share counts and splits (build_tech_universe.py, refreshed quarterly)
-  HOLDINGS                 secret, CSV "sleeve,ticker,shares" (sleeve QQQ or SMH; the ETFs and PSQ included) -> the
-                           report prints dollar amounts, room left, trims and the rebalance; without it, percentages
+  HOLDINGS                 secret, CSV "sleeve,ticker,shares": sleeve QQQ or SMH (the ETF and that sleeve's names),
+                           PICKS (your own picks), PSQ on any sleeve, and one row "CASH,USD,<dollars>" for the USD
+                           cash balance (negative = margin loan). With it the report prints dollar amounts and share
+                           counts; without it, percentages.
+  ETF_SHARE                variable, the plan's share of the account (default 0.70); MONTHLY_DEPOSIT (default 4000)
   BREADTH_PARAMS           secret, breadth calibration and levels (see breadth_live.py)
   SMTP_HOST/PORT/USER/PASS, MAIL_TO   e-mail (sent when there is something to do, or on Mondays)
   NTFY_TOPIC               secret, optional phone push via ntfy.sh on action days (the topic name is the password)
   DISCORD_WEBHOOK          secret, optional push to a Discord channel webhook on action days
-State: state/plan_alerts.json (last alert per sleeve and name, last hedge state). Report: results/alerts/latest.md.
+State: state/plan_alerts.json (last alert per sleeve and name, January done). Private state (workflow cache, never
+committed): WU state, hedge on/off, the hedge loan and the bridge loan. Report: results/alerts/latest.md.
 
 python plan_alerts.py            # live, Yahoo prices
-python plan_alerts.py --offline  # from the price files already in results/ (for testing)
+python plan_alerts.py --offline  # from the price files already in results/ (for testing; FORCE_JANUARY / FORCE_MONTHLY)
 """
 import io, json, os, re, sys, glob
 import numpy as np
@@ -36,9 +52,13 @@ import pandas as pd
 from tech_caps import daily_caps
 
 STEP, CAP_NAME, CAP_TOT, FLOOR_B, TOP_N, DROP, SPACING = 0.02, 0.10, 0.40, 50.0, 25, 0.30, 63
+MIN_TRADE, LOAN_CAP, MAINT, EXCESS_WARN, BOOK_CAP = 500.0, 0.50, 0.30, 0.20, 0.10
+ETF_SHARE = float(os.getenv("ETF_SHARE", "0.70") or 0.70)
+DEPOSIT = float(os.getenv("MONTHLY_DEPOSIT", "4000") or 4000)
 UNI, STATE, OUT = "results/universe", "state/plan_alerts.json", "results/alerts"
-PRIVATE = "state/private.json"        # hedge state: kept in the workflow cache, never committed (the repo is public)
+PRIVATE = "state/private.json"        # hedge state and loans: kept in the workflow cache, never committed (public repo)
 CHIP_SIC = {3674}
+SLEEVES = ("QQQ", "SMH")
 
 def load_prices(offline, tickers):
     if offline:
@@ -82,13 +102,47 @@ def signals(adj, caps, meta):
     return d, {"QQQ": q, "SMH": s}
 
 def holdings(adj_close):
+    """HOLDINGS secret -> (frame of positions, cash). Cash row: sleeve CASH or ticker CASH/USD, shares = dollars."""
     raw = os.getenv("HOLDINGS", "").strip()
-    if not raw: return None
+    if not raw: return None, 0.0
     h = pd.read_csv(io.StringIO(raw)); h.columns = [c.strip().lower() for c in h.columns]
-    h["sleeve"] = h.sleeve.str.upper().str.strip(); h["ticker"] = h.ticker.str.upper().str.strip()
-    h["price"] = [adj_close[t].dropna().iloc[-1] if t in adj_close else np.nan for t in h.ticker]
+    h["sleeve"] = h.sleeve.astype(str).str.upper().str.strip(); h["ticker"] = h.ticker.astype(str).str.upper().str.strip()
+    is_cash = (h.sleeve == "CASH") | h.ticker.isin(["CASH", "USD"])
+    cash = float(h[is_cash].shares.sum()); h = h[~is_cash].copy()
+    live = [adj_close[t].dropna().iloc[-1] if t in adj_close else np.nan for t in h.ticker]
+    h["price"] = h["price"].astype(float).where(h["price"].notna(), live) if "price" in h else live   # optional price column
     h["value"] = h.shares * h.price
-    return h
+    return h, cash
+
+class Book:
+    """Dollar view of the account from HOLDINGS: sleeves, picks, PSQ, cash, loan, targets and guardrails."""
+    def __init__(s, H, cash):
+        s.H, s.cash = H, cash
+        s.sv = {k: H[(H.sleeve == k) & (H.ticker != "PSQ")].value.sum() for k in SLEEVES}
+        s.picks = H[(H.sleeve == "PICKS") & (H.ticker != "PSQ")].value.sum()
+        s.psq = H[H.ticker == "PSQ"].value.sum(); s.psq_sh = H[H.ticker == "PSQ"].shares.sum()
+        s.loan = max(0.0, -cash); s.free = max(0.0, cash)
+        s.longs = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.psq
+        s.equity = s.longs + cash
+        s.base = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.free           # what the 70/30 targets are measured on
+        s.tgt = {k: ETF_SHARE / 2 * s.base for k in SLEEVES}; s.tgt_picks = (1 - ETF_SHARE) * s.base
+    def names(s, k):                                                   # a sleeve's laggard names (not its ETF)
+        return s.H[(s.H.sleeve == k) & ~s.H.ticker.isin([k, "PSQ"])].groupby("ticker").value.sum()
+    def under(s):                                                      # the sleeve furthest below its target
+        return min(SLEEVES, key=lambda k: s.sv[k] - s.tgt[k])
+    def over(s):
+        return max(SLEEVES, key=lambda k: s.sv[k] - s.tgt[k])
+    def guard(s, loan=None, longs=None):
+        loan = s.loan if loan is None else loan; longs = s.longs if longs is None else longs
+        eq = longs - loan; exc = eq - MAINT * longs
+        return dict(loan=loan, longs=longs, ratio=loan / longs if longs else 0.0, excess=exc, exc_ratio=exc / longs if longs else 1.0)
+
+def guard_lines(g, when=""):
+    out = [f"Margin{when}: loan ${g['loan']:,.0f} = {g['ratio']:.0%} of holdings (limit {LOAN_CAP:.0%}); "
+           f"excess liquidity at a {MAINT:.0%} requirement about ${g['excess']:,.0f} ({g['exc_ratio']:.0%} of holdings)."]
+    if g["ratio"] > LOAN_CAP: out.append(f"**Over the {LOAN_CAP:.0%} loan limit: reduce PSQ or add cash.**")
+    elif g["exc_ratio"] < EXCESS_WARN: out.append(f"**Excess liquidity under {EXCESS_WARN:.0%} of holdings: reduce PSQ or add cash.**")
+    return out
 
 def main(offline=False):
     meta0 = pd.read_csv(f"{UNI}/tech_meta.csv")
@@ -125,50 +179,100 @@ def main(offline=False):
     except Exception as e:
         print("breadth signal unavailable:", str(e)[:200])
     r = np.log(adj[["QQQ", "SMH"]]).diff().iloc[-1260:]
-    beta = r.SMH.cov(r.QQQ) / r.QQQ.var(); h_smh = 0.5 * beta / (1 + beta)
-    H = holdings(close)
+    beta = r.SMH.cov(r.QQQ) / r.QQQ.var()
+    frac = {"QQQ": 0.5, "SMH": min(0.5, beta / 2), "PICKS": 0.5}
+    H, cash = holdings(close)
+    B = Book(H, cash) if H is not None else None
+    px = lambda t: close[t].dropna().iloc[-1]
     L = [f"# Plan alerts, {d:%A %Y-%m-%d}", ""]
+    P = list(L)
+    orders = {}                                                      # ticker -> signed dollars today (netted across sleeves)
     acts, pub_acts = [], []                                          # today's to-do list (private / public wording)
     todo = False
+    hedge_loan, bridge = float(priv.get("hedge_loan", 0.0)), float(priv.get("bridge", 0.0))
+    if B is not None:                                                # the loans cannot exceed what IBKR shows
+        if "hedge_loan" not in priv and B.psq_sh > 0: hedge_loan = min(B.loan, B.psq)   # no record yet: PSQ was bought on margin
+        hedge_loan = min(hedge_loan, B.loan); bridge = min(bridge, max(0.0, B.loan - hedge_loan))
+    borrow_today = 0.0
+    def order(t, x, why):
+        orders[t] = orders.get(t, 0.0) + x
+        return f"{'buy' if x > 0 else 'sell'} ${abs(x):,.0f} of {t} ({abs(x) / px(t):,.1f} sh at {px(t):,.2f}): {why}"
+    month_start = (d.day <= 3 and len(td[(td.month == d.month) & (td.year == d.year)]) == 1) or bool(os.getenv("FORCE_MONTHLY"))
+    january = (d.month == 1 and state.get("january_done") != d.year) or bool(os.getenv("FORCE_JANUARY"))
 
-    # hedge: WU only. PSQ bought on margin, half of each sleeve (beta/2 for SMH, capped at a 50% loan)
-    frac = {"QQQ": 0.5, "SMH": min(0.5, beta / 2)}
-    sv = {}
-    if H is not None:
-        for s in ("QQQ", "SMH"): sv[s] = H[H.sleeve == s].value.sum()
-    psq_held = H is not None and (H.ticker == "PSQ").any() and H[H.ticker == "PSQ"].shares.sum() > 0
-    source = wu_src
+    # ---- allocation (e-mail only)
+    if B is not None:
+        L += ["## Account", ""]
+        L.append(f"| | value | target | |\n|---|---|---|---|")
+        for k in SLEEVES:
+            nm = B.names(k).sum()
+            L.append(f"| {k} sleeve | ${B.sv[k]:,.0f} | ${B.tgt[k]:,.0f} | ETF ${B.sv[k] - nm:,.0f}, names ${nm:,.0f} ({nm / B.sv[k] if B.sv[k] else 0:.0%} of the sleeve) |")
+        L.append(f"| Picks | ${B.picks:,.0f} | ${B.tgt_picks:,.0f} | {(1 - ETF_SHARE):.0%} bucket; cash for picks counts here |")
+        L.append(f"| PSQ hedge | ${B.psq:,.0f} | | {B.psq_sh:,.0f} sh |")
+        L.append(f"| Cash | ${cash:,.0f} | | {'margin loan' if cash < 0 else 'available'} |")
+        L.append(f"| Equity | ${B.equity:,.0f} | | holdings ${B.longs:,.0f} |")
+        L.append("")
+        L += guard_lines(B.guard()); L.append("")
+        allv = B.H[B.H.ticker != "PSQ"].groupby("ticker").value.sum()
+        big = allv[(allv > BOOK_CAP * B.base) & ~allv.index.isin(SLEEVES)]
+        for t, v in big.items():
+            L.append(f"Note: {t} is {v / B.base:.0%} of the account across sleeves and picks (above {BOOK_CAP:.0%}); the caps are per sleeve, so this is for your judgement.")
+        if len(big): L.append("")
+
+    # ---- hedge: WU only. PSQ bought on margin: 50% of each sleeve (beta/2 for SMH) and 50% of the picks
+    psq_held = B is not None and B.psq_sh > 0
     want = (wu == "on") if wu else None
     prev = priv.get("hedge_on")
-    P = list(L) + ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
+    P += ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
     L += ["## Hedge (PSQ)", ""]
+    def psq_target(b):
+        return frac["QQQ"] * b.sv["QQQ"] + frac["SMH"] * b.sv["SMH"] + frac["PICKS"] * b.picks
+    def psq_buy(b, tgt):
+        """PSQ to buy so the loan stays within LOAN_CAP of holdings: cash first, then margin."""
+        if tgt <= b.free: return tgt, 0.0
+        cap = max(b.free, b.longs - 2 * b.loan + 2 * b.free)         # L + (P - c) <= LOAN_CAP (longs + P), LOAN_CAP = 0.5
+        p = min(tgt, cap); return p, max(0.0, p - b.free)
     if want is None:
         L.append("No WU signal yet (set up the TradingView alert e-mails, or the WU_HEDGE variable); no hedge change"
                  + (f" -- the hedge stays {'ON' if prev else 'OFF'}." if prev is not None else "."))
     else:
         need = None
-        if H is not None:
-            need = "on" if want and not psq_held else "off" if not want and psq_held else None
-        elif prev is None or bool(prev) != bool(want):
-            need = "on" if want else "off"
+        if B is not None: need = "on" if want and not psq_held else "off" if not want and psq_held else None
+        elif prev is None or bool(prev) != bool(want): need = "on" if want else "off"
         if need == "on":
             todo = True
-            txt = (f"Hedge ON ({source}): keep QQQ and SMH; in the taxable account buy PSQ on margin worth "
-                   f"{frac['QQQ']:.0%} of the QQQ sleeve and {frac['SMH']:.0%} of the SMH sleeve (SMH beta {beta:.2f}).")
-            if sv:
-                loan = frac["QQQ"] * sv["QQQ"] + frac["SMH"] * sv["SMH"]; V = sv["QQQ"] + sv["SMH"]
-                txt += (f" That is ${loan:,.0f} of PSQ, borrowed; the plan's leverage becomes about {(V + loan) / V:.2f}x. "
-                        "Check that IBKR's Excess Liquidity stays above 30% of the account.")
-            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": buy PSQ on margin")
-            L.append(f"(Without margin: sell 25% of the QQQ sleeve and {h_smh:.0%} of the SMH sleeve into PSQ instead; "
-                     "in a taxable account that realizes gains.)")
+            txt = (f"Hedge ON ({wu_src}): keep everything; buy PSQ worth {frac['QQQ']:.0%} of the QQQ sleeve, {frac['SMH']:.0%} of the "
+                   f"SMH sleeve (SMH beta {beta:.2f}) and {frac['PICKS']:.0%} of the picks, on margin.")
+            L.append(f"**{txt}**")
+            if B is not None:
+                tgt = psq_target(B); p, borrow = psq_buy(B, tgt)
+                L.append("- " + order("PSQ", p, f"{'the full hedge' if p >= tgt - 1 else f'cut from ${tgt:,.0f} by the {LOAN_CAP:.0%} loan limit'}; "
+                                                f"${p - borrow:,.0f} from cash, ${borrow:,.0f} borrowed"))
+                L += guard_lines(B.guard(B.loan + borrow, B.longs + p), " after")
+                hedge_loan += borrow
+            acts.append(f"Hedge ON: buy PSQ on margin")
         elif need == "off":
             todo = True
-            txt = (f"Hedge OFF ({source}): sell all PSQ; repay the margin loan first, then put anything left back into "
-                   "each sleeve's ETF.")
-            L.append(f"**{txt}**"); acts.append(txt.split(":")[0] + ": sell PSQ")
+            txt = f"Hedge OFF ({wu_src}): sell all PSQ, repay the margin loan, put anything left into the more underweight ETF."
+            L.append(f"**{txt}**")
+            if B is not None:
+                L.append("- " + order("PSQ", -B.psq, "the whole hedge"))
+                repay = min(B.psq, B.loan); left = B.psq - repay
+                L.append(f"- repay ${repay:,.0f} of the loan (it happens by itself: the sale credits USD cash)")
+                if left >= MIN_TRADE: L.append("- " + order(B.under(), left, "leftover PSQ proceeds into the more underweight sleeve"))
+                L += guard_lines(B.guard(B.loan - repay, B.longs - B.psq + max(0.0, left)), " after")
+            hedge_loan = 0.0
+            acts.append("Hedge OFF: sell PSQ, repay the loan")
         else:
-            L.append(f"Hedge stays {'ON' if want else 'OFF'} ({source})" + ("; holdings match." if H is not None else "."))
+            L.append(f"Hedge stays {'ON' if want else 'OFF'} ({wu_src})" + ("; holdings match." if B is not None else "."))
+            if want and B is not None:                               # top up for picks / names bought since it went on
+                tgt = psq_target(B); short = tgt - B.psq
+                if short > max(MIN_TRADE, 0.05 * tgt):
+                    p, borrow = psq_buy(B, short); todo = True
+                    L.append("- " + order("PSQ", p, f"top-up: the hedge target is ${tgt:,.0f} and you hold ${B.psq:,.0f}; ${p - borrow:,.0f} from cash, ${borrow:,.0f} borrowed"))
+                    hedge_loan += borrow; acts.append("Hedge top-up: buy PSQ")
+                elif short < -max(MIN_TRADE, 0.10 * tgt):
+                    L.append(f"- PSQ is ${-short:,.0f} above the ${tgt:,.0f} target; no trade (the hedge is not trimmed while on).")
         if want != prev: priv["hedge_on"], priv["hedge_since"] = bool(want), str(d.date())
     if br:
         agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; differs from WU")
@@ -177,36 +281,37 @@ def main(offline=False):
     if wu: L.append(f"WU: {wu.upper()} ({wu_src}).")
     L.append("")
 
-    # rotation alerts
+    # ---- laggard alerts: buy today, cash first, the rest on margin
+    buys_today = 0.0
     for s, bench in (("QQQ", "QQQ"), ("SMH", "SMH")):
         last = state.setdefault(s, {})
         fresh = []
         for t, v in sig[s].items():
-            prev = last.get(t)
-            gap = len(td[(td > pd.Timestamp(prev)) & (td <= d)]) if prev else None
-            if prev is None or gap >= SPACING: fresh.append(t)
+            prev_d = last.get(t)
+            gap = len(td[(td > pd.Timestamp(prev_d)) & (td <= d)]) if prev_d else None
+            if prev_d is None or gap >= SPACING: fresh.append(t)
         fresh = sorted(fresh, key=lambda t: -caps.get(t, 0))
         hdr = [f"## {s} sleeve: {len(fresh)} new alert(s), {len(sig[s])} name(s) now >= {DROP:.0%} behind {bench}", ""]
         L += hdr; P += hdr
         if fresh:
             todo = True
-            acts.append(f"{s} sleeve: buy {len(fresh)} stock(s) ({', '.join(fresh)})"); pub_acts.append(acts[-1])
+            pub_acts.append(f"{s} sleeve: buy {len(fresh)} stock(s) ({', '.join(fresh)})")
             room = None
-            if H is not None:
-                V = sv[s]; names_val = H[(H.sleeve == s) & ~H.ticker.isin([s, "PSQ"])].groupby("ticker").value.sum()
-                room = max(0.0, CAP_TOT * V - names_val.sum())
-                L.append(f"Sleeve ${V:,.0f}; in names ${names_val.sum():,.0f}; room ${room:,.0f}; step ${STEP * V:,.0f}.")
+            if B is not None:
+                V = B.sv[s]; nm = B.names(s); room = max(0.0, CAP_TOT * V - nm.sum())
+                L.append(f"Sleeve ${V:,.0f}; in names ${nm.sum():,.0f}; room ${room:,.0f}; step ${STEP * V:,.0f}.")
                 L.append("")
             th = [f"| buy | name | behind {bench} | market cap | amount | price |", "|---|---|---|---|---|---|"]
             L += th; P += th
             for t in fresh:
-                if H is not None:
-                    held = H[(H.sleeve == s) & (H.ticker == t)].value.sum()
-                    x = max(0.0, min(STEP * sv[s], CAP_NAME * sv[s] - held, room)); room -= x
-                    amt = f"${x:,.0f}" + ("" if x > 0 else " (no room: skip)")
+                if B is not None:
+                    held = B.names(s).get(t, 0.0)
+                    x = max(0.0, min(STEP * B.sv[s], CAP_NAME * B.sv[s] - held, room))
+                    if x < 1: amt = "$0 (no room: skip)"; x = 0.0          # laggard buys are never skipped for size
+                    else: amt = f"${x:,.0f}"; room -= x; buys_today += x; orders[t] = orders.get(t, 0.0) + x
                 else:
                     amt = f"{STEP:.0%} of sleeve"
-                row = f"| {t} | {meta.name.get(t, '')} | {sig[s][t]:+.0%} | ${caps.get(t, np.nan):,.0f}B | {{}} | {close[t].dropna().iloc[-1]:,.2f} |"
+                row = f"| {t} | {meta.name.get(t, '')} | {sig[s][t]:+.0%} | ${caps.get(t, np.nan):,.0f}B | {{}} | {px(t):,.2f} |"
                 L.append(row.format(amt)); P.append(row.format(f"{STEP:.0%} of sleeve"))
                 last[t] = str(d.date())
             L.append(""); P.append("")
@@ -214,46 +319,101 @@ def main(offline=False):
         if others:
             ln = [f"Already alerted, still behind (no action): {', '.join(f'{t} {sig[s][t]:+.0%}' for t in others)}", ""]
             L += ln; P += ln
+    if buys_today > 0 and B is not None:
+        c = B.free; borrow = max(0.0, buys_today - c)
+        L += ["## Paying for today's buys", "", f"Total ${buys_today:,.0f}: ${min(c, buys_today):,.0f} from cash, ${borrow:,.0f} on margin "
+              f"(repaid at the next monthly deposit; nothing is sold today)."]
+        L += guard_lines(B.guard(B.loan + borrow, B.longs + buys_today), " after"); L.append("")
+        borrow_today = borrow
+    lag_names = [t for t, x in orders.items() if x > 0 and t not in ("PSQ", "QQQ", "SMH")]
+    if lag_names: acts.append(f"Laggards: buy {len(lag_names)} stock(s) ({', '.join(lag_names)}), cash first then margin")
+    elif pub_acts and B is None: acts.append("Laggard alerts: see the tables (percent sizing; set HOLDINGS for dollars)")
+    elif pub_acts: acts.append("Laggard alerts with no room in the sleeve: nothing to buy")
 
-    # January: trim and rebalance
-    if (d.month == 1 and state.get("january_done") != d.year) or os.getenv("FORCE_JANUARY"):
-        todo = True; state["january_done"] = d.year
-        acts.append("January: trim and rebalance the sleeves"); pub_acts.append(acts[-1])
-        L += ["## January: trim and rebalance", ""]
-        P += ["## January: trim and rebalance", "", "Trim names to 10% of the sleeve and 40% in names; rebalance the sleeves to 50/50 "
-              "(dollar amounts in the e-mail).", ""]
-        if H is None:
-            L.append("Trim any name above 10% of its sleeve to 10%; if a sleeve's names exceed 40% of it, scale them down to 40%. "
-                     "Then move money between QQQ and SMH so the two sleeves are equal.")
+    # ---- monthly deposit and settlement
+    if month_start:
+        todo = True
+        L += ["## Monthly deposit and settlement", ""]; P += ["## Monthly deposit", "", f"Deposit: repay any margin loan first, then {ETF_SHARE:.0%} to the more "
+                                                                        f"underweight sleeve's ETF and {1 - ETF_SHARE:.0%} to the picks' cash.", ""]
+        if B is None:
+            L.append(f"Deposit ${DEPOSIT:,.0f}: repay any margin loan first; then {ETF_SHARE:.0%} of what is left into the more underweight "
+                     f"sleeve's ETF and {1 - ETF_SHARE:.0%} kept as cash for picks. If a laggard loan remains, sell that much ETF.")
         else:
-            for s in ("QQQ", "SMH"):
-                V = sv[s]; g = H[(H.sleeve == s) & ~H.ticker.isin([s, "PSQ"])].groupby("ticker").value.sum()
-                for t, v in g[g > CAP_NAME * V].items():
-                    L.append(f"- {s} sleeve: sell ${v - CAP_NAME * V:,.0f} of {t} into {s}")
-                if g.clip(upper=CAP_NAME * V).sum() > CAP_TOT * V:
-                    L.append(f"- {s} sleeve: names exceed 40%; sell {1 - CAP_TOT * V / g.clip(upper=CAP_NAME * V).sum():.0%} of each into {s}")
-            gap = (sv["QQQ"] - sv["SMH"]) / 2
-            L.append(f"- Rebalance: move ${abs(gap):,.0f} from {'QQQ to SMH' if gap > 0 else 'SMH to QQQ'}.")
+            repay = min(DEPOSIT, B.loan); rest = DEPOSIT - repay; n = 1
+            hl2 = max(0.0, hedge_loan - repay); br2 = max(0.0, B.loan - repay - hl2)
+            L.append(f"{n}. Deposit ${DEPOSIT:,.0f}" + (f"; ${repay:,.0f} repays the loan (hedge loan left ${hl2:,.0f}, laggard loan left ${br2:,.0f})." if repay > 0 else ".")); n += 1
+            etf_part, pick_part = ETF_SHARE * rest, (1 - ETF_SHARE) * rest
+            if etf_part >= MIN_TRADE:
+                u = B.under(); L.append(f"{n}. " + order(u, etf_part, f"the plan's {ETF_SHARE:.0%} of the deposit, into the more underweight sleeve")); n += 1
+            elif rest > 0: L.append(f"{n}. ${etf_part:,.0f} for the ETFs is under ${MIN_TRADE:,.0f}: leave it as cash for next month."); n += 1
+            if pick_part > 0: L.append(f"{n}. ${pick_part:,.0f} stays as cash for your picks."); n += 1
+            if br2 >= MIN_TRADE:
+                o = B.over(); L.append(f"{n}. " + order(o, -br2, "clear the laggard loan: sell ETF from the more overweight sleeve"))
+                acts.append(f"Monthly settlement: sell ${br2:,.0f} of {o} to clear the laggard loan"); br2 = 0.0
+            hedge_loan, bridge = hl2, br2 + borrow_today
         L.append("")
-    if d.day <= 3 and len(td[(td.month == d.month) & (td.year == d.year)]) == 1:
-        L += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
-        P += ["## Monthly deposit", "", "Put half of this month's deposit into QQQ and half into SMH.", ""]
-        todo = True; acts.append("Monthly deposit: half into QQQ, half into SMH"); pub_acts.append(acts[-1])
-    # the verdict goes right under the title
+        acts.append(f"Monthly deposit ${DEPOSIT:,.0f}: repay the loan first, then {ETF_SHARE:.0%} to the underweight ETF, {1 - ETF_SHARE:.0%} to pick cash")
+        pub_acts.append("Monthly deposit")
+
+    # ---- January: tax, trims, rebalance
+    if january:
+        todo = True; state["january_done"] = d.year
+        acts.append("January: set the tax aside, trim names to the caps, rebalance the sleeves 50/50"); pub_acts.append("January: trim and rebalance")
+        L += ["## January: tax, trim and rebalance", ""]
+        P += ["## January: trim and rebalance", "", f"Trim names to {CAP_NAME:.0%} of the sleeve and {CAP_TOT:.0%} in names; rebalance the sleeves to 50/50 and the "
+              f"account toward {ETF_SHARE:.0%} / {1 - ETF_SHARE:.0%} (dollar amounts in the e-mail).", ""]
+        L.append("1. Tax: add up last year's realized gains (PSQ sales, trims, rebalances) and margin interest; set 27% of the net gain aside.")
+        if B is None:
+            L.append(f"2. Trim any name above {CAP_NAME:.0%} of its sleeve to {CAP_NAME:.0%}; if a sleeve's names exceed {CAP_TOT:.0%}, scale them down. "
+                     "3. Move money between QQQ and SMH so the sleeves are equal; use deposits first to bring the account back to "
+                     f"{ETF_SHARE:.0%} / {1 - ETF_SHARE:.0%}.")
+        else:
+            n = 2
+            for s in SLEEVES:
+                V = B.sv[s]; g = B.names(s); freed = 0.0
+                for t, v in g[g > CAP_NAME * V].items():
+                    x = v - CAP_NAME * V
+                    if x >= MIN_TRADE: L.append(f"{n}. " + order(t, -x, f"trim to {CAP_NAME:.0%} of the {s} sleeve")); freed += x; n += 1
+                capped = g.clip(upper=CAP_NAME * V)
+                if capped.sum() > CAP_TOT * V:
+                    cut = capped.sum() - CAP_TOT * V; share = capped / capped.sum()
+                    for t, w in share.items():
+                        x = cut * w
+                        if x >= MIN_TRADE: L.append(f"{n}. " + order(t, -x, f"names above {CAP_TOT:.0%} of the {s} sleeve")); freed += x; n += 1
+                if freed >= MIN_TRADE: L.append(f"{n}. " + order(s, freed, "trim proceeds back into the sleeve's ETF")); n += 1
+            gap = (B.sv["QQQ"] - B.sv["SMH"]) / 2
+            if abs(gap) >= MIN_TRADE:
+                frm, to = ("QQQ", "SMH") if gap > 0 else ("SMH", "QQQ")
+                L.append(f"{n}. " + order(frm, -abs(gap), "rebalance the sleeves to 50/50 (sell the ETF, not the names)")); n += 1
+                L.append(f"{n}. " + order(to, abs(gap), "rebalance the sleeves to 50/50")); n += 1
+            drift = (B.sv["QQQ"] + B.sv["SMH"]) / B.base - ETF_SHARE if B.base else 0.0
+            L.append(f"{n}. Plan vs picks: the plan is {ETF_SHARE + drift:.0%} of the account (target {ETF_SHARE:.0%}); "
+                     + ("fine." if abs(drift) < 0.05 else "steer the next deposits to the side that is short rather than selling."))
+        L.append("")
+
+    # ---- verdict and footer
     def verdict(items, extra=""):
-        if not items: return ["## Today: no action", "", "Nothing to trade. Keep the monthly DCA going." + extra, ""]
+        if not items: return ["## Today: no action", "", "Nothing to trade." + extra, ""]
         return [f"## Today: {len(items)} action(s)", ""] + [f"{i}. {a}" for i, a in enumerate(items, 1)] + [""]
+    net = {t: x for t, x in orders.items() if abs(x) >= 1}
+    if net:
+        L += ["## Orders (netted across sleeves, sells first)", ""]
+        for t, x in sorted(net.items(), key=lambda z: z[1]):
+            L.append(f"- {'SELL' if x < 0 else 'BUY'} {abs(x) / px(t):,.1f} {t} at about {px(t):,.2f} (${abs(x):,.0f})")
+        L.append("")
     L[2:2] = verdict(acts)
-    hedge_act = len(acts) > len(pub_acts)
+    hedge_act = any(a.startswith("Hedge") for a in acts)
     P[2:2] = verdict(pub_acts + (["Hedge change: see the e-mail"] if hedge_act else []))
-    foot =["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; "
-            f"re-alert after {SPACING} trading days. Caps use SEC share counts refreshed quarterly. Not investment advice."]
+    foot = ["---", f"Rules: alerts are {STEP:.0%} of the sleeve, max {CAP_NAME:.0%} per name, {CAP_TOT:.0%} in names per sleeve; re-alert after "
+            f"{SPACING} trading days; orders under ${MIN_TRADE:,.0f} skipped; laggards bought on margin and repaid monthly; loan limit "
+            f"{LOAN_CAP:.0%} of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice."]
     L += foot; P += foot
+    if not month_start: bridge += borrow_today
+    priv["hedge_loan"], priv["bridge"] = round(hedge_loan, 2), round(bridge, 2)
 
     os.makedirs(OUT, exist_ok=True); os.makedirs(os.path.dirname(STATE), exist_ok=True)
     md, pub = "\n".join(L) + "\n", "\n".join(P) + "\n"
-    if offline: OUTP = "/tmp" if not os.getenv("ALERTS_OUT") else os.getenv("ALERTS_OUT")
-    else: OUTP = OUT
+    OUTP = (os.getenv("ALERTS_OUT") or "/tmp") if offline else OUT
     open(f"{OUTP}/latest.md", "w").write(md if offline else pub)        # committed copy: public data only
     if not offline:
         json.dump(state, open(STATE, "w"), indent=1, sort_keys=True)
@@ -296,6 +456,7 @@ def md_to_html(md):
         if line.startswith("## "): out.append(f"<h3>{line[3:]}</h3>")
         elif line.startswith("# "): out.append(f"<h2>{line[2:]}</h2>")
         elif line.startswith("- "): out.append(f"<div>&bull; {line[2:]}</div>")
+        elif re.match(r"\d+\. ", line): out.append(f"<div>{line}</div>")
         elif line.strip() == "---": out.append("<hr>")
         elif line.strip(): out.append(f"<p>{line.replace('**', '')}</p>")
     if in_table: out.append("</table>")
