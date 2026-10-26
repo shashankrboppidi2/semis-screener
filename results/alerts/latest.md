@@ -2,7 +2,7 @@
 
 ## Today: no action
 
-Nothing to trade. Keep the monthly DCA going.
+Nothing to trade.
 
 ## Hedge
 
@@ -17,4 +17,4 @@ Already alerted, still behind (no action): APP -69%, ORCL -61%, INTU -56%, WDC -
 Already alerted, still behind (no action): AVGO -46%, ARM -41%, SNPS -40%, KLAC -40%, CDNS -39%, AMAT -35%, QCOM -35%, STM -35%, MPWR -34%, LRCX -34%, ALAB -34%, NXPI -32%, TER -31%, MCHP -30%
 
 ---
-Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days. Caps use SEC share counts refreshed quarterly. Not investment advice.
+Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
