@@ -83,7 +83,10 @@ def caps_now(close, new_splits):
     for t, g in sh.groupby("ticker"):
         if t not in close.columns: continue
         s = sp[sp.ticker == t].set_index("date").ratio
-        out[t] = daily_caps(close[t].dropna(), s, g[["end", "shares"]], meta.adr_ratio.get(t, 1.0)).iloc[-1]
+        px_t = close[t].dropna()
+        if px_t.empty: continue                                       # a failed download (Yahoo hiccup): skip the name today
+        c = daily_caps(px_t, s, g[["end", "shares"]], meta.adr_ratio.get(t, 1.0))
+        if len(c): out[t] = c.iloc[-1]
     return pd.Series(out), meta
 
 def signals(adj, caps, meta):
