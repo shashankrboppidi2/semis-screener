@@ -344,7 +344,7 @@ def main(offline=False):
         borrow_today = borrow
     lag_names = [t for t, x in orders.items() if x > 0 and t not in ("PSQ", "QQQ", "SMH")]
     if lag_names: acts.append(f"Laggards: buy {len(lag_names)} stock(s) ({', '.join(lag_names)}), cash first then margin")
-    elif pub_acts and B is None: acts.append("Laggard alerts: see the tables (percent sizing; set HOLDINGS for dollars)")
+    elif pub_acts and B is None: acts += [f"{a} -- {STEP:.0%} of the sleeve each" for a in pub_acts]
     elif pub_acts: acts.append("Laggard alerts with no room in the sleeve: nothing to buy")
 
     # ---- monthly deposit and settlement
