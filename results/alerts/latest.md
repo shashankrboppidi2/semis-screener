@@ -1,20 +1,30 @@
-# Plan alerts, Monday 2026-10-26
+# Plan alerts, Tuesday 2026-10-27
 
-## Today: no action
+## Today: 2 action(s)
 
-Nothing to trade.
+1. QQQ sleeve: buy 2 stock(s) (IBM, TER)
+2. SMH sleeve: buy 1 stock(s) (NVDA)
 
 ## Hedge
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 0 new alert(s), 18 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 2 new alert(s), 18 name(s) now >= 30% behind QQQ
 
-Already alerted, still behind (no action): APP -69%, ORCL -61%, INTU -57%, NFLX -53%, WDC -50%, KLAC -49%, ARM -47%, VRT -46%, SNDK -46%, INFY -46%, AMAT -45%, LRCX -43%, STX -39%, ADBE -39%, INTC -34%, MPWR -33%, TSLA -32%, ADSK -31%
+| buy | name | behind QQQ | market cap | amount | price |
+|---|---|---|---|---|---|
+| IBM | INTERNATIONAL BUSINESS MACHINES CORP | -31% | $239B | 2% of sleeve | 250.25 |
+| TER | TERADYNE, INC | -32% | $51B | 2% of sleeve | 323.68 |
 
-## SMH sleeve: 0 new alert(s), 14 name(s) now >= 30% behind SMH
+Already alerted, still behind (no action): APP -69%, ORCL -59%, INTU -59%, NFLX -55%, KLAC -48%, WDC -48%, ARM -47%, VRT -45%, SNDK -45%, AMAT -44%, LRCX -43%, ADBE -42%, STX -38%, ADSK -33%, INTC -32%, MPWR -32%
 
-Already alerted, still behind (no action): AVGO -47%, KLAC -40%, CDNS -40%, ARM -39%, SNPS -39%, QCOM -35%, AMAT -35%, ALAB -35%, STM -35%, MPWR -35%, LRCX -34%, TER -33%, MCHP -30%, NXPI -30%
+## SMH sleeve: 1 new alert(s), 14 name(s) now >= 30% behind SMH
+
+| buy | name | behind SMH | market cap | amount | price |
+|---|---|---|---|---|---|
+| NVDA | NVIDIA CORP | -31% | $5,252B | 2% of sleeve | 217.94 |
+
+Already alerted, still behind (no action): AVGO -46%, KLAC -40%, ARM -40%, SNPS -38%, CDNS -37%, QCOM -36%, AMAT -36%, LRCX -35%, MPWR -34%, STM -32%, TER -31%, NXPI -30%, ALAB -30%
 
 ---
 Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
