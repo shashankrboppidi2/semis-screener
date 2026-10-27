@@ -19,6 +19,7 @@ funding and hedge variants; none of this is investment advice.
 | Monthly | First trading day: the deposit (`MONTHLY_DEPOSIT`) repays the margin loan first (hedge loan, then laggard loan). Of what is left, 70% buys the ETF of the sleeve furthest below its target (one order) and 30% stays as cash for picks. If the laggard loan is not cleared, sell that much ETF from the sleeve furthest above target. |
 | Hedge | WU SP500 Hedging Signal only. When it turns on: keep everything and buy PSQ on margin worth 50% of the QQQ sleeve, 50% of the SMH sleeve (beta/2, capped at 50%) and 50% of the picks; the total loan is capped at 50% of the account's long holdings. While on, PSQ is topped up when new picks or laggards leave it more than 5% short, never trimmed. When it turns off: sell all PSQ, repay the loan, put anything left into the ETF of the sleeve furthest below target. |
 | January | Set aside 27% of last year's net realized gain (PSQ sales, trims, rebalances, less margin interest). Trim any stock above 10% of its sleeve to 10%; if a sleeve's stocks exceed 40%, scale them down (slices under $500 skipped); proceeds go to the sleeve's ETF. Rebalance the sleeves to 50/50 by selling ETF, not stocks. Bring the account back toward 70/30 with the next deposits rather than sales. |
+| I/O Fund hedge | PSQ you buy on I/O Fund's hedging calls (sleeve `IOHEDGE` in HOLDINGS) is yours to manage: it sits outside the plan's 50% target, is not topped up, trimmed or sold when WU comes back in, and its margin loan is not cleared by the monthly settlement. Sell it when I/O Fund lowers its hedge. |
 | Small orders | Re-weights, trims, rebalances and deposit buys under $500 are skipped and left for the next month. Laggard buys are never skipped for size. Orders in the same ticker from both sleeves are netted into one. |
 | Guardrails | Every e-mail shows the loan as a share of long holdings (limit 50%) and the estimated excess liquidity at IBKR's 30% requirement (warning below 20% of holdings). These are the account's own numbers: a TFSA cannot be collateral and is not part of this plan. |
 
@@ -76,7 +77,8 @@ In the backtests, hedging on it cost more than it saved: buy and hold beat it af
    - `SMTP_USER`, `SMTP_PASS` (a Gmail app password), `MAIL_TO` -- e-mail.
    - `BREADTH_PARAMS` -- calibration and levels for the breadth signal (kept out of the public code).
    - `HOLDINGS` -- `sleeve,ticker,shares` lines for everything in the account; update after trading. Sleeves `QQQ`
-     and `SMH` hold the ETF and that sleeve's laggards, `PICKS` holds your own picks, PSQ can sit on any sleeve, and
+     and `SMH` hold the ETF and that sleeve's laggards, `PICKS` holds your own picks, the plan's PSQ can sit on any of those, PSQ
+     bought on I/O Fund's own hedging calls goes under `IOHEDGE` (counted for margin, never traded by the alerts), and
      one line `CASH,USD,<dollars>` gives the USD cash balance (negative while on margin). An optional fourth column
      `price` sets a price for a ticker the universe does not cover. Without the secret the report sizes in percent.
    - `NTFY_TOPIC` (optional) -- a long random topic name; install the ntfy app and subscribe to it for phone pushes.
