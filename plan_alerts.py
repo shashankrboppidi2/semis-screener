@@ -215,7 +215,7 @@ def main(offline=False):
             L.append(f"| {k} sleeve | ${B.sv[k]:,.0f} | ${B.tgt[k]:,.0f} | ETF ${B.sv[k] - nm:,.0f}, names ${nm:,.0f} ({nm / B.sv[k] if B.sv[k] else 0:.0%} of the sleeve) |")
         L.append(f"| Picks | ${B.picks:,.0f} | ${B.tgt_picks:,.0f} | {(1 - ETF_SHARE):.0%} bucket; cash for picks counts here |")
         L.append(f"| PSQ hedge | ${B.psq:,.0f} | | {B.psq_sh:,.0f} sh (WU hedge) |")
-        if B.io_psq_sh > 0: L.append(f"| PSQ, I/O Fund hedge | ${B.io_psq:,.0f} | | {B.io_psq_sh:,.0f} sh; follows I/O Fund, not traded by these alerts |")
+        if B.io_psq_sh > 0: L.append(f"| PSQ, I/O Fund hedge | ${B.io_psq:,.0f} | | {B.io_psq_sh:,.0f} sh; I/O Fund hedge; sold with the WU hedge, never topped up |")
         L.append(f"| Cash | ${cash:,.0f} | | {'margin loan' if cash < 0 else 'available'} |")
         L.append(f"| Equity | ${B.equity:,.0f} | | holdings ${B.longs:,.0f} |")
         L.append("")
@@ -228,6 +228,7 @@ def main(offline=False):
 
     # ---- hedge: WU only. PSQ bought on margin: 50% of each sleeve (beta/2 for SMH) and 50% of the picks
     psq_held = B is not None and B.psq_sh > 0
+    any_psq = B is not None and (B.psq_sh + B.io_psq_sh) > 0          # the I/O Fund hedge follows WU too: it exits with it
     want = (wu == "on") if wu else None
     prev = priv.get("hedge_on")
     P += ["## Hedge", "", "The hedge instructions are in the e-mail only (this file and the run log are public).", ""]
@@ -244,7 +245,7 @@ def main(offline=False):
                  + (f" -- the hedge stays {'ON' if prev else 'OFF'}." if prev is not None else "."))
     else:
         need = None
-        if B is not None: need = "on" if want and not psq_held else "off" if not want and psq_held else None
+        if B is not None: need = "on" if want and not psq_held else "off" if not want and any_psq else None
         elif prev is None or bool(prev) != bool(want): need = "on" if want else "off"
         if need == "on":
             todo = True
@@ -260,15 +261,20 @@ def main(offline=False):
             acts.append(f"Hedge ON: buy PSQ on margin")
         elif need == "off":
             todo = True
-            txt = (f"Hedge OFF ({wu_src}): sell the WU hedge's PSQ, repay the margin loan, put anything left into the more underweight ETF."
-                   + (" Keep the I/O Fund hedge's PSQ until I/O Fund lowers its hedge." if B is not None and B.io_psq_sh > 0 else ""))
+            txt = (f"Hedge OFF ({wu_src}): sell all PSQ" + (" (the WU hedge and the I/O Fund hedge)" if B is not None and B.io_psq_sh > 0 else "")
+                   + ", repay the margin loan, put anything left toward the ETF target, the rest stays as pick cash.")
             L.append(f"**{txt}**")
             if B is not None:
-                L.append("- " + order("PSQ", -B.psq, "the whole WU hedge"))
-                repay = min(B.psq, B.loan); left = B.psq - repay
+                allp = B.psq + B.io_psq
+                L.append("- " + order("PSQ", -allp, "the whole hedge" + (f" ({B.psq_sh:,.0f} WU + {B.io_psq_sh:,.0f} I/O Fund shares)" if B.io_psq_sh > 0 else "")))
+                repay = min(allp, B.loan); left = allp - repay
                 L.append(f"- repay ${repay:,.0f} of the loan (it happens by itself: the sale credits USD cash)")
-                if left >= MIN_TRADE: L.append("- " + order(B.under(), left, "leftover PSQ proceeds into the more underweight sleeve"))
-                L += guard_lines(B.guard(B.loan - repay, B.longs - B.psq + max(0.0, left)), " after")
+                short = max(0.0, sum(B.tgt[k] - B.sv[k] for k in SLEEVES))   # the ETFs' gap to 70%; the rest is pick cash
+                x = min(left, short)
+                if x >= MIN_TRADE: L.append("- " + order(B.under(), x, "leftover PSQ proceeds into the more underweight sleeve, up to the ETF target"))
+                else: x = 0.0
+                if left - x >= 1: L.append(f"- ${left - x:,.0f} stays as cash for your picks (the ETFs are at target)")
+                L += guard_lines(B.guard(B.loan - repay, B.longs - allp + x), " after")
             hedge_loan = 0.0
             acts.append("Hedge OFF: sell PSQ, repay the loan")
         else:
