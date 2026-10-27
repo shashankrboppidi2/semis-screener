@@ -1,8 +1,8 @@
 # Plan alerts, Tuesday 2026-10-27
 
-## Today: no action
+## Today: 1 action(s)
 
-Nothing to trade.
+1. Hedge change: see the e-mail
 
 ## Hedge
 
