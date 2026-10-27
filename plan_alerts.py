@@ -55,6 +55,7 @@ STEP, CAP_NAME, CAP_TOT, FLOOR_B, TOP_N, DROP, SPACING = 0.02, 0.10, 0.40, 50.0,
 MIN_TRADE, LOAN_CAP, MAINT, EXCESS_WARN, BOOK_CAP = 500.0, 0.50, 0.30, 0.20, 0.10
 ETF_SHARE = float(os.getenv("ETF_SHARE", "0.70") or 0.70)
 DEPOSIT = float(os.getenv("MONTHLY_DEPOSIT", "4000") or 4000)
+IOF_HEDGE = float(os.getenv("IOFUND_HEDGE", "") or 0)   # I/O Fund's hedge as a share of its book in SMH terms (e.g. 0.75); 0 = off
 UNI, STATE, OUT = "results/universe", "state/plan_alerts.json", "results/alerts"
 PRIVATE = "state/private.json"        # hedge state and loans: kept in the workflow cache, never committed (public repo)
 CHIP_SIC = {3674}
@@ -116,6 +117,14 @@ def holdings(adj_close):
     h["price"] = h["price"].astype(float).where(h["price"].notna(), live) if "price" in h else live   # optional price column
     h["value"] = h.shares * h.price
     return h, cash
+
+def iofund_picks():
+    """IOFUND_PICKS secret: one "TICKER weight%" per line (commas, colons or spaces) -> {ticker: weight as a fraction}."""
+    out = {}
+    for t, w in re.findall(r"([A-Za-z][A-Za-z.\-]{0,9})\s*[,:;\s]\s*([\d.]+)\s*%?", os.getenv("IOFUND_PICKS", "")):
+        if t.lower() in ("ticker", "weight"): continue
+        out[t.upper()] = float(w) / 100.0
+    return out
 
 class Book:
     """Dollar view of the account from HOLDINGS: sleeves, picks, PSQ, cash, loan, targets and guardrails."""
@@ -186,7 +195,8 @@ def main(offline=False):
         print("breadth signal unavailable:", str(e)[:200])
     r = np.log(adj[["QQQ", "SMH"]]).diff().iloc[-1260:]
     beta = r.SMH.cov(r.QQQ) / r.QQQ.var()
-    frac = {"QQQ": 0.5, "SMH": min(0.5, beta / 2), "PICKS": 0.5}
+    frac = {"QQQ": 0.5, "SMH": min(0.5, beta / 2), "PICKS": 0.0 if IOF_HEDGE > 0 else 0.5}
+    io_frac = IOF_HEDGE * beta                                       # I/O Fund's SMH hedge, in PSQ (QQQ) terms
     H, cash = holdings(close)
     B = Book(H, cash) if H is not None else None
     px = lambda t: close[t].dropna().iloc[-1]
@@ -218,7 +228,8 @@ def main(offline=False):
             L.append(f"| {k} sleeve | ${B.sv[k]:,.0f} | ${B.tgt[k]:,.0f} | ETF ${B.sv[k] - nm:,.0f}, names ${nm:,.0f} ({nm / B.sv[k] if B.sv[k] else 0:.0%} of the sleeve) |")
         L.append(f"| Picks | ${B.picks:,.0f} | ${B.tgt_picks:,.0f} | {(1 - ETF_SHARE):.0%} bucket; cash for picks counts here |")
         L.append(f"| PSQ hedge | ${B.psq:,.0f} | | {B.psq_sh:,.0f} sh (WU hedge) |")
-        if B.io_psq_sh > 0: L.append(f"| PSQ, I/O Fund hedge | ${B.io_psq:,.0f} | | {B.io_psq_sh:,.0f} sh; I/O Fund hedge; sold with the WU hedge, never topped up |")
+        if B.io_psq_sh > 0 or IOF_HEDGE > 0:
+            L.append(f"| PSQ, I/O Fund hedge | ${B.io_psq:,.0f} | " + (f"${io_frac * B.picks:,.0f}" if IOF_HEDGE > 0 else "") + f" | {B.io_psq_sh:,.0f} sh; covers the picks; sold with the WU hedge |")
         L.append(f"| Cash | ${cash:,.0f} | | {'margin loan' if cash < 0 else 'available'} |")
         L.append(f"| Equity | ${B.equity:,.0f} | | holdings ${B.longs:,.0f} |")
         L.append("")
@@ -253,10 +264,13 @@ def main(offline=False):
         if need == "on":
             todo = True
             txt = (f"Hedge ON ({wu_src}): keep everything; buy PSQ worth {frac['QQQ']:.0%} of the QQQ sleeve, {frac['SMH']:.0%} of the "
-                   f"SMH sleeve (SMH beta {beta:.2f}) and {frac['PICKS']:.0%} of the picks, on margin.")
+                   f"SMH sleeve (SMH beta {beta:.2f}) and " + (f"{io_frac:.0%} of the picks (I/O Fund's {IOF_HEDGE:.0%} SMH hedge)" if IOF_HEDGE > 0
+                   else f"{frac['PICKS']:.0%} of the picks") + ", on margin.")
             L.append(f"**{txt}**")
             if B is not None:
-                tgt = psq_target(B); p, borrow = psq_buy(B, tgt)
+                io_t = io_frac * B.picks if IOF_HEDGE > 0 else 0.0
+                tgt = psq_target(B) + io_t; p, borrow = psq_buy(B, tgt)
+                if io_t > 0: L.append(f"- of which ${io_t * p / tgt:,.0f} is the I/O Fund hedge: list those shares under IOHEDGE in HOLDINGS")
                 L.append("- " + order("PSQ", p, f"{'the full hedge' if p >= tgt - 1 else f'cut from ${tgt:,.0f} by the {LOAN_CAP:.0%} loan limit'}; "
                                                 f"${p - borrow:,.0f} from cash, ${borrow:,.0f} borrowed"))
                 L += guard_lines(B.guard(B.loan + borrow, B.longs + p), " after")
@@ -290,6 +304,15 @@ def main(offline=False):
                     hedge_loan += borrow; acts.append("Hedge top-up: buy PSQ")
                 elif short < -max(MIN_TRADE, 0.10 * tgt):
                     L.append(f"- PSQ is ${-short:,.0f} above the ${tgt:,.0f} target; no trade (the hedge is not trimmed while on).")
+                if IOF_HEDGE > 0:                                    # the picks' hedge, sized like I/O Fund's
+                    io_t = io_frac * B.picks; io_short = io_t - B.io_psq
+                    if io_short > max(MIN_TRADE, 0.05 * io_t):
+                        p, borrow = psq_buy(B, io_short); todo = True
+                        L.append("- " + order("PSQ", p, f"I/O Fund hedge top-up: target ${io_t:,.0f} ({io_frac:.0%} of the picks), you hold ${B.io_psq:,.0f}; "
+                                                        f"add the shares to the IOHEDGE row"))
+                        acts.append("I/O Fund hedge top-up: buy PSQ")
+                    elif io_short < -max(MIN_TRADE, 0.10 * io_t):
+                        L.append(f"- I/O Fund hedge is ${-io_short:,.0f} above its ${io_t:,.0f} target; no trade.")
         if want != prev: priv["hedge_on"], priv["hedge_since"] = bool(want), str(d.date())
     if br:
         agree = "" if wu is None else ("; agrees with WU" if (wu == "on") == br["on"] else "; differs from WU")
@@ -297,6 +320,27 @@ def main(offline=False):
                  f"(lines {br['orange']:,.0f} / {br['blue']:,.0f} on {br['date'].date()}){agree}.")
     if wu: L.append(f"WU: {wu.upper()} ({wu_src}).")
     L.append("")
+
+    # ---- I/O Fund picks vs what you hold (e-mail only: the list is a paid service's portfolio)
+    io = iofund_picks()
+    if io and B is not None:
+        budget = (1 - ETF_SHARE) * B.equity
+        held = B.H[(B.H.sleeve == "PICKS") & (B.H.ticker != "PSQ")].groupby("ticker").value.sum()
+        rows = sorted(((t, w, w * budget, held.get(t, 0.0)) for t, w in io.items()), key=lambda r: -(r[2] - r[3]))
+        missing = [r for r in rows if r[3] < 1 and r[2] >= MIN_TRADE]
+        L += ["## I/O Fund picks", "", f"Picks budget ${budget:,.0f} ({1 - ETF_SHARE:.0%} of the account); invested ${held.sum():,.0f}.", ""]
+        L += ["| ticker | I/O weight | target | you hold | to buy |", "|---|---|---|---|---|"]
+        for t, w, tg, h in rows:
+            L.append(f"| {t} | {w:.1%} | ${tg:,.0f} | ${h:,.0f} | " + (f"${tg - h:,.0f}" if tg - h >= 1 else "-") + " |")
+        extra = [t for t in held.index if t not in io]
+        L.append("")
+        if extra: L.append(f"You hold picks that are not in I/O Fund's list: {', '.join(extra)} (sold or never in their portfolio; your call).")
+        small = [r[0] for r in rows if r[3] < 1 and r[2] < MIN_TRADE]
+        if small: L.append(f"Not held, but under ${MIN_TRADE:,.0f} at your size: {', '.join(small)}.")
+        L.append("")
+        if missing:
+            todo = True; acts.append(f"I/O Fund picks you don't hold: {', '.join(f'{t} ${tg:,.0f}' for t, w, tg, h in missing)}")
+            pub_acts.append("I/O Fund picks: see the e-mail")
 
     # ---- laggard alerts: buy today, cash first, the rest on margin
     buys_today = 0.0

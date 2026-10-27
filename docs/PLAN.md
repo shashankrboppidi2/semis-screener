@@ -81,9 +81,14 @@ In the backtests, hedging on it cost more than it saved: buy and hold beat it af
      bought on I/O Fund's own hedging calls goes under `IOHEDGE` (counted for margin, sold with the WU hedge), and
      one line `CASH,USD,<dollars>` gives the USD cash balance (negative while on margin). An optional fourth column
      `price` sets a price for a ticker the universe does not cover. Without the secret the report sizes in percent.
+   - `IOFUND_PICKS` (optional) -- I/O Fund's current portfolio, one `TICKER weight%` per line (for example `SITM 9.3%`).
+     The e-mail then compares it with your PICKS: target dollars per name (weight x the picks budget), what you hold,
+     what to buy, names they no longer list. A name you don't hold at all with a target of $500+ becomes an action.
    - `NTFY_TOPIC` (optional) -- a long random topic name; install the ntfy app and subscribe to it for phone pushes.
    - `DISCORD_WEBHOOK` (optional) -- a webhook URL for a channel in a private Discord server.
    - `SMS_TO` (optional) -- your carrier's e-mail-to-SMS address (see Delivery above).
 3. Repository variables: `WU_HEDGE` (optional, see above); `ETF_SHARE` (default 0.70); `MONTHLY_DEPOSIT` (default 4000);
+   `IOFUND_HEDGE` (optional, e.g. `0.75`: I/O Fund's hedge as a share of its book in SMH; the picks are then hedged with
+   PSQ worth that x SMH's beta under IOHEDGE, topped up as picks are added, and the WU hedge covers only the sleeves);
    `MAIL_DAILY` / `PUSH_DAILY` (default on) and `SMS_DAILY` (default off) for the delivery cadence.
 4. The stock universe refreshes itself quarterly (`universe.yml`); the breadth counts refresh on every alert run.

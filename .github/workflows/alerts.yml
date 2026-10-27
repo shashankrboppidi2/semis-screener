@@ -42,6 +42,8 @@ jobs:
           ETF_SHARE: ${{ vars.ETF_SHARE }}
           MONTHLY_DEPOSIT: ${{ vars.MONTHLY_DEPOSIT }}
           HOLDINGS: ${{ secrets.HOLDINGS }}
+          IOFUND_PICKS: ${{ secrets.IOFUND_PICKS }}
+          IOFUND_HEDGE: ${{ vars.IOFUND_HEDGE }}
           BREADTH_PARAMS: ${{ secrets.BREADTH_PARAMS }}
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
