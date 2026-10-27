@@ -1,25 +1,25 @@
 {
- "finished_utc": "2026-10-21T16:23Z",
+ "finished_utc": "2026-10-25T15:20Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 506
+   "secs": 482
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 17
+   "secs": 15
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 158
+   "secs": 130
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 20
+   "secs": 14
   },
   "tier1_screen": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "build_tier1_workbook": {
    "rc": 0,
@@ -27,11 +27,11 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 634
+   "secs": 572
   },
   "br_extract": {
    "rc": 0,
-   "secs": 45
+   "secs": 27
   },
   "br_postpass": {
    "rc": 0,
@@ -47,7 +47,7 @@
   },
   "xbrl_ADI": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_ALAB": {
    "rc": 0,
@@ -59,7 +59,7 @@
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -75,7 +75,7 @@
   },
   "xbrl_AVGO": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_CBRS": {
    "rc": 0,
@@ -83,7 +83,7 @@
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -99,7 +99,7 @@
   },
   "xbrl_KLAC": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_LRCX": {
    "rc": 0,
@@ -115,7 +115,7 @@
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_MTSI": {
    "rc": 0,
@@ -127,7 +127,7 @@
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -143,11 +143,11 @@
   },
   "xbrl_QCOM": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_SKHY": {
    "rc": 0,
@@ -179,7 +179,7 @@
   },
   "xbrl_TXN": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_UMC": {
    "rc": 0,
@@ -187,11 +187,11 @@
   },
   "accel_series": {
    "rc": 0,
-   "secs": 27
+   "secs": 24
   },
   "accel_rank": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "build_accel_workbook": {
    "rc": 0,
