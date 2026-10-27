@@ -1,0 +1,36 @@
+name: Long history (on demand)
+
+# Index stand-ins from 1985 (fetch_indexes.py) and a Tiingo coverage check for delisted stocks (probe_tiingo.py, needs
+# the TIINGO_KEY secret). Commits results/history/.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['fetch_indexes.py', 'probe_tiingo.py', '.github/workflows/history2.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas requests yfinance
+      - run: python fetch_indexes.py
+      - name: Tiingo probe
+        env:
+          TIINGO_KEY: ${{ secrets.TIINGO_KEY }}
+        run: python probe_tiingo.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/history
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) long history"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

@@ -1,0 +1,37 @@
+name: Software fundamentals (on demand)
+
+# Point-in-time revenue and operating income for the universe's software names (fetch_fundamentals.py), from SEC
+# companyfacts. Commits results/universe/fundamentals.csv.gz.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['fetch_fundamentals.py', '.github/workflows/fundamentals.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas numpy
+      - name: Fetch
+        env:
+          SEC_UA: ${{ secrets.SEC_UA }}
+        run: |
+          if [ -z "$SEC_UA" ]; then echo "::error::Add the SEC_UA repository secret"; exit 1; fi
+          python fetch_fundamentals.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/universe/fundamentals.csv.gz
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) software fundamentals"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

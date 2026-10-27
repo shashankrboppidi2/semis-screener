@@ -1,0 +1,34 @@
+name: Nasdaq-100 membership history (on demand)
+
+# Quarterly Nasdaq-100 membership from Wikipedia's revision history plus Yahoo prices for every member
+# (fetch_n100.py). Commits results/n100/.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['fetch_n100.py', '.github/workflows/n100.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          pip install pandas yfinance requests
+          pip install git+https://github.com/jmccarrell/n100tickers.git || echo "n100tickers not installed; skipping the cross-check"
+      - run: python fetch_n100.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/n100
+          git diff --cached --quiet && exit 0
+          git commit -m "$(date -u +%Y-%m-%dT%H:%M) nasdaq-100 membership"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
