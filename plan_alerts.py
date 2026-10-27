@@ -120,9 +120,11 @@ class Book:
         s.H, s.cash = H, cash
         s.sv = {k: H[(H.sleeve == k) & (H.ticker != "PSQ")].value.sum() for k in SLEEVES}
         s.picks = H[(H.sleeve == "PICKS") & (H.ticker != "PSQ")].value.sum()
-        s.psq = H[H.ticker == "PSQ"].value.sum(); s.psq_sh = H[H.ticker == "PSQ"].shares.sum()
+        plan_psq = (H.ticker == "PSQ") & (H.sleeve != "IOHEDGE"); io_psq = (H.ticker == "PSQ") & (H.sleeve == "IOHEDGE")
+        s.psq = H[plan_psq].value.sum(); s.psq_sh = H[plan_psq].shares.sum()        # the plan's WU hedge
+        s.io_psq = H[io_psq].value.sum(); s.io_psq_sh = H[io_psq].shares.sum()      # I/O Fund hedge: yours, not traded here
         s.loan = max(0.0, -cash); s.free = max(0.0, cash)
-        s.longs = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.psq
+        s.longs = s.sv["QQQ"] + s.sv["SMH"] + s.picks + s.psq + s.io_psq
         s.equity = s.longs + cash
         s.base = s.equity                                              # 70/30 targets on net liquidation: while hedged, the PSQ
                                                                        # bought with pick cash nets against the loan
@@ -191,9 +193,12 @@ def main(offline=False):
     acts, pub_acts = [], []                                          # today's to-do list (private / public wording)
     todo = False
     hedge_loan, bridge = float(priv.get("hedge_loan", 0.0)), float(priv.get("bridge", 0.0))
+    io_loan = 0.0
     if B is not None:                                                # the loans cannot exceed what IBKR shows
         if "hedge_loan" not in priv and B.psq_sh > 0: hedge_loan = min(B.loan, B.psq)   # no record yet: PSQ was bought on margin
-        hedge_loan = min(hedge_loan, B.loan); bridge = min(bridge, max(0.0, B.loan - hedge_loan))
+        hedge_loan = min(hedge_loan, B.loan)
+        io_loan = min(B.io_psq, max(0.0, B.loan - hedge_loan))         # margin behind the I/O Fund hedge: never "settled"
+        bridge = min(bridge, max(0.0, B.loan - hedge_loan - io_loan))
     borrow_today = 0.0
     def order(t, x, why):
         orders[t] = orders.get(t, 0.0) + x
@@ -209,7 +214,8 @@ def main(offline=False):
             nm = B.names(k).sum()
             L.append(f"| {k} sleeve | ${B.sv[k]:,.0f} | ${B.tgt[k]:,.0f} | ETF ${B.sv[k] - nm:,.0f}, names ${nm:,.0f} ({nm / B.sv[k] if B.sv[k] else 0:.0%} of the sleeve) |")
         L.append(f"| Picks | ${B.picks:,.0f} | ${B.tgt_picks:,.0f} | {(1 - ETF_SHARE):.0%} bucket; cash for picks counts here |")
-        L.append(f"| PSQ hedge | ${B.psq:,.0f} | | {B.psq_sh:,.0f} sh |")
+        L.append(f"| PSQ hedge | ${B.psq:,.0f} | | {B.psq_sh:,.0f} sh (WU hedge) |")
+        if B.io_psq_sh > 0: L.append(f"| PSQ, I/O Fund hedge | ${B.io_psq:,.0f} | | {B.io_psq_sh:,.0f} sh; follows I/O Fund, not traded by these alerts |")
         L.append(f"| Cash | ${cash:,.0f} | | {'margin loan' if cash < 0 else 'available'} |")
         L.append(f"| Equity | ${B.equity:,.0f} | | holdings ${B.longs:,.0f} |")
         L.append("")
@@ -254,10 +260,11 @@ def main(offline=False):
             acts.append(f"Hedge ON: buy PSQ on margin")
         elif need == "off":
             todo = True
-            txt = f"Hedge OFF ({wu_src}): sell all PSQ, repay the margin loan, put anything left into the more underweight ETF."
+            txt = (f"Hedge OFF ({wu_src}): sell the WU hedge's PSQ, repay the margin loan, put anything left into the more underweight ETF."
+                   + (" Keep the I/O Fund hedge's PSQ until I/O Fund lowers its hedge." if B is not None and B.io_psq_sh > 0 else ""))
             L.append(f"**{txt}**")
             if B is not None:
-                L.append("- " + order("PSQ", -B.psq, "the whole hedge"))
+                L.append("- " + order("PSQ", -B.psq, "the whole WU hedge"))
                 repay = min(B.psq, B.loan); left = B.psq - repay
                 L.append(f"- repay ${repay:,.0f} of the loan (it happens by itself: the sale credits USD cash)")
                 if left >= MIN_TRADE: L.append("- " + order(B.under(), left, "leftover PSQ proceeds into the more underweight sleeve"))
@@ -341,7 +348,7 @@ def main(offline=False):
                      f"sleeve's ETF and {1 - ETF_SHARE:.0%} kept as cash for picks. If a laggard loan remains, sell that much ETF.")
         else:
             repay = min(DEPOSIT, B.loan); rest = DEPOSIT - repay; n = 1
-            hl2 = max(0.0, hedge_loan - repay); br2 = max(0.0, B.loan - repay - hl2)
+            hl2 = max(0.0, hedge_loan - repay); br2 = max(0.0, B.loan - repay - hl2 - io_loan)
             L.append(f"{n}. Deposit ${DEPOSIT:,.0f}" + (f"; ${repay:,.0f} repays the loan (hedge loan left ${hl2:,.0f}, laggard loan left ${br2:,.0f})." if repay > 0 else ".")); n += 1
             etf_part, pick_part = ETF_SHARE * rest, (1 - ETF_SHARE) * rest
             if etf_part >= MIN_TRADE:
