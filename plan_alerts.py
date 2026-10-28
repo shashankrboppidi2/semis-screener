@@ -91,6 +91,9 @@ def caps_now(close, new_splits):
     return pd.Series(out), meta
 
 def signals(adj, caps, meta):
+    # a benchmark missing on the last row (Yahoo posts some closes late) would blank every signal: use the last day both
+    # ETFs have a close, and carry a name's last close forward a few days over a gap in its own download
+    adj = adj.loc[:adj[["QQQ", "SMH"]].dropna().index.max()].ffill(limit=5)
     d = adj.index[-1]
     def behind(names, bench):
         x = adj[names].div(adj[bench], axis=0)
@@ -103,7 +106,7 @@ def signals(adj, caps, meta):
     top = caps[chips].sort_values(ascending=False).head(TOP_N).index
     q = bq[(caps[names] >= FLOOR_B) & (bq <= -DROP)].sort_values()
     s = bs[bs.index.isin(top) & (bs <= -DROP)].sort_values()
-    return d, {"QQQ": q, "SMH": s}
+    return d, {"QQQ": q, "SMH": s}, bq.notna().mean()
 
 def holdings(adj_close):
     """HOLDINGS secret -> (frame of positions, cash). Cash row: sleeve CASH or ticker CASH/USD, shares = dollars."""
@@ -163,7 +166,7 @@ def main(offline=False):
     meta0 = pd.read_csv(f"{UNI}/tech_meta.csv")
     adj, close, new_splits = load_prices(offline, list(meta0.ticker))
     caps, meta = caps_now(close, new_splits)
-    d, sig = signals(adj, caps, meta)
+    d, sig, cover = signals(adj, caps, meta)
     td = adj.index
     state = json.load(open(STATE)) if os.path.exists(STATE) else {"QQQ": {}, "SMH": {}}
     if offline: state = {"QQQ": {}, "SMH": {}}                       # a test run never reads or writes the live state
@@ -205,6 +208,9 @@ def main(offline=False):
     orders = {}                                                      # ticker -> signed dollars today (netted across sleeves)
     acts, pub_acts = [], []                                          # today's to-do list (private / public wording)
     todo = False
+    if cover < 0.8:                                                  # a bad download must not read as "no laggards"
+        todo = True; acts.append(w := f"Price data incomplete ({cover:.0%} of names): laggard alerts may be missing, re-run the workflow later")
+        pub_acts.append(w)
     hedge_loan, bridge = float(priv.get("hedge_loan", 0.0)), float(priv.get("bridge", 0.0))
     io_loan = 0.0
     if B is not None:                                                # the loans cannot exceed what IBKR shows
