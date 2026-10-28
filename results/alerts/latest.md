@@ -8,13 +8,9 @@
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 0 new alert(s), 18 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 0 new alert(s), 0 name(s) now >= 30% behind QQQ
 
-Already alerted, still behind (no action): APP -69%, ORCL -59%, INTU -59%, NFLX -55%, KLAC -48%, WDC -48%, ARM -47%, VRT -45%, SNDK -45%, AMAT -44%, LRCX -43%, ADBE -42%, STX -38%, ADSK -33%, INTC -32%, TER -32%, MPWR -32%, IBM -31%
-
-## SMH sleeve: 0 new alert(s), 14 name(s) now >= 30% behind SMH
-
-Already alerted, still behind (no action): AVGO -46%, KLAC -40%, ARM -40%, SNPS -38%, CDNS -37%, QCOM -36%, AMAT -36%, LRCX -35%, MPWR -34%, STM -32%, TER -31%, NVDA -31%, NXPI -30%, ALAB -30%
+## SMH sleeve: 0 new alert(s), 0 name(s) now >= 30% behind SMH
 
 ---
 Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
