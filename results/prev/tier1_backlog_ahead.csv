@@ -1,6 +1,7 @@
 ticker,name,industry,cqp,rev,rpo,rpo_cover_q,b2b,b2b_4q,b2b_prev3,b2b_trend,rpo_yoy,rpo_yoy_accel,rev_yoy,d_rpo
 LMT,LOCKHEED MARTIN CORPORATION,Guided Missiles & Space Vehicles & Parts,2026Q3,2.071e+04,2.92e+05,14.1,3.974,2.37,1.836,2.139,0.6304,0.2466,0.113,6.16e+04
 AKAM,"Akamai Technologies, Inc","Services-Business Services, NEC",2026Q2,1100,7600,6.911,2.91,1.757,1.373,1.537,0.7674,0.4884,0.05385,2100
+BA,THE BOEING COMPANY,Aircraft,2026Q3,2.419e+04,7.454e+05,30.82,2.247,2.147,2.114,0.1333,0.1726,0.01626,0.03945,3.017e+04
 FLNC,"Fluence Energy, Inc.","Miscellaneous Electrical Machinery, Equipment & Supplies",2026Q2,649.8,6400,9.848,2.231,1.622,1.212,1.019,0.3061,0.1633,0.07853,800
 HII,"HUNTINGTON INGALLS INDUSTRIES, INC.",Ship & Boat Building & Repairing,2026Q2,3418,5.73e+04,16.76,1.965,1.033,0.7222,1.243,0.00703,-0.118,0.109,3300
 PRIM,Primoris Services Corporation,"Water, Sewer, Pipeline, Comm & Power Line Construction",2026Q2,1688,6000,3.554,1.889,1.112,0.8528,1.036,0.1321,0.3562,-0.1071,1500
@@ -15,12 +16,11 @@ IDCC,"INTERDIGITAL, INC.",Patent Owners & Lessors,2026Q2,260.2,2113,8.121,1.534,
 ,"CHART INDUSTRIES, INC.",Fabricated Plate Work (Boiler Shops),2026Q1,884.8,6283,7.101,1.448,1.282,1.226,0.2224,0.2215,0.006622,-0.1165,396.7
 DRS,"Leonardo DRS, Inc.","Search, Detection, Navigation, Guidance, Aeronautical Sys",2026Q2,913,8787,9.624,1.444,1.061,0.9339,0.5097,0.02091,0.04762,0.1013,405
 NOC,NORTHROP GRUMMAN CORP /DE/,"Search, Detection, Navigation, Guidance, Aeronautical Sys",2026Q3,1.112e+04,1.096e+05,9.854,1.441,1.409,1.398,0.04266,0.1991,0.0319,0.06706,4900
+PSN,Parsons Corporation,Services-Computer Integrated Systems Design,2026Q3,1651,7600,4.605,1.424,1.09,0.9785,0.4456,0.08571,0.1,0.01776,700
 MEDP,"Medpace Holdings, Inc.",Services-Commercial Physical & Biological Research,2026Q3,716,3800,5.307,1.419,1.105,0.9999,0.4191,0.08571,0.08571,0.08501,300
-XYL,Xylem Inc.,Pumps & Pumping Equipment,2026Q2,2336,2924,1.252,1.414,1.121,1.024,0.3902,0.6244,0.5372,0.01521,967
-ENPH,"Enphase Energy, Inc.",Semiconductors & Related Devices,2026Q2,291.9,582.5,1.996,1.384,1.096,1,0.3833,0.2647,0.3264,-0.1963,111.9
 DCO,DUCOMMUN INCORPORATED,"Aircraft Parts & Auxiliary Equipment, NEC",2026Q2,224.5,1159,5.162,1.38,1.288,1.258,0.1216,0.2791,0.1902,0.118,85.2
 RXT,"RACKSPACE TECHNOLOGY, INC.","Services-Computer Programming, Data Processing, Etc.",2026Q2,670.1,809.1,1.207,1.349,1.109,1.03,0.3189,0.5711,0.6309,0.005703,233.6
-ICLR,ICON plc,Services-Commercial Physical & Biological Research,2026Q2,2063,1.57e+04,7.608,1.339,1.156,1.094,0.2448,0.09028,0.1225,0.01197,700
+ICLR,ICON plc,Services-Commercial Physical & Biological Research,2026Q3,2025,1.64e+04,8.1,1.346,1.29,1.271,0.07424,0.1714,0.08115,-0.02862,700
 BOX,"Box, Inc.",Services-Prepackaged Software,2026Q2,321.1,1700,5.294,1.311,1.16,1.109,0.2024,0.1333,0.06667,0.09234,100
 NABL,"N-able, Inc.",Services-Prepackaged Software,2026Q2,138.2,279.8,2.024,1.287,1.062,0.9871,0.3001,0.1415,-0.04894,0.05901,39.7
 FSTR,L.B. Foster Company,Wholesale-Metals Service Centers & of fices,2026Q2,138.6,246.1,1.776,1.264,0.9765,0.8807,0.383,-0.08823,0.0283,-0.03488,36.54
@@ -47,5 +47,4 @@ UPLD,"UPLAND SOFTWARE, INC.",Services-Prepackaged Software,2026Q2,49.14,169.8,3.
 ACM,AECOM,Services-Engineering Services,2026Q2,3586,2.04e+04,5.689,1.084,1.063,0.9874,0.09624,0.1397,0.05318,-0.1418,300
 ,"Udemy, Inc.",Services-Educational Services,2026Q1,191.4,579.7,3.029,1.062,1.021,1.008,0.05414,0.02784,-0.007344,-0.0444,11.8
 IBM,INTERNATIONAL BUSINESS MACHINES CORPORATION,Computer & office Equipment,2026Q3,1.71e+04,6.9e+04,4.034,1.058,1.058,1.057,0.001248,0.07812,0.04782,0.04727,1000
-GEHC,GE HEALTHCARE TECHNOLOGIES INC.,X-Ray Apparatus & Tubes & Related Irradiation Apparatus,2026Q2,5295,1.612e+04,3.044,1.055,1.036,1.03,0.02479,0.05319,-0.01059,0.05752,290
 SPOK,"SPOK HOLDINGS, INC.",Radiotelephone Communications,2026Q2,35.01,57.1,1.631,1.051,0.9394,0.902,0.1494,-0.1242,0.0007669,-0.01891,1.8

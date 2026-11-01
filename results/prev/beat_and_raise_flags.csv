@@ -32,6 +32,7 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 912093,2025Q4,1,1,False,1,1,0.01178,next-quarter guide implies faster y/y than reported,dollar guide,VIAV
 1077183,2025Q4,2,1,False,1,1,0.01154,next-quarter guide implies faster y/y than reported,dollar guide,NEO
 1272842,2025Q4,3,1,False,1,1,0.01042,next-quarter guide implies faster y/y than reported,dollar guide,AIRG
+780571,2026Q3,6,1,False,1,1,0.007282,next-quarter guide implies faster y/y than reported,dollar guide,ITRI
 1819994,2026Q2,5,1,False,1,1,0.006735,next-quarter guide implies faster y/y than reported,dollar guide,RKLB
 1372612,2026Q2,5,1,False,1,1,0.00673,next-quarter guide implies faster y/y than reported,dollar guide,BOX
 910638,2026Q2,2,1,False,1,1,0.00616,next-quarter guide implies faster y/y than reported,dollar guide,DDD
@@ -106,6 +107,7 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 707549,2025Q4,1,0,False,1,0,0.02784,next-quarter guide implies faster y/y than reported,dollar guide,LRCX
 21535,2026Q1,2,0,False,1,0,0.02557,next-quarter guide implies faster y/y than reported,dollar guide,COHU
 896493,2026Q1,1,0,False,1,0,0.02509,next-quarter guide implies faster y/y than reported,dollar guide,GPUS
+917273,2026Q3,1,0,False,1,0,0.02483,next-quarter guide implies faster y/y than reported,dollar guide,RMBS
 1713683,2025Q4,1,0,False,1,0,0.02353,next-quarter guide implies faster y/y than reported,dollar guide,ZS
 720500,2026Q1,1,0,False,1,0,0.0234,next-quarter guide implies faster y/y than reported,dollar guide,ASYS
 1364954,2025Q3,1,0,False,1,0,0.02292,next-quarter guide implies faster y/y than reported,dollar guide,CHGG
@@ -150,18 +152,17 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 1058290,2026Q2,5,0,False,0,0,-0.0007293,next-quarter guide implies faster y/y than reported,dollar guide,CTSH
 1703056,2025Q3,2,0,False,0,0,-0.001574,next-quarter guide implies faster y/y than reported,dollar guide,ADT
 1036044,2026Q2,5,0,False,0,0,-0.003333,next-quarter guide implies faster y/y than reported,dollar guide,INVE
-780571,2026Q2,5,0,False,0,1,-0.003713,next-quarter guide implies faster y/y than reported,dollar guide,ITRI
 1626450,2026Q2,3,0,False,0,0,-0.005753,next-quarter guide implies faster y/y than reported,dollar guide,CMRC
 1370946,2025Q3,2,0,False,0,0,-0.005926,next-quarter guide implies faster y/y than reported,dollar guide,OC
 1681622,2026Q1,1,0,False,0,1,-0.006897,next-quarter guide implies faster y/y than reported,dollar guide,VREX
 1114925,2025Q4,1,0,False,0,1,-0.007533,next-quarter guide implies faster y/y than reported,dollar guide,LTRX
 1417663,2025Q4,1,0,False,0,0,-0.007852,next-quarter guide implies faster y/y than reported,dollar guide,SNWV
-1463101,2026Q2,3,0,False,0,0,-0.01066,next-quarter guide implies faster y/y than reported,dollar guide,ENPH
 1738177,2024Q3,2,0,False,0,0,-0.01829,next-quarter guide implies faster y/y than reported,dollar guide,CMBMF
 880807,2025Q3,1,0,False,0,0,-0.02427,next-quarter guide implies faster y/y than reported,dollar guide,AMSC
 948320,2026Q2,2,0,False,0,0,-0.02513,next-quarter guide implies faster y/y than reported,dollar guide,LFMD
 810136,2026Q1,1,0,False,0,1,-0.02806,next-quarter guide implies faster y/y than reported,dollar guide,PLAB
 819793,2026Q2,3,0,False,0,1,-0.03094,next-quarter guide implies faster y/y than reported,dollar guide,AIN
+1463101,2026Q3,4,0,False,0,0,-0.03827,next-quarter guide implies faster y/y than reported,dollar guide,ENPH
 926282,2026Q2,5,0,False,0,0,-0.04046,next-quarter guide implies faster y/y than reported,dollar guide,ADTN
 1070235,2025Q3,1,0,False,0,0,-0.04706,next-quarter guide implies faster y/y than reported,dollar guide,BB
 1123360,2025Q3,1,0,False,0,1,-0.0474,next-quarter guide implies faster y/y than reported,growth guide converted to dollars,GPN
@@ -169,5 +170,6 @@ cik,latest_scored_q,scored_quarters,br_streak,two_consecutive,last_beat,last_rai
 1294133,2025Q4,2,0,False,0,0,-0.0766,full-year guide raised vs prior full-year guide,dollar guide,INGN
 1159167,2024Q4,1,0,False,0,1,-0.08246,next-quarter guide implies faster y/y than reported,dollar guide,
 723125,2025Q1,1,0,False,0,1,-0.08489,next-quarter guide implies faster y/y than reported,dollar guide,MU
+1996810,2026Q3,1,0,False,0,1,-0.1429,full-year guide raised vs prior full-year guide,dollar guide,GEV
 808326,2024Q1,1,0,False,0,0,-0.1463,next-quarter guide implies faster y/y than reported,dollar guide,
 2040127,2026Q2,1,0,False,0,1,-0.1492,next-quarter guide implies faster y/y than reported,dollar guide,KRMN
