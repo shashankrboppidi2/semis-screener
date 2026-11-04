@@ -1,17 +1,17 @@
 {
- "finished_utc": "2026-11-01T17:33Z",
+ "finished_utc": "2026-11-04T19:03Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 500
+   "secs": 487
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 14
+   "secs": 15
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 139
+   "secs": 131
   },
   "rpo_pull": {
    "rc": 0,
@@ -27,15 +27,15 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 627
+   "secs": 609
   },
   "br_extract": {
    "rc": 0,
-   "secs": 92
+   "secs": 110
   },
   "br_postpass": {
    "rc": 0,
-   "secs": 12
+   "secs": 13
   },
   "br_flag": {
    "rc": 0,
@@ -51,15 +51,15 @@
   },
   "xbrl_ALAB": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 5
+   "secs": 6
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 4
+   "secs": 6
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -83,7 +83,7 @@
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 2
+   "secs": 3
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -91,7 +91,7 @@
   },
   "xbrl_ENTG": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_INTC": {
    "rc": 0,
@@ -115,7 +115,7 @@
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "xbrl_MTSI": {
    "rc": 0,
@@ -127,7 +127,7 @@
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -139,15 +139,15 @@
   },
   "xbrl_ON": {
    "rc": 0,
-   "secs": 5
+   "secs": 7
   },
   "xbrl_QCOM": {
    "rc": 0,
-   "secs": 4
+   "secs": 5
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 3
+   "secs": 4
   },
   "xbrl_SKHY": {
    "rc": 0,
@@ -171,7 +171,7 @@
   },
   "xbrl_TSEM": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "xbrl_TSM": {
    "rc": 0,
