@@ -1,21 +1,21 @@
 {
- "finished_utc": "2026-11-04T19:03Z",
+ "finished_utc": "2026-11-08T17:28Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 487
+   "secs": 503
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 15
+   "secs": 10
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 131
+   "secs": 138
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 15
+   "secs": 13
   },
   "tier1_screen": {
    "rc": 0,
@@ -23,19 +23,19 @@
   },
   "build_tier1_workbook": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "br_releases": {
    "rc": 0,
-   "secs": 609
+   "secs": 617
   },
   "br_extract": {
    "rc": 0,
-   "secs": 110
+   "secs": 169
   },
   "br_postpass": {
    "rc": 0,
-   "secs": 13
+   "secs": 11
   },
   "br_flag": {
    "rc": 0,
@@ -43,7 +43,7 @@
   },
   "br_build": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_ADI": {
    "rc": 0,
@@ -51,15 +51,15 @@
   },
   "xbrl_ALAB": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 6
+   "secs": 4
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -83,7 +83,7 @@
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -95,11 +95,11 @@
   },
   "xbrl_INTC": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_KLAC": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_LRCX": {
    "rc": 0,
@@ -115,7 +115,7 @@
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_MTSI": {
    "rc": 0,
@@ -127,7 +127,7 @@
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 5
+   "secs": 4
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -139,7 +139,7 @@
   },
   "xbrl_ON": {
    "rc": 0,
-   "secs": 7
+   "secs": 5
   },
   "xbrl_QCOM": {
    "rc": 0,
@@ -147,7 +147,7 @@
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_SKHY": {
    "rc": 0,
@@ -167,7 +167,7 @@
   },
   "xbrl_TER": {
    "rc": 0,
-   "secs": 6
+   "secs": 5
   },
   "xbrl_TSEM": {
    "rc": 0,
@@ -183,11 +183,11 @@
   },
   "xbrl_UMC": {
    "rc": 0,
-   "secs": 1
+   "secs": 2
   },
   "accel_series": {
    "rc": 0,
-   "secs": 23
+   "secs": 18
   },
   "accel_rank": {
    "rc": 0,

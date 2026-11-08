@@ -1,5 +1,7 @@
 ticker,name,industry,cqp,rev,rpo,rpo_cover_q,b2b,b2b_4q,b2b_prev3,b2b_trend,rpo_yoy,rpo_yoy_accel,rev_yoy,d_rpo
 VOYG,"Voyager Technologies, Inc./TX",Guided Missiles & Space Vehicles & Parts,2026Q3,88.72,608,6.853,5.723,2.711,1.707,4.016,5.893,4.8,1.241,419
-VECO,VEECO INSTRUMENTS INC.,"Special Industry Machinery, NEC",2026Q2,193.5,376.5,1.946,2.208,1.465,1.217,0.991,8.46,6.976,0.1648,233.7
+AKAM,"Akamai Technologies, Inc","Services-Business Services, NEC",2026Q3,1122,1.99e+04,17.74,11.96,4.379,1.851,10.11,3.146,2.378,0.06384,1.23e+04
+IONQ,"IONQ, INC.",Services-Computer Integrated Systems Design,2026Q3,173.8,1168,6.719,4.929,3.34,2.811,2.118,7.278,4.312,3.36,683
+KRMN,KARMAN HOLDINGS INC.,"Aircraft Parts & Auxiliary Equipment, NEC",2026Q3,201.6,1500,7.44,4.948,139.4,184.2,-179.2,1.797,1.427,0.6555,796.1
 KGS,"Kodiak Gas Services, Inc.",Natural Gas Transmission,2026Q2,391.1,2643,6.758,3.583,1.656,1.014,2.569,0.6358,0.5493,0.2115,1010
 HII,"HUNTINGTON INGALLS INDUSTRIES, INC.",Ship & Boat Building & Repairing,2026Q3,3537,8.62e+04,24.37,9.171,3.17,1.169,8.001,0.5476,0.5405,0.1081,2.89e+04
