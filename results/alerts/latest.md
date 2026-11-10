@@ -1,24 +1,20 @@
-# Plan alerts, Friday 2026-11-06
+# Plan alerts, Monday 2026-11-09
 
-## Today: 1 action(s)
+## Today: no action
 
-1. QQQ sleeve: buy 1 stock(s) (FTNT)
+Nothing to trade.
 
 ## Hedge
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 1 new alert(s), 24 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 0 new alert(s), 23 name(s) now >= 30% behind QQQ
 
-| buy | name | behind QQQ | market cap | amount | price |
-|---|---|---|---|---|---|
-| FTNT | Fortinet, Inc. | -30% | $87B | 2% of sleeve | 118.84 |
+Already alerted, still behind (no action): SNDK -60%, WDC -58%, INTU -55%, ORCL -55%, INTC -54%, ARM -54%, NFLX -51%, STX -50%, APP -49%, MRVL -47%, NOW -47%, KLAC -46%, LRCX -45%, AMAT -44%, VRT -44%, INFY -43%, LITE -41%, ADBE -41%, DELL -38%, MU -36%, DDOG -34%, TSLA -31%, FTNT -30%
 
-Already alerted, still behind (no action): SNDK -62%, WDC -60%, ARM -57%, ORCL -55%, INTC -55%, APP -54%, INTU -53%, STX -53%, NFLX -50%, MRVL -50%, VRT -49%, KLAC -48%, AMAT -48%, LRCX -48%, NOW -45%, DELL -41%, INFY -41%, ADBE -39%, MU -38%, DDOG -33%, TSLA -32%, AVGO -32%, HPE -31%
+## SMH sleeve: 0 new alert(s), 12 name(s) now >= 30% behind SMH
 
-## SMH sleeve: 0 new alert(s), 11 name(s) now >= 30% behind SMH
-
-Already alerted, still behind (no action): ALAB -47%, ARM -47%, INTC -46%, TER -44%, AVGO -44%, MRVL -40%, MCHP -38%, KLAC -35%, AMAT -35%, LRCX -35%, UMC -33%
+Already alerted, still behind (no action): INTC -46%, ARM -43%, AVGO -42%, TER -40%, ALAB -40%, MCHP -37%, MRVL -37%, NVDA -34%, KLAC -32%, UMC -31%, LRCX -31%, AMAT -31%
 
 ---
 Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
