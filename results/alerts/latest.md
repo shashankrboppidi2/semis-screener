@@ -1,4 +1,4 @@
-# Plan alerts, Monday 2026-11-09
+# Plan alerts, Tuesday 2026-11-10
 
 ## Today: no action
 
@@ -8,13 +8,13 @@ Nothing to trade.
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 0 new alert(s), 23 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 0 new alert(s), 22 name(s) now >= 30% behind QQQ
 
-Already alerted, still behind (no action): SNDK -60%, WDC -58%, INTU -55%, ORCL -55%, INTC -54%, ARM -54%, NFLX -51%, STX -50%, APP -49%, MRVL -47%, NOW -47%, KLAC -46%, LRCX -45%, AMAT -44%, VRT -44%, INFY -43%, LITE -41%, ADBE -41%, DELL -38%, MU -36%, DDOG -34%, TSLA -31%, FTNT -30%
+Already alerted, still behind (no action): SNDK -60%, WDC -58%, INTC -55%, INTU -55%, ORCL -54%, ARM -54%, NFLX -51%, STX -50%, APP -49%, MRVL -47%, NOW -46%, KLAC -45%, LRCX -44%, AMAT -44%, VRT -43%, INFY -42%, ADBE -41%, LITE -41%, DELL -37%, MU -37%, DDOG -33%, TSLA -30%
 
-## SMH sleeve: 0 new alert(s), 12 name(s) now >= 30% behind SMH
+## SMH sleeve: 0 new alert(s), 13 name(s) now >= 30% behind SMH
 
-Already alerted, still behind (no action): INTC -46%, ARM -43%, AVGO -42%, TER -40%, ALAB -40%, MCHP -37%, MRVL -37%, NVDA -34%, KLAC -32%, UMC -31%, LRCX -31%, AMAT -31%
+Already alerted, still behind (no action): INTC -46%, ARM -43%, TER -40%, AVGO -40%, ALAB -39%, MCHP -38%, NVDA -37%, MRVL -37%, KLAC -31%, SNPS -30%, LRCX -30%, UMC -30%, AMAT -30%
 
 ---
 Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
