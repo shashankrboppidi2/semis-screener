@@ -1,25 +1,25 @@
 {
- "finished_utc": "2026-11-15T18:09Z",
+ "finished_utc": "2026-11-18T19:49Z",
  "steps": {
   "tier1_frames": {
    "rc": 0,
-   "secs": 509
+   "secs": 518
   },
   "tier1_panel": {
    "rc": 0,
-   "secs": 11
+   "secs": 6
   },
   "tier1_sic": {
    "rc": 0,
-   "secs": 161
+   "secs": 156
   },
   "rpo_pull": {
    "rc": 0,
-   "secs": 16
+   "secs": 12
   },
   "tier1_screen": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "build_tier1_workbook": {
    "rc": 0,
@@ -27,15 +27,15 @@
   },
   "br_releases": {
    "rc": 0,
-   "secs": 660
+   "secs": 632
   },
   "br_extract": {
    "rc": 0,
-   "secs": 115
+   "secs": 64
   },
   "br_postpass": {
    "rc": 0,
-   "secs": 13
+   "secs": 8
   },
   "br_flag": {
    "rc": 0,
@@ -47,7 +47,7 @@
   },
   "xbrl_ADI": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_ALAB": {
    "rc": 0,
@@ -55,11 +55,11 @@
   },
   "xbrl_AMAT": {
    "rc": 0,
-   "secs": 6
+   "secs": 4
   },
   "xbrl_AMD": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_ARM": {
    "rc": 0,
@@ -67,23 +67,23 @@
   },
   "xbrl_ASML": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_ASX": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_AVGO": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_CBRS": {
    "rc": 0,
-   "secs": 1
+   "secs": 0
   },
   "xbrl_CDNS": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_CRDO": {
    "rc": 0,
@@ -91,43 +91,43 @@
   },
   "xbrl_ENTG": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_INTC": {
    "rc": 0,
-   "secs": 6
+   "secs": 4
   },
   "xbrl_KLAC": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_LRCX": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_MCHP": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_MPWR": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_MRVL": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_MTSI": {
    "rc": 0,
-   "secs": 4
+   "secs": 2
   },
   "xbrl_MU": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_NVDA": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_NVMI": {
    "rc": 0,
@@ -139,27 +139,27 @@
   },
   "xbrl_ON": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_QCOM": {
    "rc": 0,
-   "secs": 4
+   "secs": 3
   },
   "xbrl_RMBS": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "xbrl_SKHY": {
    "rc": 0,
-   "secs": 1
+   "secs": 0
   },
   "xbrl_SNPS": {
    "rc": 0,
-   "secs": 4
+   "secs": 2
   },
   "xbrl_STM": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_SWKS": {
    "rc": 0,
@@ -167,19 +167,19 @@
   },
   "xbrl_TER": {
    "rc": 0,
-   "secs": 6
+   "secs": 4
   },
   "xbrl_TSEM": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_TSM": {
    "rc": 0,
-   "secs": 2
+   "secs": 1
   },
   "xbrl_TXN": {
    "rc": 0,
-   "secs": 5
+   "secs": 3
   },
   "xbrl_UMC": {
    "rc": 0,
@@ -187,11 +187,11 @@
   },
   "accel_series": {
    "rc": 0,
-   "secs": 20
+   "secs": 11
   },
   "accel_rank": {
    "rc": 0,
-   "secs": 3
+   "secs": 2
   },
   "build_accel_workbook": {
    "rc": 0,
