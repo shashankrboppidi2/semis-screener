@@ -1,20 +1,24 @@
-# Plan alerts, Thursday 2026-11-19
+# Plan alerts, Friday 2026-11-20
 
-## Today: no action
+## Today: 1 action(s)
 
-Nothing to trade.
+1. QQQ sleeve: buy 1 stock(s) (ASX)
 
 ## Hedge
 
 The hedge instructions are in the e-mail only (this file and the run log are public).
 
-## QQQ sleeve: 0 new alert(s), 20 name(s) now >= 30% behind QQQ
+## QQQ sleeve: 1 new alert(s), 23 name(s) now >= 30% behind QQQ
 
-Already alerted, still behind (no action): INTU -57%, INTC -55%, WDC -54%, ORCL -54%, ARM -52%, NFLX -51%, NOW -50%, MRVL -50%, APP -49%, AMAT -46%, KLAC -46%, LRCX -46%, STX -45%, VRT -42%, ADBE -42%, DELL -41%, MU -37%, DDOG -35%, CRM -34%, NVDA -31%
+| buy | name | behind QQQ | market cap | amount | price |
+|---|---|---|---|---|---|
+| ASX | ASE Technology Holding Co., Ltd. | -33% | $58B | 2% of sleeve | 26.27 |
+
+Already alerted, still behind (no action): SNDK -62%, INTU -60%, ARM -58%, WDC -57%, INTC -56%, ORCL -53%, MRVL -53%, APP -52%, STX -49%, AMAT -49%, NOW -49%, KLAC -49%, LRCX -49%, NFLX -49%, VRT -48%, DELL -44%, MU -42%, ADBE -40%, NVDA -37%, DDOG -35%, HPE -31%, CRM -31%
 
 ## SMH sleeve: 0 new alert(s), 12 name(s) now >= 30% behind SMH
 
-Already alerted, still behind (no action): INTC -45%, NVDA -41%, TER -40%, ARM -39%, MRVL -39%, MCHP -35%, ALAB -34%, UMC -33%, AVGO -32%, AMAT -31%, KLAC -31%, LRCX -31%
+Already alerted, still behind (no action): NVDA -44%, ARM -43%, INTC -43%, TER -40%, MRVL -39%, ALAB -39%, AVGO -33%, UMC -32%, AMAT -31%, MCHP -31%, KLAC -31%, LRCX -31%
 
 ---
 Rules: alerts are 2% of the sleeve, max 10% per name, 40% in names per sleeve; re-alert after 63 trading days; orders under $500 skipped; laggards bought on margin and repaid monthly; loan limit 50% of holdings. Caps use SEC share counts refreshed quarterly. Not investment advice.
