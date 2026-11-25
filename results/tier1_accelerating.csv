@@ -15,7 +15,6 @@ FROG,JFrog Ltd.,Services-Prepackaged Software,2026Q3,179.2,812.4,4.534,1.856,1.4
 POWL,"Powell Industries, Inc.",Switchgear & Switchboard Apparatus,2026Q3,396.7,2700,6.806,1.756,2.038,2.132,-0.3755,0.9286,0.2143,0.3313,300
 J,JACOBS SOLUTIONS INC.,Heavy Construction Other Than Bldg Const - Contractors,2026Q2,4076,2.22e+04,5.446,1.785,1.59,1.329,0.4565,0.4605,0.2105,0.3446,3200
 MTZ,"MasTec, Inc.","Water, Sewer, Pipeline, Comm & Power Line Construction",2026Q3,5152,1.91e+04,3.707,1.543,1.43,1.392,0.1512,0.6325,0.2027,0.2988,2800
-CRWD,"CROWDSTRIKE HOLDINGS, INC.",Services-Prepackaged Software,2026Q2,1471,1.07e+04,7.274,2.292,1.639,1.422,0.8699,0.4861,0.192,0.2583,1900
 TLS,TELOS CORPORATION,Services-Computer Integrated Systems Design,2026Q3,55.2,84,1.522,1.498,1.078,0.9376,0.5606,0.2824,0.1896,0.07297,27.5
 FIVN,"Five9, Inc.",Services-Computer Processing & Data Preparation,2026Q3,323.3,1606,4.967,1.489,1.386,1.352,0.1369,0.4324,0.1734,0.1311,158
 FLNC,"Fluence Energy, Inc.","Miscellaneous Electrical Machinery, Equipment & Supplies",2026Q2,649.8,6400,9.848,2.231,1.622,1.212,1.019,0.3061,0.1633,0.07853,800
@@ -58,7 +57,6 @@ SPGI,S&P Global Inc.,"Services-Consumer Credit Reporting, Collection Agencies",2
 SIF,"SIFCO Industries, Inc.",Aircraft Engines & Engine Parts,2026Q2,26.14,164.2,6.279,1.246,1.594,1.53,-0.2834,0.2587,0.03815,0.1833,6.441
 CACI,CACI International Inc,Services-Computer Integrated Systems Design,2026Q3,2475,1.43e+04,5.779,1.606,1.074,1.017,0.5889,0.0916,0.03375,0.08173,1500
 EME,"EMCOR Group, Inc.",Electrical Work,2026Q3,5542,1.857e+04,3.352,1.258,1.302,1.316,-0.05821,0.4724,0.03354,0.2883,1430
-ZM,"Zoom Communications, Inc.","Services-Computer Programming, Data Processing, Etc.",2026Q2,1277,4536,3.551,1.186,1.111,1.087,0.09922,0.1408,0.03213,0.04928,237.3
 DRS,"Leonardo DRS, Inc.","Search, Detection, Navigation, Guidance, Aeronautical Sys",2026Q3,1066,9381,8.8,1.557,1.122,0.9769,0.5803,0.05298,0.03207,0.1104,594
 NOC,NORTHROP GRUMMAN CORP /DE/,"Search, Detection, Navigation, Guidance, Aeronautical Sys",2026Q3,1.112e+04,1.096e+05,9.854,1.441,1.409,1.398,0.04266,0.1991,0.0319,0.06706,4900
 MDB,"MONGODB, INC.",Services-Prepackaged Software,2026Q2,771.8,1519,1.968,1.079,1.266,1.329,-0.2502,0.9129,0.0291,0.305,60.6
